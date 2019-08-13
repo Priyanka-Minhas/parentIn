@@ -1,0 +1,14 @@
+<resources>
+	<string name="app_name">Parent In</string>
+
+	<!--ERROR-->
+	<string name="errorInternet">Internet connection not Available</string>
+	<string name="BIENVENIDO">WELCOME</string>
+	<string name="Un_programa_del_Ministro_de_Educación_y_Cultura_de_Uruguay">A program of the Minister of Education and Culture of Uruguay</string>
+	<string name="Selecciona_una_opción">Select an option</string>
+	<string name="Padre_o_tutor">Padre o tutor</string>
+	<string name="Maestro">Teacher</string>
+	<string name="Supervisor">Supervisor</string>
+	<string name="Acerca_de_ParentIn">About ParentIn</string>
+
+</resources>

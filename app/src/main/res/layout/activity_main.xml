@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:gravity="center"
+	android:orientation="vertical">
+
+	<com.sdei.parentIn.customViews.RegularTextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="@string/app_name"
+		android:textColor="@color/black"
+		android:textSize="@dimen/_25ssp" />
+
+	<com.sdei.parentIn.customViews.RegularTextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="@string/BIENVENIDO" />
+
+	<com.sdei.parentIn.customViews.RegularTextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="@dimen/_15sdp"
+		android:layout_marginEnd="@dimen/_15sdp"
+		android:gravity="center"
+		android:text="@string/Un_programa_del_Ministro_de_Educación_y_Cultura_de_Uruguay" />
+
+	<com.sdei.parentIn.customViews.RegularTextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="@dimen/_15sdp"
+		android:layout_marginEnd="@dimen/_15sdp"
+		android:gravity="center"
+		android:textColor="@color/black"
+		android:text="@string/Selecciona_una_opción" />
+
+</LinearLayout>
+

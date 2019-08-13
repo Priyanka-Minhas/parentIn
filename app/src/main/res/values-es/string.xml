@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">Parent In</string>
+
+	<!--ERROR-->
+	<string name="errorInternet">Conexión a internet no disponible</string>
+	<string name="BIENVENIDO">BIENVENIDO</string>
+	<string name="Un_programa_del_Ministro_de_Educación_y_Cultura_de_Uruguay">Un programa del Ministro de Educación y Cultura de Uruguay</string>
+	<string name="Selecciona_una_opción">Selecciona una opción</string>
+	<string name="Padre_o_tutor">Padre o tutor</string>
+	<string name="Maestro">Maestro</string>
+	<string name="Supervisor">Maestro</string>
+	<string name="Acerca_de_ParentIn">Acerca de ParentIn</string>
+
+
+</resources>
