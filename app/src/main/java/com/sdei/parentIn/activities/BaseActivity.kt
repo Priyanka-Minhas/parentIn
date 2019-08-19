@@ -3,8 +3,10 @@ package com.sdei.parentIn.activities
 import android.annotation.TargetApi
 import android.content.Context
 import android.content.pm.PackageManager
+import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
+import android.view.View
 import android.view.inputmethod.InputMethodManager
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
@@ -35,7 +37,7 @@ abstract class BaseActivity<V : ViewModel> : AppCompatActivity() {
 //    abstract val bindingVariable: Int
 
     /**
-     * @return layout resource id
+     * @return toolbar resource id
      */
     @get:LayoutRes
     abstract val layoutId: Int
@@ -57,6 +59,10 @@ abstract class BaseActivity<V : ViewModel> : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+            window.statusBarColor = Color.WHITE
+        }
         setContentView(layoutId)
         this.mContext = context
         mUtils = Utils(mContext)
