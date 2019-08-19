@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="app_name">ParentIn</string>
+	<string name="app_name">FamiliasIn</string>
 
 	<!--ERROR-->
 	<string name="errorInternet">Conexión a internet no disponible</string>
