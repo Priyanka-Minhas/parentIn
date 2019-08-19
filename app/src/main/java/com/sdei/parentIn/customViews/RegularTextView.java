@@ -1,6 +1,7 @@
 package com.sdei.parentIn.customViews;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.util.AttributeSet;
 
 import androidx.annotation.NonNull;
@@ -25,9 +26,9 @@ public class RegularTextView extends AppCompatTextView {
 
     private void init() {
         if (!isInEditMode()) {
-//            Typeface typeface = Typeface.createFromAsset(getContext()
-//                    .getAssets(), "regular.ttf");
-//            setTypeface(typeface);
+            Typeface typeface = Typeface.createFromAsset(getContext()
+                    .getAssets(), "Poppins_Regular.ttf");
+            setTypeface(typeface);
         }
     }
 }
