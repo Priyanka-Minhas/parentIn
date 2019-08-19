@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	android:gravity="center"
+	android:layout_margin="@dimen/overall_margin">
+
+
+	<ImageView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center"
+		android:src="@drawable/common_google_signin_btn_icon_dark"/>
+
+	<com.sdei.parentIn.customViews.RegularTextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="@string/app_name"
+		android:textColor="@color/black"
+		android:textSize="@dimen/_25ssp"/>
+
+	<com.sdei.parentIn.customViews.RegularTextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="@string/BIENVENIDO"/>
+
+	<com.sdei.parentIn.customViews.RegularTextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="@dimen/_15sdp"
+		android:layout_marginEnd="@dimen/_15sdp"
+		android:gravity="center"
+		android:text="@string/Un_programa_del_Ministro_de_Educación_y_Cultura_de_Uruguay" />
+
+	<com.sdei.parentIn.customViews.RegularTextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="@dimen/_15sdp"
+		android:layout_marginEnd="@dimen/_15sdp"
+		android:gravity="center"
+		android:textColor="@color/black"
+		android:text="@string/Selecciona_una_opción" />
+
+	<Button
+		android:id="@+id/btn_parent"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:drawableLeft="@drawable/common_google_signin_btn_icon_dark"
+		android:text="@string/Padre_o_tutor"/>
+
+	<Button
+		android:id="@+id/btn_teacher"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:drawableLeft="@drawable/common_google_signin_btn_icon_dark"
+		android:text="@string/Maestro"/>
+
+
+	<Button
+		android:id="@+id/btn_Supervisor"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:drawableLeft="@drawable/common_google_signin_btn_icon_dark"
+		android:text="@string/Supervisor"/>
+
+
+
+	<com.sdei.parentIn.customViews.RegularTextView
+		android:id="@+id/txt_about"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="@string/Acerca_de_ParentIn"
+		android:textColor="@color/black" />
+
+</LinearLayout>

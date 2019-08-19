@@ -1,16 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="app_name">Parent In</string>
+	<string name="app_name">ParentIn</string>
 
 	<!--ERROR-->
 	<string name="errorInternet">Conexión a internet no disponible</string>
+
+	<!--Welcome Activity-->
 	<string name="BIENVENIDO">BIENVENIDO</string>
 	<string name="Un_programa_del_Ministro_de_Educación_y_Cultura_de_Uruguay">Un programa del Ministro de Educación y Cultura de Uruguay</string>
 	<string name="Selecciona_una_opción">Selecciona una opción</string>
 	<string name="Padre_o_tutor">Padre o tutor</string>
 	<string name="Maestro">Maestro</string>
-	<string name="Supervisor">Maestro</string>
+	<string name="Supervisor">Supervisor</string>
 	<string name="Acerca_de_ParentIn">Acerca de ParentIn</string>
+
+	<!--SignUpParentInfo Activity-->
+	<string name="Nueva_Cuenta">Nueva Cuenta</string>
+	<string name="INFO_DEL_PADRE_O_TUTOR">INFO DEL PADRE O TUTOR</string>
+	<string name="Ingresa_tu_información_basica_para_crear_tu_nueva_cuenta">Ingresa tu información basica para crear tu nueva cuenta</string>
+	<string name="Relación_con_el_niño">Relación con el niño</string>
+	<string name="Cédula">Cédula</string>
+	<string name="Dirección_de_casa">Dirección de casa</string>
+	<string name="Es_esta_la_misma_Es_esta_la_misma_dirección_que_el_estudiante">Es esta la misma Es esta la misma dirección que el estudiante</string>
+	<string name="Si">Si</string>
+	<string name="No">No</string>
+	<string name="Nivel_de_educación_alcanzado">Nivel de educación alcanzado</string>
+	<string name="No_de_estudiantes_en_escuelas_ParentIn">No. de estudiantes en escuelas ParentIn</string>
+	<string name="SIGUIENTE">SIGUIENTE</string>
+
+	<!--SignUpStudentInfo Activity-->
+	<string name="Información_del_estudiante">Información del estudiante</string>
+	<string name="Ingresa_la_información_basica_del_nino_a_para_poder_continua">Ingresa la información basica del nino a para/poder continua</string>
+	<string name="Niño">Niño</string>
+	<string name="Género">Género</string>
+	<string name="Fecha_nacimiento">Fecha nacimiento</string>
+	<string name="Escuela">Escuela</string>
+	<string name="Agregar_hijo">Agregar hijo/ a</string>
+	<string name="CREAR_CUENTA">CREAR CUENTA</string>
+
+	<!--Login Activity-->
+	<string name="Inicia_Sesión">Inicia Sesión</string>
+	<string name="Ingresa_tu_usuario_y_controsena_para">Ingresa tu usuario y controsena para</string>
+	<string name="acceder_a_tu_cuenta">acceder a tu cuenta</string>
+	<string name="Iniciar_sesion">Iniciar sesion</string>
+	<string name="O_si_eres_nuevo_en_el_el_programa">O si eres nuevo en el el programa</string>
+	<string name="podrás_crear_una_nueva_cuenta_aquí">podrás crear una nueva cuenta aquí</string>
 
 
 </resources>

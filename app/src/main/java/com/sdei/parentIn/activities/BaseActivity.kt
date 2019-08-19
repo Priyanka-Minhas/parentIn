@@ -9,6 +9,7 @@ import android.view.inputmethod.InputMethodManager
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.ViewModel
 import com.google.android.material.snackbar.Snackbar
 import com.sdei.parentIn.utils.LocaleHelper
 import com.sdei.parentIn.utils.Utils
@@ -17,7 +18,7 @@ import com.sdei.parentIn.utils.Utils
  * Created by shubham on 22/05/19.
  */
 
-abstract class BaseActivity<V : AndroidViewModel> : AppCompatActivity() {
+abstract class BaseActivity<V : ViewModel> : AppCompatActivity() {
 
     var TAG: String = "BaseActivity:-"
 

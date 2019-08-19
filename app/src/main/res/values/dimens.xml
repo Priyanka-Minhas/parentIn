@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Parent In Universal Sizes -->
+    <dimen name="overall_margin">12sdp</dimen>
+
+</resources>
