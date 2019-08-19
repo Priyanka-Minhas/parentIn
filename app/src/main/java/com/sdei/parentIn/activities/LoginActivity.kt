@@ -7,7 +7,7 @@ import com.sdei.parentIn.viewModel.LoginViewModel
 
 
 /**
- * Created by priyanka on 14/08/19.
+ * Created by shubham on 14/08/19.
  */
 
 class LoginActivity : BaseActivity<LoginViewModel>() {

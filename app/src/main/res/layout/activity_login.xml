@@ -3,9 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
-    android:layout_margin="@dimen/activity_margin">
-
+    android:gravity="center">
 
     <ImageView
         android:layout_width="wrap_content"
@@ -31,7 +29,7 @@
         android:layout_marginStart="@dimen/_15sdp"
         android:layout_marginEnd="@dimen/_15sdp"
         android:gravity="center"
-        android:text="@string/Ingresa_tu_usuario_y_controsena_para" />
+        android:text="@string/Ingresa_tu_usuario_y_controsena_para"/>
 
     <com.sdei.parentIn.customViews.RegularTextView
         android:layout_width="wrap_content"
@@ -45,8 +43,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
+        android:layout_height="wrap_content">
 
         <EditText
             android:layout_width="match_parent"
@@ -60,15 +57,11 @@
         android:drawableLeft="@drawable/common_google_signin_btn_icon_dark"
         android:text="@string/Maestro"/>
 
-
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:drawableLeft="@drawable/common_google_signin_btn_icon_dark"
         android:text="@string/Iniciar_sesion"/>
-
-
-
 
     <com.sdei.parentIn.customViews.RegularTextView
         android:layout_width="wrap_content"
