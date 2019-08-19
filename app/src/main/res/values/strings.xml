@@ -13,39 +13,9 @@
 	<string name="Supervisor">Supervisor</string>
 	<string name="Acerca_de_ParentIn">About ParentIn</string>
 
-	<!--SignUpParentInfo Activity-->
-	<string name="Nueva_Cuenta">New account</string>
-	<string name="INFO_DEL_PADRE_O_TUTOR">PARENT OR GUARDIAN INFO</string>
-	<string name="Ingresa_tu_información_basica_para_crear_tu_nueva_cuenta">Enter your basic information to create your new account</string>
-	<string name="Relación_con_el_niño">Relationship with the child</string>
-	<string name="Cédula">Identification card</string>
-	<string name="Dirección_de_casa">Home address</string>
-	<string name="Es_esta_la_misma_Es_esta_la_misma_dirección_que_el_estudiante">Is this the same address as the student</string>
-	<string name="Si">Yes</string>
-	<string name="No">No</string>
-	<string name="Nivel_de_educación_alcanzado">Level of education achieved</string>
-	<string name="No_de_estudiantes_en_escuelas_ParentIn">No. of students in ParentIn schools</string>
-	<string name="SIGUIENTE">FOLLOWING</string>
-
-	<!--SignUpStudentInfo Activity-->
-	<string name="Información_del_estudiante">Student information</string>
-	<string name="Ingresa_la_información_basica_del_nino_a_para_poder_continua">Enter the child\'s basic information to / continue power</string>
-	<string name="Niño">Child</string>
-	<string name="Género">Gender</string>
-	<string name="Fecha_nacimiento">Birth Date</string>
-	<string name="Escuela">School</string>
-	<string name="Agregar_hijo">Add child</string>
-	<string name="CREAR_CUENTA">CREATE ACCOUNT</string>
-
-
-	<!--Login Activity-->
-	<string name="Inicia_Sesión">Log in</string>
-	<string name="Ingresa_tu_usuario_y_controsena_para">Enter your username and password to </string>
-	<string name="acceder_a_tu_cuenta">access your account</string>
-	<string name="Iniciar_sesion">Log in</string>
-	<string name="O_si_eres_nuevo_en_el_el_programa">Or if you are new to the program,</string>
-	<string name="podrás_crear_una_nueva_cuenta_aquí">you can create a new account here</string>
-
+	<!--LOGIN ACTIVITY-->
+	<string name="Bienvenido_Padre_o_tutor">Welcome Parent or Guardian</string>
+	<string name="Ingresa_tu_usuario_y_contraseña_para_acceder_a_tu_cuenta">Enter your email and password to access your account</string>
 
 
 </resources>

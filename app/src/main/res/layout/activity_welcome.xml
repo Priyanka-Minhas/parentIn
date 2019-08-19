@@ -19,26 +19,27 @@
 		android:layout_height="wrap_content"
 		android:text="@string/app_name"
 		android:textColor="@color/black"
-		android:textSize="@dimen/_32ssp" />
+		android:textSize="@dimen/_30ssp" />
 
 	<com.sdei.parentIn.customViews.SemiBoldTextView
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_marginTop="@dimen/_23sdp"
 		android:text="@string/BIENVENIDO"
+		android:textAllCaps="true"
 		android:textColor="@color/colorPrimary"
-		android:textSize="@dimen/_16ssp" />
+		android:textSize="@dimen/_14ssp" />
 
 	<com.sdei.parentIn.customViews.RegularTextView
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_marginStart="@dimen/_15sdp"
-		android:layout_marginTop="@dimen/_8sdp"
+		android:layout_marginTop="@dimen/_2sdp"
 		android:layout_marginEnd="@dimen/_15sdp"
 		android:gravity="center"
 		android:text="@string/Un_programa_del_Ministro_de_Educación_y_Cultura_de_Uruguay"
 		android:textColor="@color/black"
-		android:textSize="@dimen/_13ssp" />
+		android:textSize="@dimen/_11ssp" />
 
 	<com.sdei.parentIn.customViews.SemiBoldTextView
 		android:layout_width="wrap_content"
@@ -48,7 +49,7 @@
 		android:gravity="center"
 		android:text="@string/Selecciona_una_opción"
 		android:textColor="@color/black"
-		android:textSize="@dimen/_15ssp" />
+		android:textSize="@dimen/_13ssp" />
 
 	<androidx.cardview.widget.CardView
 		android:layout_width="match_parent"
@@ -68,7 +69,7 @@
 			android:padding="@dimen/_10sdp"
 			android:textColor="@color/black"
 			android:text="@string/Padre_o_tutor"
-			android:textSize="@dimen/_15ssp" />
+			android:textSize="@dimen/_13ssp" />
 	</androidx.cardview.widget.CardView>
 
 	<androidx.cardview.widget.CardView
@@ -91,7 +92,7 @@
 			android:padding="@dimen/_10sdp"
 			android:text="@string/Maestro"
 			android:textColor="@color/black"
-			android:textSize="@dimen/_15ssp" />
+			android:textSize="@dimen/_13ssp" />
 	</androidx.cardview.widget.CardView>
 
 	<androidx.cardview.widget.CardView
@@ -112,7 +113,7 @@
 			android:padding="@dimen/_10sdp"
 			android:textColor="@color/black"
 			android:text="@string/Supervisor"
-			android:textSize="@dimen/_15ssp" />
+			android:textSize="@dimen/_13ssp" />
 	</androidx.cardview.widget.CardView>
 
 	<com.sdei.parentIn.customViews.RegularTextView
@@ -121,7 +122,7 @@
 		android:layout_marginBottom="@dimen/_8sdp"
 		android:layout_weight="1"
 		android:gravity="bottom"
-		android:textSize="@dimen/_13ssp"
+		android:textSize="@dimen/_11ssp"
 		android:text="@string/Acerca_de_ParentIn"
 		android:textColor="@color/black" />
 
