@@ -4,13 +4,14 @@
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:gravity="center_horizontal"
-	android:orientation="vertical"
-	android:paddingTop="@dimen/_68sdp">
+	android:background="@color/white"
+	android:orientation="vertical">
 
 	<ImageView
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_gravity="center"
+		android:layout_marginTop="@dimen/_60sdp"
 		android:src="@mipmap/logo" />
 
 	<com.sdei.parentIn.customViews.HeavyTextView
@@ -43,7 +44,7 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_marginTop="@dimen/_61sdp"
-		android:layout_marginBottom="@dimen/_8sdp"
+		android:layout_marginBottom="@dimen/_6sdp"
 		android:gravity="center"
 		android:text="@string/Selecciona_una_opción"
 		android:textColor="@color/black"
@@ -54,16 +55,18 @@
 		android:layout_height="wrap_content"
 		android:layout_marginStart="@dimen/_15sdp"
 		android:layout_marginEnd="@dimen/_15sdp"
+		android:foreground="?selectableItemBackground"
 		android:elevation="@dimen/_4ssp"
 		app:cardCornerRadius="@dimen/_5ssp">
 
 		<com.sdei.parentIn.customViews.MediumTextView
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:drawableLeft="@mipmap/icon_padre"
+			android:drawableStart="@mipmap/icon_padre"
 			android:drawablePadding="@dimen/_8sdp"
 			android:gravity="center_vertical"
 			android:padding="@dimen/_10sdp"
+			android:textColor="@color/black"
 			android:text="@string/Padre_o_tutor"
 			android:textSize="@dimen/_15ssp" />
 	</androidx.cardview.widget.CardView>
@@ -72,6 +75,7 @@
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:layout_marginStart="@dimen/_15sdp"
+		android:foreground="?selectableItemBackground"
 		android:layout_marginTop="@dimen/_8sdp"
 		android:layout_marginEnd="@dimen/_15sdp"
 		android:layout_marginBottom="@dimen/_8sdp"
@@ -81,17 +85,19 @@
 		<com.sdei.parentIn.customViews.MediumTextView
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:drawableLeft="@mipmap/icon_padre"
+			android:drawableStart="@mipmap/maestro"
 			android:drawablePadding="@dimen/_8sdp"
 			android:gravity="center_vertical"
 			android:padding="@dimen/_10sdp"
-			android:text="@string/Padre_o_tutor"
+			android:text="@string/Maestro"
+			android:textColor="@color/black"
 			android:textSize="@dimen/_15ssp" />
 	</androidx.cardview.widget.CardView>
 
 	<androidx.cardview.widget.CardView
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
+		android:foreground="?selectableItemBackground"
 		android:layout_marginStart="@dimen/_15sdp"
 		android:layout_marginEnd="@dimen/_15sdp"
 		android:elevation="@dimen/_4ssp"
@@ -100,11 +106,12 @@
 		<com.sdei.parentIn.customViews.MediumTextView
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:drawableLeft="@mipmap/icon_padre"
+			android:drawableStart="@mipmap/supervisor"
 			android:drawablePadding="@dimen/_8sdp"
 			android:gravity="center_vertical"
 			android:padding="@dimen/_10sdp"
-			android:text="@string/Padre_o_tutor"
+			android:textColor="@color/black"
+			android:text="@string/Supervisor"
 			android:textSize="@dimen/_15ssp" />
 	</androidx.cardview.widget.CardView>
 
@@ -114,6 +121,7 @@
 		android:layout_marginBottom="@dimen/_8sdp"
 		android:layout_weight="1"
 		android:gravity="bottom"
+		android:textSize="@dimen/_13ssp"
 		android:text="@string/Acerca_de_ParentIn"
 		android:textColor="@color/black" />
 
