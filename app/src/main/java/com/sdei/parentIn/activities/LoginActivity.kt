@@ -22,7 +22,6 @@ class LoginActivity : BaseActivity<BaseViewModel>() {
         get() = this@LoginActivity
 
     override fun onCreate() {
-
     }
 
     override fun initListeners() {

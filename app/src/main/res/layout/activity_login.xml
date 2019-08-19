@@ -2,11 +2,32 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	android:background="@color/white"
+	android:background="@mipmap/background"
 	android:gravity="center_horizontal"
 	android:orientation="vertical">
 
-	<include layout="@layout/toolbar" />
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="@dimen/_45sdp"
+		android:background="@drawable/stroke_toolbar">
+
+		<ImageView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerVertical="true"
+			android:padding="@dimen/_5sdp"
+			android:src="@mipmap/ic_back_arrow" />
+
+		<com.sdei.parentIn.customViews.SemiBoldTextView
+			android:id="@+id/txtTitle"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerInParent="true"
+			android:textColor="@color/black"
+			android:textSize="@dimen/_14ssp"
+			android:text="@string/Inicia_Sesión"/>
+
+	</RelativeLayout>
 
 	<ImageView
 		android:layout_width="wrap_content"
@@ -80,9 +101,36 @@
 		android:layout_marginTop="@dimen/_12sdp"
 		android:layout_marginEnd="@dimen/_15sdp"
 		android:background="@drawable/bg_blue_round"
+		android:foreground="?selectableItemBackground"
 		android:gravity="center"
 		android:padding="@dimen/_12sdp"
 		android:text="@string/iniciar_sesion"
+		android:textColor="@color/white"
+		android:textSize="@dimen/_12ssp" />
+
+
+	<com.sdei.parentIn.customViews.RegularTextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="@dimen/_15sdp"
+		android:layout_marginTop="@dimen/_40sdp"
+		android:layout_marginEnd="@dimen/_15sdp"
+		android:gravity="center"
+		android:text="@string/o_si_eres_nuevo_en_el_el_programa_podras_crear_una_nueva_cuenta_aqu"
+		android:textColor="@color/black"
+		android:textSize="@dimen/_11ssp" />
+
+	<com.sdei.parentIn.customViews.SemiBoldTextView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="@dimen/_15sdp"
+		android:layout_marginTop="@dimen/_12sdp"
+		android:layout_marginEnd="@dimen/_15sdp"
+		android:background="@drawable/bg_primary_round"
+		android:foreground="?selectableItemBackground"
+		android:gravity="center"
+		android:padding="@dimen/_12sdp"
+		android:text="@string/crear_cuenta"
 		android:textColor="@color/white"
 		android:textSize="@dimen/_12ssp" />
 

@@ -4,7 +4,7 @@
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:gravity="center_horizontal"
-	android:background="@color/white"
+	android:background="@mipmap/background"
 	android:orientation="vertical">
 
 	<ImageView
@@ -52,6 +52,7 @@
 		android:textSize="@dimen/_13ssp" />
 
 	<androidx.cardview.widget.CardView
+		android:id="@+id/cdParent"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:layout_marginStart="@dimen/_15sdp"

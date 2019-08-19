@@ -14,11 +14,14 @@
 	<string name="Acerca_de_ParentIn">About ParentIn</string>
 
 	<!--LOGIN ACTIVITY-->
+	<string name="Inicia_Sesión">Log in</string>
 	<string name="Bienvenido_Padre_o_tutor">Welcome Parent or Guardian</string>
 	<string name="Ingresa_tu_usuario_y_contraseña_para_acceder_a_tu_cuenta">Enter your email and password to access your account</string>
 	<string name="Contraseña">Password</string>
 	<string name="email">Email</string>
-	<string name="iniciar_sesion">INICIAR SESION</string>
+	<string name="iniciar_sesion">LOG IN</string>
+	<string name="o_si_eres_nuevo_en_el_el_programa_podras_crear_una_nueva_cuenta_aqu">Or if you are new to the program, you can create a new account here</string>
+	<string name="crear_cuenta">CREATE ACCOUNT</string>
 
 
 </resources>
