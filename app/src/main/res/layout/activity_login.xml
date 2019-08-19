@@ -44,12 +44,13 @@
 	<EditText
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
+		android:layout_gravity="center_vertical"
 		android:layout_marginTop="@dimen/_30sdp"
 		android:background="@drawable/edit_text_selector"
-		android:drawableLeft="@mipmap/ic_email"
-		android:layout_gravity="center_vertical"
+		android:drawableStart="@mipmap/ic_email"
 		android:drawablePadding="@dimen/_5sdp"
-		android:hint="Email"
+		android:hint="@string/email"
+		android:inputType="textEmailAddress"
 		android:padding="@dimen/_12sdp"
 		android:textSize="@dimen/_12ssp" />
 
@@ -58,11 +59,20 @@
 		android:layout_height="wrap_content"
 		android:layout_gravity="center_vertical"
 		android:layout_marginTop="@dimen/_12sdp"
-		android:drawablePadding="@dimen/_5sdp"
-		android:hint="Password"
 		android:background="@drawable/edit_text_selector"
-		android:drawableLeft="@mipmap/ic_contrasena"
+		android:drawableStart="@mipmap/ic_contrasena"
+		android:drawablePadding="@dimen/_5sdp"
+		android:hint="@string/Contraseña"
+		android:inputType="textPassword"
 		android:padding="@dimen/_12sdp"
 		android:textSize="@dimen/_12ssp" />
+
+
+	<com.sdei.parentIn.customViews.SemiBoldTextView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:textColor="@color/black"
+		android:text="@string/iniciar_sesion"
+		android:background="@drawable/bg_blue_round"/>
 
 </LinearLayout>

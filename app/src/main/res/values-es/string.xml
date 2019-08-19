@@ -17,5 +17,8 @@
 	<!--LOGIN ACTIVITY-->
 	<string name="Bienvenido_Padre_o_tutor">Bienvenido Padre o tutor</string>
 	<string name="Ingresa_tu_usuario_y_contraseña_para_acceder_a_tu_cuenta">Ingrese su correo electrónico y contraseña para acceder a su cuenta</string>
+	<string name="Contraseña">Contraseña</string>
+	<string name="email">Email</string>
+	<string name="iniciar_sesion">INICIAR SESION</string>
 
 </resources>
