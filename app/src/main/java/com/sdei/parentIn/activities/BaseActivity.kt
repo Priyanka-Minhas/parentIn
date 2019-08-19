@@ -10,7 +10,6 @@ import android.view.View
 import android.view.inputmethod.InputMethodManager
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.ViewModel
 import com.google.android.material.snackbar.Snackbar
 import com.sdei.parentIn.utils.LocaleHelper
@@ -63,6 +62,7 @@ abstract class BaseActivity<V : ViewModel> : AppCompatActivity() {
             window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
             window.statusBarColor = Color.WHITE
         }
+
         setContentView(layoutId)
         this.mContext = context
         mUtils = Utils(mContext)

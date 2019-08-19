@@ -4,16 +4,22 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/_45sdp"
         android:background="@drawable/stroke_toolbar">
+
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/ic_back_arrow"
+            android:padding="@dimen/_5sdp"
+            android:src="@mipmap/ic_back_arrow"
             android:layout_centerVertical="true"/>
+
         <com.sdei.parentIn.customViews.SemiBoldTextView
+            android:id="@+id/txtTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="gdfgjl;df"/>
+            android:textSize="@dimen/_14ssp"
+            android:textColor="@color/black"
+            android:layout_centerInParent="true"/>
+
 </RelativeLayout>
 
 
