@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	tools:context="com.sdei.parentIn.activities.ParentAddChildActivity">
+
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="@drawable/stroke_toolbar">
+
+		<ImageView
+			android:id="@+id/btnBack"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerVertical="true"
+			android:foreground="?selectableItemBackground"
+			android:padding="@dimen/_12sdp"
+			android:src="@mipmap/ic_back_arrow" />
+
+		<com.sdei.parentIn.customViews.SemiBoldTextView
+			android:id="@+id/txtTitle"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerInParent="true"
+			android:padding="@dimen/_12sdp"
+			android:text="@string/informaci_n_del_estudiante"
+			android:textColor="@color/black"
+			android:textSize="@dimen/_14ssp" />
+
+	</RelativeLayout>
+
+	<com.sdei.parentIn.customViews.RegularTextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center"
+		android:layout_marginStart="@dimen/_15sdp"
+		android:layout_marginTop="@dimen/_38sdp"
+		android:layout_marginEnd="@dimen/_15sdp"
+		android:layout_marginBottom="@dimen/_15sdp"
+		android:gravity="center"
+		android:text="@string/ingresa_la_informaci_n_b_sica_del_ni_o_a_para_poder_continua"
+		android:textColor="@color/black"
+		android:textSize="@dimen/_11ssp" />
+
+	<androidx.recyclerview.widget.RecyclerView
+		android:id="@+id/rvAddChild"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="@dimen/_15sdp" />
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="@dimen/_15sdp"
+		android:layout_marginEnd="@dimen/_15sdp"
+		android:background="@drawable/bg_blue_stroke_round"
+		android:gravity="center"
+		android:orientation="horizontal"
+		android:padding="@dimen/_10sdp">
+
+		<ImageView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="@dimen/_5sdp"
+			android:src="@mipmap/add" />
+
+		<com.sdei.parentIn.customViews.SemiBoldTextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:foreground="?selectableItemBackground"
+			android:gravity="center"
+			android:text="@string/agregar_hijo_a"
+			android:textColor="@color/blue"
+			android:textSize="@dimen/_11ssp" />
+	</LinearLayout>
+
+
+	<com.sdei.parentIn.customViews.SemiBoldTextView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="@dimen/_15sdp"
+		android:layout_marginTop="@dimen/_12sdp"
+		android:layout_marginEnd="@dimen/_15sdp"
+		android:background="@drawable/bg_primary_round"
+		android:foreground="?selectableItemBackground"
+		android:gravity="center"
+		android:padding="@dimen/_12sdp"
+		android:text="@string/crear_cuenta"
+		android:textColor="@color/white"
+		android:textSize="@dimen/_12ssp" />
+
+</LinearLayout>

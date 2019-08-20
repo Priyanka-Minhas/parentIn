@@ -4,8 +4,13 @@
 	<!--ERROR-->
 	<string name="errorInternet">Internet connection not Available</string>
 
+	<!--COMMON-->
+	<string name="male">MALE</string>
+	<string name="female">FEMALE</string>
+	<string name="select_gender">SELECT GENDER</string>
+
 	<!--Welcome Activity-->
-	<string name="BIENVENIDO">WELCOME</string>
+	<string name="BIENVENIDO">¡WELCOME!</string>
 	<string name="Un_programa_del_Ministro_de_Educación_y_Cultura_de_Uruguay">A program of the Minister of Education and Culture of Uruguay</string>
 	<string name="Selecciona_una_opción">Select an option</string>
 	<string name="Padre_o_tutor">Parent or tutor</string>
@@ -14,30 +19,18 @@
 	<string name="Acerca_de_ParentIn">About ParentIn</string>
 
 	<!--LOGIN ACTIVITY-->
+	<string name="Inicia_Sesión">Log in</string>
 	<string name="Bienvenido_Padre_o_tutor">Welcome Parent or Guardian</string>
 	<string name="Ingresa_tu_usuario_y_contraseña_para_acceder_a_tu_cuenta">Enter your email and password to access your account</string>
 	<string name="Contraseña">Password</string>
 	<string name="email">Email</string>
-	<string name="iniciar_sesion">INICIAR SESION</string>
+	<string name="iniciar_sesion">LOG IN</string>
+	<string name="o_si_eres_nuevo_en_el_el_programa_podras_crear_una_nueva_cuenta_aqu">Or if you are new to the program, you can create a new account here</string>
+	<string name="crear_cuenta">CREATE ACCOUNT</string>
 
-	<!--PARENTS New Account -->
-	<string name="Nueva_Cuenta">New account</string>
-	<string name="Info_del_padre_o_tutor">Parent or guardian info</string>
-	<string name="Ingresa_tu_información_básica_para_crear_tu_nueva_cuenta">Enter your basic information to create your new account</string>
-	<string name="Leandro">Leandro</string>
-	<string name="Pontevedra">Pontevedra</string>
-	<string name="Género">Gender</string>
-	<string name="Relación_con_el_niño">Relationship with the child</string>
-	<string name="Cédula">Identification card</string>
-	<string name="Es_esta_la_misma_dirección_que_el_estudiante">Is this the same address as the student?</string>
-	<string name="Si">Yes</string>
-	<string name="No">No</string>
-	<string name="Nivel_de_educación_alcanzado">Level of education achieved</string>
-	<string name="No_de_estudiantes_en_escuelas_ParentIn">Level of education achieved</string>
-	<string name="Siguiente">FOLLOWING</string>
-
-
-
-
+	<!--SIGNUP ADD CHILD ACTIVITY-->
+	<string name="informaci_n_del_estudiante">Student information</string>
+	<string name="ingresa_la_informaci_n_b_sica_del_ni_o_a_para_poder_continua">Enter the child\'s basic information to continue</string>
+	<string name="agregar_hijo_a">Add child</string>
 
 </resources>

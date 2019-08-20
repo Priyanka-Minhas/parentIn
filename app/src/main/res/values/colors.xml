@@ -7,5 +7,6 @@
 	<color name="white">#FFFFFF</color>
 	<color name="blue">#1ACEEA</color>
 	<color name="colorToolbarStroke">#f1f1f1</color>
+	<color name="grey">#BDBDBD</color>
 
 </resources>
