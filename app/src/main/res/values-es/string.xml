@@ -55,4 +55,21 @@
 	<string name="fecha_nacimiento">Fecha nacimiento</string>
 	<string name="nino">Niño</string>
 
+	<!-- About US -->
+	<string name="Acerca">Acerca</string>
+	<string name="Familiasin">FAMILIASIN</string>
+	<string name="aboutSmallText">Es una aplicación móvil que fue creada en \ncolaboración con el Ministerio de \nEducación y Cultura y el banco Inter-\nAmericano de Desarrollo.</string>
+	<string name="aboutTextWithEmail">Si tienes alguna pregunta o comentario por \nfavor escribenos a info@parentin.com y te \nresponderemos a la brevedad posible</string>
+
+	<!-- Teacher New Account -->
+	<string name="Información_del_Maestro">Información del Maestro</string>
+	<string name="Rodrigo">Rodrigo</string>
+	<string name="Baez">Baez</string>
+	<string name="Numero_de_Estudiantes">Numero de Estudiantes</string>
+	<string name="Correo_Electrónico">Correo Electrónico</string>
+	<string name="Confirma_el_correo_electrónico">Confirma el correo electrónico</string>
+	<string name="Confirmar_contraseña">Confirmar contraseña</string>
+	<string name="Crear_cuenta">CREAR CUENTA</string>
+
+
 </resources>
