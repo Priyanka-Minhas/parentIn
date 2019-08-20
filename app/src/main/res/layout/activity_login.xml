@@ -8,14 +8,16 @@
 
 	<RelativeLayout
 		android:layout_width="match_parent"
-		android:layout_height="@dimen/_45sdp"
+		android:layout_height="wrap_content"
 		android:background="@drawable/stroke_toolbar">
 
 		<ImageView
+			android:id="@+id/btnBack"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_centerVertical="true"
-			android:padding="@dimen/_5sdp"
+			android:padding="@dimen/_12sdp"
+			android:foreground="?selectableItemBackground"
 			android:src="@mipmap/ic_back_arrow" />
 
 		<com.sdei.parentIn.customViews.SemiBoldTextView
@@ -23,6 +25,7 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_centerInParent="true"
+			android:padding="@dimen/_12sdp"
 			android:textColor="@color/black"
 			android:textSize="@dimen/_14ssp"
 			android:text="@string/Inicia_Sesión"/>
@@ -95,6 +98,7 @@
 
 
 	<com.sdei.parentIn.customViews.SemiBoldTextView
+		android:id="@+id/btnLogin"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:layout_marginStart="@dimen/_15sdp"

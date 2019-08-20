@@ -87,4 +87,3 @@ private fun View.ifNotDestroyed(block: () -> Unit) {
         block()
     }
 }
-

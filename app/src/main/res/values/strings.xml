@@ -4,8 +4,13 @@
 	<!--ERROR-->
 	<string name="errorInternet">Internet connection not Available</string>
 
+	<!--COMMON-->
+	<string name="male">MALE</string>
+	<string name="female">FEMALE</string>
+	<string name="select_gender">SELECT GENDER</string>
+
 	<!--Welcome Activity-->
-	<string name="BIENVENIDO">WELCOME</string>
+	<string name="BIENVENIDO">¡WELCOME!</string>
 	<string name="Un_programa_del_Ministro_de_Educación_y_Cultura_de_Uruguay">A program of the Minister of Education and Culture of Uruguay</string>
 	<string name="Selecciona_una_opción">Select an option</string>
 	<string name="Padre_o_tutor">Parent or tutor</string>
@@ -23,5 +28,9 @@
 	<string name="o_si_eres_nuevo_en_el_el_programa_podras_crear_una_nueva_cuenta_aqu">Or if you are new to the program, you can create a new account here</string>
 	<string name="crear_cuenta">CREATE ACCOUNT</string>
 
+	<!--SIGNUP ADD CHILD ACTIVITY-->
+	<string name="informaci_n_del_estudiante">Student information</string>
+	<string name="ingresa_la_informaci_n_b_sica_del_ni_o_a_para_poder_continua">Enter the child\'s basic information to continue</string>
+	<string name="agregar_hijo_a">Add child</string>
 
 </resources>
