@@ -6,13 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.sdei.parentIn.R
-import com.sdei.parentIn.interfaces.InterfacesCall
 import com.sdei.parentIn.model.ChildModel
+import kotlinx.android.synthetic.main.item_add_child.view.*
 import java.util.*
 
 class AddChildAdapter(var con: Context,
                       var mData: ArrayList<ChildModel>,
-                      var mClick: InterfacesCall.IndexClick) : RecyclerView.Adapter<AddChildAdapter.ViewHolder>() {
+                      var mClick: ClickInterface) : RecyclerView.Adapter<AddChildAdapter.ViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -21,6 +21,11 @@ class AddChildAdapter(var con: Context,
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+
+        holder.imgDelete.setOnClickListener {
+            mClick.deleteClick(position)
+        }
+
     }
 
     override fun getItemCount(): Int {
@@ -32,8 +37,11 @@ class AddChildAdapter(var con: Context,
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
+        var imgDelete = itemView.imgDelete
     }
 
+    interface ClickInterface {
+        fun deleteClick(pos: Int)
+    }
 
 }

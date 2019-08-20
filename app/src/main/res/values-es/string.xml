@@ -29,10 +29,7 @@
 	<string name="o_si_eres_nuevo_en_el_el_programa_podras_crear_una_nueva_cuenta_aqu">O si eres nuevo en el el programa, podras crear una nueva cuenta aquí</string>
 	<string name="crear_cuenta">CREAR CUENTA</string>
 
-	<!--SIGNUP ADD CHILD ACTIVITY-->
-	<string name="informaci_n_del_estudiante">Información del estudiante</string>
-	<string name="ingresa_la_informaci_n_b_sica_del_ni_o_a_para_poder_continua">Ingresa la información básica del niño/a para poder continua</string>
-	<string name="agregar_hijo_a">Agregar hijo/a</string>
+
 
 	<!--PARENTS New Account -->
 	<string name="Nueva_Cuenta">Nueva Cuenta</string>
@@ -49,5 +46,12 @@
 	<string name="Nivel_de_educación_alcanzado">Nivel de educación alcanzado</string>
 	<string name="No_de_estudiantes_en_escuelas_ParentIn">Nivel de educación alcanzado</string>
 	<string name="Siguiente">SIGUIENTE</string>
+
+	<!--SIGNUP ADD CHILD ACTIVITY-->
+	<string name="informaci_n_del_estudiante">Información del estudiante</string>
+	<string name="ingresa_la_informaci_n_b_sica_del_ni_o_a_para_poder_continua">Ingresa la información básica del niño/a para poder continua</string>
+	<string name="agregar_hijo_a">Agregar hijo/a</string>
+	<string name="escuela">Escuela</string>
+	<string name="fecha_nacimiento">Fecha nacimiento</string>
 
 </resources>

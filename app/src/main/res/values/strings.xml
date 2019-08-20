@@ -48,5 +48,7 @@
 	<string name="informaci_n_del_estudiante">Student information</string>
 	<string name="ingresa_la_informaci_n_b_sica_del_ni_o_a_para_poder_continua">Enter the child\'s basic information to continue</string>
 	<string name="agregar_hijo_a">Add child</string>
+	<string name="escuela">School</string>
+	<string name="fecha_nacimiento">Birth date</string>
 
 </resources>

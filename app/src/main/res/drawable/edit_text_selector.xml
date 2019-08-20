@@ -7,5 +7,6 @@
 	<item android:state_focused="true"
 		android:drawable="@drawable/bg_primary_color_stroke_round" /> <!-- focused -->
 
-	<item android:drawable="@drawable/bg_grey_stroke_round" /> <!-- default -->
+	<item android:drawable="@drawable/bg_grey_stroke_round"/> <!-- default -->
+
 </selector>
