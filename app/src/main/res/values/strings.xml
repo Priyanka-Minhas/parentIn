@@ -31,7 +31,7 @@
 	<!--PARENTS New Account -->
 	<string name="Nueva_Cuenta">New account</string>
 	<string name="Info_del_padre_o_tutor">Parent or guardian info</string>
-	<string name="Ingresa_tu_información_básica_para_crear_tu_nueva_cuenta">Enter your basic information to create your new account</string>
+	<string name="Ingresa_tu_información_básica_para_crear_tu_nueva_cuenta">Enter your basic information to \ncreate your new account</string>
 	<string name="Leandro">Leandro</string>
 	<string name="Pontevedra">Pontevedra</string>
 	<string name="Género">Gender</string>
@@ -41,7 +41,7 @@
 	<string name="Si">Yes</string>
 	<string name="No">No</string>
 	<string name="Nivel_de_educación_alcanzado">Level of education achieved</string>
-	<string name="No_de_estudiantes_en_escuelas_ParentIn">Level of education achieved</string>
+	<string name="No_de_estudiantes_en_escuelas_ParentIn">No. of students in ParentIn schools</string>
 	<string name="Siguiente">FOLLOWING</string>
 
 	<!--SIGNUP ADD CHILD ACTIVITY-->

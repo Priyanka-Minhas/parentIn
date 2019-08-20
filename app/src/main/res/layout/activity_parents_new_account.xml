@@ -26,7 +26,7 @@
             <com.sdei.parentIn.customViews.SemiBoldTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+                android:layout_gravity="center_horizontal"
                 android:text="@string/Info_del_padre_o_tutor"
                 android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/_14ssp" />
@@ -35,6 +35,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_5sdp"
+               android:layout_gravity="center_horizontal"
                 android:gravity="center"
                 android:text="@string/Ingresa_tu_información_básica_para_crear_tu_nueva_cuenta"
                 android:textColor="@color/black"
@@ -85,7 +86,11 @@
                 android:background="@drawable/edit_text_selector"
                 android:hint="@string/Género"
                 android:padding="@dimen/_12sdp"
-                android:textSize="@dimen/_12ssp" />
+                android:textSize="@dimen/_12ssp"
+                android:inputType="none"
+                android:focusable="false"
+                android:cursorVisible="false"
+                android:drawableEnd="@mipmap/ic_dropdown"/>
 
             <EditText
                 android:id="@+id/edtRelationshipChild"
@@ -98,7 +103,11 @@
                 android:background="@drawable/edit_text_selector"
                 android:hint="@string/Relación_con_el_niño"
                 android:padding="@dimen/_12sdp"
-                android:textSize="@dimen/_12ssp" />
+                android:textSize="@dimen/_12ssp"
+                android:inputType="none"
+                android:focusable="false"
+                android:cursorVisible="false"
+                android:drawableEnd="@mipmap/ic_dropdown"/>
 
             <EditText
                 android:layout_width="match_parent"
@@ -116,7 +125,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_15sdp"
-                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_20sdp"
                 android:text="@string/Es_esta_la_misma_dirección_que_el_estudiante"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_11ssp" />
@@ -126,35 +135,47 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_15sdp"
                 android:orientation="horizontal">
 
                 <RadioButton
                     android:id="@+id/rbYes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:button="@drawable/rb_selector"
+                    android:paddingStart="@dimen/_8sdp"
                     android:text="@string/Si" />
 
                 <RadioButton
                     android:id="@+id/rbNo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:button="@drawable/rb_selector"
+                    android:paddingStart="@dimen/_8sdp"
+                    android:layout_marginStart="@dimen/_15sdp"
                     android:text="@string/No" />
 
             </RadioGroup>
 
             <EditText
+                android:id="@+id/edtLevelOfEducation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="@dimen/_15sdp"
-                android:layout_marginTop="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_20sdp"
                 android:layout_marginEnd="@dimen/_15sdp"
                 android:background="@drawable/edit_text_selector"
                 android:hint="@string/Nivel_de_educación_alcanzado"
                 android:padding="@dimen/_12sdp"
-                android:textSize="@dimen/_12ssp" />
+                android:textSize="@dimen/_12ssp"
+                android:inputType="none"
+                android:focusable="false"
+                android:cursorVisible="false"
+                android:drawableEnd="@mipmap/ic_dropdown"/>
 
             <EditText
+                android:id="@+id/edtNoOfStudent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -164,18 +185,27 @@
                 android:background="@drawable/edit_text_selector"
                 android:hint="@string/No_de_estudiantes_en_escuelas_ParentIn"
                 android:padding="@dimen/_12sdp"
-                android:textSize="@dimen/_12ssp" />
+                android:textSize="@dimen/_12ssp"
+                android:inputType="none"
+                android:focusable="false"
+                android:cursorVisible="false"
+                android:drawableEnd="@mipmap/ic_dropdown"/>
 
-            <com.sdei.parentIn.customViews.RegularTextView
+            <com.sdei.parentIn.customViews.SemiBoldTextView
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_50sdp"
-                android:layout_marginBottom="@dimen/_8sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
                 android:layout_marginTop="@dimen/_25sdp"
-                android:background="@drawable/bg_blue_round"
-                android:gravity="bottom"
-                android:text="@string/Acerca_de_ParentIn"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_11ssp" />
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:background="@drawable/bg_primary_round"
+                android:drawableEnd="@mipmap/ic_arrow"
+                android:foreground="?selectableItemBackground"
+                android:layout_marginBottom="@dimen/_25sdp"
+                android:gravity="center"
+                android:padding="@dimen/_12sdp"
+                android:text="@string/Siguiente"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12ssp" />
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
