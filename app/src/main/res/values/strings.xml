@@ -51,5 +51,6 @@
 	<string name="escuela">School</string>
 	<string name="fecha_nacimiento">Birth date</string>
 	<string name="nino">Child</string>
+	<string name="something_went_wrong">Something went wrong</string>
 
 </resources>

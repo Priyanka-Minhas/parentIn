@@ -1,15 +1,21 @@
 package com.sdei.parentIn.network
 
+import com.sdei.parentIn.model.BaseModel
+import retrofit2.Call
+import retrofit2.http.Field
+import retrofit2.http.FormUrlEncoded
+import retrofit2.http.POST
+
 
 interface ApiInterface {
-//
-//    @FormUrlEncoded
-//    @POST("users/register")
-//    fun register_user(
-//        @Field("email") email: String,
-//        @Field("password") password: String
-//    ): Call<UserModel>
-//
+    //
+    @FormUrlEncoded
+    @POST("/parent/login")
+    fun login(
+            @Field("email") email: String,
+            @Field("password") password: String
+    ): Call<BaseModel>
+
 //    @FormUrlEncoded
 //    @POST("users/authenticate")
 //    fun authenticate_user(

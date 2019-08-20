@@ -1,5 +1,7 @@
 package com.sdei.parentIn.repositories
 
+import android.app.Application
+
 //package com.sdei.parentIn.repositories
 //
 //import android.app.Application
@@ -14,7 +16,7 @@ package com.sdei.parentIn.repositories
 //import retrofit2.Callback
 //import retrofit2.Response
 //
-//class UserRepository(application: Application) {
+class UserRepository(application: Application) {
 //    private val daoAccess: DaoAccess
 //    private var mUserModel: MutableLiveData<UserModel>
 //
@@ -42,4 +44,4 @@ package com.sdei.parentIn.repositories
 //        return mUserModel.value
 //    }
 //
-//}
+}

@@ -16,8 +16,9 @@ object RetrofitClient {
     const val GOOGLEPLACE_NEARBY = "https://maps.googleapis.com/maps/api/place/nearbysearch/"
     const val GOOGLEPLACE = "https://maps.googleapis.com/maps/api/place/autocomplete/"
 
-    private val BASE_URL = "http://54.71.18.74:4559/"
+    private val BASE_URL = "http://54.71.18.74:4589/"
     private val CACHE_CONTROL = "Cache-Control"
+
     private var retrofit: Retrofit? = null
     private var retrofitGoogle: Retrofit? = null
     private var retrofitEtaGoogle: Retrofit? = null

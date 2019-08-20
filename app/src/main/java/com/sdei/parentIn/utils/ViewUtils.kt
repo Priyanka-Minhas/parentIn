@@ -3,7 +3,6 @@ package com.sdei.parentIn.utils
 import android.app.Activity
 import android.content.Context
 import android.graphics.Color
-import android.text.Editable
 import android.view.View
 import android.widget.EditText
 import android.widget.ImageView
@@ -18,11 +17,6 @@ import com.sdei.parentIn.R
 
 fun Context.showToast(text: String?, duration: Int = Toast.LENGTH_SHORT) {
     text?.let { Toast.makeText(this, it, duration).show() }
-}
-
-fun Editable.toStringOrNull(): String? {
-    val str = toString()
-    return if (str.isEmpty()) null else str
 }
 
 fun EditText.toStringOrNull(): String? {

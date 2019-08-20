@@ -10,8 +10,8 @@ import com.sdei.parentIn.utils.LocaleHelper;
 
 public class AppApplication extends Application {
 
-    public static final String TAG = AppApplication.class
-            .getSimpleName();
+    public static final String TAG = AppApplication.class.getSimpleName();
+
     private static AppApplication instance;
 
     public static AppApplication getInstance() {
