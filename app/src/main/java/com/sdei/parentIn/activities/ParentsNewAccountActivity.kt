@@ -42,7 +42,7 @@ class ParentsNewAccountActivity : BaseActivity<BaseViewModel>(), View.OnClickLis
                         getGender(),
                         getString(R.string.select_gender),
                         InterfacesCall.Callback { pos ->
-
+                            edtGender.setText(getGender()[pos].name.toString())
                         }).show()
             }
             R.id.btnFollow -> {
