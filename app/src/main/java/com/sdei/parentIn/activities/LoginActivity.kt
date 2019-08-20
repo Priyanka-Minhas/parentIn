@@ -1,6 +1,7 @@
 package com.sdei.parentIn.activities
 
 import android.content.Context
+import android.content.Intent
 import android.view.View
 import androidx.lifecycle.ViewModelProviders
 import com.sdei.parentIn.R
@@ -29,6 +30,7 @@ class LoginActivity : BaseActivity<BaseViewModel>(), View.OnClickListener {
     override fun initListeners() {
         btnLogin.setOnClickListener(this)
         btnBack.setOnClickListener(this)
+        btnCreateAccount.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -43,6 +45,10 @@ class LoginActivity : BaseActivity<BaseViewModel>(), View.OnClickListener {
             }
             R.id.btnBack -> {
                 finish()
+            }
+            R.id.btnCreateAccount -> {
+                var intent = Intent(mContext, ParentsNewAccountActivity::class.java)
+                startActivity(intent)
             }
         }
     }

@@ -3,6 +3,7 @@
 	android:layout_width="match_parent"
 	android:layout_height="wrap_content"
 	android:orientation="vertical"
+	android:animateLayoutChanges="true"
 	android:padding="@dimen/_10sdp"
 	android:paddingStart="@dimen/_10sdp"
 	android:paddingEnd="@dimen/_10sdp">
@@ -13,11 +14,12 @@
 		android:layout_height="wrap_content">
 
 		<com.sdei.parentIn.customViews.SemiBoldTextView
+			android:id="@+id/txtTitle"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_weight="1"
 			android:padding="@dimen/_5sdp"
-			android:text="Niño 1"
+			android:text="@string/nino"
 			android:textColor="@color/colorPrimary"
 			android:textSize="@dimen/_14ssp" />
 
@@ -80,6 +82,9 @@
 			android:drawablePadding="@dimen/_10sdp"
 			android:padding="@dimen/_12sdp"
 			android:hint="@string/Género"
+			android:inputType="none"
+			android:focusable="false"
+			android:cursorVisible="false"
 			android:textSize="@dimen/_12ssp" />
 
 		<EditText
@@ -93,6 +98,9 @@
 			android:drawablePadding="@dimen/_10sdp"
 			android:padding="@dimen/_12sdp"
 			android:hint="@string/fecha_nacimiento"
+			android:inputType="none"
+			android:focusable="false"
+			android:cursorVisible="false"
 			android:textSize="@dimen/_12ssp" />
 
 	</LinearLayout>
@@ -107,6 +115,9 @@
 		android:padding="@dimen/_12sdp"
 		android:drawableRight="@mipmap/drop_down"
 		android:hint="@string/escuela"
+		android:inputType="none"
+		android:focusable="false"
+		android:cursorVisible="false"
 		android:textSize="@dimen/_12ssp" />
 
 	<EditText
@@ -119,6 +130,9 @@
 		android:padding="@dimen/_12sdp"
 		android:drawableRight="@mipmap/drop_down"
 		android:hint="@string/Maestro"
+		android:inputType="none"
+		android:focusable="false"
+		android:cursorVisible="false"
 		android:textSize="@dimen/_12ssp" />
 
 </LinearLayout>

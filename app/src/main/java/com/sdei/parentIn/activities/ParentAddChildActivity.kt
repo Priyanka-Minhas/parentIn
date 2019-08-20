@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.activity_parent_add_child.*
 
 class ParentAddChildActivity : BaseActivity<BaseViewModel>(), View.OnClickListener, AddChildAdapter.ClickInterface {
 
-    override fun deleteClick(pos: Int) {
+    override fun deleteChild(pos: Int) {
         mData.removeAt(pos)
         mChildAdapter.notifyDataSetChanged()
     }
@@ -38,19 +38,18 @@ class ParentAddChildActivity : BaseActivity<BaseViewModel>(), View.OnClickListen
     override val context: Context
         get() = this@ParentAddChildActivity
 
-
     var mData = arrayListOf<ChildModel>()
 
     lateinit var mChildAdapter: AddChildAdapter
 
     override fun onCreate() {
-
         mData.add(ChildModel())
         setChildAdapter()
     }
 
     override fun initListeners() {
         btnAddChild.setOnClickListener(this)
+        btnBack.setOnClickListener(this)
     }
 
     private fun setChildAdapter() {

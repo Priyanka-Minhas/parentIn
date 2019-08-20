@@ -50,5 +50,6 @@
 	<string name="agregar_hijo_a">Add child</string>
 	<string name="escuela">School</string>
 	<string name="fecha_nacimiento">Birth date</string>
+	<string name="nino">Child</string>
 
 </resources>

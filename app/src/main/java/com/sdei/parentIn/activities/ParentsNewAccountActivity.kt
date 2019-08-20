@@ -2,6 +2,7 @@ package com.sdei.parentIn.activities
 
 
 import android.content.Context
+import android.content.Intent
 import android.view.View
 import androidx.lifecycle.ViewModelProviders
 import com.sdei.parentIn.R
@@ -20,6 +21,7 @@ class ParentsNewAccountActivity : BaseActivity<BaseViewModel>(), View.OnClickLis
         get() = ViewModelProviders.of(this).get(BaseViewModel::class.java)
     override val context: Context
         get() = this@ParentsNewAccountActivity
+
     override fun onCreate() {
 
     }
@@ -29,18 +31,28 @@ class ParentsNewAccountActivity : BaseActivity<BaseViewModel>(), View.OnClickLis
         edtRelationshipChild.setOnClickListener(this)
         edtLevelOfEducation.setOnClickListener(this)
         edtNoOfStudent.setOnClickListener(this)
+        btnFollow.setOnClickListener(this)
+        btnBack.setOnClickListener(this)
     }
-    override fun onClick(view: View?) {
-       when(view!!.id){
-          R.id.edtGender->{
-              OptionDialog(mContext, R.style.pullBottomfromTop, R.layout.dialog_options,
-                       getGender(),
-                       getString(R.string.select_gender),
-                       InterfacesCall.Callback { pos ->
 
-                       }).show()
-          }
-       }
+    override fun onClick(view: View?) {
+        when (view!!.id) {
+            R.id.edtGender -> {
+                OptionDialog(mContext, R.style.pullBottomfromTop, R.layout.dialog_options,
+                        getGender(),
+                        getString(R.string.select_gender),
+                        InterfacesCall.Callback { pos ->
+
+                        }).show()
+            }
+            R.id.btnFollow -> {
+                val intent = Intent(mContext, ParentAddChildActivity::class.java)
+                startActivity(intent)
+            }
+            R.id.btnBack -> {
+                finish()
+            }
+        }
     }
 
 }

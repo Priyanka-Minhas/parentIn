@@ -21,9 +21,10 @@ class AddChildAdapter(var con: Context,
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.txtTitle.text= "${con.getString(R.string.nino)+" "}${position + 1}"
 
         holder.imgDelete.setOnClickListener {
-            mClick.deleteClick(position)
+            mClick.deleteChild(position)
         }
 
     }
@@ -37,11 +38,12 @@ class AddChildAdapter(var con: Context,
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var imgDelete = itemView.imgDelete
+        var imgDelete = itemView.imgDelete!!
+        var txtTitle = itemView.txtTitle!!
     }
 
     interface ClickInterface {
-        fun deleteClick(pos: Int)
+        fun deleteChild(pos: Int)
     }
 
 }
