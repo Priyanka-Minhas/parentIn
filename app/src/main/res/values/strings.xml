@@ -20,5 +20,24 @@
 	<string name="email">Email</string>
 	<string name="iniciar_sesion">INICIAR SESION</string>
 
+	<!--PARENTS New Account -->
+	<string name="Nueva_Cuenta">New account</string>
+	<string name="Info_del_padre_o_tutor">Parent or guardian info</string>
+	<string name="Ingresa_tu_información_básica_para_crear_tu_nueva_cuenta">Enter your basic information to create your new account</string>
+	<string name="Leandro">Leandro</string>
+	<string name="Pontevedra">Pontevedra</string>
+	<string name="Género">Gender</string>
+	<string name="Relación_con_el_niño">Relationship with the child</string>
+	<string name="Cédula">Identification card</string>
+	<string name="Es_esta_la_misma_dirección_que_el_estudiante">Is this the same address as the student?</string>
+	<string name="Si">Yes</string>
+	<string name="No">No</string>
+	<string name="Nivel_de_educación_alcanzado">Level of education achieved</string>
+	<string name="No_de_estudiantes_en_escuelas_ParentIn">Level of education achieved</string>
+	<string name="Siguiente">FOLLOWING</string>
+
+
+
+
 
 </resources>

@@ -3,11 +3,9 @@
 	<color name="colorPrimary">#5335D4</color>
 	<color name="colorPrimaryDark">#5335D4</color>
 	<color name="colorAccent">#FFFFFF</color>
-
 	<color name="black">#000000</color>
 	<color name="white">#FFFFFF</color>
 	<color name="blue">#1ACEEA</color>
-
 	<color name="colorToolbarStroke">#f1f1f1</color>
 
 </resources>

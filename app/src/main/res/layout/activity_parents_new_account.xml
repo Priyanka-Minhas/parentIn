@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent"
+    android:orientation="vertical"
+    tools:context="com.sdei.parentIn.activities.ParentsNewAccountActivity">
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/toolbar" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_35sdp"
+            android:orientation="vertical">
+
+            <com.sdei.parentIn.customViews.SemiBoldTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/Info_del_padre_o_tutor"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_14ssp" />
+
+            <com.sdei.parentIn.customViews.RegularTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:gravity="center"
+                android:text="@string/Ingresa_tu_información_básica_para_crear_tu_nueva_cuenta"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11ssp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:background="@drawable/edit_text_selector"
+                android:drawablePadding="@dimen/_5sdp"
+                android:padding="@dimen/_12sdp"
+                android:textSize="@dimen/_12ssp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:background="@drawable/edit_text_selector"
+                android:padding="@dimen/_12sdp"
+                android:textSize="@dimen/_12ssp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:background="@drawable/edit_text_selector"
+                android:padding="@dimen/_12sdp"
+                android:textSize="@dimen/_12ssp" />
+
+            <EditText
+                android:id="@+id/edtGender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:background="@drawable/edit_text_selector"
+                android:hint="@string/Género"
+                android:padding="@dimen/_12sdp"
+                android:textSize="@dimen/_12ssp" />
+
+            <EditText
+                android:id="@+id/edtRelationshipChild"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:background="@drawable/edit_text_selector"
+                android:hint="@string/Relación_con_el_niño"
+                android:padding="@dimen/_12sdp"
+                android:textSize="@dimen/_12ssp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:background="@drawable/edit_text_selector"
+                android:hint="@string/Cédula"
+                android:padding="@dimen/_12sdp"
+                android:textSize="@dimen/_12ssp" />
+
+            <com.sdei.parentIn.customViews.RegularTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="@string/Es_esta_la_misma_dirección_que_el_estudiante"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11ssp" />
+
+            <RadioGroup
+                android:id="@+id/rgYesNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rbYes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Si" />
+
+                <RadioButton
+                    android:id="@+id/rbNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/No" />
+
+            </RadioGroup>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:background="@drawable/edit_text_selector"
+                android:hint="@string/Nivel_de_educación_alcanzado"
+                android:padding="@dimen/_12sdp"
+                android:textSize="@dimen/_12ssp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:background="@drawable/edit_text_selector"
+                android:hint="@string/No_de_estudiantes_en_escuelas_ParentIn"
+                android:padding="@dimen/_12sdp"
+                android:textSize="@dimen/_12ssp" />
+
+            <com.sdei.parentIn.customViews.RegularTextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:background="@drawable/bg_blue_round"
+                android:gravity="bottom"
+                android:text="@string/Acerca_de_ParentIn"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11ssp" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</LinearLayout>

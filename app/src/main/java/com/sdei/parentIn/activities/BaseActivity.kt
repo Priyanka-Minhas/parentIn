@@ -62,7 +62,6 @@ abstract class BaseActivity<V : ViewModel> : AppCompatActivity() {
             window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
             window.statusBarColor = Color.WHITE
         }
-
         setContentView(layoutId)
         this.mContext = context
         mUtils = Utils(mContext)
