@@ -3,6 +3,7 @@
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
+	android:background="@mipmap/background"
 	android:orientation="vertical"
 	tools:context="com.sdei.parentIn.activities.ParentAddChildActivity">
 
@@ -37,7 +38,7 @@
 		android:layout_height="wrap_content"
 		android:layout_gravity="center"
 		android:layout_marginStart="@dimen/_15sdp"
-		android:layout_marginTop="@dimen/_38sdp"
+		android:layout_marginTop="@dimen/_30sdp"
 		android:layout_marginEnd="@dimen/_15sdp"
 		android:layout_marginBottom="@dimen/_15sdp"
 		android:gravity="center"
@@ -45,45 +46,59 @@
 		android:textColor="@color/black"
 		android:textSize="@dimen/_11ssp" />
 
-	<androidx.recyclerview.widget.RecyclerView
-		android:id="@+id/rvAddChild"
+	<androidx.core.widget.NestedScrollView
 		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:layout_margin="@dimen/_15sdp" />
+		android:layout_height="0dp"
+		android:layout_weight="1">
 
-	<LinearLayout
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:layout_marginStart="@dimen/_15sdp"
-		android:layout_marginEnd="@dimen/_15sdp"
-		android:background="@drawable/bg_blue_stroke_round"
-		android:gravity="center"
-		android:orientation="horizontal"
-		android:padding="@dimen/_10sdp">
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:orientation="vertical">
 
-		<ImageView
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:padding="@dimen/_5sdp"
-			android:src="@mipmap/add" />
+			<androidx.recyclerview.widget.RecyclerView
+				android:id="@+id/rvAddChild"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="@dimen/_15sdp" />
 
-		<com.sdei.parentIn.customViews.SemiBoldTextView
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:foreground="?selectableItemBackground"
-			android:gravity="center"
-			android:text="@string/agregar_hijo_a"
-			android:textColor="@color/blue"
-			android:textSize="@dimen/_11ssp" />
-	</LinearLayout>
+			<LinearLayout
+				android:id="@+id/btnAddChild"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="@dimen/_10sdp"
+				android:foreground="?selectableItemBackground"
+				android:layout_marginEnd="@dimen/_10sdp"
+				android:background="@drawable/bg_blue_stroke_round"
+				android:gravity="center"
+				android:orientation="horizontal"
+				android:padding="@dimen/_10sdp">
 
+				<ImageView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:padding="@dimen/_5sdp"
+					android:src="@mipmap/add" />
+
+				<com.sdei.parentIn.customViews.SemiBoldTextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:gravity="center"
+					android:text="@string/agregar_hijo_a"
+					android:textColor="@color/blue"
+					android:textSize="@dimen/_11ssp" />
+			</LinearLayout>
+		</LinearLayout>
+
+	</androidx.core.widget.NestedScrollView>
 
 	<com.sdei.parentIn.customViews.SemiBoldTextView
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:layout_marginStart="@dimen/_15sdp"
+		android:layout_marginStart="@dimen/_10sdp"
 		android:layout_marginTop="@dimen/_12sdp"
-		android:layout_marginEnd="@dimen/_15sdp"
+		android:layout_marginEnd="@dimen/_10sdp"
+		android:layout_marginBottom="@dimen/_15sdp"
 		android:background="@drawable/bg_primary_round"
 		android:foreground="?selectableItemBackground"
 		android:gravity="center"
