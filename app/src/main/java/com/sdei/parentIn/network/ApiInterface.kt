@@ -17,6 +17,35 @@ interface ApiInterface {
     ): Call<UserModel>
 
 
+//    {
+//        "firstName": "Lucifer",
+//        "lastName": "Morningstar",
+//        "phoneNumber": 8699826276,
+//        "relationWithChild": "Guardian",
+//        "homeAddress": "Top Floor, Lux, Los Angeles",
+//        "isSameAddressAsStudent": true,
+//        "levelOfEducation": "PHD",
+//        "noOfStudents": 1,
+//        "emailAddress": "abc@gmail.com",
+//        "password": "123456789",
+//        "roleId": 3
+//    }
+
+    @FormUrlEncoded
+    @POST("/parent/register")
+    fun register(
+            @Field("firstName") firstName: String,
+            @Field("lastName") lastName: String,
+            @Field("phoneNumber") phoneNumber: String,
+            @Field("relationWithChild") relationWithChild: String,
+            @Field("homeAddress") homeAddress: String,
+            @Field("isSameAddressAsStudent") isSameAddressAsStudent: String,
+            @Field("levelOfEducation") levelOfEducation: String,
+            @Field("noOfStudents") noOfStudents: String,
+            @Field("password") password: String,
+            @Field("roleId") roleId: String
+    ): Call<UserModel>
+
 
 //    @FormUrlEncoded
 //    @POST("users/authenticate")

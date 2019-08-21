@@ -9,7 +9,7 @@ import com.sdei.parentIn.viewModel.BaseViewModel
 import kotlinx.android.synthetic.main.activity_welcome.*
 
 /**
- * Created by priyanka on 14/08/19.
+ * Created by shubham on 14/08/19.
  */
 
 class WelcomeActivity : BaseActivity<BaseViewModel>(), View.OnClickListener {
@@ -23,9 +23,7 @@ class WelcomeActivity : BaseActivity<BaseViewModel>(), View.OnClickListener {
                 var intent = Intent(mContext, TeacherNewAccountActivity::class.java)
                 startActivity(intent)
             }
-
         }
-
     }
 
     override val layoutId: Int

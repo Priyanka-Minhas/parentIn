@@ -14,7 +14,6 @@ import kotlinx.android.synthetic.main.activity_parents_new_account.*
 
 class ParentsNewAccountActivity : BaseActivity<BaseViewModel>(), View.OnClickListener {
 
-
     override val layoutId: Int
         get() = R.layout.activity_parents_new_account
     override val viewModel: BaseViewModel

@@ -79,6 +79,7 @@
 		</androidx.cardview.widget.CardView>
 
 		<androidx.cardview.widget.CardView
+			android:id="@+id/cdTeacher"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:layout_marginStart="@dimen/_15sdp"
@@ -90,6 +91,7 @@
 			app:cardCornerRadius="@dimen/_5ssp">
 
 			<com.sdei.parentIn.customViews.MediumTextView
+
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:drawableStart="@mipmap/maestro"

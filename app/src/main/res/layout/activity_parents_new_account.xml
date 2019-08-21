@@ -1,245 +1,252 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/colorAccent"
-    android:orientation="vertical"
-    tools:context="com.sdei.parentIn.activities.ParentsNewAccountActivity">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@mipmap/background"
+	android:orientation="vertical"
+	tools:context="com.sdei.parentIn.activities.ParentsNewAccountActivity">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/stroke_toolbar">
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="@drawable/stroke_toolbar">
 
-        <ImageView
-            android:id="@+id/btnBack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:foreground="?selectableItemBackground"
-            android:padding="@dimen/_12sdp"
-            android:src="@mipmap/ic_back_arrow" />
+		<ImageView
+			android:id="@+id/btnBack"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerVertical="true"
+			android:foreground="?selectableItemBackground"
+			android:padding="@dimen/_12sdp"
+			android:src="@mipmap/ic_back_arrow" />
 
-        <com.sdei.parentIn.customViews.SemiBoldTextView
-            android:id="@+id/txtTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:padding="@dimen/_12sdp"
-            android:text="@string/Nueva_Cuenta"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_14ssp" />
+		<com.sdei.parentIn.customViews.SemiBoldTextView
+			android:id="@+id/txtTitle"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerInParent="true"
+			android:padding="@dimen/_12sdp"
+			android:text="@string/Nueva_Cuenta"
+			android:textColor="@color/black"
+			android:textSize="@dimen/_14ssp" />
 
-    </RelativeLayout>
+	</RelativeLayout>
 
 
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+	<androidx.core.widget.NestedScrollView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="@dimen/_30sdp"
-            android:orientation="vertical">
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_marginTop="@dimen/_30sdp"
+			android:orientation="vertical">
 
-            <com.sdei.parentIn.customViews.SemiBoldTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="@string/Info_del_padre_o_tutor"
-                android:textColor="@color/colorPrimary"
-                android:textSize="@dimen/_14ssp" />
+			<com.sdei.parentIn.customViews.SemiBoldTextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_horizontal"
+				android:text="@string/Info_del_padre_o_tutor"
+				android:textColor="@color/colorPrimary"
+				android:textSize="@dimen/_14ssp" />
 
-            <com.sdei.parentIn.customViews.RegularTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_5sdp"
-               android:layout_gravity="center_horizontal"
-                android:gravity="center"
-                android:text="@string/Ingresa_tu_información_básica_para_crear_tu_nueva_cuenta"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_11ssp" />
+			<com.sdei.parentIn.customViews.RegularTextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_horizontal"
+				android:layout_marginTop="@dimen/_5sdp"
+				android:gravity="center"
+				android:text="@string/Ingresa_tu_información_básica_para_crear_tu_nueva_cuenta"
+				android:textColor="@color/black"
+				android:textSize="@dimen/_11ssp" />
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginStart="@dimen/_15sdp"
-                android:layout_marginTop="@dimen/_30sdp"
-                android:layout_marginEnd="@dimen/_15sdp"
-                android:background="@drawable/edit_text_selector"
-                android:drawablePadding="@dimen/_5sdp"
-                android:padding="@dimen/_12sdp"
-                android:textSize="@dimen/_12ssp"
-                android:singleLine="true"
-                android:imeOptions="actionNext"/>
+			<EditText
+				android:id="@+id/edtFirstName"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_vertical"
+				android:layout_marginStart="@dimen/_15sdp"
+				android:layout_marginTop="@dimen/_30sdp"
+				android:layout_marginEnd="@dimen/_15sdp"
+				android:background="@drawable/edit_text_selector"
+				android:drawablePadding="@dimen/_5sdp"
+				android:hint="@string/primer_nombre"
+				android:imeOptions="actionNext"
+				android:padding="@dimen/_12sdp"
+				android:singleLine="true"
+				android:textSize="@dimen/_12ssp" />
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginStart="@dimen/_15sdp"
-                android:layout_marginTop="@dimen/_12sdp"
-                android:layout_marginEnd="@dimen/_15sdp"
-                android:background="@drawable/edit_text_selector"
-                android:padding="@dimen/_12sdp"
-                android:textSize="@dimen/_12ssp"
-                android:singleLine="true"
-                android:imeOptions="actionNext"/>
+			<EditText
+				android:id="@+id/edtLastName"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_vertical"
+				android:layout_marginStart="@dimen/_15sdp"
+				android:layout_marginTop="@dimen/_12sdp"
+				android:layout_marginEnd="@dimen/_15sdp"
+				android:background="@drawable/edit_text_selector"
+				android:hint="@string/Apellido"
+				android:imeOptions="actionNext"
+				android:padding="@dimen/_12sdp"
+				android:singleLine="true"
+				android:textSize="@dimen/_12ssp" />
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginStart="@dimen/_15sdp"
-                android:layout_marginTop="@dimen/_12sdp"
-                android:layout_marginEnd="@dimen/_15sdp"
-                android:background="@drawable/edit_text_selector"
-                android:padding="@dimen/_12sdp"
-                android:textSize="@dimen/_12ssp"
-                android:singleLine="true"
-                android:imeOptions="actionNext"/>
+			<EditText
+				android:id="@+id/edtAddress"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_vertical"
+				android:layout_marginStart="@dimen/_15sdp"
+				android:layout_marginTop="@dimen/_12sdp"
+				android:layout_marginEnd="@dimen/_15sdp"
+				android:background="@drawable/edit_text_selector"
+				android:hint="@string/Dirección"
+				android:imeOptions="actionNext"
+				android:padding="@dimen/_12sdp"
+				android:singleLine="true"
+				android:textSize="@dimen/_12ssp" />
 
-            <EditText
-                android:id="@+id/edtGender"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginStart="@dimen/_15sdp"
-                android:layout_marginTop="@dimen/_12sdp"
-                android:layout_marginEnd="@dimen/_15sdp"
-                android:background="@drawable/edit_text_selector"
-                android:hint="@string/Género"
-                android:padding="@dimen/_12sdp"
-                android:textSize="@dimen/_12ssp"
-                android:inputType="none"
-                android:focusable="false"
-                android:cursorVisible="false"
-                android:drawableEnd="@mipmap/ic_dropdown"/>
+			<EditText
+				android:id="@+id/edtGender"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_vertical"
+				android:layout_marginStart="@dimen/_15sdp"
+				android:layout_marginTop="@dimen/_12sdp"
+				android:layout_marginEnd="@dimen/_15sdp"
+				android:background="@drawable/edit_text_selector"
+				android:cursorVisible="false"
+				android:drawableEnd="@mipmap/ic_dropdown"
+				android:focusable="false"
+				android:hint="@string/Género"
+				android:inputType="none"
 
-            <EditText
-                android:id="@+id/edtRelationshipChild"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginStart="@dimen/_15sdp"
-                android:layout_marginTop="@dimen/_12sdp"
-                android:layout_marginEnd="@dimen/_15sdp"
-                android:background="@drawable/edit_text_selector"
-                android:hint="@string/Relación_con_el_niño"
-                android:padding="@dimen/_12sdp"
-                android:textSize="@dimen/_12ssp"
-                android:inputType="none"
-                android:focusable="false"
-                android:cursorVisible="false"
-                android:drawableEnd="@mipmap/ic_dropdown"/>
+				android:padding="@dimen/_12sdp"
+				android:textSize="@dimen/_12ssp" />
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginStart="@dimen/_15sdp"
-                android:layout_marginTop="@dimen/_12sdp"
-                android:layout_marginEnd="@dimen/_15sdp"
-                android:background="@drawable/edit_text_selector"
-                android:hint="@string/Cédula"
-                android:padding="@dimen/_12sdp"
-                android:textSize="@dimen/_12ssp"
-                android:singleLine="true"
-                android:imeOptions="actionDone"/>
+			<EditText
+				android:id="@+id/edtRelationshipChild"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_vertical"
+				android:layout_marginStart="@dimen/_15sdp"
+				android:layout_marginTop="@dimen/_12sdp"
+				android:layout_marginEnd="@dimen/_15sdp"
+				android:background="@drawable/edit_text_selector"
+				android:cursorVisible="false"
+				android:drawableEnd="@mipmap/ic_dropdown"
+				android:focusable="false"
+				android:hint="@string/Relación_con_el_niño"
+				android:inputType="none"
+				android:padding="@dimen/_12sdp"
+				android:textSize="@dimen/_12ssp" />
 
-            <com.sdei.parentIn.customViews.RegularTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_15sdp"
-                android:layout_marginTop="@dimen/_20sdp"
-                android:text="@string/Es_esta_la_misma_dirección_que_el_estudiante"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_11ssp" />
+			<EditText
+				android:id="@+id/edtId"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_vertical"
+				android:layout_marginStart="@dimen/_15sdp"
+				android:layout_marginTop="@dimen/_12sdp"
+				android:layout_marginEnd="@dimen/_15sdp"
+				android:background="@drawable/edit_text_selector"
+				android:hint="@string/Cédula"
+				android:imeOptions="actionDone"
+				android:padding="@dimen/_12sdp"
+				android:singleLine="true"
+				android:textSize="@dimen/_12ssp" />
 
-            <RadioGroup
-                android:id="@+id/rgYesNo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_15sdp"
-                android:layout_marginTop="@dimen/_15sdp"
-                android:orientation="horizontal">
+			<com.sdei.parentIn.customViews.RegularTextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="@dimen/_15sdp"
+				android:layout_marginTop="@dimen/_20sdp"
+				android:text="@string/Es_esta_la_misma_dirección_que_el_estudiante"
+				android:textColor="@color/black"
+				android:textSize="@dimen/_11ssp" />
 
-                <RadioButton
-                    android:id="@+id/rbYes"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:button="@drawable/rb_selector"
-                    android:paddingStart="@dimen/_8sdp"
-                    android:text="@string/Si" />
+			<RadioGroup
+				android:id="@+id/rgYesNo"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="@dimen/_15sdp"
+				android:layout_marginTop="@dimen/_15sdp"
+				android:orientation="horizontal">
 
-                <RadioButton
-                    android:id="@+id/rbNo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:button="@drawable/rb_selector"
-                    android:paddingStart="@dimen/_8sdp"
-                    android:layout_marginStart="@dimen/_15sdp"
-                    android:text="@string/No" />
+				<RadioButton
+					android:id="@+id/rbYes"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:button="@drawable/rb_selector"
+					android:paddingStart="@dimen/_8sdp"
+					android:text="@string/Si" />
 
-            </RadioGroup>
+				<RadioButton
+					android:id="@+id/rbNo"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginStart="@dimen/_15sdp"
+					android:button="@drawable/rb_selector"
+					android:paddingStart="@dimen/_8sdp"
+					android:text="@string/No" />
 
-            <EditText
-                android:id="@+id/edtLevelOfEducation"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginStart="@dimen/_15sdp"
-                android:layout_marginTop="@dimen/_20sdp"
-                android:layout_marginEnd="@dimen/_15sdp"
-                android:background="@drawable/edit_text_selector"
-                android:hint="@string/Nivel_de_educación_alcanzado"
-                android:padding="@dimen/_12sdp"
-                android:textSize="@dimen/_12ssp"
-                android:inputType="none"
-                android:focusable="false"
-                android:cursorVisible="false"
-                android:drawableEnd="@mipmap/ic_dropdown"/>
+			</RadioGroup>
 
-            <EditText
-                android:id="@+id/edtNoOfStudent"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginStart="@dimen/_15sdp"
-                android:layout_marginTop="@dimen/_12sdp"
-                android:layout_marginEnd="@dimen/_15sdp"
-                android:background="@drawable/edit_text_selector"
-                android:hint="@string/No_de_estudiantes_en_escuelas_ParentIn"
-                android:padding="@dimen/_12sdp"
-                android:textSize="@dimen/_12ssp"
-                android:inputType="none"
-                android:focusable="false"
-                android:cursorVisible="false"
-                android:drawableEnd="@mipmap/ic_dropdown"/>
+			<EditText
+				android:id="@+id/edtLevelOfEducation"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_vertical"
+				android:layout_marginStart="@dimen/_15sdp"
+				android:layout_marginTop="@dimen/_20sdp"
+				android:layout_marginEnd="@dimen/_15sdp"
+				android:background="@drawable/edit_text_selector"
+				android:cursorVisible="false"
+				android:drawableEnd="@mipmap/ic_dropdown"
+				android:focusable="false"
+				android:hint="@string/Nivel_de_educación_alcanzado"
+				android:inputType="none"
+				android:padding="@dimen/_12sdp"
+				android:textSize="@dimen/_12ssp" />
 
-            <com.sdei.parentIn.customViews.SemiBoldTextView
-                android:id="@+id/btnFollow"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_15sdp"
-                android:layout_marginTop="@dimen/_25sdp"
-                android:layout_marginEnd="@dimen/_15sdp"
-                android:background="@drawable/bg_primary_round"
-                android:drawableEnd="@mipmap/ic_arrow"
-                android:foreground="?selectableItemBackground"
-                android:layout_marginBottom="@dimen/_25sdp"
-                android:gravity="center"
-                android:padding="@dimen/_12sdp"
-                android:text="@string/Siguiente"
-                android:textColor="@color/white"
-                android:textSize="@dimen/_12ssp" />
-        </LinearLayout>
+			<EditText
+				android:id="@+id/edtNoOfStudent"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_vertical"
+				android:layout_marginStart="@dimen/_15sdp"
+				android:layout_marginTop="@dimen/_12sdp"
+				android:layout_marginEnd="@dimen/_15sdp"
+				android:background="@drawable/edit_text_selector"
+				android:cursorVisible="false"
+				android:drawableEnd="@mipmap/ic_dropdown"
+				android:focusable="false"
+				android:hint="@string/No_de_estudiantes_en_escuelas_ParentIn"
+				android:inputType="none"
+				android:padding="@dimen/_12sdp"
+				android:textSize="@dimen/_12ssp" />
 
-    </androidx.core.widget.NestedScrollView>
+			<com.sdei.parentIn.customViews.SemiBoldTextView
+				android:id="@+id/btnFollow"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="@dimen/_15sdp"
+				android:layout_marginTop="@dimen/_25sdp"
+				android:layout_marginEnd="@dimen/_15sdp"
+				android:layout_marginBottom="@dimen/_25sdp"
+				android:background="@drawable/bg_primary_round"
+				android:drawableEnd="@mipmap/ic_arrow"
+				android:foreground="?selectableItemBackground"
+				android:gravity="center"
+				android:padding="@dimen/_12sdp"
+				android:text="@string/Siguiente"
+				android:textColor="@color/white"
+				android:textSize="@dimen/_12ssp" />
+		</LinearLayout>
+
+	</androidx.core.widget.NestedScrollView>
 
 
 </LinearLayout>

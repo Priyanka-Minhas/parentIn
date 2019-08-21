@@ -12,6 +12,7 @@ import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModel
 import com.google.android.material.snackbar.Snackbar
+import com.sdei.parentIn.utils.LocaleHelper
 import com.sdei.parentIn.utils.Utils
 
 /**
@@ -91,6 +92,10 @@ abstract class BaseActivity<V : ViewModel> : AppCompatActivity() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             requestPermissions(permissions, requestCode)
         }
+    }
+
+    override fun attachBaseContext(base: Context) {
+        super.attachBaseContext(LocaleHelper.setLocale(base, "se"))
     }
 
     //    private fun performDataBinding() {

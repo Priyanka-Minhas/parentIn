@@ -1,8 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="app_name">ParentIn</string>
 
 	<!--ERROR-->
 	<string name="errorInternet">Internet connection not Available</string>
+	<string name="something_went_wrong">Something went wrong</string>
+	<string name="errorValidEmail">Email not valid</string>
+	<string name="errorValidPassword">Password not valid</string>
+	<string name="work_in_progress">WORK IN PROGRESS</string>
 
 	<!--COMMON-->
 	<string name="male">MALE</string>
@@ -32,8 +37,9 @@
 	<string name="Nueva_Cuenta">New account</string>
 	<string name="Info_del_padre_o_tutor">Parent or guardian info</string>
 	<string name="Ingresa_tu_información_básica_para_crear_tu_nueva_cuenta">Enter your basic information to \ncreate your new account</string>
-	<string name="Leandro">Leandro</string>
-	<string name="Pontevedra">Pontevedra</string>
+	<string name="primer_nombre">First Name</string>
+	<string name="Apellido">Last Name</string>
+	<string name="Dirección">Address</string>
 	<string name="Género">Gender</string>
 	<string name="Relación_con_el_niño">Relationship with the child</string>
 	<string name="Cédula">Identification card</string>
@@ -51,10 +57,7 @@
 	<string name="escuela">School</string>
 	<string name="fecha_nacimiento">Birth date</string>
 	<string name="nino">Child</string>
-	<string name="something_went_wrong">Something went wrong</string>
-	<string name="errorValidEmail">Email not valid</string>
-	<string name="errorValidPassword">Password not valid</string>
-	<string name="work_in_progress">WORK IN PROGRESS</string>
+
 
 	<!-- About US -->
 	<string name="Acerca">About</string>
@@ -71,5 +74,6 @@
 	<string name="Confirma_el_correo_electrónico">Confirm Email</string>
 	<string name="Confirmar_contraseña">Confirm Password</string>
 	<string name="Crear_cuenta">CREATE ACCOUNT</string>
+
 
 </resources>

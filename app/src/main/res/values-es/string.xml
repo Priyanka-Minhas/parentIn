@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="app_name">FamiliasIn</string>
+	<string name="app_name">ParentIn</string>
 
 	<!--ERROR-->
 	<string name="errorInternet">Conexión a internet no disponible</string>
+	<string name="something_went_wrong">Algo salió mal</string>
+	<string name="errorValidEmail">Ingrese un email valido</string>
+	<string name="errorValidPassword">Ingrese una contraseña válida</string>
+	<string name="work_in_progress">TRABAJO EN PROGRESO</string>
 
 	<!--COMMON-->
 	<string name="male">MASCULINO</string>
@@ -30,13 +34,13 @@
 	<string name="crear_cuenta">CREAR CUENTA</string>
 
 
-
 	<!--PARENTS New Account -->
 	<string name="Nueva_Cuenta">Nueva Cuenta</string>
 	<string name="Info_del_padre_o_tutor">Info del padre o tutor</string>
 	<string name="Ingresa_tu_información_básica_para_crear_tu_nueva_cuenta">Ingresa tu información básica para \ncrear tu nueva cuenta</string>
-	<string name="Leandro">Leandro</string>
-	<string name="Pontevedra">Pontevedra</string>
+	<string name="primer_nombre">Primer nombre</string>
+	<string name="Apellido">Apellido</string>
+	<string name="Dirección">Dirección</string>
 	<string name="Género">Género</string>
 	<string name="Relación_con_el_niño">Relación con el niño</string>
     <string name="Cédula">Cédula</string>
