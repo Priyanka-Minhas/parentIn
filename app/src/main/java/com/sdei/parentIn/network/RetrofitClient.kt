@@ -99,8 +99,12 @@ object RetrofitClient {
                 .maxAge(2, TimeUnit.MINUTES)
                 .build()
 
+//            for spanish --> es-UY
+//            for en --> en-US
+
             response.newBuilder()
                 .header(CACHE_CONTROL, cacheControl.toString())
+                .addHeader("accept-language","es-UY")
                 .build()
         }
     }

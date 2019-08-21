@@ -8,7 +8,8 @@ import com.sdei.parentIn.model.OptionsModel
 
 
 var CODE_SUCCESS = 200
-var CODE_ERROR = 400
+var CODE_ERROR = 404
+var CODE_WARNING = 303
 
 fun Context.getGender(): ArrayList<OptionsModel> {
     val arrayList = ArrayList<OptionsModel>()

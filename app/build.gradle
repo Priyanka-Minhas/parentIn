@@ -88,6 +88,13 @@ dependencies {
     implementation "com.wajahatkarim3.easyvalidation:easyvalidation-core:1.0.1"
 
 
+
+    implementation 'com.google.dagger:dagger:2.16'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.10'
+
+
+
+
 }
 
 repositories {

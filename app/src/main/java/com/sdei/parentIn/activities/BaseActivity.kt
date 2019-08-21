@@ -12,7 +12,6 @@ import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModel
 import com.google.android.material.snackbar.Snackbar
-import com.sdei.parentIn.utils.LocaleHelper
 import com.sdei.parentIn.utils.Utils
 
 /**
@@ -68,12 +67,6 @@ abstract class BaseActivity<V : ViewModel> : AppCompatActivity() {
         this.mViewModel = if (mViewModel == null) viewModel else mViewModel
         onCreate()
         initListeners()
-    }
-
-
-
-    override fun attachBaseContext(base: Context) {
-        super.attachBaseContext(LocaleHelper.setLocale(base,"es"))
     }
 
     abstract fun onCreate()

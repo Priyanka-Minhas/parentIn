@@ -7,10 +7,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.sdei.parentIn.R
 import com.sdei.parentIn.model.BaseModel
-import com.sdei.parentIn.utils.connectedToInternet
-import com.sdei.parentIn.utils.showAlertSnackBar
-import com.sdei.parentIn.utils.showProgess
-import com.sdei.parentIn.utils.showToast
+import com.sdei.parentIn.utils.*
 import com.sdei.parentIn.viewModel.LoginViewModel
 import com.wajahatkarim3.easyvalidation.core.view_ktx.nonEmpty
 import com.wajahatkarim3.easyvalidation.core.view_ktx.validEmail
@@ -34,7 +31,9 @@ class LoginActivity : BaseActivity<LoginViewModel>(), View.OnClickListener {
     override fun onCreate() {
         mViewModel!!.getUser().observe(this,
                 Observer<BaseModel> { mData ->
-                    showToast(mData.message)
+                    if (mData != null && responseHandler(mData.statusCode, mData.message)) {
+                        showToast(getString(R.string.work_in_progress))
+                    }
                 })
     }
 
@@ -48,9 +47,9 @@ class LoginActivity : BaseActivity<LoginViewModel>(), View.OnClickListener {
         when (v!!.id) {
             R.id.btnLogin -> {
                 if (!edtEmail.validEmail()) {
-                    showAlertSnackBar(btnLogin, "Email not valid")
+                    showAlertSnackBar(btnLogin, getString(R.string.errorValidEmail))
                 } else if (!edtPassword.nonEmpty()) {
-                    showAlertSnackBar(btnLogin, "Password not valid")
+                    showAlertSnackBar(btnLogin, getString(R.string.errorValidPassword))
                 } else if (connectedToInternet(btnLogin)) {
                     showProgess()
                     mViewModel!!.setLogin(edtEmail.text.toString(), edtPassword.text.toString())

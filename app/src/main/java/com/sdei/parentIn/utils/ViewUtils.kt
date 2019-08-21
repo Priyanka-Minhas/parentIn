@@ -45,6 +45,24 @@ fun hideProgress() {
     LoadingDialog.getLoader().dismissLoader()
 }
 
+fun Context.responseHandler(statusCode: Int, message: String): Boolean {
+    hideProgress()
+    return when (statusCode) {
+        CODE_SUCCESS -> true
+        CODE_WARNING -> {
+            showToast(message)
+            false
+        }
+        CODE_ERROR -> {
+            showToast(message)
+            false
+        }
+        else -> {
+            false
+        }
+    }
+}
+
 fun showSnackBar(view: View, message: String) {
     Snackbar.make(view, message, Snackbar.LENGTH_SHORT).show()
 }

@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import com.sdei.parentIn.model.BaseModel
 import com.sdei.parentIn.repositories.LoginRepository
 
-class LoginViewModel(application: Application):BaseViewModel(application = application) {
+class LoginViewModel(application: Application) : BaseViewModel(application = application) {
 
     private val mRepository: LoginRepository = LoginRepository()
 
@@ -18,8 +18,12 @@ class LoginViewModel(application: Application):BaseViewModel(application = appli
         return mUserModel as MutableLiveData<BaseModel>
     }
 
-    fun setLogin(email: String, password: String){
-        mUserModel!!.value = mRepository.login(email = email, password = password)
+    fun setLogin(email: String, password: String) {
+        mRepository.login(email = email, password = password){
+            mUserModel!!.value =it
+        }
     }
 
 }
+
+

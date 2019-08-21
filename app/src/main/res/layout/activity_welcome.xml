@@ -1,130 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+	xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	android:layout_width="match_parent"
-	android:layout_height="match_parent"
-	android:gravity="center_horizontal"
-	android:background="@mipmap/background"
-	android:orientation="vertical">
+	android:layout_height="match_parent">
 
-	<ImageView
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_gravity="center"
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="@mipmap/background"
+		android:gravity="center_horizontal"
 		android:layout_marginTop="@dimen/_60sdp"
-		android:src="@mipmap/logo" />
+		android:orientation="vertical">
 
-	<com.sdei.parentIn.customViews.HeavyTextView
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:text="@string/app_name"
-		android:textColor="@color/black"
-		android:textSize="@dimen/_30ssp" />
-
-	<com.sdei.parentIn.customViews.SemiBoldTextView
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_marginTop="@dimen/_23sdp"
-		android:text="@string/BIENVENIDO"
-		android:textAllCaps="true"
-		android:textColor="@color/colorPrimary"
-		android:textSize="@dimen/_14ssp" />
-
-	<com.sdei.parentIn.customViews.RegularTextView
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_marginStart="@dimen/_15sdp"
-		android:layout_marginTop="@dimen/_2sdp"
-		android:layout_marginEnd="@dimen/_15sdp"
-		android:gravity="center"
-		android:text="@string/Un_programa_del_Ministro_de_Educación_y_Cultura_de_Uruguay"
-		android:textColor="@color/black"
-		android:textSize="@dimen/_11ssp" />
-
-	<com.sdei.parentIn.customViews.SemiBoldTextView
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_marginTop="@dimen/_61sdp"
-		android:layout_marginBottom="@dimen/_6sdp"
-		android:gravity="center"
-		android:text="@string/Selecciona_una_opción"
-		android:textColor="@color/black"
-		android:textSize="@dimen/_13ssp" />
-
-	<androidx.cardview.widget.CardView
-		android:id="@+id/cdParent"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:layout_marginStart="@dimen/_15sdp"
-		android:layout_marginEnd="@dimen/_15sdp"
-		android:foreground="?selectableItemBackground"
-		android:elevation="@dimen/_4ssp"
-		app:cardCornerRadius="@dimen/_5ssp">
-
-		<com.sdei.parentIn.customViews.MediumTextView
-			android:layout_width="match_parent"
+		<ImageView
+			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:drawableStart="@mipmap/icon_padre"
-			android:drawablePadding="@dimen/_8sdp"
-			android:gravity="center_vertical"
-			android:padding="@dimen/_10sdp"
+			android:layout_gravity="center"
+			android:src="@mipmap/logo" />
+
+		<com.sdei.parentIn.customViews.HeavyTextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/app_name"
 			android:textColor="@color/black"
-			android:text="@string/Padre_o_tutor"
-			android:textSize="@dimen/_13ssp" />
-	</androidx.cardview.widget.CardView>
+			android:textSize="@dimen/_30ssp" />
 
-	<androidx.cardview.widget.CardView
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:layout_marginStart="@dimen/_15sdp"
-		android:foreground="?selectableItemBackground"
-		android:layout_marginTop="@dimen/_8sdp"
-		android:layout_marginEnd="@dimen/_15sdp"
-		android:layout_marginBottom="@dimen/_8sdp"
-		android:elevation="@dimen/_4ssp"
-		app:cardCornerRadius="@dimen/_5ssp">
-
-		<com.sdei.parentIn.customViews.MediumTextView
-			android:layout_width="match_parent"
+		<com.sdei.parentIn.customViews.SemiBoldTextView
+			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:drawableStart="@mipmap/maestro"
-			android:drawablePadding="@dimen/_8sdp"
-			android:gravity="center_vertical"
-			android:padding="@dimen/_10sdp"
-			android:text="@string/Maestro"
+			android:layout_marginTop="@dimen/_23sdp"
+			android:text="@string/BIENVENIDO"
+			android:textAllCaps="true"
+			android:textColor="@color/colorPrimary"
+			android:textSize="@dimen/_14ssp" />
+
+		<com.sdei.parentIn.customViews.RegularTextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="@dimen/_15sdp"
+			android:layout_marginTop="@dimen/_2sdp"
+			android:layout_marginEnd="@dimen/_15sdp"
+			android:gravity="center"
+			android:text="@string/Un_programa_del_Ministro_de_Educación_y_Cultura_de_Uruguay"
+			android:textColor="@color/black"
+			android:textSize="@dimen/_11ssp" />
+
+		<com.sdei.parentIn.customViews.SemiBoldTextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/_61sdp"
+			android:layout_marginBottom="@dimen/_6sdp"
+			android:gravity="center"
+			android:text="@string/Selecciona_una_opción"
 			android:textColor="@color/black"
 			android:textSize="@dimen/_13ssp" />
-	</androidx.cardview.widget.CardView>
 
-	<androidx.cardview.widget.CardView
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:foreground="?selectableItemBackground"
-		android:layout_marginStart="@dimen/_15sdp"
-		android:layout_marginEnd="@dimen/_15sdp"
-		android:elevation="@dimen/_4ssp"
-		app:cardCornerRadius="@dimen/_5ssp">
-
-		<com.sdei.parentIn.customViews.MediumTextView
+		<androidx.cardview.widget.CardView
+			android:id="@+id/cdParent"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:drawableStart="@mipmap/supervisor"
-			android:drawablePadding="@dimen/_8sdp"
-			android:gravity="center_vertical"
-			android:padding="@dimen/_10sdp"
+			android:layout_marginStart="@dimen/_15sdp"
+			android:layout_marginEnd="@dimen/_15sdp"
+			android:elevation="@dimen/_4ssp"
+			android:foreground="?selectableItemBackground"
+			app:cardCornerRadius="@dimen/_5ssp">
+
+			<com.sdei.parentIn.customViews.MediumTextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:drawableStart="@mipmap/icon_padre"
+				android:drawablePadding="@dimen/_8sdp"
+				android:gravity="center_vertical"
+				android:padding="@dimen/_10sdp"
+				android:text="@string/Padre_o_tutor"
+				android:textColor="@color/black"
+				android:textSize="@dimen/_13ssp" />
+		</androidx.cardview.widget.CardView>
+
+		<androidx.cardview.widget.CardView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="@dimen/_15sdp"
+			android:layout_marginTop="@dimen/_8sdp"
+			android:layout_marginEnd="@dimen/_15sdp"
+			android:layout_marginBottom="@dimen/_8sdp"
+			android:elevation="@dimen/_4ssp"
+			android:foreground="?selectableItemBackground"
+			app:cardCornerRadius="@dimen/_5ssp">
+
+			<com.sdei.parentIn.customViews.MediumTextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:drawableStart="@mipmap/maestro"
+				android:drawablePadding="@dimen/_8sdp"
+				android:gravity="center_vertical"
+				android:padding="@dimen/_10sdp"
+				android:text="@string/Maestro"
+				android:textColor="@color/black"
+				android:textSize="@dimen/_13ssp" />
+		</androidx.cardview.widget.CardView>
+
+		<androidx.cardview.widget.CardView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="@dimen/_15sdp"
+			android:layout_marginEnd="@dimen/_15sdp"
+			android:elevation="@dimen/_4ssp"
+			android:foreground="?selectableItemBackground"
+			app:cardCornerRadius="@dimen/_5ssp">
+
+			<com.sdei.parentIn.customViews.MediumTextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:drawableStart="@mipmap/supervisor"
+				android:drawablePadding="@dimen/_8sdp"
+				android:gravity="center_vertical"
+				android:padding="@dimen/_10sdp"
+				android:text="@string/Supervisor"
+				android:textColor="@color/black"
+				android:textSize="@dimen/_13ssp" />
+		</androidx.cardview.widget.CardView>
+
+		<com.sdei.parentIn.customViews.RegularTextView
+			android:layout_width="wrap_content"
+			android:layout_height="0dp"
+			android:layout_marginBottom="@dimen/_20sdp"
+			android:layout_weight="1"
+			android:gravity="bottom"
+			android:text="@string/Acerca_de_ParentIn"
 			android:textColor="@color/black"
-			android:text="@string/Supervisor"
-			android:textSize="@dimen/_13ssp" />
-	</androidx.cardview.widget.CardView>
+			android:textSize="@dimen/_11ssp" />
 
-	<com.sdei.parentIn.customViews.RegularTextView
-		android:layout_width="wrap_content"
-		android:layout_height="0dp"
-		android:layout_marginBottom="@dimen/_8sdp"
-		android:layout_weight="1"
-		android:gravity="bottom"
-		android:textSize="@dimen/_11ssp"
-		android:text="@string/Acerca_de_ParentIn"
-		android:textColor="@color/black" />
+	</LinearLayout>
 
-</LinearLayout>
+</androidx.core.widget.NestedScrollView>

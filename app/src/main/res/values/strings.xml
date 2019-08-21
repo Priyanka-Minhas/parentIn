@@ -52,5 +52,8 @@
 	<string name="fecha_nacimiento">Birth date</string>
 	<string name="nino">Child</string>
 	<string name="something_went_wrong">Something went wrong</string>
+	<string name="errorValidEmail">Email not valid</string>
+	<string name="errorValidPassword">Password not valid</string>
+	<string name="work_in_progress">WORK IN PROGRESS</string>
 
 </resources>
