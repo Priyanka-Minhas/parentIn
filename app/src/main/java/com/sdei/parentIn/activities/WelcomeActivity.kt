@@ -19,6 +19,10 @@ class WelcomeActivity : BaseActivity<BaseViewModel>(), View.OnClickListener {
                 var intent = Intent(mContext, LoginActivity::class.java)
                 startActivity(intent)
             }
+            R.id.cdTeacher ->{
+                var intent = Intent(mContext, TeacherNewAccountActivity::class.java)
+                startActivity(intent)
+            }
 
         }
 
@@ -39,6 +43,7 @@ class WelcomeActivity : BaseActivity<BaseViewModel>(), View.OnClickListener {
 
     override fun initListeners() {
         cdParent.setOnClickListener(this)
+        cdTeacher.setOnClickListener(this)
     }
 
 }

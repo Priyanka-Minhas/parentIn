@@ -56,4 +56,20 @@
 	<string name="errorValidPassword">Password not valid</string>
 	<string name="work_in_progress">WORK IN PROGRESS</string>
 
+	<!-- About US -->
+	<string name="Acerca">About</string>
+	<string name="Familiasin">FAMILIASIN</string>
+	<string name="aboutSmallText">It is a mobile application that was created in \ncollaboration with the Ministry of \nEducation and Culture and the Inter-\nAmerican Development Bank.</string>
+	<string name="aboutTextWithEmail">If you have any questions or comments \nplease write to info@parentin.com and we \nwill respond as soon as possible</string>
+
+	<!--Teacher New Account Activity -->
+	<string name="Información_del_Maestro">Teacher Information</string>
+	<string name="Rodrigo">Rodrigo</string>
+	<string name="Baez">Baez</string>
+	<string name="Numero_de_Estudiantes">Number of students</string>
+	<string name="Correo_Electrónico">Email</string>
+	<string name="Confirma_el_correo_electrónico">Confirm Email</string>
+	<string name="Confirmar_contraseña">Confirm Password</string>
+	<string name="Crear_cuenta">CREATE ACCOUNT</string>
+
 </resources>
