@@ -13,6 +13,7 @@ import com.wajahatkarim3.easyvalidation.core.view_ktx.nonEmpty
 import com.wajahatkarim3.easyvalidation.core.view_ktx.validEmail
 import kotlinx.android.synthetic.main.activity_login.*
 
+
 /**
  * Created by shubham on 14/08/19.
  */
