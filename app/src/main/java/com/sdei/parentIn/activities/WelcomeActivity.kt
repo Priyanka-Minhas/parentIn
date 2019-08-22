@@ -16,11 +16,13 @@ class WelcomeActivity : BaseActivity<BaseViewModel>(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v!!.id) {
             R.id.cdParent -> {
-                var intent = Intent(mContext, LoginActivity::class.java)
+                val intent = Intent(mContext, LoginActivity::class.java)
                 startActivity(intent)
             }
-            R.id.cdTeacher ->{
-                var intent = Intent(mContext, TeacherNewAccountActivity::class.java)
+            R.id.cdTeacher -> {
+//                var intent = Intent(mContext, LoginActivity::class.java)
+//                startActivity(intent)
+                val intent = Intent(mContext, TeacherNewAccountActivity::class.java)
                 startActivity(intent)
             }
         }

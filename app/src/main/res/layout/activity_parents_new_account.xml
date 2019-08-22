@@ -223,7 +223,7 @@
 				android:cursorVisible="false"
 				android:drawableEnd="@mipmap/ic_dropdown"
 				android:focusable="false"
-				android:hint="@string/No_de_estudiantes_en_escuelas_ParentIn"
+				android:hint="@string/No_de_estudiantes_en_escuelas_FamiliasIn"
 				android:inputType="none"
 				android:padding="@dimen/_12sdp"
 				android:textSize="@dimen/_12ssp" />

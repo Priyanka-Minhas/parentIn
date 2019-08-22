@@ -40,6 +40,7 @@
 		android:layout_marginTop="@dimen/_10sdp"
 		android:background="@drawable/edit_text_selector"
 		android:drawablePadding="@dimen/_5sdp"
+		android:hint="@string/primer_nombre"
 		android:padding="@dimen/_12sdp"
 		android:textSize="@dimen/_12ssp" />
 
@@ -51,6 +52,7 @@
 		android:background="@drawable/edit_text_selector"
 		android:drawablePadding="@dimen/_10sdp"
 		android:padding="@dimen/_12sdp"
+		android:hint="@string/Apellido"
 		android:textSize="@dimen/_12ssp" />
 
 	<EditText

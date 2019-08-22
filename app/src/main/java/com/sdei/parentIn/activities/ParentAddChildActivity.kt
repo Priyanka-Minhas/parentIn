@@ -2,15 +2,22 @@ package com.sdei.parentIn.activities
 
 import android.content.Context
 import android.view.View
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sdei.parentIn.R
 import com.sdei.parentIn.adapters.AddChildAdapter
+import com.sdei.parentIn.interfaces.UserModel
 import com.sdei.parentIn.model.ChildModel
-import com.sdei.parentIn.viewModel.BaseViewModel
+import com.sdei.parentIn.utils.DATA
+import com.sdei.parentIn.utils.connectedToInternet
+import com.sdei.parentIn.utils.responseHandler
+import com.sdei.parentIn.utils.showToast
+import com.sdei.parentIn.viewModel.ParentNewAccountViewModel
 import kotlinx.android.synthetic.main.activity_parent_add_child.*
 
-class ParentAddChildActivity : BaseActivity<BaseViewModel>(), View.OnClickListener, AddChildAdapter.ClickInterface {
+
+class ParentAddChildActivity : BaseActivity<ParentNewAccountViewModel>(), View.OnClickListener, AddChildAdapter.ClickInterface {
 
     override fun deleteChild(pos: Int) {
         mData.removeAt(pos)
@@ -23,6 +30,16 @@ class ParentAddChildActivity : BaseActivity<BaseViewModel>(), View.OnClickListen
                 mData.add(ChildModel())
                 mChildAdapter.notifyDataSetChanged()
             }
+
+            R.id.txtCreateAccount -> {
+                val i = intent
+                val model = i.getSerializableExtra(DATA) as UserModel.DataBean
+
+                if (connectedToInternet(btnAddChild)) {
+                    mViewModel!!.setProfile(model)
+                }
+            }
+
             R.id.btnBack -> {
                 finish()
             }
@@ -32,8 +49,8 @@ class ParentAddChildActivity : BaseActivity<BaseViewModel>(), View.OnClickListen
     override val layoutId: Int
         get() = R.layout.activity_parent_add_child
 
-    override val viewModel: BaseViewModel
-        get() = ViewModelProviders.of(this).get(BaseViewModel::class.java)
+    override val viewModel: ParentNewAccountViewModel
+        get() = ViewModelProviders.of(this).get(ParentNewAccountViewModel::class.java)
 
     override val context: Context
         get() = this@ParentAddChildActivity
@@ -45,10 +62,19 @@ class ParentAddChildActivity : BaseActivity<BaseViewModel>(), View.OnClickListen
     override fun onCreate() {
         mData.add(ChildModel())
         setChildAdapter()
+
+        mViewModel!!.getProfile().observe(this,
+                Observer<UserModel> { mData ->
+                    if (mData != null && responseHandler(mData.statusCode, mData.message)) {
+                        showToast(getString(R.string.work_in_progress))
+                    }
+                })
+
     }
 
     override fun initListeners() {
         btnAddChild.setOnClickListener(this)
+        txtCreateAccount.setOnClickListener(this)
         btnBack.setOnClickListener(this)
     }
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="app_name">ParentIn</string>
+	<string name="app_name">FamiliasIn</string>
 
 	<!--ERROR-->
 	<string name="errorInternet">Internet connection not Available</string>
@@ -10,9 +10,14 @@
 	<string name="work_in_progress">WORK IN PROGRESS</string>
 
 	<!--COMMON-->
+	<string name="select_gender">SELECT GENDER</string>
 	<string name="male">MALE</string>
 	<string name="female">FEMALE</string>
-	<string name="select_gender">SELECT GENDER</string>
+
+	<string name="select_relation">SELECT RELATION</string>
+	<string name="father">Father</string>
+	<string name="mother">Mother</string>
+	<string name="guardian">Guardian</string>
 
 	<!--Welcome Activity-->
 	<string name="BIENVENIDO">¡WELCOME!</string>
@@ -21,7 +26,7 @@
 	<string name="Padre_o_tutor">Parent or tutor</string>
 	<string name="Maestro">Teacher</string>
 	<string name="Supervisor">Supervisor</string>
-	<string name="Acerca_de_ParentIn">About ParentIn</string>
+	<string name="Acerca_de_FamiliasIn">About FamiliasIn</string>
 
 	<!--LOGIN ACTIVITY-->
 	<string name="Inicia_Sesión">Log in</string>
@@ -47,7 +52,7 @@
 	<string name="Si">Yes</string>
 	<string name="No">No</string>
 	<string name="Nivel_de_educación_alcanzado">Level of education achieved</string>
-	<string name="No_de_estudiantes_en_escuelas_ParentIn">No. of students in ParentIn schools</string>
+	<string name="No_de_estudiantes_en_escuelas_FamiliasIn">No. of students in FamiliasIn schools</string>
 	<string name="Siguiente">FOLLOWING</string>
 
 	<!--SIGNUP ADD CHILD ACTIVITY-->
@@ -74,6 +79,8 @@
 	<string name="Confirma_el_correo_electrónico">Confirm Email</string>
 	<string name="Confirmar_contraseña">Confirm Password</string>
 	<string name="Crear_cuenta">CREATE ACCOUNT</string>
+
+
 
 
 </resources>

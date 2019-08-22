@@ -1,6 +1,6 @@
 package com.sdei.parentIn.repositories
 
-import com.sdei.parentIn.model.UserModel
+import com.sdei.parentIn.interfaces.UserModel
 import com.sdei.parentIn.network.RetrofitClient
 import retrofit2.Call
 import retrofit2.Callback

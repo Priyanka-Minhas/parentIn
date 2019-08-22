@@ -21,7 +21,11 @@ class AddChildAdapter(var con: Context,
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.txtTitle.text= "${con.getString(R.string.nino)+" "}${position + 1}"
+        holder.txtTitle.text = "${con.getString(R.string.nino) + " "}${position + 1}"
+
+        if (position == 0) {
+            holder.imgDelete.visibility = View.GONE
+        }
 
         holder.imgDelete.setOnClickListener {
             mClick.deleteChild(position)

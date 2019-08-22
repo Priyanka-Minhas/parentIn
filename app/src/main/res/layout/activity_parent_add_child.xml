@@ -92,6 +92,7 @@
 
 
 			<com.sdei.parentIn.customViews.SemiBoldTextView
+				android:id="@+id/txtCreateAccount"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_marginStart="@dimen/_10sdp"

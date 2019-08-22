@@ -130,7 +130,7 @@
 			android:layout_marginBottom="@dimen/_20sdp"
 			android:layout_weight="1"
 			android:gravity="bottom"
-			android:text="@string/Acerca_de_ParentIn"
+			android:text="@string/Acerca_de_FamiliasIn"
 			android:textColor="@color/black"
 			android:textSize="@dimen/_11ssp" />
 

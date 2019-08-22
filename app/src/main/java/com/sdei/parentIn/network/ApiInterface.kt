@@ -1,7 +1,8 @@
 package com.sdei.parentIn.network
 
-import com.sdei.parentIn.model.UserModel
+import com.sdei.parentIn.interfaces.UserModel
 import retrofit2.Call
+import retrofit2.http.Body
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.POST
@@ -10,12 +11,11 @@ import retrofit2.http.POST
 interface ApiInterface {
 
     @FormUrlEncoded
-    @POST("/parent/login")
+    @POST("/user/login")
     fun login(
             @Field("email") email: String,
             @Field("password") password: String
     ): Call<UserModel>
-
 
 //    {
 //        "firstName": "Lucifer",
@@ -31,21 +31,26 @@ interface ApiInterface {
 //        "roleId": 3
 //    }
 
-    @FormUrlEncoded
-    @POST("/parent/register")
-    fun register(
-            @Field("firstName") firstName: String,
-            @Field("lastName") lastName: String,
-            @Field("phoneNumber") phoneNumber: String,
-            @Field("relationWithChild") relationWithChild: String,
-            @Field("homeAddress") homeAddress: String,
-            @Field("isSameAddressAsStudent") isSameAddressAsStudent: String,
-            @Field("levelOfEducation") levelOfEducation: String,
-            @Field("noOfStudents") noOfStudents: String,
-            @Field("password") password: String,
-            @Field("roleId") roleId: String
-    ): Call<UserModel>
+    @POST("/user/register")
+    fun register(@Body userModel: UserModel.DataBean): Call<UserModel>
 
+//
+//    @FormUrlEncoded
+//    @POST("/user/register")
+//    fun register(
+//            @Field("firstName") firstName: String,
+//            @Field("lastName") lastName: String,
+//            @Field("phoneNumber") phoneNumber: String,
+//            @Field("relationWithChild") relationWithChild: String,
+//            @Field("homeAddress") homeAddress: String,
+//            @Field("isSameAddressAsStudent") isSameAddressAsStudent: String,
+//            @Field("levelOfEducation") levelOfEducation: String,
+//            @Field("noOfStudents") noOfStudents: String,
+//            @Field("password") password: String,
+//            @Field("roleId") roleId: String,
+//            @Field("child") child: String
+//    ): Call<UserModel>
+//
 
 //    @FormUrlEncoded
 //    @POST("users/authenticate")
