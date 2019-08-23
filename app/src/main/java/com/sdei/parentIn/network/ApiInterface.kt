@@ -26,6 +26,12 @@ interface ApiInterface {
     @GET("school/list")
     fun getSchoolList():Call<SchoolModel>
 
+    // teacher list
+    @FormUrlEncoded
+    @POST("/user/listBySchool")
+    fun getTeacherList(@Field("roleId") roleId:Int): Call<UserModel>
+
+
 //    @FormUrlEncoded
 //    @POST("/user/register")
 //    fun register(

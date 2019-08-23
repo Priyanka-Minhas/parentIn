@@ -7,6 +7,7 @@
 	<string name="something_went_wrong">Something went wrong</string>
 	<string name="errorEmail">Please enter email</string>
 	<string name="errorValidEmail">Please enter valid email</string>
+    <string name="errorConfEmail">Please confirm email</string>
 	<string name="errorValidPassword">Please enter password</string>
 	<string name="work_in_progress">WORK IN PROGRESS</string>
 	<string name="errorFirstName">Please enter First Name</string>

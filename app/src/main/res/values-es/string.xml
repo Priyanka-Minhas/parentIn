@@ -6,6 +6,7 @@
 	<string name="something_went_wrong">Algo salió mal</string>
 	<string name="errorValidEmail">Por favor introduzca un correo electrónico válido</string>
 	<string name="errorEmail">Por favor ingrese su correo electrónico</string>
+	<string name="errorConfEmail">Por favor confirme el correo electrónico</string>
 	<string name="errorValidPassword">Por favor, ingrese contraseña</string>
 	<string name="work_in_progress">TRABAJO EN PROGRESO</string>
 	<string name="errorFirstName">Por favor ingrese el nombre</string>
