@@ -23,6 +23,11 @@ import kotlinx.android.synthetic.main.activity_parent_add_child.*
 class ParentAddChildActivity : BaseActivity<ParentNewAccountViewModel>(), View.OnClickListener, AddChildAdapter.ClickInterface {
 
     fun getSchoolList(returnValue: (SchoolModel.DataBean) -> Unit) {
+
+
+
+
+
         SchoolListDialog(mContext, R.style.pullBottomfromTop, R.layout.dialog_options,
                 mSchoolList,
                 getString(R.string.select_school),
