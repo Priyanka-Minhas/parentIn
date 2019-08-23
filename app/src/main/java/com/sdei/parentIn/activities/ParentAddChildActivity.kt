@@ -48,32 +48,32 @@ class ParentAddChildActivity : BaseActivity<ParentNewAccountViewModel>(), View.O
             }
 
             R.id.txtCreateAccount -> {
-                val i = intent
-                val model = i.getParcelableExtra(EXTRA_DATA) as UserModel.DataBean
-                model.noOfStudents = mChildList.size
-                /*if (mChildList.size == 0) {
-                    showAlertSnackBar(txtCreateAccount, getString(R.string.errorChild))
-                }*/
+                val model = intent.getParcelableExtra(EXTRA_DATA) as UserModel.DataBean
+                for (i in 0 until mChildList.size) {
+                    var childNo = i + 1
 
-
-                for(i in 0..mChildList.size-1){
-                    if(mChildList[i].firstName.isNullOrEmpty()){
-                        showAlertSnackBar(txtCreateAccount,getString(R.string.errorChildFirstName)+i)
-                    }else if(mChildList[i].lastName.isNullOrEmpty()){
-                        showAlertSnackBar(txtCreateAccount,getString(R.string.errorChildLastName)+i)
-                    }else if(mChildList[i].verificationCard.isEmpty()){
-                        showAlertSnackBar(txtCreateAccount,getString(R.string.errorIdentification)+i)
-                    }else if(mChildList[i].gender.isEmpty()){
-                        showAlertSnackBar(txtCreateAccount,getString(R.string.errorChildGender)+i)
-                    }else if(!mChildList[i].birthDate.isEmpty()){
-                        showAlertSnackBar(txtCreateAccount,getString(R.string.errorBirthday)+i)
-                    }else{
-                        if (connectedToInternet(btnAddChild)) {
-                            // mViewModel!!.setProfile(model)
-                        }
+                    if (mChildList[i].firstName.isNullOrEmpty()) {
+                        showAlertSnackBar(txtCreateAccount, getString(R.string.errorChildFirstName) + " " + childNo)
+                        return
+                    } else if (mChildList[i].lastName.isNullOrEmpty()) {
+                        showAlertSnackBar(txtCreateAccount, getString(R.string.errorChildLastName) + " " + childNo)
+                        return
+                    } else if (mChildList[i].verificationCard.isEmpty()) {
+                        showAlertSnackBar(txtCreateAccount, getString(R.string.errorIdentification) + " " + childNo)
+                        return
+                    } else if (mChildList[i].gender.isEmpty()) {
+                        showAlertSnackBar(txtCreateAccount, getString(R.string.errorChildGender) + " " + childNo)
+                        return
+                    } else if (mChildList[i].birthDate.isEmpty()) {
+                        showAlertSnackBar(txtCreateAccount, getString(R.string.errorBirthday) + " " + childNo)
+                        return
                     }
                 }
 
+                model.noOfStudents = mChildList.size
+                if (connectedToInternet(btnAddChild)) {
+                    mViewModel!!.setProfile(model)
+                }
             }
 
             R.id.btnBack -> {

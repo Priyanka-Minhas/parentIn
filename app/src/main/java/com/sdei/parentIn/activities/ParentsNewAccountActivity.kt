@@ -9,19 +9,19 @@ import com.sdei.parentIn.dialog.OptionDialog
 import com.sdei.parentIn.interfaces.InterfacesCall
 import com.sdei.parentIn.model.UserModel
 import com.sdei.parentIn.utils.*
-import com.sdei.parentIn.viewModel.ParentNewAccountViewModel
+import com.sdei.parentIn.viewModel.BaseViewModel
 import com.wajahatkarim3.easyvalidation.core.view_ktx.nonEmpty
 import com.wajahatkarim3.easyvalidation.core.view_ktx.validEmail
 import kotlinx.android.synthetic.main.activity_parents_new_account.*
 
-class ParentsNewAccountActivity : BaseActivity<ParentNewAccountViewModel>(), View.OnClickListener {
+class ParentsNewAccountActivity : BaseActivity<BaseViewModel>(), View.OnClickListener {
 
     var isSameAddressAsStudent: Boolean = true
 
     override val layoutId: Int
         get() = R.layout.activity_parents_new_account
-    override val viewModel: ParentNewAccountViewModel
-        get() = ViewModelProviders.of(this).get(ParentNewAccountViewModel::class.java)
+    override val viewModel: BaseViewModel
+        get() = ViewModelProviders.of(this).get(BaseViewModel::class.java)
     override val context: Context
         get() = this@ParentsNewAccountActivity
 

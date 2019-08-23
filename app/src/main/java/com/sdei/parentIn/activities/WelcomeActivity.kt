@@ -7,14 +7,14 @@ import androidx.lifecycle.ViewModelProviders
 import com.sdei.parentIn.R
 import com.sdei.parentIn.utils.InterConstants
 import com.sdei.parentIn.utils.getUtils
-import com.sdei.parentIn.viewModel.WelcomeViewModel
+import com.sdei.parentIn.viewModel.BaseViewModel
 import kotlinx.android.synthetic.main.activity_welcome.*
 
 /**
  * Created by shubham on 14/08/19.
  */
 
-class WelcomeActivity : BaseActivity<WelcomeViewModel>(), View.OnClickListener {
+class WelcomeActivity : BaseActivity<BaseViewModel>(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v!!.id) {
 
@@ -42,8 +42,8 @@ class WelcomeActivity : BaseActivity<WelcomeViewModel>(), View.OnClickListener {
     override val layoutId: Int
         get() = R.layout.activity_welcome
 
-    override val viewModel: WelcomeViewModel
-        get() = ViewModelProviders.of(this).get(WelcomeViewModel::class.java)
+    override val viewModel: BaseViewModel
+        get() = ViewModelProviders.of(this).get(BaseViewModel::class.java)
 
     override val context: Context
         get() = this@WelcomeActivity

@@ -20,9 +20,26 @@ public class UserModel extends BaseModel implements Parcelable {
         super(message);
     }
 
-    public UserModel(@NotNull BaseModel baseModel) {
-        super.setMessage(baseModel.getMessage());
+    public UserModel(@NotNull int statusCode,@NotNull String message) {
+        super.setMessage(message);
+        super.setStatusCode(statusCode);
     }
+
+    protected UserModel(Parcel in) {
+        data = in.readParcelable(DataBean.class.getClassLoader());
+    }
+
+    public static final Creator<UserModel> CREATOR = new Creator<UserModel>() {
+        @Override
+        public UserModel createFromParcel(Parcel in) {
+            return new UserModel(in);
+        }
+
+        @Override
+        public UserModel[] newArray(int size) {
+            return new UserModel[size];
+        }
+    };
 
     public DataBean getData() {
         return data;
@@ -39,7 +56,7 @@ public class UserModel extends BaseModel implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-
+        dest.writeParcelable(data, flags);
     }
 
     public static class DataBean implements Parcelable {

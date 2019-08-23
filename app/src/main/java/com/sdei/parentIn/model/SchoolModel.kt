@@ -1,6 +1,6 @@
 package com.sdei.parentIn.model
 
-class SchoolModel(message: String) : BaseModel(message) {
+class SchoolModel : BaseModel {
 
 
     /**
@@ -10,6 +10,15 @@ class SchoolModel(message: String) : BaseModel(message) {
      */
 
     var data: ArrayList<DataBean>? = null
+
+    constructor(message: String) {
+        super.message = message
+    }
+
+    constructor(statusCode: Int, message: String) {
+        super.message = message
+        super.statusCode = statusCode
+    }
 
     class DataBean {
         /**

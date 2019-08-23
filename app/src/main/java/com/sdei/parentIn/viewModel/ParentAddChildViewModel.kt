@@ -1,14 +1,13 @@
 package com.sdei.parentIn.viewModel
 
 import android.app.Application
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import com.sdei.parentIn.model.BaseModel
 
-import com.sdei.parentIn.repositories.WelcomeRepository
+import com.sdei.parentIn.repositories.ParentAddChildRepository
 
-class WelcomeViewModel(application: Application): BaseViewModel(application = application) {
-    private val welcomeRepository  = WelcomeRepository()
+class ParentAddChildViewModel(application: Application): BaseViewModel(application = application) {
+    private val welcomeRepository  = ParentAddChildRepository()
     private var mUserModel: MutableLiveData<BaseModel>? = null
 
     fun getSchoolList(): MutableLiveData<BaseModel>{
