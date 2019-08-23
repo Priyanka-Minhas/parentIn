@@ -4,7 +4,8 @@
 	<!--ERROR-->
 	<string name="errorInternet">Conexión a internet no disponible</string>
 	<string name="something_went_wrong">Algo salió mal</string>
-	<string name="errorValidEmail">Ingrese un email valido</string>
+	<string name="errorValidEmail">Por favor, ingrese contraseña</string>
+	<string name="errorEmail">Por favor ingrese su correo electrónico</string>
 	<string name="errorValidPassword">Ingrese una contraseña válida</string>
 	<string name="work_in_progress">TRABAJO EN PROGRESO</string>
 	<string name="errorFirstName">Nombre no vacío</string>

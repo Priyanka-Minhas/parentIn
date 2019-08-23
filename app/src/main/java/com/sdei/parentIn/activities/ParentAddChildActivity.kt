@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.sdei.parentIn.R
 import com.sdei.parentIn.adapters.AddChildAdapter
 import com.sdei.parentIn.model.ChildModel
+import com.sdei.parentIn.model.SchoolModel
 import com.sdei.parentIn.model.UserModel
 import com.sdei.parentIn.utils.DATA
 import com.sdei.parentIn.utils.connectedToInternet
@@ -37,7 +38,7 @@ class ParentAddChildActivity : BaseActivity<ParentNewAccountViewModel>(), View.O
                 val model = i.getParcelableExtra(DATA) as UserModel.DataBean
 
                 if (connectedToInternet(btnAddChild)) {
-                    Log.e("=======", "ierieu" + model.firstName)
+
                     // mViewModel!!.setProfile(model)
                 }
             }
@@ -71,6 +72,14 @@ class ParentAddChildActivity : BaseActivity<ParentNewAccountViewModel>(), View.O
                         showToast(getString(R.string.work_in_progress))
                     }
                 })
+        // get school list
+
+        mViewModel!!.getSchoolList().observe(this,
+                Observer<SchoolModel>{ mData ->
+                    if (mData != null && responseHandler(mData.statusCode, mData.message)) {
+                        //showToast(getString(R.string.work_in_progress))
+                    }
+        })
 
     }
 
