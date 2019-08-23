@@ -23,11 +23,6 @@ import kotlinx.android.synthetic.main.activity_parent_add_child.*
 class ParentAddChildActivity : BaseActivity<ParentNewAccountViewModel>(), View.OnClickListener, AddChildAdapter.ClickInterface {
 
     fun getSchoolList(returnValue: (SchoolModel.DataBean) -> Unit) {
-
-
-
-
-
         SchoolListDialog(mContext, R.style.pullBottomfromTop, R.layout.dialog_options,
                 mSchoolList,
                 getString(R.string.select_school),
@@ -55,14 +50,30 @@ class ParentAddChildActivity : BaseActivity<ParentNewAccountViewModel>(), View.O
             R.id.txtCreateAccount -> {
                 val i = intent
                 val model = i.getParcelableExtra(EXTRA_DATA) as UserModel.DataBean
-                if (mChildList.size == 0) {
-                    showAlertSnackBar(txtCreateAccount, getString(R.string.errorChild))
-                }
                 model.noOfStudents = mChildList.size
+                /*if (mChildList.size == 0) {
+                    showAlertSnackBar(txtCreateAccount, getString(R.string.errorChild))
+                }*/
 
-                if (connectedToInternet(btnAddChild)) {
-                    mViewModel!!.setProfile(model)
+
+                for(i in 0..mChildList.size-1){
+                    if(mChildList[i].firstName.isNullOrEmpty()){
+                        showAlertSnackBar(txtCreateAccount,getString(R.string.errorChildFirstName)+i)
+                    }else if(mChildList[i].lastName.isNullOrEmpty()){
+                        showAlertSnackBar(txtCreateAccount,getString(R.string.errorChildLastName)+i)
+                    }else if(mChildList[i].verificationCard.isEmpty()){
+                        showAlertSnackBar(txtCreateAccount,getString(R.string.errorIdentification)+i)
+                    }else if(mChildList[i].gender.isEmpty()){
+                        showAlertSnackBar(txtCreateAccount,getString(R.string.errorChildGender)+i)
+                    }else if(!mChildList[i].birthDate.isEmpty()){
+                        showAlertSnackBar(txtCreateAccount,getString(R.string.errorBirthday)+i)
+                    }else{
+                        if (connectedToInternet(btnAddChild)) {
+                            // mViewModel!!.setProfile(model)
+                        }
+                    }
                 }
+
             }
 
             R.id.btnBack -> {

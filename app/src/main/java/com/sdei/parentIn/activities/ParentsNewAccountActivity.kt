@@ -150,7 +150,7 @@ class ParentsNewAccountActivity : BaseActivity<ParentNewAccountViewModel>(), Vie
         model.noOfStudents = edtNoOfStudent.text.toString().toInt()
 
         val intent = Intent(mContext, ParentAddChildActivity::class.java)
-        intent.putExtra(DATA, model)
+        intent.putExtra(InterConstants.EXTRA_DATA, model)
         startActivity(intent)
     }
 
