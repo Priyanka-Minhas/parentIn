@@ -17,6 +17,7 @@
 	<string name="errorStudentAddress">Por favor confirme la dirección del estudiante</string>
 	<string name="errorLevelOfEducation">Por favor seleccione el nivel de educación</string>
 	<string name="errorNoOfSchools">Por favor seleccione No. de estudiante en familias en escuelas</string>
+	<string name="errorChild">El niño debe ser uno o más de uno</string>
 
 	<!--COMMON-->
 	<string name="select_gender">SELECCIONE GÉNERO</string>

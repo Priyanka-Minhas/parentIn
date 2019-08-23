@@ -1,7 +1,6 @@
 package com.sdei.parentIn.activities
 
 import android.content.Context
-import android.util.Log
 import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -9,10 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.sdei.parentIn.R
 import com.sdei.parentIn.adapters.AddChildAdapter
 import com.sdei.parentIn.model.UserModel
-import com.sdei.parentIn.utils.DATA
-import com.sdei.parentIn.utils.connectedToInternet
-import com.sdei.parentIn.utils.responseHandler
-import com.sdei.parentIn.utils.showToast
+import com.sdei.parentIn.utils.*
 import com.sdei.parentIn.viewModel.ParentNewAccountViewModel
 import kotlinx.android.synthetic.main.activity_parent_add_child.*
 
@@ -34,9 +30,13 @@ class ParentAddChildActivity : BaseActivity<ParentNewAccountViewModel>(), View.O
             R.id.txtCreateAccount -> {
                 val i = intent
                 val model = i.getParcelableExtra(DATA) as UserModel.DataBean
+                if (mData.size == 0) {
+                    showAlertSnackBar(txtCreateAccount, getString(R.string.errorChild))
+                }
+                model.noOfStudents = mData.size
+
                 if (connectedToInternet(btnAddChild)) {
-                    Log.e("=======", "ierieu" + model.firstName)
-                    // mViewModel!!.setProfile(model)
+                    mViewModel!!.setProfile(model)
                 }
             }
 

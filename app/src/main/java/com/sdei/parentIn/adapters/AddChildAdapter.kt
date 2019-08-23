@@ -35,33 +35,44 @@ class AddChildAdapter(var con: Context,
             mClick.deleteChild(position)
         }
 
-        holder.gender.setOnClickListener{
+        holder.gender.setOnClickListener {
             OptionDialog(con, R.style.pullBottomfromTop, R.layout.dialog_options,
-                   con.getGender(),
-                   con.getString(R.string.select_gender),
+                    con.getGender(),
+                    con.getString(R.string.select_gender),
                     InterfacesCall.Callback { pos ->
-                       // edtGender.setText(getGender()[pos].name.toString())
+                        holder.gender.setText(con.getGender()[pos].name.toString())
+                        mData[position].gender = holder.gender.text.toString()
+
                     }).show()
         }
-        holder.birthdate.setOnClickListener{
+
+        holder.birthdate.setOnClickListener {
             val calender = Calendar.getInstance()
             val year = calender.get(Calendar.YEAR)
             val month = calender.get(Calendar.MONTH)
             val day = calender.get(Calendar.DAY_OF_MONTH)
             val dpd = DatePickerDialog(con, DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+
                 // Display Selected date in Toast
-                
-                // Toast.makeText(this, """$dayOfMonth - ${monthOfYear + 1} - $year""", Toast.LENGTH_LONG).show()
+                val date = "$day-$dayOfMonth-${monthOfYear + 1}"
+                holder.birthdate.setText(date)
+                mData[position].birthDate = holder.birthdate.text.toString()
 
             }, year, month, day)
+
             dpd.show()
         }
-        holder.school.setOnClickListener{
+
+        holder.school.setOnClickListener {
 
         }
-        holder.teacher.setOnClickListener{
+
+        holder.teacher.setOnClickListener {
 
         }
+        mData[position].firstName = holder.firstName.text.toString()
+        mData[position].lastName = holder.lastName.text.toString()
+        mData[position].verificationCard = holder.identityCard.text.toString()
 
     }
 
@@ -76,13 +87,13 @@ class AddChildAdapter(var con: Context,
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var imgDelete = itemView.imgDelete!!
         var txtTitle = itemView.txtTitle!!
-        var firstName = itemView.edtChildFirstName
-        var lastName = itemView.edtChildLastName
-        var identityCard = itemView.edtChildIdentityCard
-        var gender = itemView.edtChildGender
-        var birthdate = itemView.edtChildBirthDate
-        var school = itemView.edtChildSchool
-        var teacher = itemView.edtChildTeacher
+        var firstName = itemView.edtChildFirstName!!
+        var lastName = itemView.edtChildLastName!!
+        var identityCard = itemView.edtChildIdentityCard!!
+        var gender = itemView.edtChildGender!!
+        var birthdate = itemView.edtChildBirthDate!!
+        var school = itemView.edtChildSchool!!
+        var teacher = itemView.edtChildTeacher!!
     }
 
     interface ClickInterface {
@@ -90,3 +101,5 @@ class AddChildAdapter(var con: Context,
     }
 
 }
+
+

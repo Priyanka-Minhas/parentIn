@@ -18,6 +18,7 @@
 	<string name="errorStudentAddress">Please confirm student address </string>
 	<string name="errorLevelOfEducation">Please select level of education</string>
 	<string name="errorNoOfSchools">Please select No. of Student in FamiliasIn schools</string>
+	<string name="errorChild">Child Should be one or Greater than one</string>
 
 	<!--COMMON-->
 	<string name="select_gender">SELECT GENDER</string>
