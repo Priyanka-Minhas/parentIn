@@ -9,13 +9,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.sdei.parentIn.R
 import com.sdei.parentIn.dialog.OptionDialog
 import com.sdei.parentIn.interfaces.InterfacesCall
-import com.sdei.parentIn.model.ChildModel
+import com.sdei.parentIn.model.UserModel
 import com.sdei.parentIn.utils.getGender
 import kotlinx.android.synthetic.main.item_add_child.view.*
 import java.util.*
 
 class AddChildAdapter(var con: Context,
-                      var mData: ArrayList<ChildModel>,
+                      var mData: ArrayList<UserModel.DataBean.ChildsBean>,
                       var mClick: ClickInterface) : RecyclerView.Adapter<AddChildAdapter.ViewHolder>() {
 
 

@@ -8,7 +8,6 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sdei.parentIn.R
 import com.sdei.parentIn.adapters.AddChildAdapter
-import com.sdei.parentIn.model.ChildModel
 import com.sdei.parentIn.model.UserModel
 import com.sdei.parentIn.utils.DATA
 import com.sdei.parentIn.utils.connectedToInternet
@@ -28,14 +27,13 @@ class ParentAddChildActivity : BaseActivity<ParentNewAccountViewModel>(), View.O
     override fun onClick(v: View?) {
         when (v!!.id) {
             R.id.btnAddChild -> {
-                mData.add(ChildModel())
+                mData.add(UserModel.DataBean.ChildsBean())
                 mChildAdapter.notifyDataSetChanged()
             }
 
             R.id.txtCreateAccount -> {
                 val i = intent
                 val model = i.getParcelableExtra(DATA) as UserModel.DataBean
-
                 if (connectedToInternet(btnAddChild)) {
                     Log.e("=======", "ierieu" + model.firstName)
                     // mViewModel!!.setProfile(model)
@@ -57,12 +55,12 @@ class ParentAddChildActivity : BaseActivity<ParentNewAccountViewModel>(), View.O
     override val context: Context
         get() = this@ParentAddChildActivity
 
-    var mData = arrayListOf<ChildModel>()
+    var mData = arrayListOf<UserModel.DataBean.ChildsBean>()
 
     lateinit var mChildAdapter: AddChildAdapter
 
     override fun onCreate() {
-        mData.add(ChildModel())
+        mData.add(UserModel.DataBean.ChildsBean())
         setChildAdapter()
 
         mViewModel!!.getProfile().observe(this,
