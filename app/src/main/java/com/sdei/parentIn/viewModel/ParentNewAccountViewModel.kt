@@ -2,7 +2,7 @@ package com.sdei.parentIn.viewModel
 
 import android.app.Application
 import androidx.lifecycle.MutableLiveData
-import com.sdei.parentIn.interfaces.UserModel
+import com.sdei.parentIn.model.UserModel
 import com.sdei.parentIn.repositories.ParentNewAccountRepository
 
 class ParentNewAccountViewModel(application: Application) : BaseViewModel(application = application) {

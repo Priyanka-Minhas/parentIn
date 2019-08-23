@@ -8,8 +8,8 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sdei.parentIn.R
 import com.sdei.parentIn.adapters.AddChildAdapter
-import com.sdei.parentIn.interfaces.UserModel
 import com.sdei.parentIn.model.ChildModel
+import com.sdei.parentIn.model.UserModel
 import com.sdei.parentIn.utils.DATA
 import com.sdei.parentIn.utils.connectedToInternet
 import com.sdei.parentIn.utils.responseHandler
@@ -34,11 +34,11 @@ class ParentAddChildActivity : BaseActivity<ParentNewAccountViewModel>(), View.O
 
             R.id.txtCreateAccount -> {
                 val i = intent
-                val model = i.getSerializableExtra(DATA) as UserModel.DataBean
+                val model = i.getParcelableExtra(DATA) as UserModel.DataBean
 
                 if (connectedToInternet(btnAddChild)) {
-                    Log.e("=======","ierieu"+model.firstName)
-                   // mViewModel!!.setProfile(model)
+                    Log.e("=======", "ierieu" + model.firstName)
+                    // mViewModel!!.setProfile(model)
                 }
             }
 

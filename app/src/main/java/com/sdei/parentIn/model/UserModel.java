@@ -1,11 +1,11 @@
-package com.sdei.parentIn.interfaces;
+package com.sdei.parentIn.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import com.sdei.parentIn.model.BaseModel;
-
 import org.jetbrains.annotations.NotNull;
+
+import java.util.List;
 
 public class UserModel extends BaseModel implements Parcelable {
 
@@ -18,22 +18,21 @@ public class UserModel extends BaseModel implements Parcelable {
             return new UserModel[size];
         }
     };
-
-    public UserModel(@NotNull String message) {
-        super.setMessage(message);
-    }
-
     /**
      * statusCode : 200
-     * data : {"_id":"5d5cee72254b342ebe39f4d5","firstName":"Lucifer","lastName":"Morningstar","phoneNumber":"8699826276","relationWithChild":"Guardian","homeAddress":"Top Floor, Lux, Los Angeles","isSameAddressAsStudent":true,"levelOfEducation":"PHD","noOfStudents":1,"emailAddress":"abc@gmail.com","password":"123456789","roleId":3,"__v":0,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjZWxsX251bWJlciI6ImFiY0BnbWFpbC5jb20iLCJpYXQiOjE1NjYzNzE0ODksImV4cCI6MTU2NjQ1Nzg4OX0.ULjh2x390TXPdLcroY2JxugPe6So6mn6CUn3IcWUwYw"}
+     * data : {"_id":"5d5f73ff1c7e4c024e5a2c78","firstName":"Lucifer","lastName":"Morningstar","phoneNumber":"8699826276","relationWithChild":"Guardian","homeAddress":"Top Floor, Lux, Los Angeles","isSameAddressAsStudent":true,"levelOfEducation":"PHD","noOfStudents":1,"emailAddress":"abcd@gmail.com","password":"$2b$12$dv5IyhNF2ZiKxeLit1Yh0.27oeNR0ysFU3buqm0kw4TUZlWXX7UE.","roleId":2,"childs":[],"__v":0}
      * message : Exitoso
      */
+
     private DataBean data;
+
+    public UserModel(@NotNull String message) {
+        super(message);
+    }
 
     public UserModel(Parcel in) {
         this.data = in.readParcelable(DataBean.class.getClassLoader());
     }
-
 
     public DataBean getData() {
         return data;
@@ -64,7 +63,7 @@ public class UserModel extends BaseModel implements Parcelable {
             }
         };
         /**
-         * _id : 5d5cee72254b342ebe39f4d5
+         * _id : 5d5f73ff1c7e4c024e5a2c78
          * firstName : Lucifer
          * lastName : Morningstar
          * phoneNumber : 8699826276
@@ -73,11 +72,11 @@ public class UserModel extends BaseModel implements Parcelable {
          * isSameAddressAsStudent : true
          * levelOfEducation : PHD
          * noOfStudents : 1
-         * emailAddress : abc@gmail.com
-         * password : 123456789
-         * roleId : 3
+         * emailAddress : abcd@gmail.com
+         * password : $2b$12$dv5IyhNF2ZiKxeLit1Yh0.27oeNR0ysFU3buqm0kw4TUZlWXX7UE.
+         * roleId : 2
+         * childs : []
          * __v : 0
-         * token : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjZWxsX251bWJlciI6ImFiY0BnbWFpbC5jb20iLCJpYXQiOjE1NjYzNzE0ODksImV4cCI6MTU2NjQ1Nzg4OX0.ULjh2x390TXPdLcroY2JxugPe6So6mn6CUn3IcWUwYw
          */
 
         private String _id;
@@ -93,23 +92,7 @@ public class UserModel extends BaseModel implements Parcelable {
         private String password;
         private int roleId;
         private int __v;
-        private String token;
-
-        public DataBean(String _id, String firstName, String lastName, String phoneNumber, String relationWithChild, String homeAddress, boolean isSameAddressAsStudent, String levelOfEducation, int noOfStudents, String emailAddress, String password, int roleId, int __v, String token) {
-            this._id = _id;
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.relationWithChild = relationWithChild;
-            this.homeAddress = homeAddress;
-            this.isSameAddressAsStudent = isSameAddressAsStudent;
-            this.levelOfEducation = levelOfEducation;
-            this.noOfStudents = noOfStudents;
-            this.emailAddress = emailAddress;
-            this.password = password;
-            this.roleId = roleId;
-            this.__v = __v;
-            this.token = token;
-        }
+        private List<ChildModel> childs;
 
         public DataBean(Parcel in) {
             this._id = in.readString();
@@ -124,11 +107,15 @@ public class UserModel extends BaseModel implements Parcelable {
             this.password = in.readString();
             this.roleId = in.readInt();
             this.__v = in.readInt();
-            this.token = in.readString();
             boolean[] temp = new boolean[1];
             in.readBooleanArray(temp);
             isSameAddressAsStudent = temp[0];
         }
+
+        public DataBean() {
+
+        }
+
 
         public String get_id() {
             return _id;
@@ -234,12 +221,12 @@ public class UserModel extends BaseModel implements Parcelable {
             this.__v = __v;
         }
 
-        public String getToken() {
-            return token;
+        public List<?> getChilds() {
+            return childs;
         }
 
-        public void setToken(String token) {
-            this.token = token;
+        public void setChilds(List<ChildModel> childs) {
+            this.childs = childs;
         }
 
         @Override
@@ -261,7 +248,6 @@ public class UserModel extends BaseModel implements Parcelable {
             dest.writeString(this.password);
             dest.writeInt(this.roleId);
             dest.writeInt(this.__v);
-            dest.writeString(this.token);
             dest.writeBooleanArray(new boolean[]{isSameAddressAsStudent});
         }
     }

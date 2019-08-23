@@ -5,6 +5,8 @@ public class InterfacesCall {
         void onresume();
 
         void onpause();
+
+
     }
 
     public  interface IndexClick{

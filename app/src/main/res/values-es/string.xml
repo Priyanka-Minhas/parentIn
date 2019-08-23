@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="app_name">FamiliasIn</string>
 
@@ -70,7 +69,7 @@
 	<string name="Dirección">Dirección</string>
 	<string name="Género">Género</string>
 	<string name="Relación_con_el_niño">Relación con el niño</string>
-    <string name="Cédula">Cédula</string>
+	<string name="Cédula">Cédula</string>
 	<string name="Es_esta_la_misma_dirección_que_el_estudiante">¿Es esta la misma dirección que el estudiante?</string>
 	<string name="Si">Si</string>
 	<string name="No">No</string>

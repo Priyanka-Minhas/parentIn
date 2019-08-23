@@ -5,7 +5,6 @@ import android.content.Intent
 import android.view.View
 import androidx.lifecycle.ViewModelProviders
 import com.sdei.parentIn.R
-import com.sdei.parentIn.viewModel.BaseViewModel
 import com.sdei.parentIn.viewModel.WelcomeViewModel
 import kotlinx.android.synthetic.main.activity_welcome.*
 
@@ -32,7 +31,7 @@ class WelcomeActivity : BaseActivity<WelcomeViewModel>(), View.OnClickListener {
     }
 
     override val layoutId: Int
-        get() = R.layout.test
+        get() = R.layout.activity_welcome
 
     override val viewModel: WelcomeViewModel
         get() = ViewModelProviders.of(this).get(WelcomeViewModel::class.java)

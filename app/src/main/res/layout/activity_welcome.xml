@@ -4,9 +4,8 @@
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent">
-	<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:app="http://schemas.android.com/apk/res-auto"
+
+<LinearLayout
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:gravity="center_horizontal"
@@ -125,13 +124,14 @@
 	</androidx.cardview.widget.CardView>
 
 	<com.sdei.parentIn.customViews.RegularTextView
+		android:id="@+id/btnAboutFamiliasIn"
 		android:layout_width="wrap_content"
 		android:layout_height="0dp"
 		android:layout_marginBottom="@dimen/_8sdp"
 		android:layout_weight="1"
 		android:gravity="bottom"
 		android:textSize="@dimen/_11ssp"
-		android:text="@string/Acerca_de_ParentIn"
+		android:text="@string/Acerca_de_FamiliasIn"
 		android:textColor="@color/black" />
 
 </LinearLayout>

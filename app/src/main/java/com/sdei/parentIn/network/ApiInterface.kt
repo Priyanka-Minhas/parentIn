@@ -1,7 +1,7 @@
 package com.sdei.parentIn.network
 
-import com.sdei.parentIn.interfaces.UserModel
-import com.sdei.parentIn.model.SchoolListModel
+import com.sdei.parentIn.model.SchoolModel
+import com.sdei.parentIn.model.UserModel
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -36,7 +36,7 @@ interface ApiInterface {
     // Get School List
 
     @GET("school/list")
-    fun getSchoolList():Call<SchoolListModel>
+    fun getSchoolList():Call<SchoolModel>
 
 //
 //    @FormUrlEncoded

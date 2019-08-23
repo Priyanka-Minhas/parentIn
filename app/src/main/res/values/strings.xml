@@ -28,7 +28,7 @@
 	<string name="father">Father</string>
 	<string name="mother">Mother</string>
 	<string name="guardian">Guardian</string>
-	
+
 	<string name="select_no_of_student">SELECT NO. OF STUDENTS</string>
 	<string name="less50">less than 50</string>
 	<string name="less100">less than 100</string>
@@ -101,8 +101,4 @@
 	<string name="Confirma_el_correo_electrónico">Confirm Email</string>
 	<string name="Confirmar_contraseña">Confirm Password</string>
 	<string name="Crear_cuenta">CREATE ACCOUNT</string>
-
-
-
-
 </resources>

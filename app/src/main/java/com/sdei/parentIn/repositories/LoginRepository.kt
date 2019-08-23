@@ -1,13 +1,8 @@
 package com.sdei.parentIn.repositories
 
-import android.util.Log
-import android.widget.Toast
-import com.sdei.parentIn.R
-import com.sdei.parentIn.interfaces.UserModel
+import com.sdei.parentIn.model.UserModel
 import com.sdei.parentIn.network.RetrofitClient
 import com.sdei.parentIn.utils.hideProgress
-import com.sdei.parentIn.utils.showSnackBar
-import com.sdei.parentIn.utils.showToast
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
