@@ -72,6 +72,10 @@ class AddChildAdapter(var con: Context,
 
         holder.school.setOnClickListener {
             (con as ParentAddChildActivity).getSchoolList {
+
+                holder.teacher.setText("")
+                mData[position].teacher = ""
+
                 holder.school.setText(it.schoolName.toString())
                 mData[position].school = holder.school.text.toString()
                 mData[position].school_id = it._id
