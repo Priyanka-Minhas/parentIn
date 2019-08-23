@@ -7,12 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.sdei.parentIn.R
+import com.sdei.parentIn.activities.ParentAddChildActivity
 import com.sdei.parentIn.dialog.OptionDialog
 import com.sdei.parentIn.interfaces.InterfacesCall
 import com.sdei.parentIn.model.UserModel
 import com.sdei.parentIn.utils.getGender
 import kotlinx.android.synthetic.main.item_add_child.view.*
 import java.util.*
+
 
 class AddChildAdapter(var con: Context,
                       var mData: ArrayList<UserModel.DataBean.ChildsBean>,
@@ -64,12 +66,18 @@ class AddChildAdapter(var con: Context,
         }
 
         holder.school.setOnClickListener {
-
+            (con as ParentAddChildActivity).getSchoolList {
+                holder.school.setText(it.schoolName.toString())
+                mData[position].school = holder.school.text.toString()
+            }
         }
 
         holder.teacher.setOnClickListener {
+            (con as ParentAddChildActivity).getTeacherList {
 
+            }
         }
+
         mData[position].firstName = holder.firstName.text.toString()
         mData[position].lastName = holder.lastName.text.toString()
         mData[position].verificationCard = holder.identityCard.text.toString()

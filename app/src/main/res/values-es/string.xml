@@ -24,11 +24,12 @@
 	<string name="select_gender">SELECCIONE GÉNERO</string>
 	<string name="male">MASCULINO</string>
 	<string name="female">HEMBRA</string>
-
 	<string name="select_relation">SELECCIONE RELACIÓN</string>
 	<string name="father">padre</string>
 	<string name="mother">madre</string>
 	<string name="guardian">guardián</string>
+	<string name="select_school">SELECCIONE LA ESCUELA</string>
+
 
 	<string name="select_no_of_student">SELECCIONE NO. DE ESTUDIANTES</string>
 	<string name="less50">menos de 50</string>
@@ -102,7 +103,6 @@
 	<string name="Confirma_el_correo_electrónico">Confirma el correo electrónico</string>
 	<string name="Confirmar_contraseña">Confirmar contraseña</string>
 	<string name="Crear_cuenta">CREAR CUENTA</string>
-
 
 
 </resources>

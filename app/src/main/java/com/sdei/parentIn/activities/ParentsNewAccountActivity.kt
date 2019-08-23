@@ -9,6 +9,7 @@ import com.sdei.parentIn.dialog.OptionDialog
 import com.sdei.parentIn.interfaces.InterfacesCall
 import com.sdei.parentIn.model.UserModel
 import com.sdei.parentIn.utils.*
+import com.sdei.parentIn.utils.InterConstants.EXTRA_DATA
 import com.sdei.parentIn.viewModel.ParentNewAccountViewModel
 import com.wajahatkarim3.easyvalidation.core.view_ktx.nonEmpty
 import com.wajahatkarim3.easyvalidation.core.view_ktx.validEmail
@@ -36,7 +37,7 @@ class ParentsNewAccountActivity : BaseActivity<ParentNewAccountViewModel>(), Vie
         edtNoOfStudent.setOnClickListener(this)
         btnFollow.setOnClickListener(this)
         btnBack.setOnClickListener(this)
-        rgYesNo.setOnCheckedChangeListener { radioGroup, id ->
+        rgYesNo.setOnCheckedChangeListener { _, id ->
             when (id) {
                 R.id.rbYes -> {
                     isSameAddressAsStudent = true
@@ -134,7 +135,7 @@ class ParentsNewAccountActivity : BaseActivity<ParentNewAccountViewModel>(), Vie
                     model.noOfStudents = edtNoOfStudent.text.toString().toInt()
 
                     val intent = Intent(mContext, ParentAddChildActivity::class.java)
-                    intent.putExtra(DATA, model)
+                    intent.putExtra(EXTRA_DATA, model)
                     startActivity(intent)
                 }
 

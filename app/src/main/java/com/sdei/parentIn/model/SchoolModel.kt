@@ -9,7 +9,7 @@ class SchoolModel(message: String) : BaseModel(message) {
      * message : Successful
      */
 
-    var data: List<DataBean>? = null
+    var data: ArrayList<DataBean>? = null
 
     class DataBean {
         /**

@@ -16,29 +16,13 @@ interface ApiInterface {
             @Field("roleId")rollId:Int
     ): Call<UserModel>
 
-//    {
-//        "firstName": "Lucifer",
-//        "lastName": "Morningstar",
-//        "phoneNumber": 8699826276,
-//        "relationWithChild": "Guardian",
-//        "homeAddress": "Top Floor, Lux, Los Angeles",
-//        "isSameAddressAsStudent": true,
-//        "levelOfEducation": "PHD",
-//        "noOfStudents": 1,
-//        "emailAddress": "abc@gmail.com",
-//        "password": "123456789",
-//        "roleId": 3
-//    }
-
     @POST("/user/register")
     fun register(@Body userModel: UserModel.DataBean): Call<UserModel>
 
     // Get School List
-
     @GET("school/list")
     fun getSchoolList():Call<SchoolModel>
 
-//
 //    @FormUrlEncoded
 //    @POST("/user/register")
 //    fun register(

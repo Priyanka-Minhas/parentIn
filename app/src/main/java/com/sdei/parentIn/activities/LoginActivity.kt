@@ -12,7 +12,6 @@ import com.sdei.parentIn.viewModel.LoginViewModel
 import com.wajahatkarim3.easyvalidation.core.view_ktx.nonEmpty
 import com.wajahatkarim3.easyvalidation.core.view_ktx.validEmail
 import kotlinx.android.synthetic.main.activity_login.*
-import kotlinx.android.synthetic.main.activity_welcome.*
 
 
 /**
@@ -43,7 +42,6 @@ class LoginActivity : BaseActivity<LoginViewModel>(), View.OnClickListener {
         btnLogin.setOnClickListener(this)
         btnBack.setOnClickListener(this)
         btnCreateAccount.setOnClickListener(this)
-
     }
 
     override fun onClick(v: View?) {
@@ -55,14 +53,20 @@ class LoginActivity : BaseActivity<LoginViewModel>(), View.OnClickListener {
                     showAlertSnackBar(btnLogin, getString(R.string.errorValidPassword))
                 } else if (connectedToInternet(btnLogin)) {
                     showProgess()
-                    mViewModel!!.setLogin(edtEmail.text.toString(), edtPassword.text.toString())
+                    mViewModel!!.setLogin(edtEmail.text.toString(), edtPassword.text.toString(), getUtils().getInt(InterConstants.ROLE_ID))
                 }
             }
+
             R.id.btnBack -> {
                 finish()
             }
+
             R.id.btnCreateAccount -> {
-                val intent = Intent(mContext, ParentsNewAccountActivity::class.java)
+                val intent = if (getUtils().getInt(InterConstants.ROLE_ID) == InterConstants.ROLE_PARENT) {
+                    Intent(mContext, ParentsNewAccountActivity::class.java)
+                } else {
+                    Intent(mContext, TeacherNewAccountActivity::class.java)
+                }
                 startActivity(intent)
             }
 

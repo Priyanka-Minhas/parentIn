@@ -43,6 +43,10 @@ class Utils(mActivity: Context) {
         return preferences.getInt(key, defaultValue)
     }
 
+    fun getInt(key: String): Int {
+        return preferences.getInt(key, -1)
+    }
+
     fun clearShf() {
         preferences.edit().clear().apply()
     }

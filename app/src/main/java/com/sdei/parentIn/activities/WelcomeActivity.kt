@@ -5,6 +5,8 @@ import android.content.Intent
 import android.view.View
 import androidx.lifecycle.ViewModelProviders
 import com.sdei.parentIn.R
+import com.sdei.parentIn.utils.InterConstants
+import com.sdei.parentIn.utils.getUtils
 import com.sdei.parentIn.viewModel.WelcomeViewModel
 import kotlinx.android.synthetic.main.activity_welcome.*
 
@@ -15,15 +17,22 @@ import kotlinx.android.synthetic.main.activity_welcome.*
 class WelcomeActivity : BaseActivity<WelcomeViewModel>(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v!!.id) {
+
             R.id.cdParent -> {
+                getUtils().setInt(InterConstants.ROLE_ID, InterConstants.ROLE_PARENT)
+
                 val intent = Intent(mContext, LoginActivity::class.java)
                 startActivity(intent)
             }
+
             R.id.cdTeacher -> {
-                val intent = Intent(mContext, TeacherNewAccountActivity::class.java)
+                getUtils().setInt(InterConstants.ROLE_ID, InterConstants.ROLE_TEACHER)
+
+                val intent = Intent(mContext, LoginActivity::class.java)
                 startActivity(intent)
             }
-            R.id.btnAboutFamiliasIn ->{
+
+            R.id.btnAboutFamiliasIn -> {
                 val intent = Intent(mContext, AboutActivity::class.java)
                 startActivity(intent)
             }

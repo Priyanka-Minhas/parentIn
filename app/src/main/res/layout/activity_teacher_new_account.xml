@@ -75,6 +75,7 @@
                 android:drawablePadding="@dimen/_5sdp"
                 android:padding="@dimen/_12sdp"
                 android:textSize="@dimen/_12ssp"
+                android:hint="@string/primer_nombre"
                 android:singleLine="true"
                 android:imeOptions="actionNext"/>
 
@@ -88,6 +89,7 @@
                 android:background="@drawable/edit_text_selector"
                 android:padding="@dimen/_12sdp"
                 android:textSize="@dimen/_12ssp"
+                android:hint="@string/Apellido"
                 android:singleLine="true"
                 android:imeOptions="actionNext"/>
 

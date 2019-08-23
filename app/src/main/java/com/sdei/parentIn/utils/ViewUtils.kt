@@ -10,6 +10,7 @@ import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
 import com.sdei.parentIn.R
+import com.sdei.parentIn.utils.InterConstants.CODE_SUCCESS
 
 /**
  * Created by shubham on 12/06/19.
@@ -54,6 +55,10 @@ fun Context.responseHandler(statusCode: Int, message: String): Boolean {
             false
         }
     }
+}
+
+fun Context.getUtils(): Utils {
+    return Utils(this)
 }
 
 fun showSnackBar(view: View, message: String) {

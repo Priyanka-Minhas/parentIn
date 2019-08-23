@@ -20,6 +20,10 @@ public class UserModel extends BaseModel implements Parcelable {
         super(message);
     }
 
+    public UserModel(@NotNull BaseModel baseModel) {
+        super.setMessage(baseModel.getMessage());
+    }
+
     public DataBean getData() {
         return data;
     }

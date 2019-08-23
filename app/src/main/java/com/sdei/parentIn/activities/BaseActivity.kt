@@ -13,8 +13,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModel
 import com.google.android.material.snackbar.Snackbar
 import com.sdei.parentIn.utils.LocaleHelper
-import com.sdei.parentIn.utils.Utils
-import java.util.*
 
 /**
  * Created by shubham on 22/05/19.
@@ -55,8 +53,6 @@ abstract class BaseActivity<V : ViewModel> : AppCompatActivity() {
      */
     protected abstract val context: Context
 
-    var mUtils: Utils? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -65,7 +61,6 @@ abstract class BaseActivity<V : ViewModel> : AppCompatActivity() {
         }
         setContentView(layoutId)
         this.mContext = context
-        mUtils = Utils(mContext)
         this.mViewModel = if (mViewModel == null) viewModel else mViewModel
         onCreate()
         initListeners()

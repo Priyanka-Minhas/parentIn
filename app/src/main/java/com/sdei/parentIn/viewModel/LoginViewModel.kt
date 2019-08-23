@@ -18,9 +18,9 @@ class LoginViewModel(application: Application) : BaseViewModel(application = app
         return mUserModel as MutableLiveData<BaseModel>
     }
 
-    fun setLogin(email: String, password: String) {
-        mRepository.login(email = email, password = password){
-            mUserModel!!.value =it
+    fun setLogin(email: String, password: String, roleId: Int) {
+        mRepository.login(email = email, password = password, roleId = roleId) {
+            mUserModel!!.value = it
         }
     }
 
