@@ -12,6 +12,7 @@ import com.sdei.parentIn.viewModel.LoginViewModel
 import com.wajahatkarim3.easyvalidation.core.view_ktx.nonEmpty
 import com.wajahatkarim3.easyvalidation.core.view_ktx.validEmail
 import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.activity_welcome.*
 
 
 /**
@@ -42,6 +43,7 @@ class LoginActivity : BaseActivity<LoginViewModel>(), View.OnClickListener {
         btnLogin.setOnClickListener(this)
         btnBack.setOnClickListener(this)
         btnCreateAccount.setOnClickListener(this)
+
     }
 
     override fun onClick(v: View?) {
@@ -63,6 +65,7 @@ class LoginActivity : BaseActivity<LoginViewModel>(), View.OnClickListener {
                 val intent = Intent(mContext, ParentsNewAccountActivity::class.java)
                 startActivity(intent)
             }
+
         }
     }
 

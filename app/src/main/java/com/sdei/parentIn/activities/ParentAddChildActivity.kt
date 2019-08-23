@@ -1,6 +1,7 @@
 package com.sdei.parentIn.activities
 
 import android.content.Context
+import android.util.Log
 import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -36,7 +37,8 @@ class ParentAddChildActivity : BaseActivity<ParentNewAccountViewModel>(), View.O
                 val model = i.getSerializableExtra(DATA) as UserModel.DataBean
 
                 if (connectedToInternet(btnAddChild)) {
-                    mViewModel!!.setProfile(model)
+                    Log.e("=======","ierieu"+model.firstName)
+                   // mViewModel!!.setProfile(model)
                 }
             }
 

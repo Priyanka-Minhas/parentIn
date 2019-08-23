@@ -1,12 +1,16 @@
 package com.sdei.parentIn.adapters
 
+import android.app.DatePickerDialog
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.sdei.parentIn.R
+import com.sdei.parentIn.dialog.OptionDialog
+import com.sdei.parentIn.interfaces.InterfacesCall
 import com.sdei.parentIn.model.ChildModel
+import com.sdei.parentIn.utils.getGender
 import kotlinx.android.synthetic.main.item_add_child.view.*
 import java.util.*
 
@@ -31,6 +35,34 @@ class AddChildAdapter(var con: Context,
             mClick.deleteChild(position)
         }
 
+        holder.gender.setOnClickListener{
+            OptionDialog(con, R.style.pullBottomfromTop, R.layout.dialog_options,
+                   con.getGender(),
+                   con.getString(R.string.select_gender),
+                    InterfacesCall.Callback { pos ->
+                       // edtGender.setText(getGender()[pos].name.toString())
+                    }).show()
+        }
+        holder.birthdate.setOnClickListener{
+            val calender = Calendar.getInstance()
+            val year = calender.get(Calendar.YEAR)
+            val month = calender.get(Calendar.MONTH)
+            val day = calender.get(Calendar.DAY_OF_MONTH)
+            val dpd = DatePickerDialog(con, DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+                // Display Selected date in Toast
+                
+                // Toast.makeText(this, """$dayOfMonth - ${monthOfYear + 1} - $year""", Toast.LENGTH_LONG).show()
+
+            }, year, month, day)
+            dpd.show()
+        }
+        holder.school.setOnClickListener{
+
+        }
+        holder.teacher.setOnClickListener{
+
+        }
+
     }
 
     override fun getItemCount(): Int {
@@ -44,6 +76,13 @@ class AddChildAdapter(var con: Context,
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var imgDelete = itemView.imgDelete!!
         var txtTitle = itemView.txtTitle!!
+        var firstName = itemView.edtChildFirstName
+        var lastName = itemView.edtChildLastName
+        var identityCard = itemView.edtChildIdentityCard
+        var gender = itemView.edtChildGender
+        var birthdate = itemView.edtChildBirthDate
+        var school = itemView.edtChildSchool
+        var teacher = itemView.edtChildTeacher
     }
 
     interface ClickInterface {

@@ -94,6 +94,52 @@
 				android:textSize="@dimen/_12ssp" />
 
 			<EditText
+				android:id="@+id/edtEmailParent"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_vertical"
+				android:layout_marginStart="@dimen/_15sdp"
+				android:layout_marginTop="@dimen/_12sdp"
+				android:layout_marginEnd="@dimen/_15sdp"
+				android:background="@drawable/edit_text_selector"
+				android:hint="@string/email"
+				android:imeOptions="actionNext"
+				android:padding="@dimen/_12sdp"
+				android:singleLine="true"
+				android:inputType="textEmailAddress"
+				android:textSize="@dimen/_12ssp" />
+			<EditText
+				android:id="@+id/edtPasswordParent"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_vertical"
+				android:layout_marginStart="@dimen/_15sdp"
+				android:layout_marginTop="@dimen/_12sdp"
+				android:layout_marginEnd="@dimen/_15sdp"
+				android:background="@drawable/edit_text_selector"
+				android:hint="@string/Contraseña"
+				android:inputType="textPassword"
+				android:imeOptions="actionNext"
+				android:padding="@dimen/_12sdp"
+				android:singleLine="true"
+				android:textSize="@dimen/_12ssp" />
+			<EditText
+				android:id="@+id/edtConfPassParent"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_vertical"
+				android:layout_marginStart="@dimen/_15sdp"
+				android:layout_marginTop="@dimen/_12sdp"
+				android:layout_marginEnd="@dimen/_15sdp"
+				android:background="@drawable/edit_text_selector"
+				android:hint="@string/Confirmar_contraseña"
+				android:imeOptions="actionNext"
+				android:padding="@dimen/_12sdp"
+				android:singleLine="true"
+				android:inputType="textPassword"
+				android:textSize="@dimen/_12ssp" />
+
+			<EditText
 				android:id="@+id/edtAddress"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"

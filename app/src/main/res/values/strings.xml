@@ -8,6 +8,16 @@
 	<string name="errorValidEmail">Email not valid</string>
 	<string name="errorValidPassword">Password not valid</string>
 	<string name="work_in_progress">WORK IN PROGRESS</string>
+	<string name="errorFirstName">First Name not empty</string>
+	<string name="errorLastName">Last Name not empty</string>
+	<string name="errorConfirmPassword">Password not match</string>
+	<string name="errorAddress">Address not empty</string>
+	<string name="errorGender"> Please select Gender</string>
+	<string name="errorRelationship">Please select relationship with child</string>
+	<string name="errorIdentification">Identification card no. not empty</string>
+	<string name="errorStudentAddress">Please confirm student address </string>
+	<string name="errorLevelOfEducation">Please select level of education</string>
+	<string name="errorNoOfSchools">Please select No. of Student in FamiliasIn schools</string>
 
 	<!--COMMON-->
 	<string name="select_gender">SELECT GENDER</string>
@@ -18,10 +28,22 @@
 	<string name="father">Father</string>
 	<string name="mother">Mother</string>
 	<string name="guardian">Guardian</string>
+	
+	<string name="select_no_of_student">SELECT NO. OF STUDENTS</string>
+	<string name="less50">less than 50</string>
+	<string name="less100">less than 100</string>
+	<string name="less150">less than 150</string>
+	<string name="more150">more than 150</string>
+
+	<string name="select_level_of_education">SELECT LEVEL OF EDUCATION</string>
+	<string name="doctorate">Doctorate</string>
+	<string name="Masters">Masters</string>
+	<string name="Bachelor">Bachelor</string>
+	<string name="Under_Graduate">Under Graduate</string>
 
 	<!--Welcome Activity-->
 	<string name="BIENVENIDO">¡WELCOME!</string>
-	<string name="Un_programa_del_Ministro_de_Educación_y_Cultura_de_Uruguay">A program of the Minister of Education and Culture of Uruguay</string>
+	<string name="Un_programa_del_Ministro_de_Educación_y_Cultura_de_Uruguay">A program of the Minister of Education and \nCulture of Uruguay</string>
 	<string name="Selecciona_una_opción">Select an option</string>
 	<string name="Padre_o_tutor">Parent or tutor</string>
 	<string name="Maestro">Teacher</string>

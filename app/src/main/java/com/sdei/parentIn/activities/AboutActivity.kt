@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.lifecycle.ViewModelProviders
 import com.sdei.parentIn.R
 import com.sdei.parentIn.viewModel.BaseViewModel
+import kotlinx.android.synthetic.main.activity_about.*
 
 class AboutActivity : BaseActivity<BaseViewModel>() {
     override val layoutId: Int
@@ -20,6 +21,9 @@ class AboutActivity : BaseActivity<BaseViewModel>() {
     }
 
     override fun initListeners() {
+        btnBack.setOnClickListener{
+            finish()
+        }
 
     }
 

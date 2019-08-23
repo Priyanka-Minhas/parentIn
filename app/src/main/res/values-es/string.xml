@@ -8,6 +8,16 @@
 	<string name="errorValidEmail">Ingrese un email valido</string>
 	<string name="errorValidPassword">Ingrese una contraseña válida</string>
 	<string name="work_in_progress">TRABAJO EN PROGRESO</string>
+	<string name="errorFirstName">Nombre no vacío</string>
+	<string name="errorLastName">Apellido no vacio</string>
+	<string name="errorConfirmPassword">La contraseña no coincide</string>
+	<string name="errorAddress">Dirección no vacía</string>
+	<string name="errorGender"> Por favor seleccione el género</string>
+	<string name="errorRelationship">Por favor seleccione relación con el niño</string>
+	<string name="errorIdentification">Tarjeta de Identificación No. no vacío</string>
+	<string name="errorStudentAddress">Por favor confirme la dirección del estudiante</string>
+	<string name="errorLevelOfEducation">Por favor seleccione el nivel de educación</string>
+	<string name="errorNoOfSchools">Por favor seleccione No. de estudiante en familias en escuelas</string>
 
 	<!--COMMON-->
 	<string name="select_gender">SELECCIONE GÉNERO</string>
@@ -19,9 +29,21 @@
 	<string name="mother">madre</string>
 	<string name="guardian">guardián</string>
 
+	<string name="select_no_of_student">SELECCIONE NO. DE ESTUDIANTES</string>
+	<string name="less50">menos de 50</string>
+	<string name="less100">menos de 100</string>
+	<string name="less150">menos de 150</string>
+	<string name="more150">más de 150</string>
+
+	<string name="select_level_of_education">SELECCIONE NIVEL DE EDUCACIÓN</string>
+	<string name="doctorate">Doctorado</string>
+	<string name="Masters">Maestras</string>
+	<string name="Bachelor">Soltero</string>
+	<string name="Under_Graduate">Graduado</string>
+
 	<!--Welcome Activity-->
 	<string name="BIENVENIDO">¡Bienvenido!</string>
-	<string name="Un_programa_del_Ministro_de_Educación_y_Cultura_de_Uruguay">Un programa del Ministro de Educación y Cultura de Uruguay</string>
+	<string name="Un_programa_del_Ministro_de_Educación_y_Cultura_de_Uruguay">Un programa del Ministro de Educación y \nCultura de Uruguay</string>
 	<string name="Selecciona_una_opción">Selecciona una opción</string>
 	<string name="Padre_o_tutor">Padre o tutor</string>
 	<string name="Maestro">Maestro</string>

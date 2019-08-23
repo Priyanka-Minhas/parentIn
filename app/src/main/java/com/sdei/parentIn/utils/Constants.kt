@@ -21,6 +21,26 @@ fun Context.getRelations(): ArrayList<OptionsModel> {
     val arrayList = ArrayList<OptionsModel>()
     arrayList.add(OptionsModel(0,this.getString(R.string.father))) //padre
     arrayList.add(OptionsModel(1,this.getString(R.string.mother))) //madre
-    arrayList.add(OptionsModel(1,this.getString(R.string.guardian))) //guardián
+    arrayList.add(OptionsModel(2,this.getString(R.string.guardian))) //guardián
     return arrayList
 }
+
+fun Context.getNoOfStudents(): ArrayList<OptionsModel> {
+    val arrayList = ArrayList<OptionsModel>()
+    arrayList.add(OptionsModel(0,this.getString(R.string.less50)))
+    arrayList.add(OptionsModel(1,this.getString(R.string.less100)))
+    arrayList.add(OptionsModel(2,this.getString(R.string.less150)))
+    arrayList.add(OptionsModel(3,this.getString(R.string.more150)))
+    return arrayList
+}
+
+// Education Level
+fun Context.getLevelOfEducation(): ArrayList<OptionsModel> {
+    val arrayList = ArrayList<OptionsModel>()
+    arrayList.add(OptionsModel(0,this.getString(R.string.doctorate)))
+    arrayList.add(OptionsModel(1,this.getString(R.string.Masters)))
+    arrayList.add(OptionsModel(2,this.getString(R.string.Bachelor)))
+    arrayList.add(OptionsModel(3,this.getString(R.string.Under_Graduate)))
+    return arrayList
+}
+

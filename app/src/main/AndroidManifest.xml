@@ -58,6 +58,11 @@
 			android:screenOrientation="portrait"
 			android:windowSoftInputMode="adjustPan"
 			android:configChanges="layoutDirection|locale"/>
+		<activity android:name=".activities.AboutActivity"
+			android:launchMode="singleTop"
+			android:screenOrientation="portrait"
+			android:windowSoftInputMode="adjustPan"
+			android:configChanges="layoutDirection|locale"/>
 
 	</application>
 

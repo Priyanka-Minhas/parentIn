@@ -99,7 +99,6 @@ public class UserModel extends BaseModel implements Parcelable {
             this._id = _id;
             this.firstName = firstName;
             this.lastName = lastName;
-            this.phoneNumber = phoneNumber;
             this.relationWithChild = relationWithChild;
             this.homeAddress = homeAddress;
             this.isSameAddressAsStudent = isSameAddressAsStudent;
