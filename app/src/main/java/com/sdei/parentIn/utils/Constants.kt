@@ -27,10 +27,16 @@ fun Context.getRelations(): ArrayList<OptionsModel> {
 
 fun Context.getNoOfStudents(): ArrayList<OptionsModel> {
     val arrayList = ArrayList<OptionsModel>()
-    arrayList.add(OptionsModel(0,this.getString(R.string.less50)))
-    arrayList.add(OptionsModel(1,this.getString(R.string.less100)))
-    arrayList.add(OptionsModel(2,this.getString(R.string.less150)))
-    arrayList.add(OptionsModel(3,this.getString(R.string.more150)))
+    arrayList.add(OptionsModel(0,"1"))
+    arrayList.add(OptionsModel(1,"2"))
+    arrayList.add(OptionsModel(2,"3"))
+    arrayList.add(OptionsModel(3,"4"))
+    arrayList.add(OptionsModel(4,"5"))
+    arrayList.add(OptionsModel(5,"6"))
+    arrayList.add(OptionsModel(6,"7"))
+    arrayList.add(OptionsModel(7,"8"))
+    arrayList.add(OptionsModel(8,"9"))
+    arrayList.add(OptionsModel(9,"10"))
     return arrayList
 }
 

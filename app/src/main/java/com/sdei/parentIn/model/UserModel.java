@@ -9,29 +9,15 @@ import java.util.List;
 
 public class UserModel extends BaseModel implements Parcelable {
 
-    public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
-        public UserModel createFromParcel(Parcel in) {
-            return new UserModel(in);
-        }
 
-        public UserModel[] newArray(int size) {
-            return new UserModel[size];
-        }
-    };
     /**
-     * statusCode : 200
-     * data : {"_id":"5d5f73ff1c7e4c024e5a2c78","firstName":"Lucifer","lastName":"Morningstar","phoneNumber":"8699826276","relationWithChild":"Guardian","homeAddress":"Top Floor, Lux, Los Angeles","isSameAddressAsStudent":true,"levelOfEducation":"PHD","noOfStudents":1,"emailAddress":"abcd@gmail.com","password":"$2b$12$dv5IyhNF2ZiKxeLit1Yh0.27oeNR0ysFU3buqm0kw4TUZlWXX7UE.","roleId":2,"childs":[],"__v":0}
-     * message : Exitoso
+     * data : {"_id":"5d5f7fb41c7e4c024e5a2c7c","firstName":"Lucifer","lastName":"Morningstar","phoneNumber":"8699826276","relationWithChild":"Guardian","homeAddress":"Top Floor, Lux, Los Angeles","isSameAddressAsStudent":true,"levelOfEducation":"PHD","noOfStudents":1,"emailAddress":"abcde@gmail.com","password":"$2b$12$P/jtXSrlmxIW7y1V1IL8x.1QYqNjCR8HW4wwX3Rwiks416UmucQ36","roleId":2,"childs":[{"_id":"5d5f7fb41c7e4c024e5a2c7d","firstName":"Demo","lastName":"Name","verificationCard":"45983434755","gender":"M","birthDate":"11-10-1991","school":"5d5e322baaa88c670cb0babb","teacher":"5d5e7f8a439fae1351a2914b"}],"__v":0}
      */
 
     private DataBean data;
 
     public UserModel(@NotNull String message) {
         super(message);
-    }
-
-    public UserModel(Parcel in) {
-        this.data = in.readParcelable(DataBean.class.getClassLoader());
     }
 
     public DataBean getData() {
@@ -49,7 +35,7 @@ public class UserModel extends BaseModel implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeParcelable(this.data, flags);
+
     }
 
     public static class DataBean implements Parcelable {
@@ -63,7 +49,7 @@ public class UserModel extends BaseModel implements Parcelable {
             }
         };
         /**
-         * _id : 5d5f73ff1c7e4c024e5a2c78
+         * _id : 5d5f7fb41c7e4c024e5a2c7c
          * firstName : Lucifer
          * lastName : Morningstar
          * phoneNumber : 8699826276
@@ -72,10 +58,10 @@ public class UserModel extends BaseModel implements Parcelable {
          * isSameAddressAsStudent : true
          * levelOfEducation : PHD
          * noOfStudents : 1
-         * emailAddress : abcd@gmail.com
-         * password : $2b$12$dv5IyhNF2ZiKxeLit1Yh0.27oeNR0ysFU3buqm0kw4TUZlWXX7UE.
+         * emailAddress : abcde@gmail.com
+         * password : $2b$12$P/jtXSrlmxIW7y1V1IL8x.1QYqNjCR8HW4wwX3Rwiks416UmucQ36
          * roleId : 2
-         * childs : []
+         * childs : [{"_id":"5d5f7fb41c7e4c024e5a2c7d","firstName":"Demo","lastName":"Name","verificationCard":"45983434755","gender":"M","birthDate":"11-10-1991","school":"5d5e322baaa88c670cb0babb","teacher":"5d5e7f8a439fae1351a2914b"}]
          * __v : 0
          */
 
@@ -92,7 +78,7 @@ public class UserModel extends BaseModel implements Parcelable {
         private String password;
         private int roleId;
         private int __v;
-        private List<ChildModel> childs;
+        private List<ChildsBean> childs;
 
         public DataBean(Parcel in) {
             this._id = in.readString();
@@ -115,7 +101,6 @@ public class UserModel extends BaseModel implements Parcelable {
         public DataBean() {
 
         }
-
 
         public String get_id() {
             return _id;
@@ -221,11 +206,11 @@ public class UserModel extends BaseModel implements Parcelable {
             this.__v = __v;
         }
 
-        public List<?> getChilds() {
+        public List<ChildsBean> getChilds() {
             return childs;
         }
 
-        public void setChilds(List<ChildModel> childs) {
+        public void setChilds(List<ChildsBean> childs) {
             this.childs = childs;
         }
 
@@ -249,6 +234,135 @@ public class UserModel extends BaseModel implements Parcelable {
             dest.writeInt(this.roleId);
             dest.writeInt(this.__v);
             dest.writeBooleanArray(new boolean[]{isSameAddressAsStudent});
+        }
+
+
+
+        public static class ChildsBean implements Parcelable {
+            public static final Creator CREATOR = new Creator() {
+                public ChildsBean createFromParcel(Parcel in) {
+                    return new ChildsBean(in);
+                }
+
+                public ChildsBean[] newArray(int size) {
+                    return new ChildsBean[size];
+                }
+            };
+            /**
+             * _id : 5d5f7fb41c7e4c024e5a2c7d
+             * firstName : Demo
+             * lastName : Name
+             * verificationCard : 45983434755
+             * gender : M
+             * birthDate : 11-10-1991
+             * school : 5d5e322baaa88c670cb0babb
+             * teacher : 5d5e7f8a439fae1351a2914b
+             */
+
+            private String _id;
+            private String firstName;
+            private String lastName;
+            private String verificationCard;
+            private String gender;
+            private String birthDate;
+            private String school;
+            private String teacher;
+
+            public ChildsBean(Parcel in) {
+                this._id = in.readString();
+                this.firstName = in.readString();
+                this.lastName = in.readString();
+                this.verificationCard = in.readString();
+                this.gender = in.readString();
+                this.birthDate = in.readString();
+                this.school = in.readString();
+                this.teacher = in.readString();
+            }
+
+            public ChildsBean() {
+
+            }
+
+            public String get_id() {
+                return _id;
+            }
+
+            public void set_id(String _id) {
+                this._id = _id;
+            }
+
+            public String getFirstName() {
+                return firstName;
+            }
+
+            public void setFirstName(String firstName) {
+                this.firstName = firstName;
+            }
+
+            public String getLastName() {
+                return lastName;
+            }
+
+            public void setLastName(String lastName) {
+                this.lastName = lastName;
+            }
+
+            public String getVerificationCard() {
+                return verificationCard;
+            }
+
+            public void setVerificationCard(String verificationCard) {
+                this.verificationCard = verificationCard;
+            }
+
+            public String getGender() {
+                return gender;
+            }
+
+            public void setGender(String gender) {
+                this.gender = gender;
+            }
+
+            public String getBirthDate() {
+                return birthDate;
+            }
+
+            public void setBirthDate(String birthDate) {
+                this.birthDate = birthDate;
+            }
+
+            public String getSchool() {
+                return school;
+            }
+
+            public void setSchool(String school) {
+                this.school = school;
+            }
+
+            public String getTeacher() {
+                return teacher;
+            }
+
+            public void setTeacher(String teacher) {
+                this.teacher = teacher;
+            }
+
+            @Override
+            public int describeContents() {
+                return 0;
+            }
+
+            @Override
+            public void writeToParcel(Parcel dest, int flags) {
+                dest.writeString(this._id);
+                dest.writeString(this.firstName);
+                dest.writeString(this.lastName);
+                dest.writeString(this.verificationCard);
+                dest.writeString(this.gender);
+                dest.writeString(this.birthDate);
+                dest.writeString(this.school);
+                dest.writeString(this.teacher);
+            }
         }
     }
 }

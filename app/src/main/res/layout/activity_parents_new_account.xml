@@ -94,7 +94,7 @@
 				android:textSize="@dimen/_12ssp" />
 
 			<EditText
-				android:id="@+id/edtEmailParent"
+				android:id="@+id/edtEmail"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_gravity="center_vertical"
@@ -109,7 +109,7 @@
 				android:inputType="textEmailAddress"
 				android:textSize="@dimen/_12ssp" />
 			<EditText
-				android:id="@+id/edtPasswordParent"
+				android:id="@+id/edtPassword"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_gravity="center_vertical"
@@ -124,7 +124,7 @@
 				android:singleLine="true"
 				android:textSize="@dimen/_12ssp" />
 			<EditText
-				android:id="@+id/edtConfPassParent"
+				android:id="@+id/edtConfPassword"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_gravity="center_vertical"

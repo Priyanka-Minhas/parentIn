@@ -1,20 +1,14 @@
 package com.sdei.parentIn.activities
 
 import android.content.Context
-import android.util.Log
 import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sdei.parentIn.R
 import com.sdei.parentIn.adapters.AddChildAdapter
-import com.sdei.parentIn.model.ChildModel
-import com.sdei.parentIn.model.SchoolModel
 import com.sdei.parentIn.model.UserModel
-import com.sdei.parentIn.utils.DATA
-import com.sdei.parentIn.utils.connectedToInternet
-import com.sdei.parentIn.utils.responseHandler
-import com.sdei.parentIn.utils.showToast
+import com.sdei.parentIn.utils.*
 import com.sdei.parentIn.viewModel.ParentNewAccountViewModel
 import kotlinx.android.synthetic.main.activity_parent_add_child.*
 
@@ -29,17 +23,20 @@ class ParentAddChildActivity : BaseActivity<ParentNewAccountViewModel>(), View.O
     override fun onClick(v: View?) {
         when (v!!.id) {
             R.id.btnAddChild -> {
-                mData.add(ChildModel())
+                mData.add(UserModel.DataBean.ChildsBean())
                 mChildAdapter.notifyDataSetChanged()
             }
 
             R.id.txtCreateAccount -> {
                 val i = intent
                 val model = i.getParcelableExtra(DATA) as UserModel.DataBean
+                if (mData.size == 0) {
+                    showAlertSnackBar(txtCreateAccount, getString(R.string.errorChild))
+                }
+                model.noOfStudents = mData.size
 
                 if (connectedToInternet(btnAddChild)) {
-
-                    // mViewModel!!.setProfile(model)
+                    mViewModel!!.setProfile(model)
                 }
             }
 
@@ -58,12 +55,12 @@ class ParentAddChildActivity : BaseActivity<ParentNewAccountViewModel>(), View.O
     override val context: Context
         get() = this@ParentAddChildActivity
 
-    var mData = arrayListOf<ChildModel>()
+    var mData = arrayListOf<UserModel.DataBean.ChildsBean>()
 
     lateinit var mChildAdapter: AddChildAdapter
 
     override fun onCreate() {
-        mData.add(ChildModel())
+        mData.add(UserModel.DataBean.ChildsBean())
         setChildAdapter()
 
         mViewModel!!.getProfile().observe(this,
@@ -72,14 +69,6 @@ class ParentAddChildActivity : BaseActivity<ParentNewAccountViewModel>(), View.O
                         showToast(getString(R.string.work_in_progress))
                     }
                 })
-        // get school list
-
-        mViewModel!!.getSchoolList().observe(this,
-                Observer<SchoolModel>{ mData ->
-                    if (mData != null && responseHandler(mData.statusCode, mData.message)) {
-                        //showToast(getString(R.string.work_in_progress))
-                    }
-        })
 
     }
 
