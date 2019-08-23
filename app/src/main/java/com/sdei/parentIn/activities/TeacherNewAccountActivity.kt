@@ -1,6 +1,7 @@
 package com.sdei.parentIn.activities
 
 import android.content.Context
+import android.content.Intent
 import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -39,7 +40,10 @@ class TeacherNewAccountActivity : BaseActivity<ParentNewAccountViewModel>(), Vie
                 Observer<UserModel> { mData ->
                     if (mData != null && responseHandler(mData.statusCode, mData.message)) {
                         showToast(getString(R.string.registered_successfully))
-                        finish()
+
+                        val intent = Intent(mContext, WelcomeActivity::class.java)
+                        startActivity(intent)
+                        finishAffinity()
                     }
                 })
     }
@@ -86,7 +90,6 @@ class TeacherNewAccountActivity : BaseActivity<ParentNewAccountViewModel>(), Vie
                     model._id =""
                     model.firstName = edtTeacherFirstName.text.toString()
                     model.lastName = edtTeacherLastName.text.toString()
-                    model.phoneNumber=""
                     model.relationWithChild=""
                     model.homeAddress=""
                     model.isIsSameAddressAsStudent = true

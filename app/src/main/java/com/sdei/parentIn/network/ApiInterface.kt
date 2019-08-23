@@ -11,7 +11,7 @@ interface ApiInterface {
 
     @FormUrlEncoded
     @POST("/user/login")
-    fun login(@Field("email") email: String,
+    fun login(@Field("emailAddress") email: String,
             @Field("password") password: String,
             @Field("roleId")rollId:Int): Call<UserModel>
 

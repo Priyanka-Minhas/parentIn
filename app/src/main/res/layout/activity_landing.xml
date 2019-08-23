@@ -9,7 +9,25 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_centerInParent="true"
-		android:textColor="@color/black"
-		android:text="@string/work_in_progress" />
+		android:text="@string/under_development"
+		android:textColor="@color/black" />
+
+
+	<com.sdei.parentIn.customViews.SemiBoldTextView
+		android:id="@+id/txtLogout"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:layout_marginStart="@dimen/_10sdp"
+		android:layout_marginTop="@dimen/_12sdp"
+		android:layout_marginEnd="@dimen/_10sdp"
+		android:layout_marginBottom="@dimen/_15sdp"
+		android:background="@drawable/bg_primary_round"
+		android:foreground="?selectableItemBackground"
+		android:gravity="center"
+		android:padding="@dimen/_12sdp"
+		android:text="@string/logout"
+		android:textColor="@color/white"
+		android:textSize="@dimen/_12ssp" />
 
 </RelativeLayout>

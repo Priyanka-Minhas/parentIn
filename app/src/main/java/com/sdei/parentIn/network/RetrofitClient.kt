@@ -11,6 +11,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.io.File
 import java.util.concurrent.TimeUnit
 
+
+
 object RetrofitClient {
 
     const val GOOGLEPLACE_NEARBY = "https://maps.googleapis.com/maps/api/place/nearbysearch/"
@@ -120,10 +122,12 @@ object RetrofitClient {
 
                 request = request.newBuilder()
                     .cacheControl(cacheControl)
+                     .addHeader("accept-language","es-UY")
                     .build()
             }
 
             chain.proceed(request)
         }
     }
+
 }

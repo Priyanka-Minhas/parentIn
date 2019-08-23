@@ -113,5 +113,8 @@
 	<string name="Confirma_el_correo_electrónico">Confirm Email</string>
 	<string name="Confirmar_contraseña">Confirm Password</string>
 	<string name="Crear_cuenta">CREATE ACCOUNT</string>
+	<!--	LANDING-->
+	<string name="logout">LOGOUT</string>
+	<string name="under_development">Under Development</string>
 
 </resources>

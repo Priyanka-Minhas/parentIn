@@ -121,9 +121,13 @@ class ParentAddChildActivity : BaseActivity<ParentNewAccountViewModel>(), View.O
                 Observer<UserModel> { mData ->
                     if (mData != null && responseHandler(mData.statusCode, mData.message)) {
                         showToast(getString(R.string.registered_successfully))
-                        val intent = Intent()
-                        setResult(RESULT_OK, intent)
-                        finish()
+//                        val intent = Intent()
+//                        setResult(RESULT_OK, intent)
+//                        finish()
+
+                        val intent = Intent(mContext, WelcomeActivity::class.java)
+                        startActivity(intent)
+                        finishAffinity()
                     }
                 })
 
