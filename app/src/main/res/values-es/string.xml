@@ -4,21 +4,30 @@
 	<!--ERROR-->
 	<string name="errorInternet">Conexión a internet no disponible</string>
 	<string name="something_went_wrong">Algo salió mal</string>
-	<string name="errorValidEmail">Por favor, ingrese contraseña</string>
+	<string name="errorValidEmail">Por favor introduzca un correo electrónico válido</string>
 	<string name="errorEmail">Por favor ingrese su correo electrónico</string>
-	<string name="errorValidPassword">Ingrese una contraseña válida</string>
+	<string name="errorValidPassword">Por favor, ingrese contraseña</string>
 	<string name="work_in_progress">TRABAJO EN PROGRESO</string>
-	<string name="errorFirstName">Nombre no vacío</string>
-	<string name="errorLastName">Apellido no vacio</string>
-	<string name="errorConfirmPassword">La contraseña no coincide</string>
-	<string name="errorAddress">Dirección no vacía</string>
+	<string name="errorFirstName">Por favor ingrese el nombre</string>
+	<string name="errorLastName">Por favor ingrese el apellido</string>
+	<string name="errorEnterConfPass">Por favor ingrese confirmar contraseña</string>
+	<string name="errorConfirmPassword">Las contraseñas no coinciden</string>
+	<string name="errorAddress">Por favor ingrese su dirección</string>
 	<string name="errorGender"> Por favor seleccione el género</string>
 	<string name="errorRelationship">Por favor seleccione relación con el niño</string>
-	<string name="errorIdentification">Tarjeta de Identificación No. no vacío</string>
+	<string name="errorIdentification">Por favor, introduzca el número de identificación</string>
 	<string name="errorStudentAddress">Por favor confirme la dirección del estudiante</string>
 	<string name="errorLevelOfEducation">Por favor seleccione el nivel de educación</string>
 	<string name="errorNoOfSchools">Por favor seleccione No. de estudiante en familias en escuelas</string>
 	<string name="errorChild">El niño debe ser uno o más de uno</string>
+	<string name="errorBirthday">Por favor, introduzca la fecha de nacimiento de su hijo</string>
+	<string name="errorSchool">Por favor ingrese a la escuela</string>
+	<string name="errorTeacher">Por favor ingrese maestro</string>
+	<string name="errorChildFirstName">Por favor ingrese el nombre de su hijo</string>
+	<string name="errorChildLastName">Por favor ingrese el apellido de su hijo</string>
+	<string name="errorChildGender">Por favor ingrese el género de su hijo</string>
+
+
 
 	<!--COMMON-->
 	<string name="select_gender">SELECCIONE GÉNERO</string>

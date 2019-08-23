@@ -43,7 +43,9 @@
 		android:drawablePadding="@dimen/_5sdp"
 		android:hint="@string/primer_nombre"
 		android:padding="@dimen/_12sdp"
-		android:textSize="@dimen/_12ssp" />
+		android:textSize="@dimen/_12ssp"
+		android:singleLine="true"
+		android:imeOptions="actionNext"/>
 
 	<EditText
 		android:id="@+id/edtChildLastName"
@@ -55,7 +57,9 @@
 		android:drawablePadding="@dimen/_10sdp"
 		android:padding="@dimen/_12sdp"
 		android:hint="@string/Apellido"
-		android:textSize="@dimen/_12ssp" />
+		android:textSize="@dimen/_12ssp"
+		android:imeOptions="actionNext"
+		android:singleLine="true"/>
 
 	<EditText
 		android:id="@+id/edtChildIdentityCard"
@@ -67,7 +71,9 @@
 		android:drawablePadding="@dimen/_10sdp"
 		android:padding="@dimen/_12sdp"
 		android:hint="@string/Cédula"
-		android:textSize="@dimen/_12ssp" />
+		android:textSize="@dimen/_12ssp"
+		android:imeOptions="actionDone"
+		android:singleLine="true"/>
 
 
 	<LinearLayout

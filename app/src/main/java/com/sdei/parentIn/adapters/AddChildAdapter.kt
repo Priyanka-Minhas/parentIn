@@ -12,6 +12,9 @@ import com.sdei.parentIn.dialog.OptionDialog
 import com.sdei.parentIn.interfaces.InterfacesCall
 import com.sdei.parentIn.model.UserModel
 import com.sdei.parentIn.utils.getGender
+import com.sdei.parentIn.utils.showAlertSnackBar
+import com.sdei.parentIn.utils.showToast
+import kotlinx.android.synthetic.main.activity_parent_add_child.*
 import kotlinx.android.synthetic.main.item_add_child.view.*
 import java.util.*
 
@@ -56,9 +59,10 @@ class AddChildAdapter(var con: Context,
             val dpd = DatePickerDialog(con, DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
 
                 // Display Selected date in Toast
-                val date = "$day-$dayOfMonth-${monthOfYear + 1}"
+                val date = "$year/${monthOfYear + 1}/$dayOfMonth"
                 holder.birthdate.setText(date)
                 mData[position].birthDate = holder.birthdate.text.toString()
+                //showAlertSnackBar(txtCreateAccount, getString(R.string.errorChild))
 
             }, year, month, day)
 

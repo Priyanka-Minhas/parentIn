@@ -9,7 +9,6 @@ import com.sdei.parentIn.dialog.OptionDialog
 import com.sdei.parentIn.interfaces.InterfacesCall
 import com.sdei.parentIn.model.UserModel
 import com.sdei.parentIn.utils.*
-import com.sdei.parentIn.utils.InterConstants.EXTRA_DATA
 import com.sdei.parentIn.viewModel.ParentNewAccountViewModel
 import com.wajahatkarim3.easyvalidation.core.view_ktx.nonEmpty
 import com.wajahatkarim3.easyvalidation.core.view_ktx.validEmail
@@ -37,7 +36,7 @@ class ParentsNewAccountActivity : BaseActivity<ParentNewAccountViewModel>(), Vie
         edtNoOfStudent.setOnClickListener(this)
         btnFollow.setOnClickListener(this)
         btnBack.setOnClickListener(this)
-        rgYesNo.setOnCheckedChangeListener { _, id ->
+        rgYesNo.setOnCheckedChangeListener { radioGroup, id ->
             when (id) {
                 R.id.rbYes -> {
                     isSameAddressAsStudent = true
@@ -92,10 +91,14 @@ class ParentsNewAccountActivity : BaseActivity<ParentNewAccountViewModel>(), Vie
                     showAlertSnackBar(btnFollow, getString(R.string.errorFirstName))
                 } else if (!edtLastName.nonEmpty()) {
                     showAlertSnackBar(btnFollow, getString(R.string.errorLastName))
+                }else if(!edtEmail.nonEmpty()){
+                    showAlertSnackBar(btnFollow, getString(R.string.errorEmail))
                 } else if (!edtEmail.validEmail()) {
                     showAlertSnackBar(btnFollow, getString(R.string.errorValidEmail))
                 } else if (!edtPassword.nonEmpty()) {
                     showAlertSnackBar(btnFollow, getString(R.string.errorValidPassword))
+                }else if(!edtConfPassword.nonEmpty()){
+                    showAlertSnackBar(btnFollow, getString(R.string.errorEnterConfPass))
                 } else if (!edtConfPassword.text.toString().equals(edtPassword.text.toString())) {
                     showAlertSnackBar(btnFollow, getString(R.string.errorConfirmPassword))
                 } else if (!edtAddress.nonEmpty()) {
@@ -113,37 +116,42 @@ class ParentsNewAccountActivity : BaseActivity<ParentNewAccountViewModel>(), Vie
                 } else if (!edtNoOfStudent.nonEmpty()) {
                     showAlertSnackBar(btnFollow, getString(R.string.errorNoOfSchools))
                 } else {
-                    val model = UserModel.DataBean()
-
-                    model.firstName = edtFirstName.text.toString()
-                    model.lastName = edtLastName.text.toString()
-                    model.emailAddress = edtEmail.text.toString()
-                    model.password = edtPassword.text.toString()
-                    model.homeAddress = edtAddress.text.toString()
-                    model.relationWithChild = edtRelationshipChild.text.toString()
-
-//                    model._id = edtId.text.toString()
-//                    model._id = edtGender.text.toString()
-
-                    model.relationWithChild = edtRelationshipChild.text.toString()
-                    if (rbYes.isEnabled) {
-                        model.isIsSameAddressAsStudent = true
-                    } else {
-                        model.isIsSameAddressAsStudent = true
-                    }
-                    model.levelOfEducation = edtLevelOfEducation.text.toString()
-                    model.noOfStudents = edtNoOfStudent.text.toString().toInt()
-
-                    val intent = Intent(mContext, ParentAddChildActivity::class.java)
-                    intent.putExtra(EXTRA_DATA, model)
-                    startActivity(intent)
+                   //sendDataToNext()
                 }
+                sendDataToNext()
 
             }
             R.id.btnBack -> {
                 finish()
             }
         }
+    }
+
+    private fun sendDataToNext() {
+        val model = UserModel.DataBean()
+
+        model.firstName = edtFirstName.text.toString()
+        model.lastName = edtLastName.text.toString()
+        model.emailAddress = edtEmail.text.toString()
+        model.password = edtPassword.text.toString()
+        model.homeAddress = edtAddress.text.toString()
+        model.relationWithChild = edtRelationshipChild.text.toString()
+
+//                    model._id = edtId.text.toString()
+//                    model._id = edtGender.text.toString()
+
+        model.relationWithChild = edtRelationshipChild.text.toString()
+        if (rbYes.isEnabled) {
+            model.isIsSameAddressAsStudent = true
+        } else {
+            model.isIsSameAddressAsStudent = true
+        }
+        model.levelOfEducation = edtLevelOfEducation.text.toString()
+        model.noOfStudents = edtNoOfStudent.text.toString().toInt()
+
+        val intent = Intent(mContext, ParentAddChildActivity::class.java)
+        intent.putExtra(DATA, model)
+        startActivity(intent)
     }
 
 

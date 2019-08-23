@@ -7,56 +7,54 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sdei.parentIn.R
 import com.sdei.parentIn.adapters.AddChildAdapter
-import com.sdei.parentIn.dialog.SchoolListDialog
-import com.sdei.parentIn.interfaces.InterfacesCall
 import com.sdei.parentIn.model.SchoolModel
 import com.sdei.parentIn.model.UserModel
-import com.sdei.parentIn.utils.InterConstants.EXTRA_DATA
-import com.sdei.parentIn.utils.connectedToInternet
-import com.sdei.parentIn.utils.responseHandler
-import com.sdei.parentIn.utils.showAlertSnackBar
-import com.sdei.parentIn.utils.showToast
+import com.sdei.parentIn.utils.*
 import com.sdei.parentIn.viewModel.ParentNewAccountViewModel
+import com.wajahatkarim3.easyvalidation.core.view_ktx.nonEmpty
 import kotlinx.android.synthetic.main.activity_parent_add_child.*
+import kotlinx.android.synthetic.main.item_add_child.*
 
 
 class ParentAddChildActivity : BaseActivity<ParentNewAccountViewModel>(), View.OnClickListener, AddChildAdapter.ClickInterface {
 
-    fun getSchoolList(returnValue: (SchoolModel.DataBean) -> Unit) {
-        SchoolListDialog(mContext, R.style.pullBottomfromTop, R.layout.dialog_options,
-                mSchoolList,
-                getString(R.string.select_school),
-                InterfacesCall.Callback { pos ->
-                    returnValue(mSchoolList[pos])
-                }).show()
-    }
-
-    fun getTeacherList(returnValue: (SchoolModel.DataBean) -> Unit) {
-
-    }
-
     override fun deleteChild(pos: Int) {
-        mChildList.removeAt(pos)
+        mData.removeAt(pos)
         mChildAdapter.notifyDataSetChanged()
     }
 
     override fun onClick(v: View?) {
         when (v!!.id) {
             R.id.btnAddChild -> {
-                mChildList.add(UserModel.DataBean.ChildsBean())
+                mData.add(UserModel.DataBean.ChildsBean())
                 mChildAdapter.notifyDataSetChanged()
             }
 
             R.id.txtCreateAccount -> {
                 val i = intent
-                val model = i.getParcelableExtra(EXTRA_DATA) as UserModel.DataBean
-                if (mChildList.size == 0) {
-                    showAlertSnackBar(txtCreateAccount, getString(R.string.errorChild))
+                val model = i.getParcelableExtra(DATA) as UserModel.DataBean
+
+                for(i in 0..mData.size-1){
+                 if(mData[i].firstName.isEmpty()){
+                     showAlertSnackBar(txtCreateAccount,getString(R.string.errorChildFirstName)+i)
+                 }else if(!edtChildLastName.nonEmpty()){
+                     showAlertSnackBar(txtCreateAccount,getString(R.string.errorChildLastName)+i)
+                 }else if(!edtChildIdentityCard.nonEmpty()){
+                     showAlertSnackBar(txtCreateAccount,getString(R.string.errorIdentification)+i)
+                 }else if(!edtChildGender.nonEmpty()){
+                     showAlertSnackBar(txtCreateAccount,getString(R.string.errorChildGender)+i)
+                 }else if(!edtChildBirthDate.nonEmpty()){
+                     showAlertSnackBar(txtCreateAccount,getString(R.string.errorBirthday)+i)
+                 }
                 }
-                model.noOfStudents = mChildList.size
+               /* if (mData.size == 0) {
+                    showAlertSnackBar(txtCreateAccount, getString(R.string.errorChild))
+                    return
+                }*/
+                model.noOfStudents = mData.size
 
                 if (connectedToInternet(btnAddChild)) {
-                    mViewModel!!.setProfile(model)
+                  //  mViewModel!!.setProfile(model)
                 }
             }
 
@@ -75,13 +73,12 @@ class ParentAddChildActivity : BaseActivity<ParentNewAccountViewModel>(), View.O
     override val context: Context
         get() = this@ParentAddChildActivity
 
-    var mChildList = arrayListOf<UserModel.DataBean.ChildsBean>()
-    var mSchoolList = arrayListOf<SchoolModel.DataBean>()
+    var mData = arrayListOf<UserModel.DataBean.ChildsBean>()
 
     lateinit var mChildAdapter: AddChildAdapter
 
     override fun onCreate() {
-        mChildList.add(UserModel.DataBean.ChildsBean())
+        mData.add(UserModel.DataBean.ChildsBean())
         setChildAdapter()
 
         mViewModel!!.getProfile().observe(this,
@@ -91,11 +88,13 @@ class ParentAddChildActivity : BaseActivity<ParentNewAccountViewModel>(), View.O
                     }
                 })
 
+
         // get school list
+
         mViewModel!!.getSchoolList().observe(this,
                 Observer<SchoolModel> { mData ->
                     if (mData != null && responseHandler(mData.statusCode, mData.message)) {
-                        mSchoolList.addAll(mData.data!!)
+                        //showToast(getString(R.string.work_in_progress))
                     }
                 })
 
@@ -109,7 +108,7 @@ class ParentAddChildActivity : BaseActivity<ParentNewAccountViewModel>(), View.O
 
     private fun setChildAdapter() {
         rvAddChild.layoutManager = LinearLayoutManager(mContext)
-        mChildAdapter = AddChildAdapter(mContext, mChildList, this)
+        mChildAdapter = AddChildAdapter(mContext, mData, this)
         rvAddChild.adapter = mChildAdapter
     }
 

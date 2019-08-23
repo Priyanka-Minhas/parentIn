@@ -5,14 +5,15 @@
 	<!--ERROR-->
 	<string name="errorInternet">Internet connection not Available</string>
 	<string name="something_went_wrong">Something went wrong</string>
-	<string name="errorEmail">Please enter Email</string>
-	<string name="errorValidEmail">Please enter  valid</string>
-	<string name="errorValidPassword">Please enter Password</string>
+	<string name="errorEmail">Please enter email</string>
+	<string name="errorValidEmail">Please enter valid email</string>
+	<string name="errorValidPassword">Please enter password</string>
 	<string name="work_in_progress">WORK IN PROGRESS</string>
 	<string name="errorFirstName">Please enter First Name</string>
 	<string name="errorLastName">Please enter Last Name </string>
+	<string name="errorEnterConfPass">Please enter confirm password</string>
 	<string name="errorConfirmPassword">Password not match</string>
-	<string name="errorAddress">Please enter Address</string>
+	<string name="errorAddress">Please enter your Address</string>
 	<string name="errorGender"> Please select Gender</string>
 	<string name="errorRelationship">Please select relationship with child</string>
 	<string name="errorIdentification">Please enter Identification card no.</string>
@@ -20,6 +21,13 @@
 	<string name="errorLevelOfEducation">Please select level of education</string>
 	<string name="errorNoOfSchools">Please select No. of Student in FamiliasIn schools</string>
 	<string name="errorChild">Child Should be one or Greater than one</string>
+	<string name="errorBirthday">Please enter date of birth of your child</string>
+	<string name="errorSchool">Please enter school</string>
+	<string name="errorTeacher">Please enter teacher</string>
+	<string name="errorChildFirstName">Please enter first name of your child</string>
+	<string name="errorChildLastName">Please enter last name of your child</string>
+	<string name="errorChildGender">Please enter gender of your child</string>
+
 
 	<!--COMMON-->
 	<string name="select_gender">SELECT GENDER</string>

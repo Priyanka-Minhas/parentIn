@@ -47,7 +47,9 @@ class LoginActivity : BaseActivity<LoginViewModel>(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v!!.id) {
             R.id.btnLogin -> {
-                if (!edtEmail.validEmail()) {
+                if(!edtEmail.nonEmpty()){
+                    showAlertSnackBar(btnLogin, getString(R.string.errorEmail))
+                }else if(!edtEmail.validEmail()) {
                     showAlertSnackBar(btnLogin, getString(R.string.errorValidEmail))
                 } else if (!edtPassword.nonEmpty()) {
                     showAlertSnackBar(btnLogin, getString(R.string.errorValidPassword))
