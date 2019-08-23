@@ -17,4 +17,5 @@ public interface InterConstants {
     @NotNull
     String EXTRA_DATA = "extra_data";
 
+    int RESULT_CREATE_ACCOUNT =100;
 }

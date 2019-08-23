@@ -1,7 +1,6 @@
 package com.sdei.parentIn.activities
 
 import android.content.Context
-import android.content.Intent
 import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -40,9 +39,7 @@ class TeacherNewAccountActivity : BaseActivity<ParentNewAccountViewModel>(), Vie
                 Observer<UserModel> { mData ->
                     if (mData != null && responseHandler(mData.statusCode, mData.message)) {
                         showToast(getString(R.string.registered_successfully))
-                        val intent = Intent(mContext, LandingActivity::class.java)
-                        startActivity(intent)
-                        finishAffinity()
+                        finish()
                     }
                 })
     }

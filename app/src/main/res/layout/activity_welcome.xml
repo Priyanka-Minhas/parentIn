@@ -3,6 +3,7 @@
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	android:layout_width="match_parent"
+	android:background="@mipmap/background"
 	android:layout_height="match_parent">
 
 	<androidx.core.widget.NestedScrollView
@@ -13,7 +14,6 @@
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		android:gravity="center_horizontal"
-		android:background="@mipmap/background"
 		android:orientation="vertical">
 
 		<ImageView
@@ -53,7 +53,7 @@
 		<com.sdei.parentIn.customViews.SemiBoldTextView
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:layout_marginTop="@dimen/_61sdp"
+			android:layout_marginTop="@dimen/_41sdp"
 			android:layout_marginBottom="@dimen/_6sdp"
 			android:gravity="center"
 			android:text="@string/Selecciona_una_opción"
@@ -134,7 +134,7 @@
 		android:id="@+id/btnAboutFamiliasIn"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_marginTop="@dimen/_5sdp"
+		android:layout_marginTop="@dimen/_25sdp"
 		android:layout_alignParentBottom="true"
 		android:layout_centerHorizontal="true"
 		android:layout_marginBottom="@dimen/_10sdp"

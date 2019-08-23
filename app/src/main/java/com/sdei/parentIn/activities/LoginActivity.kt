@@ -66,6 +66,9 @@ class LoginActivity : BaseActivity<LoginViewModel>(), View.OnClickListener {
             }
 
             R.id.btnCreateAccount -> {
+                edtEmail.setText("")
+                edtPassword.setText("")
+
                 val intent = if (getUtils().getInt(InterConstants.ROLE_ID) == InterConstants.ROLE_PARENT) {
                     Intent(mContext, ParentsNewAccountActivity::class.java)
                 } else {

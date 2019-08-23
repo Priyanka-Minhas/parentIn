@@ -1,5 +1,6 @@
 package com.sdei.parentIn.activities
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.view.View
@@ -90,13 +91,13 @@ class ParentsNewAccountActivity : BaseActivity<BaseViewModel>(), View.OnClickLis
                     showAlertSnackBar(btnFollow, getString(R.string.errorFirstName))
                 } else if (!edtLastName.nonEmpty()) {
                     showAlertSnackBar(btnFollow, getString(R.string.errorLastName))
-                }else if(!edtEmail.nonEmpty()){
+                } else if (!edtEmail.nonEmpty()) {
                     showAlertSnackBar(btnFollow, getString(R.string.errorEmail))
                 } else if (!edtEmail.validEmail()) {
                     showAlertSnackBar(btnFollow, getString(R.string.errorValidEmail))
                 } else if (!edtPassword.nonEmpty()) {
                     showAlertSnackBar(btnFollow, getString(R.string.errorValidPassword))
-                }else if(!edtConfPassword.nonEmpty()){
+                } else if (!edtConfPassword.nonEmpty()) {
                     showAlertSnackBar(btnFollow, getString(R.string.errorEnterConfPass))
                 } else if (!edtConfPassword.text.toString().equals(edtPassword.text.toString())) {
                     showAlertSnackBar(btnFollow, getString(R.string.errorConfirmPassword))
@@ -115,7 +116,7 @@ class ParentsNewAccountActivity : BaseActivity<BaseViewModel>(), View.OnClickLis
                 } else if (!edtNoOfStudent.nonEmpty()) {
                     showAlertSnackBar(btnFollow, getString(R.string.errorNoOfSchools))
                 } else {
-                   sendDataToNext()
+                    sendDataToNext()
                 }
 
             }
@@ -149,7 +150,19 @@ class ParentsNewAccountActivity : BaseActivity<BaseViewModel>(), View.OnClickLis
 
         val intent = Intent(mContext, ParentAddChildActivity::class.java)
         intent.putExtra(InterConstants.EXTRA_DATA, model)
-        startActivity(intent)
+        startActivityForResult(intent, InterConstants.RESULT_CREATE_ACCOUNT)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode == Activity.RESULT_OK) {
+            when (requestCode) {
+                InterConstants.RESULT_CREATE_ACCOUNT -> {
+                    finish()
+                }
+            }
+        }
+
     }
 
 
