@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sdei.parentIn.R
 import com.sdei.parentIn.adapters.AddChildAdapter
+import com.sdei.parentIn.model.SchoolModel
 import com.sdei.parentIn.model.UserModel
 import com.sdei.parentIn.utils.*
 import com.sdei.parentIn.viewModel.ParentNewAccountViewModel
@@ -67,6 +68,16 @@ class ParentAddChildActivity : BaseActivity<ParentNewAccountViewModel>(), View.O
                 Observer<UserModel> { mData ->
                     if (mData != null && responseHandler(mData.statusCode, mData.message)) {
                         showToast(getString(R.string.work_in_progress))
+                    }
+                })
+
+
+        // get school list
+
+        mViewModel!!.getSchoolList().observe(this,
+                Observer<SchoolModel> { mData ->
+                    if (mData != null && responseHandler(mData.statusCode, mData.message)) {
+                        //showToast(getString(R.string.work_in_progress))
                     }
                 })
 
