@@ -8,14 +8,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.sdei.parentIn.R
 import com.sdei.parentIn.adapters.AddChildAdapter
 import com.sdei.parentIn.dialog.SchoolListDialog
+import com.sdei.parentIn.dialog.TeacherListDialog
 import com.sdei.parentIn.interfaces.InterfacesCall
 import com.sdei.parentIn.model.SchoolModel
+import com.sdei.parentIn.model.TeacherModel
 import com.sdei.parentIn.model.UserModel
+import com.sdei.parentIn.utils.*
 import com.sdei.parentIn.utils.InterConstants.EXTRA_DATA
-import com.sdei.parentIn.utils.connectedToInternet
-import com.sdei.parentIn.utils.responseHandler
-import com.sdei.parentIn.utils.showAlertSnackBar
-import com.sdei.parentIn.utils.showToast
 import com.sdei.parentIn.viewModel.ParentNewAccountViewModel
 import kotlinx.android.synthetic.main.activity_parent_add_child.*
 
@@ -31,7 +30,26 @@ class ParentAddChildActivity : BaseActivity<ParentNewAccountViewModel>(), View.O
                 }).show()
     }
 
-    fun getTeacherList(returnValue: (SchoolModel.DataBean) -> Unit) {
+    fun getTeacherList(schoolId: String, returnValue: (TeacherModel.DataBean) -> Unit) {
+        showProgess()
+
+        mViewModel!!.hitTeacherListApi(schoolId)
+
+        mViewModel!!.getTeacherList().observe(this,
+                Observer<TeacherModel> {
+                    if (it != null && responseHandler(it.statusCode, it.message)) {
+                        mTeacherList.clear()
+                        mTeacherList.addAll(it.data!!)
+
+                        TeacherListDialog(mContext, R.style.pullBottomfromTop, R.layout.dialog_options,
+                                mTeacherList,
+                                getString(R.string.select_school),
+                                InterfacesCall.Callback { pos ->
+                                    returnValue(mTeacherList[pos])
+                                }).show()
+
+                    }
+                })
 
     }
 
@@ -71,6 +89,7 @@ class ParentAddChildActivity : BaseActivity<ParentNewAccountViewModel>(), View.O
                 }
 
                 model.noOfStudents = mChildList.size
+
                 if (connectedToInternet(btnAddChild)) {
                     mViewModel!!.setProfile(model)
                 }
@@ -93,6 +112,7 @@ class ParentAddChildActivity : BaseActivity<ParentNewAccountViewModel>(), View.O
 
     var mChildList = arrayListOf<UserModel.DataBean.ChildsBean>()
     var mSchoolList = arrayListOf<SchoolModel.DataBean>()
+    var mTeacherList = arrayListOf<TeacherModel.DataBean>()
 
     lateinit var mChildAdapter: AddChildAdapter
 

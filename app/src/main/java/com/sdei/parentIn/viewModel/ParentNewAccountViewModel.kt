@@ -3,17 +3,19 @@ package com.sdei.parentIn.viewModel
 import android.app.Application
 import androidx.lifecycle.MutableLiveData
 import com.sdei.parentIn.model.SchoolModel
+import com.sdei.parentIn.model.TeacherModel
 import com.sdei.parentIn.model.UserModel
 import com.sdei.parentIn.repositories.ParentAddChildRepository
 
 class ParentNewAccountViewModel(application: Application) : BaseViewModel(application = application) {
 
 
-    private val mRepository:ParentAddChildRepository = ParentAddChildRepository()
+    private val mRepository: ParentAddChildRepository = ParentAddChildRepository()
 
     private var mUserModel: MutableLiveData<UserModel>? = null
     // school model
-    private var mSchoolModel:MutableLiveData<SchoolModel>?=null
+    private var mSchoolModel: MutableLiveData<SchoolModel>? = null
+    private var mTeacherModel: MutableLiveData<TeacherModel>? = null
 
     fun getProfile(): MutableLiveData<UserModel> {
         if (mUserModel == null) {
@@ -29,14 +31,29 @@ class ParentNewAccountViewModel(application: Application) : BaseViewModel(applic
     }
 
     // get school list
-    fun getSchoolList(): MutableLiveData<SchoolModel>{
+    fun getSchoolList(): MutableLiveData<SchoolModel> {
         if (mSchoolModel == null) {
             mSchoolModel = MutableLiveData()
             mRepository.getSchoolData {
-                mSchoolModel!!.value =it
+                mSchoolModel!!.value = it
             }
         }
         return mSchoolModel as MutableLiveData<SchoolModel>
+    }
+
+    // get Teacher list
+    fun getTeacherList(): MutableLiveData<TeacherModel> {
+        if (mTeacherModel == null) {
+            mTeacherModel = MutableLiveData()
+        }
+        return mTeacherModel as MutableLiveData<TeacherModel>
+    }
+
+    // get Teacher list
+    fun hitTeacherListApi(schoolId: String) {
+        mRepository.getTeacherList(schoolId) {
+            mTeacherModel!!.value = it
+        }
     }
 
 

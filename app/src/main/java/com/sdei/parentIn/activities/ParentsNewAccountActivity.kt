@@ -44,7 +44,6 @@ class ParentsNewAccountActivity : BaseActivity<BaseViewModel>(), View.OnClickLis
                 R.id.rbNo -> {
                     isSameAddressAsStudent = false
                 }
-
             }
         }
     }

@@ -1,6 +1,7 @@
 package com.sdei.parentIn.network
 
 import com.sdei.parentIn.model.SchoolModel
+import com.sdei.parentIn.model.TeacherModel
 import com.sdei.parentIn.model.UserModel
 import retrofit2.Call
 import retrofit2.http.*
@@ -10,11 +11,13 @@ interface ApiInterface {
 
     @FormUrlEncoded
     @POST("/user/login")
-    fun login(
-            @Field("email") email: String,
+    fun login(@Field("email") email: String,
             @Field("password") password: String,
-            @Field("roleId")rollId:Int
-    ): Call<UserModel>
+            @Field("roleId")rollId:Int): Call<UserModel>
+
+    @FormUrlEncoded
+    @POST("/user/listBySchool")
+    fun listBySchool(@Field("school") school: String): Call<TeacherModel>
 
     @POST("/user/register")
     fun register(@Body userModel: UserModel.DataBean): Call<UserModel>

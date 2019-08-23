@@ -1,5 +1,6 @@
 package com.sdei.parentIn.repositories
 import com.sdei.parentIn.model.SchoolModel
+import com.sdei.parentIn.model.TeacherModel
 import com.sdei.parentIn.model.UserModel
 import com.sdei.parentIn.network.RetrofitClient
 import org.json.JSONObject
@@ -63,6 +64,31 @@ class ParentAddChildRepository {
 
     }
 
+    // make call to get school list
+    fun getTeacherList(schoolId:String,returnValue: (TeacherModel) -> Unit){
+        RetrofitClient.instance!!.listBySchool(schoolId).enqueue(object :Callback<TeacherModel>{
+            override fun onFailure(call: Call<TeacherModel>, t: Throwable) {
+                returnValue(TeacherModel(t.message!!))
+            }
+            override fun onResponse(call: Call<TeacherModel>, response: Response<TeacherModel>) {
+                if (response.body() != null) {
+                    returnValue(response.body()!!)
+                } else if(response.errorBody()!=null) {
 
+                    val obj = JSONObject(response.errorBody()!!.string())
+
+                    val statusCode = obj.getString("statusCode")
+                    val message = obj.getString("message")
+
+                    returnValue(TeacherModel(statusCode.toInt(),message.toString()))
+
+                }else{
+                    returnValue(TeacherModel(response.code(),response.message().toString()))
+                }
+            }
+
+        })
+
+    }
 
 }

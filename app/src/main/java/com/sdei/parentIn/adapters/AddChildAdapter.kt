@@ -2,6 +2,7 @@ package com.sdei.parentIn.adapters
 
 import android.app.DatePickerDialog
 import android.content.Context
+import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,8 +14,6 @@ import com.sdei.parentIn.interfaces.InterfacesCall
 import com.sdei.parentIn.model.UserModel
 import com.sdei.parentIn.utils.getGender
 import com.sdei.parentIn.utils.showAlertSnackBar
-import com.sdei.parentIn.utils.showToast
-import kotlinx.android.synthetic.main.activity_parent_add_child.*
 import kotlinx.android.synthetic.main.item_add_child.view.*
 import java.util.*
 
@@ -73,12 +72,18 @@ class AddChildAdapter(var con: Context,
             (con as ParentAddChildActivity).getSchoolList {
                 holder.school.setText(it.schoolName.toString())
                 mData[position].school = holder.school.text.toString()
+                mData[position].school_id = it._id
             }
         }
 
         holder.teacher.setOnClickListener {
-            (con as ParentAddChildActivity).getTeacherList {
-
+            if (TextUtils.isEmpty(holder.school.text.toString())) {
+                showAlertSnackBar(holder.teacher, "Please Select School First")
+                return@setOnClickListener
+            }
+            (con as ParentAddChildActivity).getTeacherList(mData[position].school_id) {
+                holder.teacher.setText(it.firstName.toString())
+                mData[position].teacher = holder.teacher.text.toString()
             }
         }
 
