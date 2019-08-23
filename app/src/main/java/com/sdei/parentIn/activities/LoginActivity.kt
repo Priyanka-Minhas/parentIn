@@ -33,7 +33,9 @@ class LoginActivity : BaseActivity<LoginViewModel>(), View.OnClickListener {
         mViewModel!!.getUser().observe(this,
                 Observer<BaseModel> { mData ->
                     if (mData != null && responseHandler(mData.statusCode, mData.message)) {
-                        showToast(getString(R.string.work_in_progress))
+                        val intent = Intent(mContext, LandingActivity::class.java)
+                        startActivity(intent)
+                        finishAffinity()
                     }
                 })
     }

@@ -1,6 +1,7 @@
 package com.sdei.parentIn.activities
 
 import android.content.Context
+import android.content.Intent
 import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -119,7 +120,10 @@ class ParentAddChildActivity : BaseActivity<ParentNewAccountViewModel>(), View.O
         mViewModel!!.getProfile().observe(this,
                 Observer<UserModel> { mData ->
                     if (mData != null && responseHandler(mData.statusCode, mData.message)) {
-                        showToast(getString(R.string.work_in_progress))
+                        showToast(getString(R.string.registered_successfully))
+                        val intent = Intent(mContext, LandingActivity::class.java)
+                        startActivity(intent)
+                        finishAffinity()
                     }
                 })
 
@@ -132,7 +136,6 @@ class ParentAddChildActivity : BaseActivity<ParentNewAccountViewModel>(), View.O
                 })
 
         // get teacher list
-
 
 
     }

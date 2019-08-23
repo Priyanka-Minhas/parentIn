@@ -70,6 +70,11 @@ fun showAlertSnackBar(view: View, message: String) {
     mSnackbar.view.setBackgroundColor(Color.RED)
     mSnackbar.show()
 }
+fun showSucessSnackBar(view: View, message: String) {
+    val mSnackbar = Snackbar.make(view, message, Snackbar.LENGTH_SHORT)
+    mSnackbar.view.setBackgroundColor(Color.GREEN)
+    mSnackbar.show()
+}
 
 fun showInternetAlert(view: View) {
     Snackbar.make(view, R.string.errorInternet, Snackbar.LENGTH_SHORT).show()

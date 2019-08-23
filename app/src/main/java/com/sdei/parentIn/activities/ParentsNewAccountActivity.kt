@@ -115,9 +115,8 @@ class ParentsNewAccountActivity : BaseActivity<BaseViewModel>(), View.OnClickLis
                 } else if (!edtNoOfStudent.nonEmpty()) {
                     showAlertSnackBar(btnFollow, getString(R.string.errorNoOfSchools))
                 } else {
-                   //sendDataToNext()
+                   sendDataToNext()
                 }
-                sendDataToNext()
 
             }
             R.id.btnBack -> {
@@ -136,8 +135,8 @@ class ParentsNewAccountActivity : BaseActivity<BaseViewModel>(), View.OnClickLis
         model.homeAddress = edtAddress.text.toString()
         model.relationWithChild = edtRelationshipChild.text.toString()
 
-//                    model._id = edtId.text.toString()
-//                    model._id = edtGender.text.toString()
+//      model._id = edtId.text.toString()
+//      model._id = edtGender.text.toString()
 
         model.relationWithChild = edtRelationshipChild.text.toString()
         if (rbYes.isEnabled) {

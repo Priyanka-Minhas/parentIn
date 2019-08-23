@@ -1,6 +1,7 @@
 package com.sdei.parentIn.activities
 
 import android.content.Context
+import android.content.Intent
 import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -11,14 +12,10 @@ import com.sdei.parentIn.interfaces.InterfacesCall
 import com.sdei.parentIn.model.SchoolModel
 import com.sdei.parentIn.model.UserModel
 import com.sdei.parentIn.utils.*
-import com.sdei.parentIn.viewModel.BaseViewModel
 import com.sdei.parentIn.viewModel.ParentNewAccountViewModel
 import com.wajahatkarim3.easyvalidation.core.view_ktx.nonEmpty
 import com.wajahatkarim3.easyvalidation.core.view_ktx.validEmail
-import kotlinx.android.synthetic.main.activity_parent_add_child.*
-import kotlinx.android.synthetic.main.activity_parents_new_account.*
 import kotlinx.android.synthetic.main.activity_teacher_new_account.*
-import kotlinx.android.synthetic.main.activity_teacher_new_account.btnBack
 
 class TeacherNewAccountActivity : BaseActivity<ParentNewAccountViewModel>(), View.OnClickListener {
     var mSchoolList = arrayListOf<SchoolModel.DataBean>()
@@ -42,7 +39,10 @@ class TeacherNewAccountActivity : BaseActivity<ParentNewAccountViewModel>(), Vie
         mViewModel!!.getProfile().observe(this,
                 Observer<UserModel> { mData ->
                     if (mData != null && responseHandler(mData.statusCode, mData.message)) {
-                        showToast(getString(R.string.work_in_progress))
+                        showToast(getString(R.string.registered_successfully))
+                        val intent = Intent(mContext, LandingActivity::class.java)
+                        startActivity(intent)
+                        finishAffinity()
                     }
                 })
     }
@@ -107,7 +107,6 @@ class TeacherNewAccountActivity : BaseActivity<ParentNewAccountViewModel>(), Vie
                 }
             }
             R.id.edtTeacherSchool ->{
-
                 SchoolListDialog(mContext, R.style.pullBottomfromTop, R.layout.dialog_options,
                         mSchoolList,
                         getString(R.string.select_school),InterfacesCall.Callback { pos ->

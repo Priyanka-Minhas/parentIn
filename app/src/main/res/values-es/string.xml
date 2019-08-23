@@ -46,7 +46,7 @@
 	<string name="less100">menos de 100</string>
 	<string name="less150">menos de 150</string>
 	<string name="more150">más de 150</string>
-
+	<string name="registered_successfully">Registrado correctamente</string>
 	<string name="select_level_of_education">SELECCIONE NIVEL DE EDUCACIÓN</string>
 	<string name="doctorate">Doctorado</string>
 	<string name="Masters">Maestras</string>

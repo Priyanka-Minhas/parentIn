@@ -7,7 +7,7 @@
 	<string name="something_went_wrong">Something went wrong</string>
 	<string name="errorEmail">Please enter email</string>
 	<string name="errorValidEmail">Please enter valid email</string>
-    <string name="errorConfEmail">Please confirm email</string>
+	<string name="errorConfEmail">Please confirm email</string>
 	<string name="errorValidPassword">Please enter password</string>
 	<string name="work_in_progress">WORK IN PROGRESS</string>
 	<string name="errorFirstName">Please enter First Name</string>
@@ -41,7 +41,7 @@
 	<string name="guardian">Guardian</string>
 	<string name="select_school">SELECT SCHOOL</string>
 	<string name="select_teacher">SELECT TEACHER</string>
-
+	<string name="registered_successfully">Registered Successfully</string>
 	<string name="select_no_of_student">SELECT NO. OF STUDENTS</string>
 	<string name="less50">less than 50</string>
 	<string name="less100">less than 100</string>
