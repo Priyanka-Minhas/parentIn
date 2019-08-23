@@ -2,7 +2,9 @@ package com.sdei.parentIn.adapters
 
 import android.app.DatePickerDialog
 import android.content.Context
+import android.text.Editable
 import android.text.TextUtils
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -78,7 +80,8 @@ class AddChildAdapter(var con: Context,
 
         holder.teacher.setOnClickListener {
             if (TextUtils.isEmpty(holder.school.text.toString())) {
-                showAlertSnackBar(holder.teacher, "Please Select School First")
+                val p = position + 1
+                showAlertSnackBar(holder.teacher, con.getString(R.string.errorSchool) + " " + p)
                 return@setOnClickListener
             }
             (con as ParentAddChildActivity).getTeacherList(mData[position].school_id) {
@@ -87,11 +90,45 @@ class AddChildAdapter(var con: Context,
             }
         }
 
-        mData[position].firstName = holder.firstName.text.toString()
-        mData[position].lastName = holder.lastName.text.toString()
-        mData[position].verificationCard = holder.identityCard.text.toString()
+        holder.firstName.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {}
+            override fun beforeTextChanged(s: CharSequence, start: Int,
+                                           count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence, start: Int,
+                                       before: Int, count: Int) {
+                mData[position].firstName = holder.firstName.text.toString()
+            }
+        })
+
+        holder.lastName.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {}
+            override fun beforeTextChanged(s: CharSequence, start: Int,
+                                           count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence, start: Int,
+                                       before: Int, count: Int) {
+                mData[position].lastName = holder.lastName.text.toString()
+
+            }
+        })
+
+        holder.identityCard.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {}
+            override fun beforeTextChanged(s: CharSequence, start: Int,
+                                           count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence, start: Int,
+                                       before: Int, count: Int) {
+                mData[position].verificationCard = holder.identityCard.text.toString()
+            }
+        })
 
     }
+
 
     override fun getItemCount(): Int {
         return mData.size

@@ -32,25 +32,17 @@ class ParentAddChildActivity : BaseActivity<ParentNewAccountViewModel>(), View.O
 
     fun getTeacherList(schoolId: String, returnValue: (TeacherModel.DataBean) -> Unit) {
         showProgess()
+        mViewModel!!.hitTeacherListApi(schoolId) {
+            if (it != null && responseHandler(it.statusCode, it.message)) {
+                TeacherListDialog(mContext, R.style.pullBottomfromTop, R.layout.dialog_options,
+                        it.data,
+                        getString(R.string.select_teacher),
+                        InterfacesCall.Callback { pos ->
+                            returnValue(it.data[pos])
+                        }).show()
 
-        mViewModel!!.hitTeacherListApi(schoolId)
-
-        mViewModel!!.getTeacherList().observe(this,
-                Observer<TeacherModel> {
-                    if (it != null && responseHandler(it.statusCode, it.message)) {
-                        mTeacherList.clear()
-                        mTeacherList.addAll(it.data!!)
-
-                        TeacherListDialog(mContext, R.style.pullBottomfromTop, R.layout.dialog_options,
-                                mTeacherList,
-                                getString(R.string.select_school),
-                                InterfacesCall.Callback { pos ->
-                                    returnValue(mTeacherList[pos])
-                                }).show()
-
-                    }
-                })
-
+            }
+        }
     }
 
     override fun deleteChild(pos: Int) {
@@ -68,22 +60,27 @@ class ParentAddChildActivity : BaseActivity<ParentNewAccountViewModel>(), View.O
             R.id.txtCreateAccount -> {
                 val model = intent.getParcelableExtra(EXTRA_DATA) as UserModel.DataBean
                 for (i in 0 until mChildList.size) {
-                    var childNo = i + 1
-
+                    val childNo = i + 1
                     if (mChildList[i].firstName.isNullOrEmpty()) {
                         showAlertSnackBar(txtCreateAccount, getString(R.string.errorChildFirstName) + " " + childNo)
                         return
                     } else if (mChildList[i].lastName.isNullOrEmpty()) {
                         showAlertSnackBar(txtCreateAccount, getString(R.string.errorChildLastName) + " " + childNo)
                         return
-                    } else if (mChildList[i].verificationCard.isEmpty()) {
-                        showAlertSnackBar(txtCreateAccount, getString(R.string.errorIdentification) + " " + childNo)
+                    } else if (mChildList[i].verificationCard.isNullOrEmpty()) {
+                        showAlertSnackBar(txtCreateAccount, getString(R.string.errorChildIdentification) + " " + childNo)
                         return
-                    } else if (mChildList[i].gender.isEmpty()) {
+                    } else if (mChildList[i].gender.isNullOrEmpty()) {
                         showAlertSnackBar(txtCreateAccount, getString(R.string.errorChildGender) + " " + childNo)
                         return
-                    } else if (mChildList[i].birthDate.isEmpty()) {
+                    } else if (mChildList[i].birthDate.isNullOrEmpty()) {
                         showAlertSnackBar(txtCreateAccount, getString(R.string.errorBirthday) + " " + childNo)
+                        return
+                    } else if (mChildList[i].school.isNullOrEmpty()) {
+                        showAlertSnackBar(txtCreateAccount, getString(R.string.errorSchool) + " " + childNo)
+                        return
+                    } else if (mChildList[i].teacher.isNullOrEmpty()) {
+                        showAlertSnackBar(txtCreateAccount, getString(R.string.errorTeacher) + " " + childNo)
                         return
                     }
                 }
@@ -91,6 +88,7 @@ class ParentAddChildActivity : BaseActivity<ParentNewAccountViewModel>(), View.O
                 model.noOfStudents = mChildList.size
 
                 if (connectedToInternet(btnAddChild)) {
+                    showProgess()
                     mViewModel!!.setProfile(model)
                 }
             }
@@ -112,8 +110,6 @@ class ParentAddChildActivity : BaseActivity<ParentNewAccountViewModel>(), View.O
 
     var mChildList = arrayListOf<UserModel.DataBean.ChildsBean>()
     var mSchoolList = arrayListOf<SchoolModel.DataBean>()
-    var mTeacherList = arrayListOf<TeacherModel.DataBean>()
-
     lateinit var mChildAdapter: AddChildAdapter
 
     override fun onCreate() {

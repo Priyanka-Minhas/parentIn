@@ -15,7 +15,6 @@ class ParentNewAccountViewModel(application: Application) : BaseViewModel(applic
     private var mUserModel: MutableLiveData<UserModel>? = null
     // school model
     private var mSchoolModel: MutableLiveData<SchoolModel>? = null
-    private var mTeacherModel: MutableLiveData<TeacherModel>? = null
 
     fun getProfile(): MutableLiveData<UserModel> {
         if (mUserModel == null) {
@@ -42,17 +41,9 @@ class ParentNewAccountViewModel(application: Application) : BaseViewModel(applic
     }
 
     // get Teacher list
-    fun getTeacherList(): MutableLiveData<TeacherModel> {
-        if (mTeacherModel == null) {
-            mTeacherModel = MutableLiveData()
-        }
-        return mTeacherModel as MutableLiveData<TeacherModel>
-    }
-
-    // get Teacher list
-    fun hitTeacherListApi(schoolId: String) {
+    fun hitTeacherListApi(schoolId: String, returnValue: (TeacherModel) -> Unit) {
         mRepository.getTeacherList(schoolId) {
-            mTeacherModel!!.value = it
+            returnValue(it)
         }
     }
 

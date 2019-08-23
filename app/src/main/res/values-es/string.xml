@@ -21,11 +21,12 @@
 	<string name="errorNoOfSchools">Por favor seleccione No. de estudiante en familias en escuelas</string>
 	<string name="errorChild">El niño debe ser uno o más de uno</string>
 	<string name="errorBirthday">Por favor, introduzca la fecha de nacimiento de su hijo</string>
-	<string name="errorSchool">Por favor ingrese a la escuela</string>
-	<string name="errorTeacher">Por favor ingrese maestro</string>
+	<string name="errorSchool">Por favor ingrese a la escuela de su hijo</string>
+	<string name="errorTeacher">Por favor ingrese el maestro de su hijo</string>
 	<string name="errorChildFirstName">Por favor ingrese el nombre de su hijo</string>
 	<string name="errorChildLastName">Por favor ingrese el apellido de su hijo</string>
 	<string name="errorChildGender">Por favor ingrese el género de su hijo</string>
+	<string name="errorChildIdentification">Por favor, introduzca la tarjeta de identificación no. de tu hijo</string>
 
 
 
@@ -38,8 +39,7 @@
 	<string name="mother">madre</string>
 	<string name="guardian">guardián</string>
 	<string name="select_school">SELECCIONE LA ESCUELA</string>
-
-
+	<string name="select_teacher">SELECCIONE PROFESOR</string>
 	<string name="select_no_of_student">SELECCIONE NO. DE ESTUDIANTES</string>
 	<string name="less50">menos de 50</string>
 	<string name="less100">menos de 100</string>
