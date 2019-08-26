@@ -10,7 +10,9 @@ import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
 import com.sdei.parentIn.R
+import com.sdei.parentIn.interfaces.InterConst
 import com.sdei.parentIn.interfaces.InterConst.CODE_SUCCESS
+import com.sdei.parentIn.model.UserModel
 import org.json.JSONObject
 
 /**
@@ -68,6 +70,30 @@ fun handleJson(response: String): Pair<String, String> {
 
 fun Context.getUtils(): Utils {
     return Utils(this)
+}
+
+
+fun Context.saveUserData(model: UserModel.DataBean) {
+    /**
+     * _id : 5d5f7fb41c7e4c024e5a2c7c
+     * firstName : Lucifer
+     * lastName : Morningstar
+     * phoneNumber : 8699826276
+     * relationWithChild : Guardian
+     * homeAddress : Top Floor, Lux, Los Angeles
+     * isSameAddressAsStudent : true
+     * levelOfEducation : PHD
+     * noOfStudents : 1
+     * emailAddress : abcde@gmail.com
+     * password : $2b$12$P/jtXSrlmxIW7y1V1IL8x.1QYqNjCR8HW4wwX3Rwiks416UmucQ36
+     * roleId : 2
+     * childs : [{"_id":"5d5f7fb41c7e4c024e5a2c7d","firstName":"Demo","lastName":"Name","verificationCard":"45983434755","gender":"M","birthDate":"11-10-1991","school":"5d5e322baaa88c670cb0babb","teacher":"5d5e7f8a439fae1351a2914b"}]
+     * __v : 0
+     */
+    getUtils().setString(InterConst.ID,model._id)
+    getUtils().setString(InterConst.FIRST_NAME,model.firstName)
+    getUtils().setString(InterConst.LAST_NAME,model.lastName)
+
 }
 
 fun showSnackBar(view: View, message: String) {

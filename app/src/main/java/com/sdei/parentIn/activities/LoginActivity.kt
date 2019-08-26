@@ -7,7 +7,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.sdei.parentIn.R
 import com.sdei.parentIn.interfaces.InterConst
-import com.sdei.parentIn.model.BaseModel
+import com.sdei.parentIn.model.UserModel
 import com.sdei.parentIn.utils.*
 import com.sdei.parentIn.viewModel.LoginViewModel
 import com.wajahatkarim3.easyvalidation.core.view_ktx.nonEmpty
@@ -32,8 +32,9 @@ class LoginActivity : BaseActivity<LoginViewModel>(), View.OnClickListener {
 
     override fun onCreate() {
         mViewModel!!.getUser().observe(this,
-                Observer<BaseModel> { mData ->
+                Observer<UserModel> { mData ->
                     if (mData != null && responseHandler(mData.statusCode, mData.message)) {
+                        saveUserData(mData.data)
                         val intent = Intent(mContext, LandingActivity::class.java)
                         startActivity(intent)
                         finishAffinity()
@@ -50,9 +51,9 @@ class LoginActivity : BaseActivity<LoginViewModel>(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v!!.id) {
             R.id.btnLogin -> {
-                if(!edtEmail.nonEmpty()){
+                if (!edtEmail.nonEmpty()) {
                     showAlertSnackBar(btnLogin, getString(R.string.errorEmail))
-                }else if(!edtEmail.validEmail()) {
+                } else if (!edtEmail.validEmail()) {
                     showAlertSnackBar(btnLogin, getString(R.string.errorValidEmail))
                 } else if (!edtPassword.nonEmpty()) {
                     showAlertSnackBar(btnLogin, getString(R.string.errorValidPassword))
