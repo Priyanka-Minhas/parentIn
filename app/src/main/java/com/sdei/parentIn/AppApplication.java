@@ -34,10 +34,13 @@ public class AppApplication extends Application {
         return networkInfo != null && networkInfo.isConnected();
     }
 
-    @Override
-    protected void attachBaseContext(Context base) {
-        super.attachBaseContext(LocaleHelper.setLocale(base,"es"));
-    }
+//    @Override
+//    protected void attachBaseContext(Context base) {
+////        es - spanish
+//
+//        super.attachBaseContext(LocaleHelper.setLocale(base,"es"));
+//
+//    }
 
     @Override
     public void onConfigurationChanged(Configuration newConfig) {

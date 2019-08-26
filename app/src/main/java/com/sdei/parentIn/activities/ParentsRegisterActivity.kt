@@ -7,6 +7,7 @@ import android.view.View
 import androidx.lifecycle.ViewModelProviders
 import com.sdei.parentIn.R
 import com.sdei.parentIn.dialog.OptionDialog
+import com.sdei.parentIn.interfaces.InterConst
 import com.sdei.parentIn.interfaces.InterfacesCall
 import com.sdei.parentIn.model.UserModel
 import com.sdei.parentIn.utils.*
@@ -15,7 +16,7 @@ import com.wajahatkarim3.easyvalidation.core.view_ktx.nonEmpty
 import com.wajahatkarim3.easyvalidation.core.view_ktx.validEmail
 import kotlinx.android.synthetic.main.activity_parents_new_account.*
 
-class ParentsNewAccountActivity : BaseActivity<BaseViewModel>(), View.OnClickListener {
+class ParentsRegisterActivity : BaseActivity<BaseViewModel>(), View.OnClickListener {
 
     var isSameAddressAsStudent: Boolean = true
 
@@ -24,7 +25,7 @@ class ParentsNewAccountActivity : BaseActivity<BaseViewModel>(), View.OnClickLis
     override val viewModel: BaseViewModel
         get() = ViewModelProviders.of(this).get(BaseViewModel::class.java)
     override val context: Context
-        get() = this@ParentsNewAccountActivity
+        get() = this@ParentsRegisterActivity
 
     override fun onCreate() {
 
@@ -37,7 +38,7 @@ class ParentsNewAccountActivity : BaseActivity<BaseViewModel>(), View.OnClickLis
         edtNoOfStudent.setOnClickListener(this)
         btnFollow.setOnClickListener(this)
         btnBack.setOnClickListener(this)
-        rgYesNo.setOnCheckedChangeListener { radioGroup, id ->
+        rgYesNo.setOnCheckedChangeListener { _, id ->
             when (id) {
                 R.id.rbYes -> {
                     isSameAddressAsStudent = true
@@ -86,6 +87,7 @@ class ParentsNewAccountActivity : BaseActivity<BaseViewModel>(), View.OnClickLis
                             edtNoOfStudent.setText(getNoOfStudents()[pos].name.toString())
                         }).show()
             }
+
             R.id.btnFollow -> {
                 if (!edtFirstName.nonEmpty()) {
                     showAlertSnackBar(btnFollow, getString(R.string.errorFirstName))
@@ -127,37 +129,36 @@ class ParentsNewAccountActivity : BaseActivity<BaseViewModel>(), View.OnClickLis
     }
 
     private fun sendDataToNext() {
-        val model = UserModel.DataBean()
+        val model = UserModel.DataBeanRequest()
 
         model.firstName = edtFirstName.text.toString()
         model.lastName = edtLastName.text.toString()
         model.emailAddress = edtEmail.text.toString()
-        model.password = edtPassword.text.toString()
         model.homeAddress = edtAddress.text.toString()
         model.relationWithChild = edtRelationshipChild.text.toString()
+        model.levelOfEducation = edtLevelOfEducation.text.toString()
+        model.verificationCard = edtId.text.toString()
+        model.password = edtPassword.text.toString()
+        model.confirmPassword = edtConfPassword.text.toString()
+        model.gender = edtGender.text.toString()
+        model.roleId = getUtils().getInt(InterConst.ROLE_ID)
 
-//      model._id = edtId.text.toString()
-//      model._id = edtGender.text.toString()
-
-        model.relationWithChild = edtRelationshipChild.text.toString()
         if (rbYes.isEnabled) {
             model.isIsSameAddressAsStudent = true
         } else {
             model.isIsSameAddressAsStudent = true
         }
-        model.levelOfEducation = edtLevelOfEducation.text.toString()
-        model.noOfStudents = edtNoOfStudent.text.toString().toInt()
 
         val intent = Intent(mContext, ParentAddChildActivity::class.java)
-        intent.putExtra(InterConstants.EXTRA_DATA, model)
-        startActivityForResult(intent, InterConstants.RESULT_CREATE_ACCOUNT)
+        intent.putExtra(InterConst.EXTRA_DATA, model)
+        startActivityForResult(intent, InterConst.RESULT_CREATE_ACCOUNT)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == Activity.RESULT_OK) {
             when (requestCode) {
-                InterConstants.RESULT_CREATE_ACCOUNT -> {
+                InterConst.RESULT_CREATE_ACCOUNT -> {
                     finish()
                 }
             }

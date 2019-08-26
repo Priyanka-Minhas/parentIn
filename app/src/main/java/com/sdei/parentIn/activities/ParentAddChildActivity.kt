@@ -10,17 +10,17 @@ import com.sdei.parentIn.R
 import com.sdei.parentIn.adapters.AddChildAdapter
 import com.sdei.parentIn.dialog.SchoolListDialog
 import com.sdei.parentIn.dialog.TeacherListDialog
+import com.sdei.parentIn.interfaces.InterConst.EXTRA_DATA
 import com.sdei.parentIn.interfaces.InterfacesCall
 import com.sdei.parentIn.model.SchoolModel
 import com.sdei.parentIn.model.TeacherModel
 import com.sdei.parentIn.model.UserModel
 import com.sdei.parentIn.utils.*
-import com.sdei.parentIn.utils.InterConstants.EXTRA_DATA
-import com.sdei.parentIn.viewModel.ParentNewAccountViewModel
+import com.sdei.parentIn.viewModel.ParentAddChildViewModel
 import kotlinx.android.synthetic.main.activity_parent_add_child.*
 
 
-class ParentAddChildActivity : BaseActivity<ParentNewAccountViewModel>(), View.OnClickListener, AddChildAdapter.ClickInterface {
+class ParentAddChildActivity : BaseActivity<ParentAddChildViewModel>(), View.OnClickListener, AddChildAdapter.ClickInterface {
 
     fun getSchoolList(returnValue: (SchoolModel.DataBean) -> Unit) {
         SchoolListDialog(mContext, R.style.pullBottomfromTop, R.layout.dialog_options,
@@ -34,14 +34,13 @@ class ParentAddChildActivity : BaseActivity<ParentNewAccountViewModel>(), View.O
     fun getTeacherList(schoolId: String, returnValue: (TeacherModel.DataBean) -> Unit) {
         showProgess()
         mViewModel!!.hitTeacherListApi(schoolId) {
-            if (it != null && responseHandler(it.statusCode, it.message)) {
+            if (responseHandler(it.statusCode, it.message)) {
                 TeacherListDialog(mContext, R.style.pullBottomfromTop, R.layout.dialog_options,
                         it.data,
                         getString(R.string.select_teacher),
                         InterfacesCall.Callback { pos ->
-                            returnValue(it.data[pos])
+                            returnValue(it.data!![pos])
                         }).show()
-
             }
         }
     }
@@ -54,12 +53,14 @@ class ParentAddChildActivity : BaseActivity<ParentNewAccountViewModel>(), View.O
     override fun onClick(v: View?) {
         when (v!!.id) {
             R.id.btnAddChild -> {
-                mChildList.add(UserModel.DataBean.ChildsBean())
+                mChildList.add(UserModel.ChildsBean())
                 mChildAdapter.notifyDataSetChanged()
             }
 
             R.id.txtCreateAccount -> {
-                val model = intent.getParcelableExtra(EXTRA_DATA) as UserModel.DataBean
+
+                val model = intent.getParcelableExtra(EXTRA_DATA) as UserModel.DataBeanRequest
+
                 for (i in 0 until mChildList.size) {
                     val childNo = i + 1
                     if (mChildList[i].firstName.isNullOrEmpty()) {
@@ -86,7 +87,7 @@ class ParentAddChildActivity : BaseActivity<ParentNewAccountViewModel>(), View.O
                     }
                 }
 
-                model.noOfStudents = mChildList.size
+                model.noOfStudents = mChildList.size.toString()
 
                 if (connectedToInternet(btnAddChild)) {
                     showProgess()
@@ -103,44 +104,37 @@ class ParentAddChildActivity : BaseActivity<ParentNewAccountViewModel>(), View.O
     override val layoutId: Int
         get() = R.layout.activity_parent_add_child
 
-    override val viewModel: ParentNewAccountViewModel
-        get() = ViewModelProviders.of(this).get(ParentNewAccountViewModel::class.java)
+    override val viewModel: ParentAddChildViewModel
+        get() = ViewModelProviders.of(this).get(ParentAddChildViewModel::class.java)
 
     override val context: Context
         get() = this@ParentAddChildActivity
 
-    var mChildList = arrayListOf<UserModel.DataBean.ChildsBean>()
+    var mChildList = arrayListOf<UserModel.ChildsBean>()
     var mSchoolList = arrayListOf<SchoolModel.DataBean>()
+
     lateinit var mChildAdapter: AddChildAdapter
 
     override fun onCreate() {
-        mChildList.add(UserModel.DataBean.ChildsBean())
+        mChildList.add(UserModel.ChildsBean())
         setChildAdapter()
 
         mViewModel!!.getProfile().observe(this,
                 Observer<UserModel> { mData ->
                     if (mData != null && responseHandler(mData.statusCode, mData.message)) {
                         showToast(getString(R.string.registered_successfully))
-//                        val intent = Intent()
-//                        setResult(RESULT_OK, intent)
-//                        finish()
 
                         val intent = Intent(mContext, WelcomeActivity::class.java)
                         startActivity(intent)
                         finishAffinity()
+
                     }
                 })
 
-        // get school list
         mViewModel!!.getSchoolList().observe(this,
-                Observer<SchoolModel> { mData ->
-                    if (mData != null && responseHandler(mData.statusCode, mData.message)) {
-                        mSchoolList.addAll(mData.data!!)
-                    }
+                Observer<ArrayList<SchoolModel.DataBean>> { mData ->
+                    mSchoolList.addAll(mData)
                 })
-
-        // get teacher list
-
 
     }
 

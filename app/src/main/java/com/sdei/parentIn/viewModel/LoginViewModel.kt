@@ -8,8 +8,9 @@ import com.sdei.parentIn.repositories.LoginRepository
 class LoginViewModel(application: Application) : BaseViewModel(application = application) {
 
     private val mRepository: LoginRepository = LoginRepository()
-
     private var mUserModel: MutableLiveData<BaseModel>? = null
+
+
 
     fun getUser(): MutableLiveData<BaseModel> {
         if (mUserModel == null) {
@@ -19,7 +20,7 @@ class LoginViewModel(application: Application) : BaseViewModel(application = app
     }
 
     fun setLogin(email: String, password: String, roleId: Int) {
-        mRepository.login(email = email, password = password, roleId = roleId) {
+        mRepository.loginApi(email = email, password = password, roleId = roleId) {
             mUserModel!!.value = it
         }
     }

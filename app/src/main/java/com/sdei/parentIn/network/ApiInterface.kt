@@ -10,7 +10,7 @@ import retrofit2.http.*
 interface ApiInterface {
 
     @FormUrlEncoded
-    @POST("/user/login")
+    @POST("/user/loginApi")
     fun login(@Field("emailAddress") email: String,
             @Field("password") password: String,
             @Field("roleId")rollId:Int): Call<UserModel>
@@ -20,7 +20,7 @@ interface ApiInterface {
     fun listBySchool(@Field("school") school: String): Call<TeacherModel>
 
     @POST("/user/register")
-    fun register(@Body userModel: UserModel.DataBean): Call<UserModel>
+    fun register(@Body userModel: UserModel.DataBeanRequest): Call<UserModel>
 
     // Get School List
     @GET("school/list")

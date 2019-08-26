@@ -1,7 +1,11 @@
 package com.sdei.parentIn.model
 
-class SchoolModel : BaseModel {
+import androidx.annotation.NonNull
+import androidx.room.Entity
+import androidx.room.Index
+import androidx.room.PrimaryKey
 
+class SchoolModel : BaseModel {
 
     /**
      * statusCode : 200
@@ -20,6 +24,7 @@ class SchoolModel : BaseModel {
         super.statusCode = statusCode
     }
 
+    @Entity(tableName = "SchoolDataBean", indices = [Index(value = ["_id"], unique = true)])
     class DataBean {
         /**
          * _id : 5d5e322baaa88c670cb0babb
@@ -35,16 +40,29 @@ class SchoolModel : BaseModel {
          * notes : Found via name
          */
 
+        @PrimaryKey
+        @NonNull
         var _id: String? = null
+
         var code: String? = null
+
         var schoolName: String? = null
+
         var address: String? = null
+
         var department: String? = null
+
         var location: String? = null
+
         var latitude: String? = null
+
         var longitude: String? = null
+
         var __v: Int = 0
+
         var suggestedAddress: String? = null
+
         var notes: String? = null
+
     }
 }

@@ -12,7 +12,6 @@ import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModel
 import com.google.android.material.snackbar.Snackbar
-import com.sdei.parentIn.utils.LocaleHelper
 
 /**
  * Created by shubham on 22/05/19.
@@ -90,9 +89,9 @@ abstract class BaseActivity<V : ViewModel> : AppCompatActivity() {
         }
     }
 
-    override fun attachBaseContext(base: Context) {
-        super.attachBaseContext(LocaleHelper.setLocale(base,"es"))
-    }
+//    override fun attachBaseContext(base: Context) {
+//        super.attachBaseContext(LocaleHelper.setLocale(base,"es"))
+//    }
 
     //    private fun performDataBinding() {
 //        mViewDataBinding = DataBindingUtil.setContentView(this, getLayoutId())

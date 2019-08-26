@@ -21,7 +21,7 @@ import java.util.*
 
 
 class AddChildAdapter(var con: Context,
-                      var mData: ArrayList<UserModel.DataBean.ChildsBean>,
+                      var mData: ArrayList<UserModel.ChildsBean>,
                       var mClick: ClickInterface) : RecyclerView.Adapter<AddChildAdapter.ViewHolder>() {
 
 
@@ -57,7 +57,7 @@ class AddChildAdapter(var con: Context,
             val year = calender.get(Calendar.YEAR)
             val month = calender.get(Calendar.MONTH)
             val day = calender.get(Calendar.DAY_OF_MONTH)
-            val dpd = DatePickerDialog(con, DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+            val dpd = DatePickerDialog(con, DatePickerDialog.OnDateSetListener { _, year, monthOfYear, dayOfMonth ->
 
                 // Display Selected date in Toast
                 val date = "$year/${monthOfYear + 1}/$dayOfMonth"

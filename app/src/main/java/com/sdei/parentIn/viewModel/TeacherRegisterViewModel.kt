@@ -7,10 +7,9 @@ import com.sdei.parentIn.model.TeacherModel
 import com.sdei.parentIn.model.UserModel
 import com.sdei.parentIn.repositories.RegisterUserRepository
 
-class ParentAddChildViewModel(application: Application) : BaseViewModel(application = application) {
+class TeacherRegisterViewModel(application: Application) : BaseViewModel(application = application) {
 
     private val mRepository: RegisterUserRepository = RegisterUserRepository()
-
     private var mUserModel: MutableLiveData<UserModel>? = null
     private var mSchoolList: MutableLiveData<ArrayList<SchoolModel.DataBean>>? = null
 

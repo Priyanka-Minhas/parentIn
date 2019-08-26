@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@mipmap/background"
     android:orientation="vertical"
-    tools:context="com.sdei.parentIn.activities.ParentsNewAccountActivity">
+    tools:context="com.sdei.parentIn.activities.ParentsRegisterActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -65,7 +65,7 @@
                 android:textSize="@dimen/_11ssp" />
 
             <EditText
-                android:id="@+id/edtTeacherFirstName"
+                android:id="@+id/edtFirstName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -81,7 +81,7 @@
                 android:imeOptions="actionNext"/>
 
             <EditText
-                android:id="@+id/edtTeacherLastName"
+                android:id="@+id/edtLastName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -96,7 +96,7 @@
                 android:imeOptions="actionNext"/>
 
             <EditText
-                android:id="@+id/edtTeacherGender"
+                android:id="@+id/edtGender"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -113,7 +113,7 @@
                 android:drawableEnd="@mipmap/ic_dropdown"
                 android:singleLine="true"/>
             <EditText
-                android:id="@+id/edtTeacherIdCard"
+                android:id="@+id/edtId"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -128,7 +128,7 @@
                 android:imeOptions="actionNext"/>
 
             <EditText
-                android:id="@+id/edtTeacherSchool"
+                android:id="@+id/edtSchool"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -145,7 +145,7 @@
                 android:drawableEnd="@mipmap/ic_dropdown"/>
 
             <EditText
-                android:id="@+id/edtTeacherNumberOfStu"
+                android:id="@+id/edtNumberOfStu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -163,7 +163,7 @@
 
 
             <EditText
-                android:id="@+id/edtTeacherLevelOfEducation"
+                android:id="@+id/edtLevelOfEducation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -179,7 +179,7 @@
                 android:cursorVisible="false"
                 android:drawableEnd="@mipmap/ic_dropdown"/>
             <EditText
-                android:id="@+id/edtTeacherEmail"
+                android:id="@+id/edtEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -195,7 +195,7 @@
                 android:inputType="textEmailAddress"/>
 
             <EditText
-                android:id="@+id/edtTeacherConfMail"
+                android:id="@+id/edtConfMail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -209,7 +209,7 @@
                 android:inputType="textEmailAddress"/>
 
             <EditText
-                android:id="@+id/edtTeacherPass"
+                android:id="@+id/edtPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -224,7 +224,7 @@
                 android:singleLine="true"
                 android:imeOptions="actionNext"/>
             <EditText
-                android:id="@+id/edtTeacherConfPass"
+                android:id="@+id/edtConfPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -241,7 +241,7 @@
 
 
             <com.sdei.parentIn.customViews.SemiBoldTextView
-                android:id="@+id/btnCreateTeachAccount"
+                android:id="@+id/btnCreateAccount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_15sdp"

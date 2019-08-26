@@ -6,6 +6,7 @@ import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.sdei.parentIn.R
+import com.sdei.parentIn.interfaces.InterConst
 import com.sdei.parentIn.model.BaseModel
 import com.sdei.parentIn.utils.*
 import com.sdei.parentIn.viewModel.LoginViewModel
@@ -57,7 +58,7 @@ class LoginActivity : BaseActivity<LoginViewModel>(), View.OnClickListener {
                     showAlertSnackBar(btnLogin, getString(R.string.errorValidPassword))
                 } else if (connectedToInternet(btnLogin)) {
                     showProgess()
-                    mViewModel!!.setLogin(edtEmail.text.toString(), edtPassword.text.toString(), getUtils().getInt(InterConstants.ROLE_ID))
+                    mViewModel!!.setLogin(edtEmail.text.toString(), edtPassword.text.toString(), getUtils().getInt(InterConst.ROLE_ID))
                 }
             }
 
@@ -69,10 +70,10 @@ class LoginActivity : BaseActivity<LoginViewModel>(), View.OnClickListener {
                 edtEmail.setText("")
                 edtPassword.setText("")
 
-                val intent = if (getUtils().getInt(InterConstants.ROLE_ID) == InterConstants.ROLE_PARENT) {
-                    Intent(mContext, ParentsNewAccountActivity::class.java)
+                val intent = if (getUtils().getInt(InterConst.ROLE_ID) == InterConst.ROLE_PARENT) {
+                    Intent(mContext, ParentsRegisterActivity::class.java)
                 } else {
-                    Intent(mContext, TeacherNewAccountActivity::class.java)
+                    Intent(mContext, TeacherRegisterActivity::class.java)
                 }
                 startActivity(intent)
             }

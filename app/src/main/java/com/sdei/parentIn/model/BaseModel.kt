@@ -1,6 +1,6 @@
 package com.sdei.parentIn.model
 
-import com.sdei.parentIn.utils.InterConstants.CODE_ERROR
+import com.sdei.parentIn.interfaces.InterConst.CODE_ERROR
 
 open class BaseModel {
 

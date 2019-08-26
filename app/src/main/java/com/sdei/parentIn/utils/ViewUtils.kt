@@ -10,7 +10,7 @@ import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
 import com.sdei.parentIn.R
-import com.sdei.parentIn.utils.InterConstants.CODE_SUCCESS
+import com.sdei.parentIn.interfaces.InterConst.CODE_SUCCESS
 
 /**
  * Created by shubham on 12/06/19.

@@ -9,12 +9,13 @@ import com.sdei.parentIn.adapters.ParentListAdapter
 import com.sdei.parentIn.interfaces.InterfacesCall
 import com.sdei.parentIn.model.TeacherModel
 import kotlinx.android.synthetic.main.dialog_options.*
+import java.util.*
 
 class TeacherListDialog(
         context: Context,
         themeResId: Int,
         private val LayoutId: Int,
-        var list: ArrayList<TeacherModel.DataBean>,
+        var list: ArrayList<TeacherModel.DataBean>?,
         title: String,
         private val callback: InterfacesCall.Callback
 ) : BaseDialog(context, themeResId) {
@@ -34,9 +35,9 @@ class TeacherListDialog(
 
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreateStuff() {
-        if (list.isNotEmpty()) {
+        if (list!!.isNotEmpty()) {
             recyclerView!!.layoutManager = LinearLayoutManager(context)
-            mAdapter = ParentListAdapter(context, list, indexClick)
+            mAdapter = ParentListAdapter(context, list!!, indexClick)
             recyclerView!!.adapter = mAdapter
             txtTitle.text = title
         }

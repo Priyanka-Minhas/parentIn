@@ -1,13 +1,10 @@
-package com.sdei.parentIn.model;
+package com.sdei.parentIn.model
 
-import org.jetbrains.annotations.NotNull;
+import java.util.*
 
-import java.util.ArrayList;
+class TeacherModel : BaseModel {
 
-public class TeacherModel extends BaseModel {
-
-
-    private ArrayList<DataBean> data;
+    var data: ArrayList<DataBean>? = null
 
     /**
      * statusCode : 200
@@ -15,25 +12,14 @@ public class TeacherModel extends BaseModel {
      * message : Exitoso
      */
 
-    public TeacherModel(@NotNull String message) {
-        super(message);
+    constructor(message: String) : super(message) {}
+
+    constructor(statusCode: Int, message: String) {
+        super.message = message
+        super.statusCode = statusCode
     }
 
-    public TeacherModel(@NotNull int statusCode, @NotNull String message) {
-        super.setMessage(message);
-        super.setStatusCode(statusCode);
-    }
-
-    public ArrayList<DataBean> getData() {
-        return data;
-    }
-
-    public void setData(ArrayList<DataBean> data) {
-        this.data = data;
-    }
-
-
-    public static class DataBean {
+    class DataBean {
         /**
          * _id : 5d5e85d3f08e701b06e656ee
          * firstName : Lucifer
@@ -52,143 +38,23 @@ public class TeacherModel extends BaseModel {
          * __v : 0
          */
 
-        private String _id;
-        private String firstName;
-        private String lastName;
-        private String phoneNumber;
-        private String relationWithChild;
-        private String homeAddress;
-        private boolean isSameAddressAsStudent;
-        private String levelOfEducation;
-        private int noOfStudents;
-        private String emailAddress;
-        private String password;
-        private int roleId;
-        private String school;
-        private int __v;
-        private ArrayList<ChildsBean> childs;
+        var _id: String? = null
+        var firstName: String? = null
+        var lastName: String? = null
+        var phoneNumber: String? = null
+        var relationWithChild: String? = null
+        var homeAddress: String? = null
+        var isIsSameAddressAsStudent: Boolean = false
+        var levelOfEducation: String? = null
+        var noOfStudents: Int = 0
+        var emailAddress: String? = null
+        var password: String? = null
+        var roleId: Int = 0
+        var school: String? = null
+        var __v: Int = 0
+        var childs: ArrayList<ChildsBean>? = null
 
-        public String get_id() {
-            return _id;
-        }
-
-        public void set_id(String _id) {
-            this._id = _id;
-        }
-
-        public String getFirstName() {
-            return firstName;
-        }
-
-        public void setFirstName(String firstName) {
-            this.firstName = firstName;
-        }
-
-        public String getLastName() {
-            return lastName;
-        }
-
-        public void setLastName(String lastName) {
-            this.lastName = lastName;
-        }
-
-        public String getPhoneNumber() {
-            return phoneNumber;
-        }
-
-        public void setPhoneNumber(String phoneNumber) {
-            this.phoneNumber = phoneNumber;
-        }
-
-        public String getRelationWithChild() {
-            return relationWithChild;
-        }
-
-        public void setRelationWithChild(String relationWithChild) {
-            this.relationWithChild = relationWithChild;
-        }
-
-        public String getHomeAddress() {
-            return homeAddress;
-        }
-
-        public void setHomeAddress(String homeAddress) {
-            this.homeAddress = homeAddress;
-        }
-
-        public boolean isIsSameAddressAsStudent() {
-            return isSameAddressAsStudent;
-        }
-
-        public void setIsSameAddressAsStudent(boolean isSameAddressAsStudent) {
-            this.isSameAddressAsStudent = isSameAddressAsStudent;
-        }
-
-        public String getLevelOfEducation() {
-            return levelOfEducation;
-        }
-
-        public void setLevelOfEducation(String levelOfEducation) {
-            this.levelOfEducation = levelOfEducation;
-        }
-
-        public int getNoOfStudents() {
-            return noOfStudents;
-        }
-
-        public void setNoOfStudents(int noOfStudents) {
-            this.noOfStudents = noOfStudents;
-        }
-
-        public String getEmailAddress() {
-            return emailAddress;
-        }
-
-        public void setEmailAddress(String emailAddress) {
-            this.emailAddress = emailAddress;
-        }
-
-        public String getPassword() {
-            return password;
-        }
-
-        public void setPassword(String password) {
-            this.password = password;
-        }
-
-        public int getRoleId() {
-            return roleId;
-        }
-
-        public void setRoleId(int roleId) {
-            this.roleId = roleId;
-        }
-
-        public String getSchool() {
-            return school;
-        }
-
-        public void setSchool(String school) {
-            this.school = school;
-        }
-
-        public int get__v() {
-            return __v;
-        }
-
-        public void set__v(int __v) {
-            this.__v = __v;
-        }
-
-        public ArrayList<ChildsBean> getChilds() {
-            return childs;
-        }
-
-        public void setChilds(ArrayList<ChildsBean> childs) {
-            this.childs = childs;
-        }
-
-        public static class ChildsBean {
+        class ChildsBean {
             /**
              * _id : 5d5e85d3f08e701b06e656ef
              * firstName : Demo
@@ -200,78 +66,14 @@ public class TeacherModel extends BaseModel {
              * teacher : 5d5e7f8a439fae1351a2914b
              */
 
-            private String _id;
-            private String firstName;
-            private String lastName;
-            private String verificationCard;
-            private String gender;
-            private String birthDate;
-            private String school;
-            private String teacher;
-
-            public String get_id() {
-                return _id;
-            }
-
-            public void set_id(String _id) {
-                this._id = _id;
-            }
-
-            public String getFirstName() {
-                return firstName;
-            }
-
-            public void setFirstName(String firstName) {
-                this.firstName = firstName;
-            }
-
-            public String getLastName() {
-                return lastName;
-            }
-
-            public void setLastName(String lastName) {
-                this.lastName = lastName;
-            }
-
-            public String getVerificationCard() {
-                return verificationCard;
-            }
-
-            public void setVerificationCard(String verificationCard) {
-                this.verificationCard = verificationCard;
-            }
-
-            public String getGender() {
-                return gender;
-            }
-
-            public void setGender(String gender) {
-                this.gender = gender;
-            }
-
-            public String getBirthDate() {
-                return birthDate;
-            }
-
-            public void setBirthDate(String birthDate) {
-                this.birthDate = birthDate;
-            }
-
-            public String getSchool() {
-                return school;
-            }
-
-            public void setSchool(String school) {
-                this.school = school;
-            }
-
-            public String getTeacher() {
-                return teacher;
-            }
-
-            public void setTeacher(String teacher) {
-                this.teacher = teacher;
-            }
+            var _id: String? = null
+            var firstName: String? = null
+            var lastName: String? = null
+            var verificationCard: String? = null
+            var gender: String? = null
+            var birthDate: String? = null
+            var school: String? = null
+            var teacher: String? = null
         }
     }
 }
