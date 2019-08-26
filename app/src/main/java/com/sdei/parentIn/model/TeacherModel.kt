@@ -12,7 +12,7 @@ class TeacherModel : BaseModel {
      * message : Exitoso
      */
 
-    constructor(message: String) : super(message) {}
+    constructor(message: String) : super(message)
 
     constructor(statusCode: Int, message: String) {
         super.message = message

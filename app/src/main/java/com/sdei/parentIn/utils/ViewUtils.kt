@@ -11,6 +11,7 @@ import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
 import com.sdei.parentIn.R
 import com.sdei.parentIn.interfaces.InterConst.CODE_SUCCESS
+import org.json.JSONObject
 
 /**
  * Created by shubham on 12/06/19.
@@ -57,6 +58,14 @@ fun Context.responseHandler(statusCode: Int, message: String): Boolean {
     }
 }
 
+fun handleJson(response: String): Pair<String, String> {
+    val obj = JSONObject(response)
+    val statusCode = obj.getString("statusCode")
+    val message = obj.getString("message")
+    return Pair(statusCode, message)
+}
+
+
 fun Context.getUtils(): Utils {
     return Utils(this)
 }
@@ -70,6 +79,7 @@ fun showAlertSnackBar(view: View, message: String) {
     mSnackbar.view.setBackgroundColor(Color.RED)
     mSnackbar.show()
 }
+
 fun showSucessSnackBar(view: View, message: String) {
     val mSnackbar = Snackbar.make(view, message, Snackbar.LENGTH_SHORT)
     mSnackbar.view.setBackgroundColor(Color.GREEN)

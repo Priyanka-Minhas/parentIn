@@ -1,8 +1,8 @@
-package com.sdei.parentIn.utils;
+package com.sdei.parentIn.interfaces;
 
 import org.jetbrains.annotations.NotNull;
 
-public interface InterConstants {
+public interface InterConst {
     @NotNull
     String ROLE_ID="role_id";
 

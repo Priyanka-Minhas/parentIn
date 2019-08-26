@@ -1,10 +1,14 @@
 package com.sdei.parentIn.model;
 
+
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.google.gson.annotations.SerializedName;
+
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class UserModel extends BaseModel implements Parcelable {
@@ -15,7 +19,6 @@ public class UserModel extends BaseModel implements Parcelable {
 
     private DataBean data;
 
-
     public UserModel(@NotNull String message) {
         super(message);
     }
@@ -25,22 +28,6 @@ public class UserModel extends BaseModel implements Parcelable {
         super.setStatusCode(statusCode);
     }
 
-    protected UserModel(Parcel in) {
-        data = in.readParcelable(DataBean.class.getClassLoader());
-    }
-
-    public static final Creator<UserModel> CREATOR = new Creator<UserModel>() {
-        @Override
-        public UserModel createFromParcel(Parcel in) {
-            return new UserModel(in);
-        }
-
-        @Override
-        public UserModel[] newArray(int size) {
-            return new UserModel[size];
-        }
-    };
-
     public DataBean getData() {
         return data;
     }
@@ -49,26 +36,8 @@ public class UserModel extends BaseModel implements Parcelable {
         this.data = data;
     }
 
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeParcelable(data, flags);
-    }
 
     public static class DataBean implements Parcelable {
-        public static final Creator CREATOR = new Creator() {
-            public DataBean createFromParcel(Parcel in) {
-                return new DataBean(in);
-            }
-
-            public DataBean[] newArray(int size) {
-                return new DataBean[size];
-            }
-        };
         /**
          * _id : 5d5f7fb41c7e4c024e5a2c7c
          * firstName : Lucifer
@@ -92,30 +61,20 @@ public class UserModel extends BaseModel implements Parcelable {
         private String phoneNumber;
         private String relationWithChild;
         private String homeAddress;
-        private boolean isSameAddressAsStudent;
         private String levelOfEducation;
         private int noOfStudents;
         private String emailAddress;
         private String password;
         private int roleId;
         private List<ChildsBean> childs;
+        private String verificationCard;
+        private boolean isSameAddressAsStudent;
 
-        public DataBean(Parcel in) {
-            this._id = in.readString();
-            this.firstName = in.readString();
-            this.lastName = in.readString();
-            this.phoneNumber = in.readString();
-            this.relationWithChild = in.readString();
-            this.homeAddress = in.readString();
-            this.levelOfEducation = in.readString();
-            this.noOfStudents = in.readInt();
-            this.emailAddress = in.readString();
-            this.password = in.readString();
-            this.roleId = in.readInt();
-            boolean[] temp = new boolean[1];
-            in.readBooleanArray(temp);
-            isSameAddressAsStudent = temp[0];
-        }
+        /**
+         * noOfStudents : 1
+         * verificationCard : 123123123123123
+         * isSameAddressAsStudent : true
+         */
 
         public DataBean() {
 
@@ -169,13 +128,6 @@ public class UserModel extends BaseModel implements Parcelable {
             this.homeAddress = homeAddress;
         }
 
-        public boolean isIsSameAddressAsStudent() {
-            return isSameAddressAsStudent;
-        }
-
-        public void setIsSameAddressAsStudent(boolean isSameAddressAsStudent) {
-            this.isSameAddressAsStudent = isSameAddressAsStudent;
-        }
 
         public String getLevelOfEducation() {
             return levelOfEducation;
@@ -226,6 +178,23 @@ public class UserModel extends BaseModel implements Parcelable {
             this.childs = childs;
         }
 
+
+        public String getVerificationCard() {
+            return verificationCard;
+        }
+
+        public void setVerificationCard(String verificationCard) {
+            this.verificationCard = verificationCard;
+        }
+
+        public boolean isIsSameAddressAsStudent() {
+            return isSameAddressAsStudent;
+        }
+
+        public void setIsSameAddressAsStudent(boolean isSameAddressAsStudent) {
+            this.isSameAddressAsStudent = isSameAddressAsStudent;
+        }
+
         @Override
         public int describeContents() {
             return 0;
@@ -244,23 +213,43 @@ public class UserModel extends BaseModel implements Parcelable {
             dest.writeString(this.emailAddress);
             dest.writeString(this.password);
             dest.writeInt(this.roleId);
-            dest.writeBooleanArray(new boolean[]{isSameAddressAsStudent});
+            dest.writeList(this.childs);
+            dest.writeString(this.verificationCard);
+            dest.writeByte(this.isSameAddressAsStudent ? (byte) 1 : (byte) 0);
         }
 
+        protected DataBean(Parcel in) {
+            this._id = in.readString();
+            this.firstName = in.readString();
+            this.lastName = in.readString();
+            this.phoneNumber = in.readString();
+            this.relationWithChild = in.readString();
+            this.homeAddress = in.readString();
+            this.levelOfEducation = in.readString();
+            this.noOfStudents = in.readInt();
+            this.emailAddress = in.readString();
+            this.password = in.readString();
+            this.roleId = in.readInt();
+            this.childs = new ArrayList<ChildsBean>();
+            in.readList(this.childs, ChildsBean.class.getClassLoader());
+            this.verificationCard = in.readString();
+            this.isSameAddressAsStudent = in.readByte() != 0;
+        }
 
+        public static final Creator<DataBean> CREATOR = new Creator<DataBean>() {
+            @Override
+            public DataBean createFromParcel(Parcel source) {
+                return new DataBean(source);
+            }
+
+            @Override
+            public DataBean[] newArray(int size) {
+                return new DataBean[size];
+            }
+        };
     }
 
     public static class DataBeanRequest implements Parcelable {
-
-        public static final Creator CREATOR = new Creator() {
-            public DataBeanRequest createFromParcel(Parcel in) {
-                return new DataBeanRequest(in);
-            }
-
-            public DataBeanRequest[] newArray(int size) {
-                return new DataBeanRequest[size];
-            }
-        };
         /**
          * confirmEmail : s@g.com
          * password : 12345678
@@ -285,67 +274,13 @@ public class UserModel extends BaseModel implements Parcelable {
         private String verificationCard;
         private String confirmPassword;
         private String homeAddress;
-        public boolean isIsSameAddressAsStudent;
+        private boolean isSameAddressAsStudent = false;
         private String relationWithChild;
         private String gender;
         private String lastName;
         private int roleId;
         private String emailAddress;
-        private List<ChildsBean> childs;
-
-        public DataBeanRequest(Parcel in) {
-            this.confirmEmail = in.readString();
-            this.password = in.readString();
-            this.school = in.readString();
-            this.levelOfEducation = in.readString();
-            this.firstName = in.readString();
-            this.noOfStudents = in.readString();
-            this.verificationCard = in.readString();
-            this.confirmPassword = in.readString();
-            this.homeAddress = in.readString();
-            this.relationWithChild = in.readString();
-            this.gender = in.readString();
-            this.lastName = in.readString();
-            this.roleId = in.readInt();
-            this.emailAddress = in.readString();
-            boolean[] temp = new boolean[1];
-            in.readBooleanArray(temp);
-            isIsSameAddressAsStudent = temp[0];
-        }
-
-
-        public String getHomeAddress() {
-            return homeAddress;
-        }
-
-        public boolean isIsSameAddressAsStudent() {
-            return isIsSameAddressAsStudent;
-        }
-
-        public void setIsSameAddressAsStudent(boolean isSameAddressAsStudent) {
-            isIsSameAddressAsStudent = isSameAddressAsStudent;
-        }
-
-        public void setHomeAddress(String homeAddress) {
-            this.homeAddress = homeAddress;
-        }
-
-        public String getRelationWithChild() {
-            return relationWithChild;
-        }
-
-        public void setRelationWithChild(String relationWithChild) {
-            this.relationWithChild = relationWithChild;
-        }
-
-        public String getGender() {
-            return gender;
-        }
-
-        public void setGender(String gender) {
-            this.gender = gender;
-        }
-
+        private ArrayList<ChildsBean> childs;
 
         public DataBeanRequest() {
 
@@ -415,6 +350,38 @@ public class UserModel extends BaseModel implements Parcelable {
             this.confirmPassword = confirmPassword;
         }
 
+        public String getHomeAddress() {
+            return homeAddress;
+        }
+
+        public void setHomeAddress(String homeAddress) {
+            this.homeAddress = homeAddress;
+        }
+
+        public boolean isSameAddressAsStudent() {
+            return isSameAddressAsStudent;
+        }
+
+        public void setSameAddressAsStudent(boolean sameAddressAsStudent) {
+            isSameAddressAsStudent = sameAddressAsStudent;
+        }
+
+        public String getRelationWithChild() {
+            return relationWithChild;
+        }
+
+        public void setRelationWithChild(String relationWithChild) {
+            this.relationWithChild = relationWithChild;
+        }
+
+        public String getGender() {
+            return gender;
+        }
+
+        public void setGender(String gender) {
+            this.gender = gender;
+        }
+
         public String getLastName() {
             return lastName;
         }
@@ -439,13 +406,14 @@ public class UserModel extends BaseModel implements Parcelable {
             this.emailAddress = emailAddress;
         }
 
-        public List<ChildsBean> getChilds() {
+        public ArrayList<ChildsBean> getChilds() {
             return childs;
         }
 
-        public void setChilds(List<ChildsBean> childs) {
+        public void setChilds(ArrayList<ChildsBean> childs) {
             this.childs = childs;
         }
+
 
         @Override
         public int describeContents() {
@@ -463,27 +431,50 @@ public class UserModel extends BaseModel implements Parcelable {
             dest.writeString(this.verificationCard);
             dest.writeString(this.confirmPassword);
             dest.writeString(this.homeAddress);
+            dest.writeByte(this.isSameAddressAsStudent ? (byte) 1 : (byte) 0);
             dest.writeString(this.relationWithChild);
             dest.writeString(this.gender);
             dest.writeString(this.lastName);
             dest.writeInt(this.roleId);
             dest.writeString(this.emailAddress);
-            dest.writeTypedList(this.childs);
-            dest.writeBooleanArray(new boolean[]{isIsSameAddressAsStudent});
+            dest.writeList(this.childs);
         }
+
+        protected DataBeanRequest(Parcel in) {
+            this.confirmEmail = in.readString();
+            this.password = in.readString();
+            this.school = in.readString();
+            this.levelOfEducation = in.readString();
+            this.firstName = in.readString();
+            this.noOfStudents = in.readString();
+            this.verificationCard = in.readString();
+            this.confirmPassword = in.readString();
+            this.homeAddress = in.readString();
+            this.isSameAddressAsStudent = in.readByte() != 0;
+            this.relationWithChild = in.readString();
+            this.gender = in.readString();
+            this.lastName = in.readString();
+            this.roleId = in.readInt();
+            this.emailAddress = in.readString();
+            this.childs = new ArrayList<ChildsBean>();
+            in.readList(this.childs, ChildsBean.class.getClassLoader());
+        }
+
+        public static final Creator<DataBeanRequest> CREATOR = new Creator<DataBeanRequest>() {
+            @Override
+            public DataBeanRequest createFromParcel(Parcel source) {
+                return new DataBeanRequest(source);
+            }
+
+            @Override
+            public DataBeanRequest[] newArray(int size) {
+                return new DataBeanRequest[size];
+            }
+        };
     }
 
 
     public static class ChildsBean implements Parcelable {
-        public static final Creator CREATOR = new Creator() {
-            public ChildsBean createFromParcel(Parcel in) {
-                return new ChildsBean(in);
-            }
-
-            public ChildsBean[] newArray(int size) {
-                return new ChildsBean[size];
-            }
-        };
         /**
          * _id : 5d5f7fb41c7e4c024e5a2c7d
          * firstName : Demo
@@ -502,27 +493,8 @@ public class UserModel extends BaseModel implements Parcelable {
         private String gender;
         private String birthDate;
         private String school;
-        private String school_id;
         private String teacher;
 
-        public String getSchool_id() {
-            return school_id;
-        }
-
-        public void setSchool_id(String school_id) {
-            this.school_id = school_id;
-        }
-
-        public ChildsBean(Parcel in) {
-            this._id = in.readString();
-            this.firstName = in.readString();
-            this.lastName = in.readString();
-            this.verificationCard = in.readString();
-            this.gender = in.readString();
-            this.birthDate = in.readString();
-            this.school = in.readString();
-            this.teacher = in.readString();
-        }
 
         public ChildsBean() {
 
@@ -592,6 +564,7 @@ public class UserModel extends BaseModel implements Parcelable {
             this.teacher = teacher;
         }
 
+
         @Override
         public int describeContents() {
             return 0;
@@ -608,6 +581,54 @@ public class UserModel extends BaseModel implements Parcelable {
             dest.writeString(this.school);
             dest.writeString(this.teacher);
         }
+
+        protected ChildsBean(Parcel in) {
+            this._id = in.readString();
+            this.firstName = in.readString();
+            this.lastName = in.readString();
+            this.verificationCard = in.readString();
+            this.gender = in.readString();
+            this.birthDate = in.readString();
+            this.school = in.readString();
+            this.teacher = in.readString();
+        }
+
+        public static final Creator<ChildsBean> CREATOR = new Creator<ChildsBean>() {
+            @Override
+            public ChildsBean createFromParcel(Parcel source) {
+                return new ChildsBean(source);
+            }
+
+            @Override
+            public ChildsBean[] newArray(int size) {
+                return new ChildsBean[size];
+            }
+        };
     }
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeParcelable(this.data, flags);
+    }
+
+    protected UserModel(Parcel in) {
+        this.data = in.readParcelable(DataBean.class.getClassLoader());
+    }
+
+    public static final Parcelable.Creator<UserModel> CREATOR = new Parcelable.Creator<UserModel>() {
+        @Override
+        public UserModel createFromParcel(Parcel source) {
+            return new UserModel(source);
+        }
+
+        @Override
+        public UserModel[] newArray(int size) {
+            return new UserModel[size];
+        }
+    };
 }

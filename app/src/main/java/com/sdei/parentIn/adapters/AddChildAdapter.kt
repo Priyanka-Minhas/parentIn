@@ -77,8 +77,8 @@ class AddChildAdapter(var con: Context,
                 mData[position].teacher = ""
 
                 holder.school.setText(it.schoolName.toString())
-                mData[position].school = holder.school.text.toString()
-                mData[position].school_id = it._id
+                holder.school.text.toString()
+                mData[position].school = it._id
             }
         }
 
@@ -88,9 +88,9 @@ class AddChildAdapter(var con: Context,
                 showAlertSnackBar(holder.teacher, con.getString(R.string.errorSchool) + " " + p)
                 return@setOnClickListener
             }
-            (con as ParentAddChildActivity).getTeacherList(mData[position].school_id) {
+            (con as ParentAddChildActivity).getTeacherList(mData[position].school) {
                 holder.teacher.setText(it.firstName.toString())
-                mData[position].teacher = holder.teacher.text.toString()
+                mData[position].teacher = it._id
             }
         }
 

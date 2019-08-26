@@ -143,11 +143,11 @@ class ParentsRegisterActivity : BaseActivity<BaseViewModel>(), View.OnClickListe
         model.gender = edtGender.text.toString()
         model.roleId = getUtils().getInt(InterConst.ROLE_ID)
 
-        if (rbYes.isEnabled) {
-            model.isIsSameAddressAsStudent = true
-        } else {
-            model.isIsSameAddressAsStudent = true
-        }
+//        if (rbYes.isEnabled) {
+//            model.setSameAddressAsStudent(true)
+//        } else {
+//            model.setSameAddressAsStudent(true)
+//        }
 
         val intent = Intent(mContext, ParentAddChildActivity::class.java)
         intent.putExtra(InterConst.EXTRA_DATA, model)

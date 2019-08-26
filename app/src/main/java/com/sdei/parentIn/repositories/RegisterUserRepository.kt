@@ -6,7 +6,7 @@ import com.sdei.parentIn.model.TeacherModel
 import com.sdei.parentIn.model.UserModel
 import com.sdei.parentIn.network.RetrofitClient
 import com.sdei.parentIn.room.RoomDb
-import org.json.JSONObject
+import com.sdei.parentIn.utils.handleJson
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -20,19 +20,13 @@ class RegisterUserRepository {
             }
 
             override fun onResponse(call: Call<UserModel>?, response: Response<UserModel>?) {
-                if (response!!.body() != null) {
-                    returnValue(response.body()!!)
-                } else if (response.errorBody() != null) {
-
-                    val obj = JSONObject(response.errorBody()!!.string())
-
-                    val statusCode = obj.getString("statusCode")
-                    val message = obj.getString("message")
-
-                    returnValue(UserModel(statusCode.toInt(), message.toString()))
-
-                } else {
-                    returnValue(UserModel(response.code(), response.message().toString()))
+                when {
+                    response!!.body() != null -> returnValue(response.body()!!)
+                    response.errorBody() != null -> {
+                        val (statusCode, message) = handleJson(response.errorBody()!!.string())
+                        returnValue(UserModel(statusCode.toInt(), message))
+                    }
+                    else -> returnValue(UserModel(response.code(), response.message().toString()))
                 }
             }
         })
@@ -40,25 +34,19 @@ class RegisterUserRepository {
 
     // make call to get school list
     fun getTeacherList(schoolId: String, returnValue: (TeacherModel) -> Unit) {
-        RetrofitClient.instance!!.listBySchool(schoolId).enqueue(object : Callback<TeacherModel> {
+        RetrofitClient.instance!!.teacherListBySchool(schoolId).enqueue(object : Callback<TeacherModel> {
             override fun onFailure(call: Call<TeacherModel>, t: Throwable) {
                 returnValue(TeacherModel(t.message!!))
             }
 
             override fun onResponse(call: Call<TeacherModel>, response: Response<TeacherModel>) {
-                if (response.body() != null) {
-                    returnValue(response.body()!!)
-                } else if (response.errorBody() != null) {
-
-                    val obj = JSONObject(response.errorBody()!!.string())
-
-                    val statusCode = obj.getString("statusCode")
-                    val message = obj.getString("message")
-
-                    returnValue(TeacherModel(statusCode.toInt(), message.toString()))
-
-                } else {
-                    returnValue(TeacherModel(response.code(), response.message().toString()))
+                when {
+                    response.body() != null -> returnValue(response.body()!!)
+                    response.errorBody() != null -> {
+                        val (statusCode, message) = handleJson(response.errorBody()!!.string())
+                        returnValue(TeacherModel(statusCode.toInt(), message))
+                    }
+                    else -> returnValue(TeacherModel(response.code(), response.message().toString()))
                 }
             }
 

@@ -4,6 +4,7 @@ import com.sdei.parentIn.interfaces.InterConst.CODE_ERROR
 
 open class BaseModel {
 
+
     /**
      * statusCode : 200
      * message : Registration successful

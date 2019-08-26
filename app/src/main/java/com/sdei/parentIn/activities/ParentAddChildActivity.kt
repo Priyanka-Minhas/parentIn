@@ -88,6 +88,7 @@ class ParentAddChildActivity : BaseActivity<ParentAddChildViewModel>(), View.OnC
                 }
 
                 model.noOfStudents = mChildList.size.toString()
+                model.childs.addAll(mChildList)
 
                 if (connectedToInternet(btnAddChild)) {
                     showProgess()
