@@ -1,8 +1,9 @@
-package com.sdei.parentIn.activities
+package com.sdei.parentIn.activities.parent
 
 import android.content.Context
 import androidx.lifecycle.ViewModelProviders
 import com.sdei.parentIn.R
+import com.sdei.parentIn.activities.BaseActivity
 import com.sdei.parentIn.adapters.ViewPagerAdapter
 import com.sdei.parentIn.fragments.ParentChildrenFragment
 import com.sdei.parentIn.fragments.ParentMessageFragment

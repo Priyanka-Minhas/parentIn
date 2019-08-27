@@ -5,6 +5,7 @@ import android.content.Intent
 import android.view.View
 import androidx.lifecycle.ViewModelProviders
 import com.sdei.parentIn.R
+import com.sdei.parentIn.activities.parent.ParentLandingActivity
 import com.sdei.parentIn.interfaces.InterConst
 import com.sdei.parentIn.utils.getAppPref
 import com.sdei.parentIn.viewModel.WelcomeViewModel

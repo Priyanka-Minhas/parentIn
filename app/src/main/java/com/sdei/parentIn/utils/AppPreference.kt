@@ -6,7 +6,7 @@ import android.content.res.Resources
 import android.util.TypedValue
 import com.sdei.parentIn.AppApplication
 
-class Utils(mActivity: AppApplication) {
+class AppPreference(mActivity: AppApplication) {
 
     private val preferences: SharedPreferences
 

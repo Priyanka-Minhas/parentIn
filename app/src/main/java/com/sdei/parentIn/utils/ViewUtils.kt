@@ -68,8 +68,8 @@ fun handleJson(response: String): Pair<String, String> {
     return Pair(statusCode, message)
 }
 
-fun getAppPref(): Utils {
-    return Utils(AppApplication.getInstance())
+fun getAppPref(): AppPreference {
+    return AppPreference(AppApplication.getInstance())
 }
 
 fun Context.saveUserData(model: UserModel.DataBean) {

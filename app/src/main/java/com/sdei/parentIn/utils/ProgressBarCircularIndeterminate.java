@@ -24,8 +24,8 @@ public class ProgressBarCircularIndeterminate extends CustomView {
     // Set atributtes of XML to View
     private void setAttributes(@NonNull AttributeSet attrs) {
 
-        setMinimumHeight(AppPrefrences.Companion.dpToPx(32, getResources()));
-        setMinimumWidth(AppPrefrences.Companion.dpToPx(32, getResources()));
+        setMinimumHeight(AppPreference.Companion.dpToPx(32, getResources()));
+        setMinimumWidth(AppPreference.Companion.dpToPx(32, getResources()));
 
         //Set background Color
         // Color by resource
@@ -43,7 +43,7 @@ public class ProgressBarCircularIndeterminate extends CustomView {
                 setBackgroundColor(Color.parseColor("#1E88E5"));
         }
 
-        setMinimumHeight(AppPrefrences.Companion.dpToPx(3, getResources()));
+        setMinimumHeight(AppPreference.Companion.dpToPx(3, getResources()));
 
     }
 
@@ -107,11 +107,11 @@ public class ProgressBarCircularIndeterminate extends CustomView {
             if (cont >= 50) {
                 radius2 = (radius2 >= getWidth() / 2) ? (float) getWidth() / 2 : radius2 + 1;
             } else {
-                radius2 = (radius2 >= getWidth() / 2 - AppPrefrences.Companion.dpToPx(4, getResources())) ? (float) getWidth() / 2 - AppPrefrences.Companion.dpToPx(4, getResources()) : radius2 + 1;
+                radius2 = (radius2 >= getWidth() / 2 - AppPreference.Companion.dpToPx(4, getResources())) ? (float) getWidth() / 2 - AppPreference.Companion.dpToPx(4, getResources()) : radius2 + 1;
             }
             temp.drawCircle(getWidth() / 2, getHeight() / 2, radius2, transparentPaint);
             canvas.drawBitmap(bitmap, 0, 0, new Paint());
-            if (radius2 >= getWidth() / 2 - AppPrefrences.Companion.dpToPx(4, getResources()))
+            if (radius2 >= getWidth() / 2 - AppPreference.Companion.dpToPx(4, getResources()))
                 cont++;
             if (radius2 >= getWidth() / 2)
                 firstAnimationOver = true;
@@ -154,7 +154,7 @@ public class ProgressBarCircularIndeterminate extends CustomView {
         transparentPaint.setAntiAlias(true);
         transparentPaint.setColor(getResources().getColor(android.R.color.transparent));
         transparentPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
-        temp.drawCircle(getWidth() / 2, getHeight() / 2, (getWidth() / 2) - AppPrefrences.Companion.dpToPx(4, getResources()), transparentPaint);
+        temp.drawCircle(getWidth() / 2, getHeight() / 2, (getWidth() / 2) - AppPreference.Companion.dpToPx(4, getResources()), transparentPaint);
 
         canvas.drawBitmap(bitmap, 0, 0, new Paint());
     }

@@ -21,7 +21,7 @@
 		tools:ignore="GoogleAppIndexingWarning"
 		tools:targetApi="n">
 		<activity
-			android:name=".activities.ParentLandingActivity"
+			android:name=".activities.parent.ParentLandingActivity"
 			android:configChanges="layoutDirection|locale"
 			android:launchMode="singleTop"
 			android:screenOrientation="portrait">
