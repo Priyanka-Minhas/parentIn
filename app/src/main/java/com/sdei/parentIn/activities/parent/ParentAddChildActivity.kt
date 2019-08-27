@@ -80,10 +80,10 @@ class ParentAddChildActivity : BaseActivity<ParentAddChildViewModel>(), View.OnC
                     } else if (mChildList[i].birthDate.isNullOrEmpty()) {
                         showAlertSnackBar(txtCreateAccount, getString(R.string.errorBirthday) + " " + childNo)
                         return
-                    } else if (mChildList[i].school.isNullOrEmpty()) {
+                    } else if (mChildList[i].school_name.isNullOrEmpty()) {
                         showAlertSnackBar(txtCreateAccount, getString(R.string.errorSchool) + " " + childNo)
                         return
-                    } else if (mChildList[i].teacher.isNullOrEmpty()) {
+                    } else if (mChildList[i].teacher_name.isNullOrEmpty()) {
                         showAlertSnackBar(txtCreateAccount, getString(R.string.errorTeacher) + " " + childNo)
                         return
                     }

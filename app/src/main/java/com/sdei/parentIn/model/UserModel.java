@@ -4,8 +4,6 @@ package com.sdei.parentIn.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import com.google.gson.annotations.SerializedName;
-
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -494,7 +492,24 @@ public class UserModel extends BaseModel implements Parcelable {
         private String birthDate;
         private String school;
         private String teacher;
+        private String school_name;
+        private String teacher_name;
 
+        public String getSchool_name() {
+            return school_name;
+        }
+
+        public void setSchool_name(String school_name) {
+            this.school_name = school_name;
+        }
+
+        public String getTeacher_name() {
+            return teacher_name;
+        }
+
+        public void setTeacher_name(String teacher_name) {
+            this.teacher_name = teacher_name;
+        }
 
         public ChildsBean() {
 
@@ -580,6 +595,8 @@ public class UserModel extends BaseModel implements Parcelable {
             dest.writeString(this.birthDate);
             dest.writeString(this.school);
             dest.writeString(this.teacher);
+            dest.writeString(this.school_name);
+            dest.writeString(this.teacher_name);
         }
 
         protected ChildsBean(Parcel in) {
@@ -591,6 +608,8 @@ public class UserModel extends BaseModel implements Parcelable {
             this.birthDate = in.readString();
             this.school = in.readString();
             this.teacher = in.readString();
+            this.school_name = in.readString();
+            this.teacher_name = in.readString();
         }
 
         public static final Creator<ChildsBean> CREATOR = new Creator<ChildsBean>() {

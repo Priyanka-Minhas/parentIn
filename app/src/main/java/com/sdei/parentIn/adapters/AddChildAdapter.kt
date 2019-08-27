@@ -70,27 +70,31 @@ class AddChildAdapter(var con: Context,
             dpd.show()
         }
 
-        holder.school.setOnClickListener {
+        holder.schoolName.setOnClickListener {
             (con as ParentAddChildActivity).getSchoolList {
 
-                holder.teacher.setText("")
+                holder.teacherName.setText("")
                 mData[position].teacher = ""
+                mData[position].teacher_name = ""
 
-                holder.school.setText(it.schoolName.toString())
-                holder.school.text.toString()
+                holder.schoolName.setText(it.schoolName.toString())
+                mData[position].school_name = holder.schoolName.text.toString()
                 mData[position].school = it._id
             }
         }
 
-        holder.teacher.setOnClickListener {
-            if (TextUtils.isEmpty(holder.school.text.toString())) {
+        holder.teacherName.setOnClickListener {
+            if (TextUtils.isEmpty(holder.schoolName.text.toString())) {
                 val p = position + 1
-                showAlertSnackBar(holder.teacher, con.getString(R.string.errorSchool) + " " + p)
+                showAlertSnackBar(holder.teacherName, con.getString(R.string.errorSchool) + " " + p)
                 return@setOnClickListener
             }
             (con as ParentAddChildActivity).getTeacherList(mData[position].school) {
-                holder.teacher.setText(it.firstName.toString())
+                holder.teacherName.setText(it.firstName.toString())
+
                 mData[position].teacher = it._id
+
+                mData[position].teacher_name = it.firstName
             }
         }
 
@@ -150,8 +154,8 @@ class AddChildAdapter(var con: Context,
         var identityCard = itemView.edtChildIdentityCard!!
         var gender = itemView.edtChildGender!!
         var birthdate = itemView.edtChildBirthDate!!
-        var school = itemView.edtChildSchool!!
-        var teacher = itemView.edtChildTeacher!!
+        var schoolName = itemView.edtChildSchool!!
+        var teacherName = itemView.edtChildTeacher!!
     }
 
     interface ClickInterface {

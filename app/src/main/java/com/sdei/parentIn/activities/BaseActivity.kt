@@ -11,7 +11,6 @@ import android.view.inputmethod.InputMethodManager
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModel
-import com.google.android.material.snackbar.Snackbar
 
 /**
  * Created by shubham on 22/05/19.
@@ -24,7 +23,6 @@ abstract class BaseActivity<V : ViewModel> : AppCompatActivity() {
     // since its going to be common for all the activities
     var mViewModel: V? = null
     lateinit var mContext: Context
-    private var mSnackbar: Snackbar? = null
 
     /**
      * Override for set binding variable
