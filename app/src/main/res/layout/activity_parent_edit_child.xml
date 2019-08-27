@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@mipmap/background"
+	android:orientation="vertical"
+	android:animateLayoutChanges="true"
+	tools:context="com.sdei.parentIn.activities.parent.ParentAddChildActivity">
+
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="@drawable/stroke_toolbar">
+
+		<ImageView
+			android:id="@+id/btnBack"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerVertical="true"
+			android:foreground="?selectableItemBackground"
+			android:padding="@dimen/_12sdp"
+			android:src="@mipmap/ic_back_arrow" />
+
+		<com.sdei.parentIn.customViews.SemiBoldTextView
+			android:id="@+id/txtTitle"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerInParent="true"
+			android:padding="@dimen/_12sdp"
+			android:text="@string/informaci_n_del_estudiante"
+			android:textColor="@color/black"
+			android:textSize="@dimen/_14ssp" />
+
+	</RelativeLayout>
+
+	<com.sdei.parentIn.customViews.RegularTextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center"
+		android:layout_marginStart="@dimen/_15sdp"
+		android:layout_marginTop="@dimen/_30sdp"
+		android:layout_marginEnd="@dimen/_15sdp"
+		android:layout_marginBottom="@dimen/_15sdp"
+		android:gravity="center"
+		android:text="@string/ingresa_la_informaci_n_b_sica_del_ni_o_a_para_poder_continua"
+		android:textColor="@color/black"
+		android:textSize="@dimen/_11ssp" />
+
+	<androidx.core.widget.NestedScrollView
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_weight="1">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:orientation="vertical">
+
+			<androidx.recyclerview.widget.RecyclerView
+				android:id="@+id/rvAddChild"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="@dimen/_15sdp" />
+
+
+			<com.sdei.parentIn.customViews.SemiBoldTextView
+				android:id="@+id/txtCreateAccount"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="@dimen/_10sdp"
+				android:layout_marginTop="@dimen/_12sdp"
+				android:layout_marginEnd="@dimen/_10sdp"
+				android:layout_marginBottom="@dimen/_15sdp"
+				android:background="@drawable/bg_primary_round"
+				android:foreground="?selectableItemBackground"
+				android:gravity="center"
+				android:padding="@dimen/_12sdp"
+				android:text="@string/done"
+				android:textColor="@color/white"
+				android:textSize="@dimen/_12ssp" />
+		</LinearLayout>
+
+	</androidx.core.widget.NestedScrollView>
+</LinearLayout>

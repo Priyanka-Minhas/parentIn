@@ -1,9 +1,6 @@
 package com.sdei.parentIn.network
 
-import com.sdei.parentIn.model.ChildModel
-import com.sdei.parentIn.model.SchoolModel
-import com.sdei.parentIn.model.TeacherModel
-import com.sdei.parentIn.model.UserModel
+import com.sdei.parentIn.model.*
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -31,6 +28,17 @@ interface ApiInterface {
     @FormUrlEncoded
     @POST("/student/listByParent")
     fun getChildList(@Field("_id") _id: String): Call<ChildModel>
+
+
+    //edit child
+    @POST("/student/updateChildbyParent")
+    fun updateChildbyParent(@Body child: ChildModel.DataBeanRequest
+    ): Call<BaseModel>
+
+   // add child
+    @POST("/student/addChildbyParent")
+    fun addChildbyParent(@Body child: ChildModel.DataBeanRequest
+    ): Call<BaseModel>
 
 
 //    @FormUrlEncoded

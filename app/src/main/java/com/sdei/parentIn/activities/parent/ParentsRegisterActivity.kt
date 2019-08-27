@@ -1,6 +1,5 @@
 package com.sdei.parentIn.activities.parent
 
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.view.View
@@ -143,29 +142,11 @@ class ParentsRegisterActivity : BaseActivity<BaseViewModel>(), View.OnClickListe
         model.confirmPassword = edtConfPassword.text.toString()
         model.gender = edtGender.text.toString()
         model.roleId = getAppPref().getInt(InterConst.ROLE_ID)
-
-//        if (rbYes.isEnabled) {
-//            model.setSameAddressAsStudent(true)
-//        } else {
-//            model.setSameAddressAsStudent(true)
-//        }
+        model.isSameAddressAsStudent = rbYes.isEnabled
 
         val intent = Intent(mContext, ParentAddChildActivity::class.java)
-        intent.putExtra(InterConst.EXTRA_DATA, model)
-        startActivityForResult(intent, InterConst.RESULT_CREATE_ACCOUNT)
+        intent.putExtra(InterConst.PARENT_DATA, model)
+        startActivity(intent)
     }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (resultCode == Activity.RESULT_OK) {
-            when (requestCode) {
-                InterConst.RESULT_CREATE_ACCOUNT -> {
-                    finish()
-                }
-            }
-        }
-
-    }
-
 
 }

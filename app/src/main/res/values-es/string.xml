@@ -129,5 +129,7 @@
 	<string name="encuestas_terminadas">Encuestas Terminadas:</string>
 	<string name="informaci_n_de_la_clase">Información de la Clase</string>
 
+	<!-- ParentEditChildActivity-->
+	<string name="done">HECHO</string>
 
 </resources>

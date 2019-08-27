@@ -12,7 +12,7 @@ import com.sdei.parentIn.activities.WelcomeActivity
 import com.sdei.parentIn.adapters.AddChildAdapter
 import com.sdei.parentIn.dialog.SchoolListDialog
 import com.sdei.parentIn.dialog.TeacherListDialog
-import com.sdei.parentIn.interfaces.InterConst.EXTRA_DATA
+import com.sdei.parentIn.interfaces.InterConst.PARENT_DATA
 import com.sdei.parentIn.interfaces.InterfacesCall
 import com.sdei.parentIn.model.SchoolModel
 import com.sdei.parentIn.model.TeacherModel
@@ -61,7 +61,7 @@ class ParentAddChildActivity : BaseActivity<ParentAddChildViewModel>(), View.OnC
 
             R.id.txtCreateAccount -> {
 
-                val model = intent.getParcelableExtra(EXTRA_DATA) as UserModel.DataBeanRequest
+                val model = intent.getParcelableExtra(PARENT_DATA) as UserModel.DataBeanRequest
 
                 for (i in 0 until mChildList.size) {
                     val childNo = i + 1
@@ -90,6 +90,7 @@ class ParentAddChildActivity : BaseActivity<ParentAddChildViewModel>(), View.OnC
                 }
 
                 model.noOfStudents = mChildList.size.toString()
+
                 model.childs.addAll(mChildList)
 
                 if (connectedToInternet(btnAddChild)) {
@@ -121,16 +122,13 @@ class ParentAddChildActivity : BaseActivity<ParentAddChildViewModel>(), View.OnC
     override fun onCreate() {
         mChildList.add(UserModel.ChildsBean())
         setChildAdapter()
-
         mViewModel!!.getProfile().observe(this,
                 Observer<UserModel> { mData ->
                     if (mData != null && responseHandler(mData.statusCode, mData.message)) {
                         showToast(getString(R.string.registered_successfully))
-
                         val intent = Intent(mContext, WelcomeActivity::class.java)
                         startActivity(intent)
                         finishAffinity()
-
                     }
                 })
 
@@ -138,6 +136,8 @@ class ParentAddChildActivity : BaseActivity<ParentAddChildViewModel>(), View.OnC
                 Observer<ArrayList<SchoolModel.DataBean>> { mData ->
                     mSchoolList.addAll(mData)
                 })
+
+
 
     }
 
