@@ -3,10 +3,13 @@
 	<color name="colorPrimary">#5335D4</color>
 	<color name="colorPrimaryDark">#5335D4</color>
 	<color name="colorAccent">#FFFFFF</color>
+	<color name="colorWhite">#FFFFFF</color>
 	<color name="black">#000000</color>
 	<color name="white">#FFFFFF</color>
 	<color name="blue">#1ACEEA</color>
-	<color name="colorToolbarStroke">#f1f1f1</color>
+	<color name="colorToolbarStroke">#F1F1F1</color>
 	<color name="grey">#BDBDBD</color>
+	<color name="colorTabNormalText">#423E57</color>
+	<color name="colorYellow">#F3AB30</color>
 
 </resources>

@@ -1,33 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
+	android:background="@color/colorAccent"
 	tools:context="com.sdei.parentIn.activities.LandingActivity">
 
-	<com.sdei.parentIn.customViews.RegularTextView
-		android:layout_width="wrap_content"
+	<com.google.android.material.appbar.AppBarLayout
+		android:id="@+id/appBarLayout"
+		android:layout_width="0dp"
 		android:layout_height="wrap_content"
-		android:layout_centerInParent="true"
-		android:text="@string/under_development"
-		android:textColor="@color/black" />
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent">
+
+		<RelativeLayout
+			android:id="@+id/relativeLayout"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="@drawable/stroke_toolbar"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent">
+
+			<ImageView
+				android:id="@+id/imgSetting"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignParentEnd="true"
+				android:layout_centerVertical="true"
+				android:layout_marginEnd="@dimen/_16sdp"
+				android:background="@drawable/ic_settings" />
+
+			<com.sdei.parentIn.customViews.SemiBoldTextView
+				android:id="@+id/txtTitle"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerInParent="true"
+				android:padding="@dimen/_12sdp"
+				android:text="@string/Familiasin_small"
+				android:textColor="@color/black"
+				android:textSize="@dimen/_14ssp" />
+
+		</RelativeLayout>
+
+		<com.sdei.parentIn.customViews.CustomTabLayout
+			android:id="@+id/tabs"
+			android:layout_width="match_parent"
+			android:layout_height="@dimen/_48sdp"
+			android:background="@color/colorAccent"
+			app:tabMode="fixed"
+			app:tabIndicatorHeight="@dimen/_3sdp"
+			app:tabSelectedTextColor="@color/colorPrimary"
+			app:tabTextColor="@color/colorTabNormalText"
+            app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+            style="@style/CustomTextAppearanceTab"/>
 
 
-	<com.sdei.parentIn.customViews.SemiBoldTextView
-		android:id="@+id/txtLogout"
+	</com.google.android.material.appbar.AppBarLayout>
+
+	<androidx.viewpager.widget.ViewPager
+		android:id="@+id/viewPager"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:layout_alignParentBottom="true"
-		android:layout_marginStart="@dimen/_10sdp"
-		android:layout_marginTop="@dimen/_12sdp"
-		android:layout_marginEnd="@dimen/_10sdp"
-		android:layout_marginBottom="@dimen/_15sdp"
-		android:background="@drawable/bg_primary_round"
-		android:foreground="?selectableItemBackground"
-		android:gravity="center"
-		android:padding="@dimen/_12sdp"
-		android:text="@string/logout"
-		android:textColor="@color/white"
-		android:textSize="@dimen/_12ssp" />
+		app:layout_behavior="@string/appbar_scrolling_view_behavior"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
 
-</RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,7 +6,7 @@
 	android:background="@mipmap/background"
 	android:orientation="vertical"
 	android:animateLayoutChanges="true"
-	tools:context="com.sdei.parentIn.activities.ParentAddChildActivity">
+	tools:context="com.sdei.parentIn.activities.parent.ParentAddChildActivity">
 
 	<RelativeLayout
 		android:layout_width="match_parent"

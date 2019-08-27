@@ -1,4 +1,4 @@
-package com.sdei.parentIn.activities
+package com.sdei.parentIn.activities.parent
 
 import android.content.Context
 import android.content.Intent
@@ -7,6 +7,8 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sdei.parentIn.R
+import com.sdei.parentIn.activities.BaseActivity
+import com.sdei.parentIn.activities.WelcomeActivity
 import com.sdei.parentIn.adapters.AddChildAdapter
 import com.sdei.parentIn.dialog.SchoolListDialog
 import com.sdei.parentIn.dialog.TeacherListDialog
@@ -16,7 +18,7 @@ import com.sdei.parentIn.model.SchoolModel
 import com.sdei.parentIn.model.TeacherModel
 import com.sdei.parentIn.model.UserModel
 import com.sdei.parentIn.utils.*
-import com.sdei.parentIn.viewModel.ParentAddChildViewModel
+import com.sdei.parentIn.viewModel.parent.ParentAddChildViewModel
 import kotlinx.android.synthetic.main.activity_parent_add_child.*
 
 

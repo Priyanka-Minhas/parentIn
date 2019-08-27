@@ -6,6 +6,8 @@ import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.sdei.parentIn.R
+import com.sdei.parentIn.activities.parent.ParentsRegisterActivity
+import com.sdei.parentIn.activities.teacher.TeacherRegisterActivity
 import com.sdei.parentIn.interfaces.InterConst
 import com.sdei.parentIn.model.UserModel
 import com.sdei.parentIn.utils.*

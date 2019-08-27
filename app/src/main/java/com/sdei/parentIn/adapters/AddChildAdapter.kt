@@ -10,7 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.sdei.parentIn.R
-import com.sdei.parentIn.activities.ParentAddChildActivity
+import com.sdei.parentIn.activities.parent.ParentAddChildActivity
 import com.sdei.parentIn.dialog.OptionDialog
 import com.sdei.parentIn.interfaces.InterfacesCall
 import com.sdei.parentIn.model.UserModel

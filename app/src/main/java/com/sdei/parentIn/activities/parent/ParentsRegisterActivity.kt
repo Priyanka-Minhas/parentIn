@@ -1,4 +1,4 @@
-package com.sdei.parentIn.activities
+package com.sdei.parentIn.activities.parent
 
 import android.app.Activity
 import android.content.Context
@@ -6,6 +6,7 @@ import android.content.Intent
 import android.view.View
 import androidx.lifecycle.ViewModelProviders
 import com.sdei.parentIn.R
+import com.sdei.parentIn.activities.BaseActivity
 import com.sdei.parentIn.dialog.OptionDialog
 import com.sdei.parentIn.interfaces.InterConst
 import com.sdei.parentIn.interfaces.InterfacesCall

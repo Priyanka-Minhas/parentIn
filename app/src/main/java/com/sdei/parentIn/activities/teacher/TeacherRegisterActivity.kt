@@ -1,4 +1,4 @@
-package com.sdei.parentIn.activities
+package com.sdei.parentIn.activities.teacher
 
 import android.content.Context
 import android.content.Intent
@@ -6,6 +6,8 @@ import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.sdei.parentIn.R
+import com.sdei.parentIn.activities.BaseActivity
+import com.sdei.parentIn.activities.WelcomeActivity
 import com.sdei.parentIn.dialog.OptionDialog
 import com.sdei.parentIn.dialog.SchoolListDialog
 import com.sdei.parentIn.interfaces.InterConst
@@ -13,7 +15,7 @@ import com.sdei.parentIn.interfaces.InterfacesCall
 import com.sdei.parentIn.model.SchoolModel
 import com.sdei.parentIn.model.UserModel
 import com.sdei.parentIn.utils.*
-import com.sdei.parentIn.viewModel.TeacherRegisterViewModel
+import com.sdei.parentIn.viewModel.teacher.TeacherRegisterViewModel
 import com.wajahatkarim3.easyvalidation.core.view_ktx.nonEmpty
 import com.wajahatkarim3.easyvalidation.core.view_ktx.validEmail
 import kotlinx.android.synthetic.main.activity_teacher_new_account.*

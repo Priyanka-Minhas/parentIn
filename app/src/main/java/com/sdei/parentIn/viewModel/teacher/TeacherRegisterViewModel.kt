@@ -1,4 +1,4 @@
-package com.sdei.parentIn.viewModel
+package com.sdei.parentIn.viewModel.teacher
 
 import android.app.Application
 import androidx.lifecycle.MutableLiveData
@@ -6,6 +6,7 @@ import com.sdei.parentIn.model.SchoolModel
 import com.sdei.parentIn.model.TeacherModel
 import com.sdei.parentIn.model.UserModel
 import com.sdei.parentIn.repositories.RegisterUserRepository
+import com.sdei.parentIn.viewModel.BaseViewModel
 
 class TeacherRegisterViewModel(application: Application) : BaseViewModel(application = application) {
 

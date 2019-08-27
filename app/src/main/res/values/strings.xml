@@ -101,6 +101,7 @@
 	<!-- About US -->
 	<string name="Acerca">About</string>
 	<string name="Familiasin">FAMILIASIN</string>
+	<string name="Familiasin_small">Familias In</string>
 	<string name="aboutSmallText">It is a mobile application that was created in \ncollaboration with the Ministry of \nEducation and Culture and the Inter-\nAmerican Development Bank.</string>
 	<string name="aboutTextWithEmail">If you have any questions or comments \nplease write to info@parentin.com and we \nwill respond as soon as possible</string>
 
@@ -114,7 +115,8 @@
 	<string name="Confirmar_contraseña">Confirm Password</string>
 	<string name="Crear_cuenta">CREATE ACCOUNT</string>
 	<!--	LANDING-->
-	<string name="logout">LOGOUT</string>
-	<string name="under_development">Under Development</string>
-
+    <string name="children">Children</string>
+	<string name="Mensajes">Messages</string>
+	<!-- Message Fragments -->
+    <string name="escribir_nuevo_mensaje">WRITE NEW MESSAGE</string>
 </resources>
