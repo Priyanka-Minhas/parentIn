@@ -6,8 +6,6 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.sdei.parentIn.model.SchoolModel
 
-
-
 @Dao
 interface DaoAccess {
 
