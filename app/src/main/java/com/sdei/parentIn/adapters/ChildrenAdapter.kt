@@ -6,21 +6,30 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.sdei.parentIn.R
+import com.sdei.parentIn.model.ChildModel
+import kotlinx.android.synthetic.main.item_children_fragment.view.*
+import java.util.*
 
-import java.util.ArrayList
-
-class ChildrenAdapter(var context : Context,var childrenList: ArrayList<String>): RecyclerView.Adapter<ChildrenAdapter.ChildrenViewHolder>() {
+class ChildrenAdapter(var context: Context, var mData: ArrayList<ChildModel.DataBean>) : RecyclerView.Adapter<ChildrenAdapter.ChildrenViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChildrenViewHolder {
-        val layout = LayoutInflater.from(parent.context).inflate(R.layout.item_children_fragment,parent,false)
+        val layout = LayoutInflater.from(parent.context).inflate(R.layout.item_children_fragment, parent, false)
         return ChildrenViewHolder(layout)
     }
 
     override fun getItemCount(): Int {
-       return  childrenList.size
+        return mData.size
     }
 
     override fun onBindViewHolder(holder: ChildrenViewHolder, position: Int) {
-
+        holder.rvMain.setOnClickListener {
+            if (holder.llSendMessage.visibility == View.VISIBLE) {
+                holder.llSendMessage.visibility = View.GONE
+            } else {
+                holder.llSendMessage.visibility = View.VISIBLE
+            }
+        }
+        holder.txtChildDob.text = mData[position].birthDate.toString()
+        holder.txtChildName.text = "${mData[position].firstName} ${mData[position].lastName}"
     }
 
     override fun getItemViewType(position: Int): Int {
@@ -28,11 +37,14 @@ class ChildrenAdapter(var context : Context,var childrenList: ArrayList<String>)
     }
 
 
-    inner  class ChildrenViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
-        var imgChild = ""
-        var imgEditChild =""
-        var txtChildName =""
-        var txtChildDob =""
+    inner class ChildrenViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+
+        var rvMain = itemView.rvMain
+        var llSendMessage = itemView.llSendMessage
+        var txtChildName = itemView.txtChildName
+        var txtChildDob = itemView.txtChildDob
+        var txtChildClass = itemView.txtChildClass
+        var txtParentName = itemView.txtParentName
 
     }
 

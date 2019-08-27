@@ -4,8 +4,9 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.content.res.Resources
 import android.util.TypedValue
+import com.sdei.parentIn.AppApplication
 
-class Utils(mActivity: Context) {
+class Utils(mActivity: AppApplication) {
 
     private val preferences: SharedPreferences
 
@@ -21,6 +22,10 @@ class Utils(mActivity: Context) {
 
     fun getString(key: String, defaultValue: String): String? {
         return preferences.getString(key, defaultValue)
+    }
+
+    fun getString(key: String): String? {
+        return preferences.getString(key, "")
     }
 
     fun setBoolean(key: String, value: Boolean?) {

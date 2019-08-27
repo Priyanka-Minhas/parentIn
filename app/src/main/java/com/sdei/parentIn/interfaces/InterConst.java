@@ -22,8 +22,13 @@ public interface InterConst {
 
     @NotNull
     String ID = "_id";
+
     @NotNull
     String FIRST_NAME = "firstName";
+
     @NotNull
     String LAST_NAME = "lastName";
+
+    @NotNull
+    String AUTH_TOKEN = "auth_token";
 }

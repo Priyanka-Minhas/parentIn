@@ -1,15 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="@dimen/_16sdp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/_12sdp"
+    android:layout_marginEnd="@dimen/_12sdp"
+    android:layout_marginTop="@dimen/_8sdp"
+	android:animateLayoutChanges="true"
+    app:cardCornerRadius="@dimen/_5sdp"
     android:background="@color/colorAccent">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_12sdp"
-        android:layout_marginEnd="@dimen/_12sdp">
+		android:layout_marginBottom="@dimen/_8sdp"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_8sdp">
+
+       <RelativeLayout
+		   android:id="@+id/rvMain"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+
         <ImageView
             android:id="@+id/imgChild"
             android:layout_width="wrap_content"
@@ -22,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/imgChild"
-            android:textSize="@dimen/_14sdp"
+            android:textSize="@dimen/_12ssp"
             android:textColor="@color/colorTabNormalText"
             android:layout_marginStart="@dimen/_14ssp"
             android:layout_marginTop="@dimen/_16sdp"
@@ -35,15 +47,15 @@
             android:layout_below="@+id/txtChildName"
             android:layout_toRightOf="@+id/imgChild"
             android:textColor="@color/colorTabNormalText"
-            android:layout_marginStart="@dimen/_14ssp"
-            android:textSize="@dimen/_12sdp"
+            android:layout_marginStart="@dimen/_12ssp"
+            android:textSize="@dimen/_12ssp"
             android:text="24 JulIo 2013"/>
 
         <ImageView
             android:id="@+id/imgEditChild"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/ic_yellow_child_edit"
+            android:src="@drawable/ic_yellow_child_edit"
             android:layout_marginTop="@dimen/_16sdp"
             android:layout_alignParentEnd="true"/>
 
@@ -62,42 +74,48 @@
             android:layout_below="@+id/view"
             android:layout_marginTop="@dimen/_8sdp"
             android:orientation="horizontal">
+
             <com.sdei.parentIn.customViews.SemiBoldTextView
+				android:id="@+id/txtChildClass"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorTabNormalText"
-                android:textSize="@dimen/_12ssp"
+                android:textSize="@dimen/_10ssp"
                 android:text="ABC kindergarden"/>
+
             <ImageView
                 android:layout_width="@dimen/_5sdp"
                 android:layout_height="@dimen/_5sdp"
                 android:background="@drawable/style_yellow_dot"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="@dimen/_10sdp"/>
+
             <com.sdei.parentIn.customViews.MediumTextView
+				android:id="@+id/txtParentName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_5sdp"
-                android:textSize="@dimen/_12ssp"
+                android:textSize="@dimen/_10ssp"
                 android:textColor="@color/colorTabNormalText"
                 android:text="Mtra. Adalberta López"/>
-
-
         </LinearLayout>
+
+       </RelativeLayout>
 
         <!-- ======================== Button  send Message to teacher =================== -->
 
         <LinearLayout
+            android:id="@+id/llSendMessage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/layText"
+            android:layout_below="@+id/rvMain"
+            android:visibility="gone"
             android:background="@drawable/bg_purpul_stroke"
             android:foreground="?selectableItemBackground"
             android:gravity="center"
             android:orientation="horizontal"
             android:padding="@dimen/_10sdp"
-            android:layout_marginTop="@dimen/_15sdp"
-            android:layout_marginBottom="@dimen/_12sdp">
+            android:layout_marginTop="@dimen/_8sdp">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -111,7 +129,7 @@
                 android:gravity="center"
                 android:text="Enviar Mensaje al Maestro"
                 android:textColor="@color/colorPrimary"
-                android:textSize="@dimen/_11ssp" />
+                android:textSize="@dimen/_10ssp" />
         </LinearLayout>
        <!-- =============== close ==================================== -->
 

@@ -51,6 +51,10 @@ public class UserModel extends BaseModel implements Parcelable {
          * roleId : 2
          * childs : [{"_id":"5d5f7fb41c7e4c024e5a2c7d","firstName":"Demo","lastName":"Name","verificationCard":"45983434755","gender":"M","birthDate":"11-10-1991","school":"5d5e322baaa88c670cb0babb","teacher":"5d5e7f8a439fae1351a2914b"}]
          * __v : 0
+         * token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjZWxsX251bWJlciI6ImFzd3dhc0Bhc2Fzd3cuY29tIiwiaWF0IjoxNTY2OTAwODUxfQ.disHOjYRtWv5QFPSjrJi9l_UC5Ta-_E5jRSWEttgWQQ"
+         * noOfStudents : 1
+         * verificationCard : 123123123123123
+         * isSameAddressAsStudent : true
          */
 
         private String _id;
@@ -66,13 +70,24 @@ public class UserModel extends BaseModel implements Parcelable {
         private int roleId;
         private List<ChildsBean> childs;
         private String verificationCard;
+        private String token;
         private boolean isSameAddressAsStudent;
 
-        /**
-         * noOfStudents : 1
-         * verificationCard : 123123123123123
-         * isSameAddressAsStudent : true
-         */
+        public boolean isSameAddressAsStudent() {
+            return isSameAddressAsStudent;
+        }
+
+        public void setSameAddressAsStudent(boolean sameAddressAsStudent) {
+            isSameAddressAsStudent = sameAddressAsStudent;
+        }
+
+        public String getToken() {
+            return token;
+        }
+
+        public void setToken(String token) {
+            this.token = token;
+        }
 
         public DataBean() {
 
@@ -211,8 +226,9 @@ public class UserModel extends BaseModel implements Parcelable {
             dest.writeString(this.emailAddress);
             dest.writeString(this.password);
             dest.writeInt(this.roleId);
-            dest.writeList(this.childs);
+            dest.writeTypedList(this.childs);
             dest.writeString(this.verificationCard);
+            dest.writeString(this.token);
             dest.writeByte(this.isSameAddressAsStudent ? (byte) 1 : (byte) 0);
         }
 
@@ -228,9 +244,9 @@ public class UserModel extends BaseModel implements Parcelable {
             this.emailAddress = in.readString();
             this.password = in.readString();
             this.roleId = in.readInt();
-            this.childs = new ArrayList<ChildsBean>();
-            in.readList(this.childs, ChildsBean.class.getClassLoader());
+            this.childs = in.createTypedArrayList(ChildsBean.CREATOR);
             this.verificationCard = in.readString();
+            this.token = in.readString();
             this.isSameAddressAsStudent = in.readByte() != 0;
         }
 

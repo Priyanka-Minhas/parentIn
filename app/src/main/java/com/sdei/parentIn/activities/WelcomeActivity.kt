@@ -46,7 +46,11 @@ class WelcomeActivity : BaseActivity<WelcomeViewModel>(), View.OnClickListener {
         get() = this@WelcomeActivity
 
     override fun onCreate() {
-
+        if(!getUtils().getString(InterConst.AUTH_TOKEN).isNullOrEmpty()){
+            val intent = Intent(mContext, ParentLandingActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 
     override fun initListeners() {

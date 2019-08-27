@@ -1,5 +1,6 @@
 package com.sdei.parentIn.network
 
+import com.sdei.parentIn.model.ChildModel
 import com.sdei.parentIn.model.SchoolModel
 import com.sdei.parentIn.model.TeacherModel
 import com.sdei.parentIn.model.UserModel
@@ -12,8 +13,8 @@ interface ApiInterface {
     @FormUrlEncoded
     @POST("/user/login")
     fun login(@Field("emailAddress") email: String,
-            @Field("password") password: String,
-            @Field("roleId")rollId:Int): Call<UserModel>
+              @Field("password") password: String,
+              @Field("roleId") rollId: Int): Call<UserModel>
 
     @FormUrlEncoded
     @POST("/user/listBySchool")
@@ -24,8 +25,12 @@ interface ApiInterface {
 
     // Get School List
     @GET("school/list")
-    fun getSchoolList():Call<SchoolModel>
+    fun getSchoolList(): Call<SchoolModel>
 
+    // Get child List
+    @FormUrlEncoded
+    @POST("/student/listByParent")
+    fun getChildList(@Field("_id") _id: String): Call<ChildModel>
 
 
 //    @FormUrlEncoded

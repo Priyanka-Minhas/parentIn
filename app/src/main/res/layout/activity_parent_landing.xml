@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-	xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:background="@color/colorAccent"
-	tools:context="com.sdei.parentIn.activities.LandingActivity">
+	tools:context="com.sdei.parentIn.activities.ParentLandingActivity">
+
+	<androidx.viewpager.widget.ViewPager
+		android:id="@+id/viewPager"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		app:layout_behavior="@string/appbar_scrolling_view_behavior"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
 
 	<com.google.android.material.appbar.AppBarLayout
 		android:id="@+id/appBarLayout"
@@ -31,16 +39,18 @@
 				android:layout_height="wrap_content"
 				android:layout_alignParentEnd="true"
 				android:layout_centerVertical="true"
-				android:layout_marginEnd="@dimen/_16sdp"
-				android:background="@drawable/ic_settings" />
+				android:layout_marginEnd="@dimen/_5sdp"
+				android:foreground="?selectableItemBackground"
+				android:padding="@dimen/_10sdp"
+				android:src="@drawable/ic_settings" />
 
 			<com.sdei.parentIn.customViews.SemiBoldTextView
 				android:id="@+id/txtTitle"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_centerInParent="true"
-				android:padding="@dimen/_12sdp"
-				android:text="@string/Familiasin_small"
+				android:padding="@dimen/_8sdp"
+				android:text="@string/app_name"
 				android:textColor="@color/black"
 				android:textSize="@dimen/_14ssp" />
 
@@ -48,27 +58,17 @@
 
 		<com.sdei.parentIn.customViews.CustomTabLayout
 			android:id="@+id/tabs"
+			style="@style/CustomTextAppearanceTab"
 			android:layout_width="match_parent"
-			android:layout_height="@dimen/_48sdp"
+			android:layout_height="@dimen/_38sdp"
 			android:background="@color/colorAccent"
-			app:tabMode="fixed"
 			app:tabIndicatorHeight="@dimen/_3sdp"
+			app:tabMode="fixed"
 			app:tabSelectedTextColor="@color/colorPrimary"
-			app:tabTextColor="@color/colorTabNormalText"
-            app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
-            style="@style/CustomTextAppearanceTab"/>
-
+			app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+			app:tabTextColor="@color/colorTabNormalText" />
 
 	</com.google.android.material.appbar.AppBarLayout>
-
-	<androidx.viewpager.widget.ViewPager
-		android:id="@+id/viewPager"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		app:layout_behavior="@string/appbar_scrolling_view_behavior"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

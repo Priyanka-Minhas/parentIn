@@ -37,7 +37,7 @@ class LoginActivity : BaseActivity<LoginViewModel>(), View.OnClickListener {
                 Observer<UserModel> { mData ->
                     if (mData != null && responseHandler(mData.statusCode, mData.message)) {
                         saveUserData(mData.data)
-                        val intent = Intent(mContext, LandingActivity::class.java)
+                        val intent = Intent(mContext, ParentLandingActivity::class.java)
                         startActivity(intent)
                         finishAffinity()
                     }

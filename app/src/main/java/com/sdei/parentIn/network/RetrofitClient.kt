@@ -1,6 +1,8 @@
 package com.sdei.parentIn.network
 
 import com.sdei.parentIn.AppApplication
+import com.sdei.parentIn.interfaces.InterConst
+import com.sdei.parentIn.utils.getUtils
 import okhttp3.Cache
 import okhttp3.CacheControl
 import okhttp3.Interceptor
@@ -10,7 +12,6 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.io.File
 import java.util.concurrent.TimeUnit
-
 
 
 object RetrofitClient {
@@ -30,10 +31,10 @@ object RetrofitClient {
         get() {
             if (retrofit == null) {
                 retrofit = Retrofit.Builder()
-                    .baseUrl(BASE_URL)
-                    .client(provideOkHttpClient())
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build()
+                        .baseUrl(BASE_URL)
+                        .client(provideOkHttpClient())
+                        .addConverterFactory(GsonConverterFactory.create())
+                        .build()
             }
             if (apiInterface == null) {
                 apiInterface = retrofit!!.create(ApiInterface::class.java)
@@ -45,10 +46,10 @@ object RetrofitClient {
         get() {
             if (retrofitGoogle == null) {
                 retrofitGoogle = Retrofit.Builder()
-                    .baseUrl(GOOGLEPLACE_NEARBY)
-                    .client(provideOkHttpClient())
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build()
+                        .baseUrl(GOOGLEPLACE_NEARBY)
+                        .client(provideOkHttpClient())
+                        .addConverterFactory(GsonConverterFactory.create())
+                        .build()
             }
             return retrofitGoogle
         }
@@ -57,10 +58,10 @@ object RetrofitClient {
         get() {
             if (retrofitEtaGoogle == null) {
                 retrofitEtaGoogle = Retrofit.Builder()
-                    .baseUrl(GOOGLEPLACE)
-                    .client(provideOkHttpClient())
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build()
+                        .baseUrl(GOOGLEPLACE)
+                        .client(provideOkHttpClient())
+                        .addConverterFactory(GsonConverterFactory.create())
+                        .build()
             }
             return retrofitEtaGoogle
         }
@@ -68,13 +69,13 @@ object RetrofitClient {
     //Creating OKHttpClient
     private fun provideOkHttpClient(): OkHttpClient {
         return OkHttpClient.Builder()
-            .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
-            .addInterceptor(provideOfflineCacheInterceptor())
-            .addNetworkInterceptor(provideCacheInterceptor())
-            .cache(provideCache())
-            .readTimeout(120, TimeUnit.SECONDS)
-            .connectTimeout(120, TimeUnit.SECONDS)
-            .build()
+                .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
+                .addInterceptor(provideOfflineCacheInterceptor())
+                .addNetworkInterceptor(provideCacheInterceptor())
+                .cache(provideCache())
+                .readTimeout(120, TimeUnit.SECONDS)
+                .connectTimeout(120, TimeUnit.SECONDS)
+                .build()
     }
 
     //Creating Cache
@@ -82,8 +83,8 @@ object RetrofitClient {
         var cache: Cache? = null
         try {
             cache = Cache(
-                File(AppApplication.getInstance()!!.cacheDir, "http-cache"),
-                (10 * 1024 * 1024).toLong()
+                    File(AppApplication.getInstance()!!.cacheDir, "http-cache"),
+                    (10 * 1024 * 1024).toLong()
             ) // 10 MB
         } catch (ignored: Exception) {
 
@@ -98,15 +99,18 @@ object RetrofitClient {
 
             // re-write response header to force use of cache
             val cacheControl = CacheControl.Builder()
-                .maxAge(2, TimeUnit.MINUTES)
-                .build()
+                    .maxAge(2, TimeUnit.MINUTES)
+                    .build()
 
 //            for spanish --> es-UY
 //            for en --> en-US
+
+
             response.newBuilder()
-                .header(CACHE_CONTROL, cacheControl.toString())
-                .addHeader("accept-language","es-UY")
-                .build()
+                    .header(CACHE_CONTROL, cacheControl.toString())
+                    .addHeader("accept-language", "es-UY")
+                    .addHeader("authorization", getUtils().getString(InterConst.AUTH_TOKEN)!!)
+                    .build()
         }
     }
 
@@ -117,13 +121,14 @@ object RetrofitClient {
 
             if (AppApplication.hasNetwork()) {
                 val cacheControl = CacheControl.Builder()
-                    .maxStale(7, TimeUnit.DAYS)
-                    .build()
+                        .maxStale(7, TimeUnit.DAYS)
+                        .build()
 
                 request = request.newBuilder()
-                    .cacheControl(cacheControl)
-                     .addHeader("accept-language","es-UY")
-                    .build()
+                        .cacheControl(cacheControl)
+                        .addHeader("accept-language", "es-UY")
+                        .addHeader("authorization", getUtils().getString(InterConst.AUTH_TOKEN)!!)
+                        .build()
             }
 
             chain.proceed(request)

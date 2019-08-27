@@ -77,9 +77,9 @@
 //        marshMallowPermission = new MarshMallowPermission(context);
 //        onCreate();
 //        utils = new Utils(context);
-////        if (context instanceof LandingActivity) {
+////        if (context instanceof ParentLandingActivity) {
 ////            /// ....
-////            LandingActivity.setInterface(this);
+////            ParentLandingActivity.setInterface(this);
 ////        }
 //
 //        width = utils.getInt("width", 0);
