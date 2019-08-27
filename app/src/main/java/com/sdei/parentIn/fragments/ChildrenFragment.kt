@@ -8,6 +8,23 @@ import com.sdei.parentIn.viewModel.BaseViewModel
 
 class ChildrenFragment : BaseFragment<BaseViewModel>() {
 
+    companion object {
+
+        @SuppressLint("StaticFieldLeak")
+        lateinit var instance: ChildrenFragment
+
+        @SuppressLint("StaticFieldLeak")
+        lateinit var mContext: Context
+
+        fun newInstance(context: Context): ChildrenFragment {
+            instance = ChildrenFragment()
+            mContext = context
+            return instance
+        }
+
+    }
+
+
     override val layoutId: Int
         get() = R.layout.fragment_children
 
@@ -20,20 +37,6 @@ class ChildrenFragment : BaseFragment<BaseViewModel>() {
 
     override fun initListeners() {
 
-    }
-
-    companion object {
-        @SuppressLint("StaticFieldLeak")
-        lateinit var instance: ChildrenFragment
-
-        @SuppressLint("StaticFieldLeak")
-        lateinit var mContext: Context
-
-        fun newInstance(context: Context): ChildrenFragment {
-            instance = ChildrenFragment()
-            mContext = context
-            return instance
-        }
     }
 
 }
