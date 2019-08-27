@@ -28,11 +28,8 @@ public class CustomTabLayout extends TabLayout {
         init();
     }
     private void init() {
-        if (!isInEditMode()) {
-            mTypeface = Typeface.createFromAsset(getContext()
-                    .getAssets(), "Poppins_SemiBold.ttf");
-           // setTypeface(typeface);
-        }
+        mTypeface = Typeface.createFromAsset(getContext()
+                .getAssets(), "Poppins_SemiBold.ttf");
     }
 
     @Override
@@ -46,7 +43,7 @@ public class CustomTabLayout extends TabLayout {
         for (int i = 0; i < tabChildCount; i++) {
             View tabViewChild = tabView.getChildAt(i);
             if (tabViewChild instanceof TextView) {
-                ((TextView) tabViewChild).setTypeface(mTypeface, Typeface.NORMAL);
+                ((TextView) tabViewChild).setTypeface(mTypeface);
             }
         }
     }

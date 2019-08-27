@@ -6,7 +6,7 @@ import android.view.View
 import androidx.lifecycle.ViewModelProviders
 import com.sdei.parentIn.R
 import com.sdei.parentIn.interfaces.InterConst
-import com.sdei.parentIn.utils.getUtils
+import com.sdei.parentIn.utils.getAppPref
 import com.sdei.parentIn.viewModel.WelcomeViewModel
 import kotlinx.android.synthetic.main.activity_welcome.*
 
@@ -18,13 +18,13 @@ class WelcomeActivity : BaseActivity<WelcomeViewModel>(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v!!.id)  {
             R.id.cdParent -> {
-                getUtils().setInt(InterConst.ROLE_ID, InterConst.ROLE_PARENT)
+                getAppPref().setInt(InterConst.ROLE_ID, InterConst.ROLE_PARENT)
                 val intent = Intent(mContext, LoginActivity::class.java)
                 startActivity(intent)
             }
 
             R.id.cdTeacher -> {
-                getUtils().setInt(InterConst.ROLE_ID, InterConst.ROLE_TEACHER)
+                getAppPref().setInt(InterConst.ROLE_ID, InterConst.ROLE_TEACHER)
                 val intent = Intent(mContext, LoginActivity::class.java)
                 startActivity(intent)
             }
@@ -46,7 +46,7 @@ class WelcomeActivity : BaseActivity<WelcomeViewModel>(), View.OnClickListener {
         get() = this@WelcomeActivity
 
     override fun onCreate() {
-        if(!getUtils().getString(InterConst.AUTH_TOKEN).isNullOrEmpty()){
+        if(!getAppPref().getString(InterConst.AUTH_TOKEN).isNullOrEmpty()){
             val intent = Intent(mContext, ParentLandingActivity::class.java)
             startActivity(intent)
             finish()

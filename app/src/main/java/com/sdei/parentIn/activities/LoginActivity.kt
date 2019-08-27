@@ -61,7 +61,7 @@ class LoginActivity : BaseActivity<LoginViewModel>(), View.OnClickListener {
                     showAlertSnackBar(btnLogin, getString(R.string.errorValidPassword))
                 } else if (connectedToInternet(btnLogin)) {
                     showProgess()
-                    mViewModel!!.setLogin(edtEmail.text.toString(), edtPassword.text.toString(), getUtils().getInt(InterConst.ROLE_ID))
+                    mViewModel!!.setLogin(edtEmail.text.toString(), edtPassword.text.toString(), getAppPref().getInt(InterConst.ROLE_ID))
                 }
             }
 
@@ -73,7 +73,7 @@ class LoginActivity : BaseActivity<LoginViewModel>(), View.OnClickListener {
                 edtEmail.setText("")
                 edtPassword.setText("")
 
-                val intent = if (getUtils().getInt(InterConst.ROLE_ID) == InterConst.ROLE_PARENT) {
+                val intent = if (getAppPref().getInt(InterConst.ROLE_ID) == InterConst.ROLE_PARENT) {
                     Intent(mContext, ParentsRegisterActivity::class.java)
                 } else {
                     Intent(mContext, TeacherRegisterActivity::class.java)

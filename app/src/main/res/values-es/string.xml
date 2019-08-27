@@ -121,5 +121,13 @@
 	<!-- Message Fragments -->
 	<string name="escribir_nuevo_mensaje">ESCRIBIR NUEVO MENSAJE</string>
 
+	<!-- Teacher Leading Screen -->
+	<string name="Clase">Clase</string>
+
+	<!-- Class Screen -->
+	<string name="parentin_matriculados">ParentIn Matriculados:</string>
+	<string name="encuestas_terminadas">Encuestas Terminadas:</string>
+	<string name="informaci_n_de_la_clase">Información de la Clase</string>
+
 
 </resources>

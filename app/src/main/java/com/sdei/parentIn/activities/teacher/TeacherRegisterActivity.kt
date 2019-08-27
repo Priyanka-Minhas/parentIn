@@ -147,7 +147,7 @@ class TeacherRegisterActivity : BaseActivity<TeacherRegisterViewModel>(), View.O
         model.school = edtSchool.text.toString()
         model.gender = edtGender.text.toString()
         model.verificationCard = edtId.text.toString()
-        model.roleId = getUtils().getInt(InterConst.ROLE_ID)
+        model.roleId = getAppPref().getInt(InterConst.ROLE_ID)
 
         if (connectedToInternet(btnCreateAccount)) {
             showProgess()

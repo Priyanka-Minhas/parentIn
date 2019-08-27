@@ -2,7 +2,7 @@ package com.sdei.parentIn.network
 
 import com.sdei.parentIn.AppApplication
 import com.sdei.parentIn.interfaces.InterConst
-import com.sdei.parentIn.utils.getUtils
+import com.sdei.parentIn.utils.getAppPref
 import okhttp3.Cache
 import okhttp3.CacheControl
 import okhttp3.Interceptor
@@ -109,7 +109,7 @@ object RetrofitClient {
             response.newBuilder()
                     .header(CACHE_CONTROL, cacheControl.toString())
                     .addHeader("accept-language", "es-UY")
-                    .addHeader("authorization", getUtils().getString(InterConst.AUTH_TOKEN)!!)
+                    .addHeader("authorization", getAppPref().getString(InterConst.AUTH_TOKEN)!!)
                     .build()
         }
     }
@@ -127,7 +127,7 @@ object RetrofitClient {
                 request = request.newBuilder()
                         .cacheControl(cacheControl)
                         .addHeader("accept-language", "es-UY")
-                        .addHeader("authorization", getUtils().getString(InterConst.AUTH_TOKEN)!!)
+                        .addHeader("authorization", getAppPref().getString(InterConst.AUTH_TOKEN)!!)
                         .build()
             }
 

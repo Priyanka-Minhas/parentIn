@@ -8,7 +8,7 @@ import com.sdei.parentIn.R
 import com.sdei.parentIn.adapters.ChildrenAdapter
 import com.sdei.parentIn.interfaces.InterConst
 import com.sdei.parentIn.model.ChildModel
-import com.sdei.parentIn.utils.getUtils
+import com.sdei.parentIn.utils.getAppPref
 import com.sdei.parentIn.utils.responseHandler
 import com.sdei.parentIn.viewModel.parent.ParentLandingViewModel
 import kotlinx.android.synthetic.main.fragment_children.*
@@ -26,7 +26,7 @@ class ParentChildrenFragment : BaseFragment<ParentLandingViewModel>() {
 
     override fun onCreateStuff() {
         setChildrenAdapter()
-        mViewModel!!.hitChildListApi(getUtils().getString(InterConst.ID)!!)
+        mViewModel!!.hitChildListApi(getAppPref().getString(InterConst.ID)!!)
 
         mViewModel!!.getChild().observe(this,
                 Observer<ChildModel> { mData ->

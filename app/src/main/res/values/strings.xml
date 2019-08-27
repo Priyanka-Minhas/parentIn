@@ -1,122 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="app_name">FamiliasIn</string>
+    <string name="app_name">FamiliasIn</string>
 
-	<!--ERROR-->
-	<string name="errorInternet">Internet connection not Available</string>
-	<string name="something_went_wrong">Something went wrong</string>
-	<string name="errorEmail">Please enter email</string>
-	<string name="errorValidEmail">Please enter valid email</string>
-	<string name="errorConfEmail">Please confirm email</string>
-	<string name="errorValidPassword">Please enter password</string>
-	<string name="work_in_progress">WORK IN PROGRESS</string>
-	<string name="errorFirstName">Please enter First Name</string>
-	<string name="errorLastName">Please enter Last Name </string>
-	<string name="errorEnterConfPass">Please enter confirm password</string>
-	<string name="errorConfirmPassword">Password not match</string>
-	<string name="errorAddress">Please enter your Address</string>
-	<string name="errorGender"> Please select Gender</string>
-	<string name="errorRelationship">Please select relationship with child</string>
-	<string name="errorIdentification">Please enter Identification card no.</string>
-	<string name="errorStudentAddress">Please confirm student address </string>
-	<string name="errorLevelOfEducation">Please select level of education</string>
-	<string name="errorNoOfSchools">Please select No. of Student in FamiliasIn schools</string>
-	<string name="errorChild">Child Should be one or Greater than one</string>
-	<string name="errorBirthday">Please enter date of birth of your child</string>
-	<string name="errorSchool">Please enter School of your child</string>
-	<string name="errorTeacher">Please enter teacher of your child</string>
-	<string name="errorChildFirstName">Please enter first name of your child</string>
-	<string name="errorChildLastName">Please enter last name of your child</string>
-	<string name="errorChildGender">Please enter gender of your child</string>
-	<string name="errorChildIdentification">Please enter Identification card no. of your child</string>
-
-
-	<!--COMMON-->
-	<string name="select_gender">SELECT GENDER</string>
-	<string name="male">MALE</string>
-	<string name="female">FEMALE</string>
-	<string name="select_relation">SELECT RELATION</string>
-	<string name="father">Father</string>
-	<string name="mother">Mother</string>
-	<string name="guardian">Guardian</string>
-	<string name="select_school">SELECT SCHOOL</string>
-	<string name="select_teacher">SELECT TEACHER</string>
-	<string name="registered_successfully">Registered Successfully</string>
-	<string name="select_no_of_student">SELECT NO. OF STUDENTS</string>
-	<string name="less50">less than 50</string>
-	<string name="less100">less than 100</string>
-	<string name="less150">less than 150</string>
-	<string name="more150">more than 150</string>
-	<string name="select_level_of_education">SELECT LEVEL OF EDUCATION</string>
-	<string name="doctorate">Doctorate</string>
-	<string name="Masters">Masters</string>
-	<string name="Bachelor">Bachelor</string>
-	<string name="Under_Graduate">Under Graduate</string>
-
-	<!--Welcome Activity-->
-	<string name="BIENVENIDO">¡WELCOME!</string>
-	<string name="Un_programa_del_Ministro_de_Educación_y_Cultura_de_Uruguay">A program of the Minister of Education and \nCulture of Uruguay</string>
-	<string name="Selecciona_una_opción">Select an option</string>
-	<string name="Padre_o_tutor">Parent or tutor</string>
-	<string name="Maestro">Teacher</string>
-	<string name="Supervisor">Supervisor</string>
-	<string name="Acerca_de_FamiliasIn">About FamiliasIn</string>
-
-	<!--LOGIN ACTIVITY-->
-	<string name="Inicia_Sesión">Log in</string>
-	<string name="Bienvenido_Padre_o_tutor">Welcome Parent or Guardian</string>
-	<string name="Ingresa_tu_usuario_y_contraseña_para_acceder_a_tu_cuenta">Enter your email and password to access your account</string>
-	<string name="Contraseña">Password</string>
-	<string name="email">Email</string>
-	<string name="iniciar_sesion">LOG IN</string>
-	<string name="o_si_eres_nuevo_en_el_el_programa_podras_crear_una_nueva_cuenta_aqu">Or if you are new to the program, you can create a new account here</string>
-	<string name="crear_cuenta">CREATE ACCOUNT</string>
-
-	<!--PARENTS New Account -->
-	<string name="Nueva_Cuenta">New account</string>
-	<string name="Info_del_padre_o_tutor">Parent or guardian info</string>
-	<string name="Ingresa_tu_información_básica_para_crear_tu_nueva_cuenta">Enter your basic information to \ncreate your new account</string>
-	<string name="primer_nombre">First Name</string>
-	<string name="Apellido">Last Name</string>
-	<string name="Dirección">Address</string>
-	<string name="Género">Gender</string>
-	<string name="Relación_con_el_niño">Relationship with the child</string>
-	<string name="Cédula">Identification card</string>
-	<string name="Es_esta_la_misma_dirección_que_el_estudiante">Is this the same address as the student?</string>
-	<string name="Si">Yes</string>
-	<string name="No">No</string>
-	<string name="Nivel_de_educación_alcanzado">Level of education achieved</string>
-	<string name="No_de_estudiantes_en_escuelas_FamiliasIn">No. of students in FamiliasIn schools</string>
-	<string name="Siguiente">FOLLOWING</string>
-
-	<!--SIGNUP ADD CHILD ACTIVITY-->
-	<string name="informaci_n_del_estudiante">Student information</string>
-	<string name="ingresa_la_informaci_n_b_sica_del_ni_o_a_para_poder_continua">Enter the child\'s basic information to continue</string>
-	<string name="agregar_hijo_a">Add child</string>
-	<string name="escuela">School</string>
-	<string name="fecha_nacimiento">Birth date</string>
-	<string name="nino">Child</string>
+    <!--ERROR-->
+    <string name="errorInternet">Internet connection not Available</string>
+    <string name="something_went_wrong">Something went wrong</string>
+    <string name="errorEmail">Please enter email</string>
+    <string name="errorValidEmail">Please enter valid email</string>
+    <string name="errorConfEmail">Please confirm email</string>
+    <string name="errorValidPassword">Please enter password</string>
+    <string name="work_in_progress">WORK IN PROGRESS</string>
+    <string name="errorFirstName">Please enter First Name</string>
+    <string name="errorLastName">Please enter Last Name </string>
+    <string name="errorEnterConfPass">Please enter confirm password</string>
+    <string name="errorConfirmPassword">Password not match</string>
+    <string name="errorAddress">Please enter your Address</string>
+    <string name="errorGender"> Please select Gender</string>
+    <string name="errorRelationship">Please select relationship with child</string>
+    <string name="errorIdentification">Please enter Identification card no.</string>
+    <string name="errorStudentAddress">Please confirm student address </string>
+    <string name="errorLevelOfEducation">Please select level of education</string>
+    <string name="errorNoOfSchools">Please select No. of Student in FamiliasIn schools</string>
+    <string name="errorChild">Child Should be one or Greater than one</string>
+    <string name="errorBirthday">Please enter date of birth of your child</string>
+    <string name="errorSchool">Please enter School of your child</string>
+    <string name="errorTeacher">Please enter teacher of your child</string>
+    <string name="errorChildFirstName">Please enter first name of your child</string>
+    <string name="errorChildLastName">Please enter last name of your child</string>
+    <string name="errorChildGender">Please enter gender of your child</string>
+    <string name="errorChildIdentification">Please enter Identification card no. of your child</string>
 
 
-	<!-- About US -->
-	<string name="Acerca">About</string>
-	<string name="Familiasin">FAMILIASIN</string>
-	<string name="Familiasin_small">Familias In</string>
-	<string name="aboutSmallText">It is a mobile application that was created in \ncollaboration with the Ministry of \nEducation and Culture and the Inter-\nAmerican Development Bank.</string>
-	<string name="aboutTextWithEmail">If you have any questions or comments \nplease write to info@parentin.com and we \nwill respond as soon as possible</string>
+    <!--COMMON-->
+    <string name="select_gender">SELECT GENDER</string>
+    <string name="male">MALE</string>
+    <string name="female">FEMALE</string>
+    <string name="select_relation">SELECT RELATION</string>
+    <string name="father">Father</string>
+    <string name="mother">Mother</string>
+    <string name="guardian">Guardian</string>
+    <string name="select_school">SELECT SCHOOL</string>
+    <string name="select_teacher">SELECT TEACHER</string>
+    <string name="registered_successfully">Registered Successfully</string>
+    <string name="select_no_of_student">SELECT NO. OF STUDENTS</string>
+    <string name="less50">less than 50</string>
+    <string name="less100">less than 100</string>
+    <string name="less150">less than 150</string>
+    <string name="more150">more than 150</string>
+    <string name="select_level_of_education">SELECT LEVEL OF EDUCATION</string>
+    <string name="doctorate">Doctorate</string>
+    <string name="Masters">Masters</string>
+    <string name="Bachelor">Bachelor</string>
+    <string name="Under_Graduate">Under Graduate</string>
 
-	<!--Teacher New Account Activity -->
-	<string name="Información_del_Maestro">Teacher Information</string>
-	<string name="Rodrigo">Rodrigo</string>
-	<string name="Baez">Baez</string>
-	<string name="Numero_de_Estudiantes">Number of students</string>
-	<string name="Correo_Electrónico">Email</string>
-	<string name="Confirma_el_correo_electrónico">Confirm Email</string>
-	<string name="Confirmar_contraseña">Confirm Password</string>
-	<string name="Crear_cuenta">CREATE ACCOUNT</string>
-	<!--	LANDING-->
+    <!--Welcome Activity-->
+    <string name="BIENVENIDO">¡WELCOME!</string>
+    <string name="Un_programa_del_Ministro_de_Educación_y_Cultura_de_Uruguay">A program of the Minister of Education and \nCulture of Uruguay</string>
+    <string name="Selecciona_una_opción">Select an option</string>
+    <string name="Padre_o_tutor">Parent or tutor</string>
+    <string name="Maestro">Teacher</string>
+    <string name="Supervisor">Supervisor</string>
+    <string name="Acerca_de_FamiliasIn">About FamiliasIn</string>
+
+    <!--LOGIN ACTIVITY-->
+    <string name="Inicia_Sesión">Log in</string>
+    <string name="Bienvenido_Padre_o_tutor">Welcome Parent or Guardian</string>
+    <string name="Ingresa_tu_usuario_y_contraseña_para_acceder_a_tu_cuenta">Enter your email and password to access your account</string>
+    <string name="Contraseña">Password</string>
+    <string name="email">Email</string>
+    <string name="iniciar_sesion">LOG IN</string>
+    <string name="o_si_eres_nuevo_en_el_el_programa_podras_crear_una_nueva_cuenta_aqu">Or if you are new to the program, you can create a new account here</string>
+    <string name="crear_cuenta">CREATE ACCOUNT</string>
+
+    <!--PARENTS New Account -->
+    <string name="Nueva_Cuenta">New account</string>
+    <string name="Info_del_padre_o_tutor">Parent or guardian info</string>
+    <string name="Ingresa_tu_información_básica_para_crear_tu_nueva_cuenta">Enter your basic information to \ncreate your new account</string>
+    <string name="primer_nombre">First Name</string>
+    <string name="Apellido">Last Name</string>
+    <string name="Dirección">Address</string>
+    <string name="Género">Gender</string>
+    <string name="Relación_con_el_niño">Relationship with the child</string>
+    <string name="Cédula">Identification card</string>
+    <string name="Es_esta_la_misma_dirección_que_el_estudiante">Is this the same address as the student?</string>
+    <string name="Si">Yes</string>
+    <string name="No">No</string>
+    <string name="Nivel_de_educación_alcanzado">Level of education achieved</string>
+    <string name="No_de_estudiantes_en_escuelas_FamiliasIn">No. of students in FamiliasIn schools</string>
+    <string name="Siguiente">FOLLOWING</string>
+
+    <!--SIGNUP ADD CHILD ACTIVITY-->
+    <string name="informaci_n_del_estudiante">Student information</string>
+    <string name="ingresa_la_informaci_n_b_sica_del_ni_o_a_para_poder_continua">Enter the child\'s basic information to continue</string>
+    <string name="agregar_hijo_a">Add child</string>
+    <string name="escuela">School</string>
+    <string name="fecha_nacimiento">Birth date</string>
+    <string name="nino">Child</string>
+
+
+    <!-- About US -->
+    <string name="Acerca">About</string>
+    <string name="Familiasin">FAMILIASIN</string>
+    <string name="Familiasin_small">Familias In</string>
+    <string name="aboutSmallText">It is a mobile application that was created in \ncollaboration with the Ministry of \nEducation and Culture and the Inter-\nAmerican Development Bank.</string>
+    <string name="aboutTextWithEmail">If you have any questions or comments \nplease write to info@parentin.com and we \nwill respond as soon as possible</string>
+
+    <!--Teacher New Account Activity -->
+    <string name="Información_del_Maestro">Teacher Information</string>
+    <string name="Rodrigo">Rodrigo</string>
+    <string name="Baez">Baez</string>
+    <string name="Numero_de_Estudiantes">Number of students</string>
+    <string name="Correo_Electrónico">Email</string>
+    <string name="Confirma_el_correo_electrónico">Confirm Email</string>
+    <string name="Confirmar_contraseña">Confirm Password</string>
+    <string name="Crear_cuenta">CREATE ACCOUNT</string>
+    <!--	LANDING-->
     <string name="children">Children</string>
-	<string name="Mensajes">Messages</string>
-	<!-- Message Fragments -->
+    <string name="Mensajes">Messages</string>
+    <!-- Message Fragments -->
     <string name="escribir_nuevo_mensaje">WRITE NEW MESSAGE</string>
+
+    <!-- Teacher Leading Screen -->
+    <string name="Clase">Class</string>
+
+   <!-- Class Screen -->
+    <string name="parentin_matriculados">ParentIn Enrolled:</string>
+    <string name="encuestas_terminadas">Surveys Completed:</string>
+    <string name="informaci_n_de_la_clase">Class Information</string>
 </resources>
