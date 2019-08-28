@@ -133,6 +133,8 @@
 	<string name="done">HECHO</string>
 	<string name="update_child_information">Actualizar información del niño</string>
 	<string name="update_your_child_s_basic_information">Actualice la información básica de su hijo</string>
+	<string name="add_child_information">Agregar información del niño</string>
+	<string name="add_your_child_s_basic_information">Agregue la información básica de su hijo</string>
 
 
 </resources>

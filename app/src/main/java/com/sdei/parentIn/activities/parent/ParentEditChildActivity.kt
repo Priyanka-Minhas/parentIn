@@ -127,6 +127,8 @@ class ParentEditChildActivity : BaseActivity<ParentEditChildViewModel>(), View.O
             mChildList.add(model)
         } else {
             mChildList.add(ChildModel.DataBean())
+            txtTitle.text= getString(R.string.add_child_information)
+            txtHeading.text=getString(R.string.add_your_child_s_basic_information)
         }
 
         setChildAdapter()
