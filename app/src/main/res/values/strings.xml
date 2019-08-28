@@ -127,6 +127,13 @@
 	<string name="parentin_matriculados">ParentIn Enrolled:</string>
 	<string name="encuestas_terminadas">Surveys Completed:</string>
 	<string name="informaci_n_de_la_clase">Class Information</string>
+	<string name="exportar_lista_de_alumnos">Export student list</string>
+	<string name="a_adir_alumno_manualmente">Add student manually</string>
+	<string name="estudiante">student</string>
+	<string name="fec_nac">Fec. No.</string>
+	<string name="padre">Father</string>
+	<string name="encuesta">Survey</string>
+	<string name="escribir_mensaje_al_tutor">Write message to the tutor</string>
 
 	<!-- ParentEditChildActivity-->
 	<string name="done">DONE</string>

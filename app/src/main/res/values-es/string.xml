@@ -130,6 +130,11 @@
 	<string name="informaci_n_de_la_clase">Información de la Clase</string>
 	<string name="exportar_lista_de_alumnos">Exportar lista de alumnos</string>
 	<string name="a_adir_alumno_manualmente">Añadir alumno manualmente</string>
+	<string name="estudiante">Estudiante</string>
+	<string name="fec_nac">Fec. Nac.</string>
+	<string name="padre">Padre</string>
+	<string name="encuesta">Encuesta</string>
+	<string name="escribir_mensaje_al_tutor">Escribir mensaje al tutor</string>
 
 	<!-- ParentEditChildActivity-->
 	<string name="done">HECHO</string>
