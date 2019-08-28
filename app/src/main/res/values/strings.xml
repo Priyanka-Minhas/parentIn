@@ -139,4 +139,6 @@
 	<string name="done">DONE</string>
 	<string name="update_child_information">Update child Information</string>
 	<string name="update_your_child_s_basic_information">Update your child\'s basic Information</string>
+	<string name="add_child_information">Add child information</string>
+	<string name="add_your_child_s_basic_information">Add your child\'s basic information</string>
 </resources>
