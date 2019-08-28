@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModelProviders
 import com.sdei.parentIn.R
 import com.sdei.parentIn.activities.parent.ParentLandingActivity
 import com.sdei.parentIn.activities.parent.ParentsRegisterActivity
+import com.sdei.parentIn.activities.teacher.TeacherLeadingActivity
 import com.sdei.parentIn.activities.teacher.TeacherRegisterActivity
 import com.sdei.parentIn.interfaces.InterConst
 import com.sdei.parentIn.model.UserModel
@@ -38,7 +39,11 @@ class LoginActivity : BaseActivity<LoginViewModel>(), View.OnClickListener {
                 Observer<UserModel> { mData ->
                     if (mData != null && responseHandler(mData.statusCode, mData.message)) {
                         saveUserData(mData.data)
-                        val intent = Intent(mContext, ParentLandingActivity::class.java)
+                        val intent = if (getAppPref().getInt(InterConst.ROLE_ID) == InterConst.ROLE_PARENT) {
+                            Intent(mContext, ParentLandingActivity::class.java)
+                        } else {
+                            Intent(mContext, TeacherLeadingActivity::class.java)
+                        }
                         startActivity(intent)
                         finishAffinity()
                     }

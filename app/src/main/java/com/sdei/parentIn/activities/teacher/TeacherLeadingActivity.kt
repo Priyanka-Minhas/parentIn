@@ -8,15 +8,16 @@ import com.sdei.parentIn.activities.BaseActivity
 import com.sdei.parentIn.adapters.ViewPagerAdapter
 import com.sdei.parentIn.fragments.parent.ParentMessageFragment
 import com.sdei.parentIn.fragments.teacher.ClassFragment
-import com.sdei.parentIn.viewModel.teacher.TeacherViewModel
+import com.sdei.parentIn.viewModel.teacher.TeacherLeadingViewModel
+
 
 import kotlinx.android.synthetic.main.activity_parent_landing.*
 
-class TeacherLeadingActivity : BaseActivity<TeacherViewModel>() {
+class TeacherLeadingActivity : BaseActivity<TeacherLeadingViewModel>() {
     override val layoutId: Int
         get() = R.layout.activity_teacher_landing
-    override val viewModel: TeacherViewModel
-        get() = ViewModelProviders.of(this).get(TeacherViewModel::class.java)
+    override val viewModel: TeacherLeadingViewModel
+        get() = ViewModelProviders.of(this).get(TeacherLeadingViewModel::class.java)
     override val context: Context
         get() = this@TeacherLeadingActivity
 

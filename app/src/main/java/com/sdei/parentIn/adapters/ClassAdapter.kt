@@ -7,10 +7,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.sdei.parentIn.R
 import com.sdei.parentIn.model.ChildModel
+import com.sdei.parentIn.model.ClassModel
 import kotlinx.android.synthetic.main.item_children_fragment.view.*
+import kotlinx.android.synthetic.main.item_classes.view.*
 import java.util.*
 
-class ClassAdapter(var context: Context, var mData: ArrayList<String>) : RecyclerView.Adapter<ClassAdapter.ClassViewHolder>() {
+class ClassAdapter(var context: Context, var mData: ArrayList<ClassModel.DataBean>) : RecyclerView.Adapter<ClassAdapter.ClassViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ClassViewHolder {
         val layout = LayoutInflater.from(parent.context).inflate(R.layout.item_classes, parent, false)
@@ -29,8 +31,16 @@ class ClassAdapter(var context: Context, var mData: ArrayList<String>) : Recycle
                 holder.llSendMessage.visibility = View.VISIBLE
             }
         }*/
-       // holder.txtChildDob.text = mData[position].birthDate.toString()
-       // holder.txtChildName.text = "${mData[position].firstName} ${mData[position].lastName}"
+        holder.studentName.text = """${mData[position].firstName} ${mData[position].lastName}"""
+        holder.father.text = """${mData[position].parentFirstName.toString()} ${mData[position].parentLastName}"""
+        holder.fecNo.text = mData[position].birthDate.toString()
+
+        if(mData[position].isSurvey!!){
+            holder.imgSurvey.setImageResource(R.drawable.ic_right)
+        }else {
+            holder.imgSurvey.setImageResource(R.drawable.ic_cross)
+        }
+
     }
 
     override fun getItemViewType(position: Int): Int {
@@ -40,13 +50,10 @@ class ClassAdapter(var context: Context, var mData: ArrayList<String>) : Recycle
 
     inner class ClassViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-       // var rvMain = itemView.rvMain
-       //// var llSendMessage = itemView.llSendMessage
-        var txtChildName = itemView.txtChildName
-       // var txtChildDob = itemView.txtChildDob
-       // var txtChildClass = itemView.txtChildClass
-       // var txtParentName = itemView.txtParentName
-
+        var studentName = itemView.txtStu
+        var fecNo = itemView.txtFecNec
+        var father = itemView.txtPadre
+        var imgSurvey = itemView.imgCrossRight
     }
 
 }
