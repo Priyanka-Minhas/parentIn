@@ -108,7 +108,7 @@ object RetrofitClient {
 
             response.newBuilder()
                     .header(CACHE_CONTROL, cacheControl.toString())
-                    .addHeader("accept-language", "en-US")
+                    .addHeader("accept-language", "es-UY")
                     .addHeader("authorization", getAppPref().getString(InterConst.AUTH_TOKEN)!!)
                     .build()
         }
@@ -126,7 +126,7 @@ object RetrofitClient {
 
                 request = request.newBuilder()
                         .cacheControl(cacheControl)
-                        .addHeader("accept-language", "en-US")
+                        .addHeader("accept-language", "es-UY")
                         .addHeader("authorization", getAppPref().getString(InterConst.AUTH_TOKEN)!!)
                         .build()
             }

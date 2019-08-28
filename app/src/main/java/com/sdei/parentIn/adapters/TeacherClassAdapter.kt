@@ -6,13 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.sdei.parentIn.R
-import com.sdei.parentIn.model.ChildModel
 import com.sdei.parentIn.model.ClassModel
-import kotlinx.android.synthetic.main.item_children_fragment.view.*
 import kotlinx.android.synthetic.main.item_classes.view.*
 import java.util.*
 
-class ClassAdapter(var context: Context, var mData: ArrayList<ClassModel.DataBean>) : RecyclerView.Adapter<ClassAdapter.ClassViewHolder>() {
+class TeacherClassAdapter(var context: Context, var mData: ArrayList<ClassModel.DataBean>) : RecyclerView.Adapter<TeacherClassAdapter.ClassViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ClassViewHolder {
         val layout = LayoutInflater.from(parent.context).inflate(R.layout.item_classes, parent, false)

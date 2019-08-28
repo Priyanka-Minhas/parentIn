@@ -5,6 +5,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:background="@color/grayLight">
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -15,12 +16,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingTop="@dimen/_5sdp">
+			android:layout_gravity="center_horizontal"
+
+			android:paddingTop="@dimen/_10sdp"
+			android:paddingBottom="@dimen/_10sdp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
+                android:weightSum="4"
                 android:layout_marginStart="@dimen/_12sdp"
                 android:orientation="horizontal">
 
@@ -39,35 +44,46 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:text="31 May. 2012"
+                    android:gravity="start"
                     android:textColor="@color/colorDarkText"
-                    android:layout_gravity="center_vertical"
+                    android:layout_gravity="start"
                     android:textSize="@dimen/_10ssp"
                     android:layout_weight="1"/>
 
                 <com.sdei.parentIn.customViews.MediumTextView
                     android:id="@+id/txtPadre"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:text="Juan López"
-                    android:gravity="center"
+                    android:gravity="start"
                     android:textColor="@color/colorDarkText"
                     android:layout_gravity="center_vertical"
                     android:textSize="@dimen/_10ssp"
                     android:layout_weight="1"/>
+<LinearLayout
+    android:layout_width="0dp"
+    android:orientation="vertical"
+    android:layout_weight="1"
+	android:gravity="end"
+	android:layout_gravity="end"
+    android:layout_height="wrap_content">
 
                 <ImageView
                     android:id="@+id/imgCrossRight"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
+					android:src="@drawable/ic_right"
+					android:layout_gravity="end"
                     android:layout_marginEnd="@dimen/_30sdp"/>
 
+</LinearLayout>
             </LinearLayout>
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="@color/grayLight"
                 android:layout_marginTop="@dimen/_5sdp"/>
+
             <LinearLayout
                 android:id="@+id/llSendMessage"
                 android:layout_width="match_parent"

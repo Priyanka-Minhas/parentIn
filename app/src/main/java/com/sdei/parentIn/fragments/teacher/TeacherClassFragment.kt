@@ -5,7 +5,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sdei.parentIn.R
-import com.sdei.parentIn.adapters.ClassAdapter
+import com.sdei.parentIn.adapters.TeacherClassAdapter
 import com.sdei.parentIn.dialog.TeacherAddChildDialog
 import com.sdei.parentIn.fragments.BaseFragment
 import com.sdei.parentIn.interfaces.InterConst
@@ -14,7 +14,6 @@ import com.sdei.parentIn.model.ClassModel
 import com.sdei.parentIn.utils.*
 import com.sdei.parentIn.viewModel.teacher.TeacherClassViewModel
 import com.wajahatkarim3.easyvalidation.core.view_ktx.validEmail
-import kotlinx.android.synthetic.main.dialog_teacher_add_child.*
 import kotlinx.android.synthetic.main.fragment_class.*
 
 /**
@@ -60,7 +59,7 @@ class TeacherClassFragment : BaseFragment<TeacherClassViewModel>(), View.OnClick
     lateinit var  mDialog: Unit
 
     var classList = ArrayList<ClassModel.DataBean>()
-    lateinit var classAdapter: ClassAdapter
+    lateinit var classAdapter: TeacherClassAdapter
     override val layoutId: Int
         get() = R.layout.fragment_class
     override val viewModel: TeacherClassViewModel
@@ -93,7 +92,7 @@ class TeacherClassFragment : BaseFragment<TeacherClassViewModel>(), View.OnClick
 
     private fun setClassListAdapter() {
         rvTeacherClass.layoutManager = LinearLayoutManager(mContext)
-        classAdapter = ClassAdapter(mContext,classList)
+        classAdapter = TeacherClassAdapter(mContext,classList)
         rvTeacherClass.adapter = classAdapter
 
     }
