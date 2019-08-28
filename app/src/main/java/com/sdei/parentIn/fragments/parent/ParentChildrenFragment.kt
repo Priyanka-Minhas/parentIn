@@ -1,6 +1,7 @@
 package com.sdei.parentIn.fragments.parent
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Intent
 import android.view.View
 import androidx.lifecycle.Observer
@@ -23,7 +24,7 @@ class ParentChildrenFragment : BaseFragment<ParentLandingViewModel>(), ChildrenA
         when (v!!.id) {
             R.id.btnAddChild -> {
                 val intent = Intent(mContext, ParentEditChildActivity::class.java)
-                startActivityForResult(intent,InterConst.RESULT_CHILDREN)
+                startActivityForResult(intent, InterConst.RESULT_CHILDREN)
             }
 
         }
@@ -32,7 +33,7 @@ class ParentChildrenFragment : BaseFragment<ParentLandingViewModel>(), ChildrenA
     override fun editChild(pos: Int) {
         val intent = Intent(mContext, ParentEditChildActivity::class.java)
         intent.putExtra(InterConst.CHILD_DATA, mChildrenList[pos])
-        startActivityForResult(intent,InterConst.RESULT_CHILDREN)
+        startActivityForResult(intent, InterConst.RESULT_CHILDREN)
     }
 
     var mChildrenList = arrayListOf<ChildModel.DataBean>()
@@ -70,12 +71,6 @@ class ParentChildrenFragment : BaseFragment<ParentLandingViewModel>(), ChildrenA
         btnAddChild.setOnClickListener(this)
     }
 
-    override fun onResume() {
-        super.onResume()
-        mContext.showProgess()
-        mViewModel!!.hitChildListApi(getAppPref().getString(InterConst.ID)!!)
-    }
-
     companion object {
         @SuppressLint("StaticFieldLeak")
         lateinit var instance: ParentChildrenFragment
@@ -88,7 +83,11 @@ class ParentChildrenFragment : BaseFragment<ParentLandingViewModel>(), ChildrenA
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-
+        if (resultCode == Activity.RESULT_OK) {
+            if(requestCode==InterConst.RESULT_CHILDREN){
+                mViewModel!!.hitChildListApi(getAppPref().getString(InterConst.ID)!!)
+            }
+        }
     }
 
 }

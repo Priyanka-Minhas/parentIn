@@ -1,5 +1,6 @@
 package com.sdei.parentIn.activities.parent
 
+import android.app.Activity
 import android.content.Context
 import android.view.View
 import androidx.lifecycle.Observer
@@ -139,6 +140,7 @@ class ParentEditChildActivity : BaseActivity<ParentEditChildViewModel>(), View.O
         mViewModel!!.getChildUpdateStatus().observe(this,
                 Observer<BaseModel> { mData ->
                     if (responseHandler(mData.statusCode, mData.message)) {
+                        setResult(Activity.RESULT_OK)
                         finish()
                     }
                 })
