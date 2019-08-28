@@ -40,6 +40,11 @@ interface ApiInterface {
     fun addChildbyParent(@Body child: ChildModel.DataBeanRequest
     ): Call<BaseModel>
 
+    // get class list by teacher
+    @FormUrlEncoded
+    @POST("/student/listChildbyTeacher")
+    fun getClassByTeacher(@Field("_id") id: String) : Call<ClassModel>
+
 
 //    @FormUrlEncoded
 //    @POST("/user/register")

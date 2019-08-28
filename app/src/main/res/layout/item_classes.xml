@@ -93,26 +93,25 @@
                     android:textColor="@color/colorDarkText"
                     android:layout_gravity="center_vertical"
                     android:textSize="@dimen/_10ssp"
-                    android:layout_weight=".9"/>
+                    android:layout_weight="1"/>
 
                 <com.sdei.parentIn.customViews.MediumTextView
                     android:id="@+id/txtPadre"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Juan López"
+                    android:gravity="center"
                     android:textColor="@color/colorDarkText"
                     android:layout_gravity="center_vertical"
                     android:textSize="@dimen/_10ssp"
-                    android:layout_weight=".4"/>
+                    android:layout_weight="1"/>
 
                 <ImageView
                     android:id="@+id/imgCrossRight"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:background="@drawable/ic_right"
-                    android:layout_marginEnd="@dimen/_30sdp"
-                    />
+                    android:layout_marginEnd="@dimen/_30sdp"/>
 
             </LinearLayout>
 
@@ -125,6 +124,7 @@
                 android:gravity="center"
                 android:orientation="horizontal"
                 android:padding="@dimen/_10sdp"
+                android:visibility="gone"
                 android:layout_margin="@dimen/_12sdp">
 
                 <ImageView
