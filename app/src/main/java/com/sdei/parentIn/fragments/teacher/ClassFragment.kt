@@ -5,7 +5,6 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sdei.parentIn.R
 import com.sdei.parentIn.adapters.ClassAdapter
-import com.sdei.parentIn.adapters.MessagesAdapter
 import com.sdei.parentIn.fragments.BaseFragment
 import com.sdei.parentIn.interfaces.InterConst
 import com.sdei.parentIn.model.ClassModel
@@ -15,7 +14,6 @@ import com.sdei.parentIn.utils.showProgess
 import com.sdei.parentIn.viewModel.teacher.ClassViewModel
 import com.sdei.parentIn.viewModel.teacher.TeacherLeadingViewModel
 import kotlinx.android.synthetic.main.fragment_class.*
-import kotlinx.android.synthetic.main.fragment_message.*
 
 /**
  * Fragment to show class list
@@ -56,6 +54,5 @@ class ClassFragment : BaseFragment<TeacherLeadingViewModel>() {
     override fun initListeners() {
       //rvTeacherClass.addOnItemTouchListener()
     }
-
 
 }

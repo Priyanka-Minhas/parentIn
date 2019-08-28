@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.sdei.parentIn.R
 import com.sdei.parentIn.activities.parent.ParentEditChildActivity
 import com.sdei.parentIn.adapters.ChildrenAdapter
+import com.sdei.parentIn.dialog.TeacherAddChildDialog
 import com.sdei.parentIn.fragments.BaseFragment
 import com.sdei.parentIn.interfaces.InterConst
 import com.sdei.parentIn.model.ChildModel
@@ -23,8 +24,10 @@ class ParentChildrenFragment : BaseFragment<ParentLandingViewModel>(), ChildrenA
     override fun onClick(v: View?) {
         when (v!!.id) {
             R.id.btnAddChild -> {
-                val intent = Intent(mContext, ParentEditChildActivity::class.java)
-                startActivityForResult(intent, InterConst.RESULT_CHILDREN)
+//                val intent = Intent(mContext, ParentEditChildActivity::class.java)
+//                startActivityForResult(intent, InterConst.RESULT_CHILDREN)
+
+                TeacherAddChildDialog(mContext, R.style.pullBottomfromTop, R.layout.dialog_teacher_add_child).show()
             }
 
         }
@@ -47,7 +50,6 @@ class ParentChildrenFragment : BaseFragment<ParentLandingViewModel>(), ChildrenA
 
     override fun onCreateStuff() {
         setChildrenAdapter()
-
         mContext.showProgess()
         mViewModel!!.hitChildListApi(getAppPref().getString(InterConst.ID)!!)
 
@@ -84,7 +86,7 @@ class ParentChildrenFragment : BaseFragment<ParentLandingViewModel>(), ChildrenA
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == Activity.RESULT_OK) {
-            if(requestCode==InterConst.RESULT_CHILDREN){
+            if (requestCode == InterConst.RESULT_CHILDREN) {
                 mViewModel!!.hitChildListApi(getAppPref().getString(InterConst.ID)!!)
             }
         }

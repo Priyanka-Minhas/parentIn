@@ -11,7 +11,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.sdei.parentIn.R
 import com.sdei.parentIn.activities.parent.ParentEditChildActivity
-import com.sdei.parentIn.dialog.OptionDialog
+import com.sdei.parentIn.dialog.OptionListDialog
 import com.sdei.parentIn.interfaces.InterfacesCall
 import com.sdei.parentIn.model.ChildModel
 import com.sdei.parentIn.utils.getGender
@@ -51,7 +51,7 @@ class EditChildAdapter(var con: Context,
         }
 
         holder.gender.setOnClickListener {
-            OptionDialog(con, R.style.pullBottomfromTop, R.layout.dialog_options,
+            OptionListDialog(con, R.style.pullBottomfromTop, R.layout.dialog_options,
                     con.getGender(),
                     con.getString(R.string.select_gender),
                     InterfacesCall.Callback { pos ->

@@ -81,7 +81,7 @@
 	<string name="Dirección">Address</string>
 	<string name="Género">Gender</string>
 	<string name="Relación_con_el_niño">Relationship with the child</string>
-	<string name="Cédula">Identification card</string>
+	<string name="Cédula">Identification number</string>
 	<string name="Es_esta_la_misma_dirección_que_el_estudiante">Is this the same address as the student?</string>
 	<string name="Si">Yes</string>
 	<string name="No">No</string>
@@ -141,4 +141,11 @@
 	<string name="update_your_child_s_basic_information">Update your child\'s basic Information</string>
 	<string name="add_child_information">Add child information</string>
 	<string name="add_your_child_s_basic_information">Add your child\'s basic information</string>
+
+    <!-- TeacherAddChildDialog-->
+	<string name="phone_number">Phone Number</string>
+	<string name="parent_information">Parent Information</string>
+	<string name="add_student_manually">Add Student Manually</string>
+	<string name="Añadir_Alumno">Add Student</string>
+
 </resources>

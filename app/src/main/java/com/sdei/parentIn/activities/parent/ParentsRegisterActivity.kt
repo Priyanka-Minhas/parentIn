@@ -6,7 +6,7 @@ import android.view.View
 import androidx.lifecycle.ViewModelProviders
 import com.sdei.parentIn.R
 import com.sdei.parentIn.activities.BaseActivity
-import com.sdei.parentIn.dialog.OptionDialog
+import com.sdei.parentIn.dialog.OptionListDialog
 import com.sdei.parentIn.interfaces.InterConst
 import com.sdei.parentIn.interfaces.InterfacesCall
 import com.sdei.parentIn.model.UserModel
@@ -53,7 +53,7 @@ class ParentsRegisterActivity : BaseActivity<BaseViewModel>(), View.OnClickListe
     override fun onClick(view: View?) {
         when (view!!.id) {
             R.id.edtGender -> {
-                OptionDialog(mContext, R.style.pullBottomfromTop, R.layout.dialog_options,
+                OptionListDialog(mContext, R.style.pullBottomfromTop, R.layout.dialog_options,
                         getGender(),
                         getString(R.string.select_gender),
                         InterfacesCall.Callback { pos ->
@@ -62,7 +62,7 @@ class ParentsRegisterActivity : BaseActivity<BaseViewModel>(), View.OnClickListe
             }
 
             R.id.edtRelationshipChild -> {
-                OptionDialog(mContext, R.style.pullBottomfromTop, R.layout.dialog_options,
+                OptionListDialog(mContext, R.style.pullBottomfromTop, R.layout.dialog_options,
                         getRelations(),
                         getString(R.string.select_relation),
                         InterfacesCall.Callback { pos ->
@@ -71,7 +71,7 @@ class ParentsRegisterActivity : BaseActivity<BaseViewModel>(), View.OnClickListe
             }
 
             R.id.edtLevelOfEducation -> {
-                OptionDialog(mContext, R.style.pullBottomfromTop, R.layout.dialog_options,
+                OptionListDialog(mContext, R.style.pullBottomfromTop, R.layout.dialog_options,
                         getLevelOfEducation(),
                         getString(R.string.select_level_of_education),
                         InterfacesCall.Callback { pos ->
@@ -80,7 +80,7 @@ class ParentsRegisterActivity : BaseActivity<BaseViewModel>(), View.OnClickListe
             }
 
             R.id.edtNoOfStudent -> {
-                OptionDialog(mContext, R.style.pullBottomfromTop, R.layout.dialog_options,
+                OptionListDialog(mContext, R.style.pullBottomfromTop, R.layout.dialog_options,
                         getNoOfStudents(),
                         getString(R.string.select_no_of_student),
                         InterfacesCall.Callback { pos ->
