@@ -22,13 +22,16 @@ class TeacherClassAdapter(var context: Context, var mData: ArrayList<ClassModel.
     }
 
     override fun onBindViewHolder(holder: ClassViewHolder, position: Int) {
-        /*holder.rvMain.setOnClickListener {
-            if (holder.llSendMessage.visibility == View.VISIBLE) {
-                holder.llSendMessage.visibility = View.GONE
+        holder.cvMain.setOnClickListener {
+            if (holder.lySendMessage.visibility == View.VISIBLE) {
+                holder.lySendMessage.visibility = View.GONE
+                holder.cvMain.setCardBackgroundColor(context.resources.getColor(R.color.white))
+
             } else {
-                holder.llSendMessage.visibility = View.VISIBLE
+                holder.lySendMessage.visibility = View.VISIBLE
+                holder.cvMain.setCardBackgroundColor(context.resources.getColor(R.color.grayLight))
             }
-        }*/
+        }
         holder.studentName.text = """${mData[position].firstName} ${mData[position].lastName}"""
         holder.father.text = """${mData[position].parentFirstName.toString()} ${mData[position].parentLastName}"""
         holder.fecNo.text = mData[position].birthDate.toString()
@@ -51,6 +54,8 @@ class TeacherClassAdapter(var context: Context, var mData: ArrayList<ClassModel.
         var fecNo = itemView.txtFecNec
         var father = itemView.txtPadre
         var imgSurvey = itemView.imgCrossRight
+        var cvMain = itemView.cvMain
+        var lySendMessage = itemView.lySendMessage
     }
 
 }

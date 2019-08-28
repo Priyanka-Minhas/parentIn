@@ -99,7 +99,6 @@ class TeacherClassFragment : BaseFragment<TeacherClassViewModel>(), View.OnClick
 
     override fun initListeners() {
       //rvTeacherClass.addOnItemTouchListener()
-
         btnAddStuManually.setOnClickListener(this)
     }
 
