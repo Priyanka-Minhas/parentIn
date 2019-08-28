@@ -45,6 +45,11 @@ interface ApiInterface {
     @POST("/student/listChildbyTeacher")
     fun getClassByTeacher(@Field("_id") id: String) : Call<ClassModel>
 
+    // add student manually by teacher
+
+    @POST("/student/addStudentbyTeacher")
+    fun addStudentByTeacher(@Body child: AddStudentManullyRequest
+    ): Call<BaseModel>
 
 //    @FormUrlEncoded
 //    @POST("/user/register")

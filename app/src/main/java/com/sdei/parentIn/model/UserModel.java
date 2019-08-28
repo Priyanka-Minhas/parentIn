@@ -68,10 +68,19 @@ public class UserModel extends BaseModel implements Parcelable {
         private String emailAddress;
         private String password;
         private int roleId;
+        private  String school;
         private List<ChildsBean> childs;
         private String verificationCard;
         private String token;
         private boolean isSameAddressAsStudent;
+
+        public String getSchool() {
+            return school;
+        }
+
+        public void setSchool(String school) {
+            this.school = school;
+        }
 
         public boolean isSameAddressAsStudent() {
             return isSameAddressAsStudent;

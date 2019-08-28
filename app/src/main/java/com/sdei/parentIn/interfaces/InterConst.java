@@ -7,6 +7,8 @@ public interface InterConst {
 
     @NotNull
     String ROLE_ID = "role_id";
+    @NotNull
+    String STUDENT_ID ="school_id";
 
     int ROLE_PARENT = 2;
     int ROLE_TEACHER = 3;

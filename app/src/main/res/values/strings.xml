@@ -29,6 +29,7 @@
 	<string name="errorChildLastName">Please enter last name of your child</string>
 	<string name="errorChildGender">Please enter gender of your child</string>
 	<string name="errorChildIdentification">Please enter Identification card no. of your child</string>
+	<string name="errorPhone">Please enter phone number</string>
 
 
 	<!--COMMON-->

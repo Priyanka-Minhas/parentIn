@@ -29,7 +29,7 @@
 	<string name="errorChildLastName">Por favor ingrese el apellido de su hijo</string>
 	<string name="errorChildGender">Por favor ingrese el género de su hijo</string>
 	<string name="errorChildIdentification">Por favor, introduzca la tarjeta de identificación no. de tu hijo</string>
-
+	<string name="errorPhone">Por favor ingrese el número de teléfono</string>
 
 
 	<!--COMMON-->

@@ -5,25 +5,44 @@ import android.content.Context
 import android.os.Build
 import android.view.Gravity
 import androidx.annotation.RequiresApi
+import com.sdei.parentIn.interfaces.InterConst
 import com.sdei.parentIn.model.AddStudentManullyRequest
+import com.sdei.parentIn.utils.getAppPref
 import kotlinx.android.synthetic.main.dialog_teacher_add_child.*
 import java.util.*
 
 class TeacherAddChildDialog(
-        context: Context,
+       context: Context,
         themeResId: Int,
-        private val LayoutId: Int,
-        returnValue: (AddStudentManullyRequest) -> Unit
-) : BaseDialog(context, themeResId) {
+        val LayoutId: Int,
+        val returnValue: (AddStudentManullyRequest) -> Unit) : BaseDialog(context, themeResId) {
+
+
 
     init {
         val wmlp = this.window!!.attributes
-        wmlp.gravity = Gravity.BOTTOM or Gravity.CENTER_HORIZONTAL
+        wmlp.gravity =Gravity.CENTER
         window!!.attributes = wmlp
     }
 
-    @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreateStuff() {
+        btnAddStudent.setOnClickListener{
+            var  mData=AddStudentManullyRequest()
+
+            mData.firstName = edtParentFirstName.text.toString()
+            mData.lastName =  edtParentLastName.text.toString()
+            mData.emailAddress = edtParentEmail.text.toString()
+
+            // add child
+            mData.child=AddStudentManullyRequest.DataBean()
+            mData.child!!.firstName = edtChildFirstName.text.toString()
+            mData.child!!.lastName = edtChildLastName.text.toString()
+            mData.child!!.birthDate = edtChildBirthDate.text.toString()
+            mData.child!!.verificationCard = edtChildIdentityCard.text.toString()
+            mData.child!!.school = getAppPref()!!.getInt(InterConst.STUDENT_ID).toString()
+            mData.child!!.teacher= getAppPref()!!.getInt(InterConst.ROLE_ID).toString()
+            this.returnValue(mData)
+        }
 
         edtChildBirthDate.setOnClickListener {
             val calender = Calendar.getInstance()

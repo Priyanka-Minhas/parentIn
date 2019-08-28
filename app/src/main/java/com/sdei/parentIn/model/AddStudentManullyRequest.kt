@@ -12,9 +12,10 @@ class AddStudentManullyRequest {
     var firstName: String? = null
     var lastName: String? = null
     var emailAddress: String? = null
-    var child: ChildBean? = null
+    var phone: String?=null
+    var child: DataBean? = null
 
-    class ChildBean {
+    class DataBean {
         /**
          * firstName : Desdfsdfmo
          * lastName : Namfsdfe
