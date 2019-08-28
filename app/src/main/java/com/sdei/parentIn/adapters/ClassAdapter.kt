@@ -40,7 +40,6 @@ class ClassAdapter(var context: Context, var mData: ArrayList<ClassModel.DataBea
         }else {
             holder.imgSurvey.setImageResource(R.drawable.ic_cross)
         }
-
     }
 
     override fun getItemViewType(position: Int): Int {

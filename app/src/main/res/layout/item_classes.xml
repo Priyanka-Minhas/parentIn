@@ -2,63 +2,12 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     android:background="@color/grayLight">
-
-    <!-- =============== Table header ================= -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_32sdp"
-        android:orientation="horizontal"
-        android:layout_marginStart="@dimen/_2sdp"
-        android:paddingStart="@dimen/_20sdp"
-        android:paddingEnd="@dimen/_20sdp"
-        android:background="@color/blue"
-        android:layout_marginTop="@dimen/_16sdp">
-
-        <com.sdei.parentIn.customViews.SemiBoldTextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="@string/estudiante"
-            android:textColor="@color/white"
-            android:layout_gravity="center_vertical"
-            android:textSize="@dimen/_11ssp"
-            android:layout_weight="1.1"/>
-
-        <com.sdei.parentIn.customViews.SemiBoldTextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="@string/fec_nac"
-            android:textColor="@color/white"
-            android:layout_gravity="center_vertical"
-            android:gravity="center_horizontal"
-            android:textSize="@dimen/_11ssp"
-            android:layout_weight="1.5"/>
-
-        <com.sdei.parentIn.customViews.SemiBoldTextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="@string/padre"
-            android:textColor="@color/white"
-            android:layout_gravity="center_vertical"
-            android:textSize="@dimen/_11ssp"
-            android:layout_weight="1"/>
-
-        <com.sdei.parentIn.customViews.SemiBoldTextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="@string/encuesta"
-            android:textColor="@color/white"
-            android:layout_gravity="center_vertical"
-            android:textSize="@dimen/_11ssp"
-            android:layout_weight="1"/>
-
-    </LinearLayout>
-    <!-- End -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_marginStart="@dimen/_12sdp"
         android:layout_marginEnd="@dimen/_12sdp">
 
@@ -114,7 +63,11 @@
                     android:layout_marginEnd="@dimen/_30sdp"/>
 
             </LinearLayout>
-
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grayLight"
+                android:layout_marginTop="@dimen/_5sdp"/>
             <LinearLayout
                 android:id="@+id/llSendMessage"
                 android:layout_width="match_parent"
@@ -143,7 +96,6 @@
             </LinearLayout>
 
         </LinearLayout>
-
 
     </androidx.cardview.widget.CardView>
 

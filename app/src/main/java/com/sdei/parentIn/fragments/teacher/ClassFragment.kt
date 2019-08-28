@@ -54,7 +54,7 @@ class ClassFragment : BaseFragment<TeacherLeadingViewModel>() {
     }
 
     override fun initListeners() {
-
+      //rvTeacherClass.addOnItemTouchListener()
     }
 
 
