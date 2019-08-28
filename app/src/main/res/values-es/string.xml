@@ -68,7 +68,7 @@
 	<string name="Bienvenido_Padre_o_tutor">Bienvenido Padre o tutor</string>
 	<string name="Ingresa_tu_usuario_y_contraseña_para_acceder_a_tu_cuenta">Ingrese su correo electrónico y contraseña para acceder a su cuenta</string>
 	<string name="Contraseña">Contraseña</string>
-	<string name="email">Email</string>
+	<string name="email">correo electrónico</string>
 	<string name="iniciar_sesion">INICIAR SESION</string>
 	<string name="o_si_eres_nuevo_en_el_el_programa_podras_crear_una_nueva_cuenta_aqu">O si eres nuevo en el el programa, podras crear una nueva cuenta aquí</string>
 	<string name="crear_cuenta">CREAR CUENTA</string>
@@ -143,5 +143,10 @@
 	<string name="add_child_information">Agregar información del niño</string>
 	<string name="add_your_child_s_basic_information">Agregue la información básica de su hijo</string>
 
+	<!-- TeacherAddChildDialog-->
+	<string name="phone_number">número de teléfono</string>
+	<string name="parent_information">Información de los padres</string>
+	<string name="add_student_manually">Añadir Alumno Manualmente</string>
+	<string name="Añadir_Alumno">Añadir Alumno</string>
 
 </resources>

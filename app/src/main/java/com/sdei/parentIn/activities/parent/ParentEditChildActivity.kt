@@ -9,8 +9,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.sdei.parentIn.R
 import com.sdei.parentIn.activities.BaseActivity
 import com.sdei.parentIn.adapters.EditChildAdapter
-import com.sdei.parentIn.dialog.SchoolListDialog
-import com.sdei.parentIn.dialog.TeacherListDialog
+import com.sdei.parentIn.dialog.SchoolListListDialog
+import com.sdei.parentIn.dialog.TeacherListListDialog
 import com.sdei.parentIn.interfaces.InterConst
 import com.sdei.parentIn.interfaces.InterfacesCall
 import com.sdei.parentIn.model.BaseModel
@@ -27,7 +27,7 @@ import kotlinx.android.synthetic.main.activity_parent_edit_child.*
 class ParentEditChildActivity : BaseActivity<ParentEditChildViewModel>(), View.OnClickListener, EditChildAdapter.ClickInterface {
 
     fun getSchoolList(returnValue: (SchoolModel.DataBean) -> Unit) {
-        SchoolListDialog(mContext, R.style.pullBottomfromTop, R.layout.dialog_options,
+        SchoolListListDialog(mContext, R.style.pullBottomfromTop, R.layout.dialog_options,
                 mSchoolList,
                 getString(R.string.select_school),
                 InterfacesCall.Callback { pos ->
@@ -39,7 +39,7 @@ class ParentEditChildActivity : BaseActivity<ParentEditChildViewModel>(), View.O
         showProgess()
         mViewModel!!.hitTeacherListApi(schoolId) {
             if (responseHandler(it.statusCode, it.message)) {
-                TeacherListDialog(mContext, R.style.pullBottomfromTop, R.layout.dialog_options,
+                TeacherListListDialog(mContext, R.style.pullBottomfromTop, R.layout.dialog_options,
                         it.data,
                         getString(R.string.select_teacher),
                         InterfacesCall.Callback { pos ->

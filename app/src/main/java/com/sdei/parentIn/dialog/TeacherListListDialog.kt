@@ -11,14 +11,14 @@ import com.sdei.parentIn.model.TeacherModel
 import kotlinx.android.synthetic.main.dialog_options.*
 import java.util.*
 
-class TeacherListDialog(
+class TeacherListListDialog(
         context: Context,
         themeResId: Int,
         private val LayoutId: Int,
         var list: ArrayList<TeacherModel.DataBean>?,
         title: String,
         private val callback: InterfacesCall.Callback
-) : BaseDialog(context, themeResId) {
+) : BaseListDialog(context, themeResId) {
 
     lateinit var mAdapter: ParentListAdapter
     var title: String

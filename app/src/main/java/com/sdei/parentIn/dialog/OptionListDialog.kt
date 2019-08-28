@@ -5,21 +5,22 @@ import android.os.Build
 import android.view.Gravity
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.sdei.parentIn.adapters.SchoolListAdapter
+import com.sdei.parentIn.adapters.OptionAdapter
 import com.sdei.parentIn.interfaces.InterfacesCall
-import com.sdei.parentIn.model.SchoolModel
+import com.sdei.parentIn.model.OptionsModel
 import kotlinx.android.synthetic.main.dialog_options.*
 
-class SchoolListDialog(
+
+class OptionListDialog(
         context: Context,
         themeResId: Int,
         private val LayoutId: Int,
-        var list: ArrayList<SchoolModel.DataBean>,
+        var list: ArrayList<OptionsModel>,
         title: String,
         private val callback: InterfacesCall.Callback
-) : BaseDialog(context, themeResId) {
+) : BaseListDialog(context, themeResId) {
 
-    lateinit var mAdapter: SchoolListAdapter
+    lateinit var mAdapter: OptionAdapter
     var title: String
     init {
         val wmlp = this.window!!.attributes
@@ -36,7 +37,7 @@ class SchoolListDialog(
     override fun onCreateStuff() {
         if (list.isNotEmpty()) {
             recyclerView!!.layoutManager = LinearLayoutManager(context)
-            mAdapter = SchoolListAdapter(context, list, indexClick)
+            mAdapter = OptionAdapter(context, list, indexClick)
             recyclerView!!.adapter = mAdapter
             txtTitle.text = title
         }

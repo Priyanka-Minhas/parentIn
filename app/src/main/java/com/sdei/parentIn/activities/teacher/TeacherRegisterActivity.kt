@@ -8,8 +8,8 @@ import androidx.lifecycle.ViewModelProviders
 import com.sdei.parentIn.R
 import com.sdei.parentIn.activities.BaseActivity
 import com.sdei.parentIn.activities.WelcomeActivity
-import com.sdei.parentIn.dialog.OptionDialog
-import com.sdei.parentIn.dialog.SchoolListDialog
+import com.sdei.parentIn.dialog.OptionListDialog
+import com.sdei.parentIn.dialog.SchoolListListDialog
 import com.sdei.parentIn.interfaces.InterConst
 import com.sdei.parentIn.interfaces.InterfacesCall
 import com.sdei.parentIn.model.SchoolModel
@@ -93,7 +93,7 @@ class TeacherRegisterActivity : BaseActivity<TeacherRegisterViewModel>(), View.O
                 }
             }
             R.id.edtSchool -> {
-                SchoolListDialog(mContext, R.style.pullBottomfromTop, R.layout.dialog_options,
+                SchoolListListDialog(mContext, R.style.pullBottomfromTop, R.layout.dialog_options,
                         mSchoolList,
                         getString(R.string.select_school), InterfacesCall.Callback { pos ->
                     edtSchool.setText(mSchoolList[pos].schoolName.toString())
@@ -103,7 +103,7 @@ class TeacherRegisterActivity : BaseActivity<TeacherRegisterViewModel>(), View.O
             }
 
             R.id.edtGender -> {
-                OptionDialog(mContext, R.style.pullBottomfromTop, R.layout.dialog_options,
+                OptionListDialog(mContext, R.style.pullBottomfromTop, R.layout.dialog_options,
                         getGender(),
                         getString(R.string.select_gender),
                         InterfacesCall.Callback { pos ->
@@ -112,7 +112,7 @@ class TeacherRegisterActivity : BaseActivity<TeacherRegisterViewModel>(), View.O
             }
 
             R.id.edtNumberOfStu -> {
-                OptionDialog(mContext, R.style.pullBottomfromTop, R.layout.dialog_options,
+                OptionListDialog(mContext, R.style.pullBottomfromTop, R.layout.dialog_options,
                         getNoOfStudents(),
                         getString(R.string.select_no_of_student),
                         InterfacesCall.Callback { pos ->
@@ -121,7 +121,7 @@ class TeacherRegisterActivity : BaseActivity<TeacherRegisterViewModel>(), View.O
             }
 
             R.id.edtLevelOfEducation -> {
-                OptionDialog(mContext, R.style.pullBottomfromTop, R.layout.dialog_options,
+                OptionListDialog(mContext, R.style.pullBottomfromTop, R.layout.dialog_options,
                         getLevelOfEducation(),
                         getString(R.string.select_level_of_education),
                         InterfacesCall.Callback { pos ->
