@@ -131,5 +131,10 @@
 	<string name="exportar_lista_de_alumnos">Exportar lista de alumnos</string>
 	<string name="a_adir_alumno_manualmente">Añadir alumno manualmente</string>
 
+	<!-- ParentEditChildActivity-->
+	<string name="done">HECHO</string>
+	<string name="update_child_information">Actualizar información del niño</string>
+	<string name="update_your_child_s_basic_information">Actualice la información básica de su hijo</string>
+
 
 </resources>

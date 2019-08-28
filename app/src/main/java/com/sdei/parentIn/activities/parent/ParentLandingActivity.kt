@@ -5,8 +5,8 @@ import androidx.lifecycle.ViewModelProviders
 import com.sdei.parentIn.R
 import com.sdei.parentIn.activities.BaseActivity
 import com.sdei.parentIn.adapters.ViewPagerAdapter
+import com.sdei.parentIn.fragments.ParentMessageFragment
 import com.sdei.parentIn.fragments.parent.ParentChildrenFragment
-import com.sdei.parentIn.fragments.parent.ParentMessageFragment
 import com.sdei.parentIn.viewModel.BaseViewModel
 import kotlinx.android.synthetic.main.activity_parent_landing.*
 

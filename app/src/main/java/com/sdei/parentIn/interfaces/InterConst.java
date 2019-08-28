@@ -1,6 +1,7 @@
 package com.sdei.parentIn.interfaces;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public interface InterConst {
 
@@ -16,9 +17,9 @@ public interface InterConst {
     int CODE_WARNING = 303;
 
     @NotNull
-    String EXTRA_DATA = "extra_data";
-
-    int RESULT_CREATE_ACCOUNT = 100;
+    String PARENT_DATA = "parent_data";
+    @Nullable
+    String CHILD_DATA="child_data";
 
     @NotNull
     String ID = "_id";
@@ -31,4 +32,6 @@ public interface InterConst {
 
     @NotNull
     String AUTH_TOKEN = "auth_token";
+
+    int RESULT_CHILDREN=1001;
 }

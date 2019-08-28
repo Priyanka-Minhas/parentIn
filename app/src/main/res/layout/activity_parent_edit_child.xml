@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@mipmap/background"
+	android:orientation="vertical"
+	android:animateLayoutChanges="true"
+	tools:context="com.sdei.parentIn.activities.parent.ParentAddChildActivity">
+
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="@drawable/stroke_toolbar">
+
+		<ImageView
+			android:id="@+id/btnBack"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerVertical="true"
+			android:foreground="?selectableItemBackground"
+			android:padding="@dimen/_12sdp"
+			android:src="@mipmap/ic_back_arrow" />
+
+		<com.sdei.parentIn.customViews.SemiBoldTextView
+			android:id="@+id/txtTitle"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerInParent="true"
+			android:padding="@dimen/_12sdp"
+			android:text="@string/update_child_information"
+			android:textColor="@color/black"
+			android:textSize="@dimen/_14ssp" />
+
+	</RelativeLayout>
+
+	<com.sdei.parentIn.customViews.RegularTextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center"
+		android:layout_marginStart="@dimen/_15sdp"
+		android:layout_marginTop="@dimen/_30sdp"
+		android:layout_marginEnd="@dimen/_15sdp"
+		android:layout_marginBottom="@dimen/_15sdp"
+		android:gravity="center"
+		android:text="@string/update_your_child_s_basic_information"
+		android:textColor="@color/black"
+		android:textSize="@dimen/_11ssp" />
+
+	<androidx.core.widget.NestedScrollView
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_weight="1">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:orientation="vertical">
+
+			<androidx.recyclerview.widget.RecyclerView
+				android:id="@+id/rvAddChild"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="@dimen/_15sdp" />
+
+
+<!--			<LinearLayout-->
+<!--				android:id="@+id/btnAddChild"-->
+<!--				android:layout_width="match_parent"-->
+<!--				android:layout_height="wrap_content"-->
+<!--				android:visibility="gone"-->
+<!--				android:layout_marginStart="@dimen/_10sdp"-->
+<!--				android:layout_marginEnd="@dimen/_10sdp"-->
+<!--				android:background="@drawable/bg_blue_stroke_round"-->
+<!--				android:foreground="?selectableItemBackground"-->
+<!--				android:gravity="center"-->
+<!--				android:orientation="horizontal"-->
+<!--				android:padding="@dimen/_10sdp">-->
+
+<!--				<ImageView-->
+<!--					android:layout_width="wrap_content"-->
+<!--					android:layout_height="wrap_content"-->
+<!--					android:padding="@dimen/_5sdp"-->
+<!--					android:src="@mipmap/add" />-->
+
+<!--				<com.sdei.parentIn.customViews.SemiBoldTextView-->
+<!--					android:layout_width="wrap_content"-->
+<!--					android:layout_height="wrap_content"-->
+<!--					android:gravity="center"-->
+<!--					android:text="@string/agregar_hijo_a"-->
+<!--					android:textColor="@color/blue"-->
+<!--					android:textSize="@dimen/_11ssp" />-->
+<!--			</LinearLayout>-->
+
+
+			<com.sdei.parentIn.customViews.SemiBoldTextView
+				android:id="@+id/txtCreateAccount"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="@dimen/_10sdp"
+				android:layout_marginTop="@dimen/_12sdp"
+				android:layout_marginEnd="@dimen/_10sdp"
+				android:layout_marginBottom="@dimen/_15sdp"
+				android:background="@drawable/bg_primary_round"
+				android:foreground="?selectableItemBackground"
+				android:gravity="center"
+				android:padding="@dimen/_12sdp"
+				android:text="@string/done"
+				android:textColor="@color/white"
+				android:textSize="@dimen/_12ssp" />
+		</LinearLayout>
+
+	</androidx.core.widget.NestedScrollView>
+</LinearLayout>

@@ -55,6 +55,7 @@
             android:id="@+id/imgEditChild"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+			android:padding="@dimen/_5sdp"
             android:src="@drawable/ic_yellow_child_edit"
             android:layout_marginTop="@dimen/_16sdp"
             android:layout_alignParentEnd="true"/>
@@ -76,7 +77,7 @@
             android:orientation="horizontal">
 
             <com.sdei.parentIn.customViews.SemiBoldTextView
-				android:id="@+id/txtChildClass"
+				android:id="@+id/txtSchool"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorTabNormalText"
@@ -91,7 +92,7 @@
                 android:layout_marginStart="@dimen/_10sdp"/>
 
             <com.sdei.parentIn.customViews.MediumTextView
-				android:id="@+id/txtParentName"
+				android:id="@+id/txtTeacher"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_5sdp"

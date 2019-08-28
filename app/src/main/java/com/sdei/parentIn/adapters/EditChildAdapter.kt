@@ -10,19 +10,18 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.sdei.parentIn.R
-import com.sdei.parentIn.activities.parent.ParentAddChildActivity
+import com.sdei.parentIn.activities.parent.ParentEditChildActivity
 import com.sdei.parentIn.dialog.OptionDialog
 import com.sdei.parentIn.interfaces.InterfacesCall
-import com.sdei.parentIn.model.UserModel
+import com.sdei.parentIn.model.ChildModel
 import com.sdei.parentIn.utils.getGender
 import com.sdei.parentIn.utils.showAlertSnackBar
 import kotlinx.android.synthetic.main.item_add_child.view.*
 import java.util.*
 
-
-class AddChildAdapter(var con: Context,
-                      var mData: ArrayList<UserModel.ChildsBean>,
-                      var mClick: ClickInterface) : RecyclerView.Adapter<AddChildAdapter.ViewHolder>() {
+class EditChildAdapter(var con: Context,
+                       var mData: ArrayList<ChildModel.DataBean>,
+                       var mClick: ClickInterface) : RecyclerView.Adapter<EditChildAdapter.ViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -31,11 +30,21 @@ class AddChildAdapter(var con: Context,
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.txtTitle.text = "${con.getString(R.string.nino) + " "}"
 
-        if (position == 0) {
-            holder.imgDelete.visibility = View.GONE
+        holder.txtTitle.text = "${con.getString(R.string.nino) + " "}"
+        holder.imgDelete.visibility = View.GONE
+
+        if (!TextUtils.isEmpty(mData[position].firstName)) {
+            holder.firstName.setText(mData[position].firstName)
+            holder.lastName.setText(mData[position].lastName)
+            holder.gender.setText(mData[position].gender)
+            holder.schoolName.setText(mData[position].schoolName)
+            holder.teacherName.setText(mData[position].teacherFirstName + " " + mData[position].lastName)
+            holder.birthdate.setText(mData[position].birthDate)
+            holder.identityCard.setText(mData[position].verificationCard)
         }
+
+
 
         holder.imgDelete.setOnClickListener {
             mClick.deleteChild(position)
@@ -71,14 +80,14 @@ class AddChildAdapter(var con: Context,
         }
 
         holder.schoolName.setOnClickListener {
-            (con as ParentAddChildActivity).getSchoolList {
+            (con as ParentEditChildActivity).getSchoolList {
 
                 holder.teacherName.setText("")
                 mData[position].teacher = ""
-                mData[position].teacher_name = ""
+                mData[position].teacherFirstName = ""
 
                 holder.schoolName.setText(it.schoolName.toString())
-                mData[position].school_name = holder.schoolName.text.toString()
+                mData[position].schoolName = holder.schoolName.text.toString()
                 mData[position].school = it._id
             }
         }
@@ -89,12 +98,12 @@ class AddChildAdapter(var con: Context,
                 showAlertSnackBar(holder.teacherName, con.getString(R.string.errorSchool) + " " + p)
                 return@setOnClickListener
             }
-            (con as ParentAddChildActivity).getTeacherList(mData[position].school) {
+            (con as ParentEditChildActivity).getTeacherList(mData[position].school) {
                 holder.teacherName.setText(it.firstName.toString())
 
                 mData[position].teacher = it._id
 
-                mData[position].teacher_name = it.firstName
+                mData[position].teacherFirstName = it.firstName
             }
         }
 
@@ -163,5 +172,3 @@ class AddChildAdapter(var con: Context,
     }
 
 }
-
-

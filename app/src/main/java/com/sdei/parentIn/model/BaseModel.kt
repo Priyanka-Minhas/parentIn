@@ -21,4 +21,9 @@ open class BaseModel {
     constructor(message: String) {
         this.message = message
     }
+
+    constructor(statusCode: Int, message: String){
+        this.message = message
+        this.statusCode = statusCode
+    }
 }
