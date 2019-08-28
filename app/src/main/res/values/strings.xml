@@ -130,4 +130,6 @@
 
 	<!-- ParentEditChildActivity-->
 	<string name="done">DONE</string>
+	<string name="update_child_information">Update child Information</string>
+	<string name="update_your_child_s_basic_information">Update your child\'s basic Information</string>
 </resources>

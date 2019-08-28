@@ -45,6 +45,7 @@ class EditChildAdapter(var con: Context,
         }
 
 
+
         holder.imgDelete.setOnClickListener {
             mClick.deleteChild(position)
         }

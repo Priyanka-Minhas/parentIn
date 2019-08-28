@@ -22,6 +22,7 @@ import kotlinx.android.synthetic.main.activity_teacher_new_account.*
 
 class TeacherRegisterActivity : BaseActivity<TeacherRegisterViewModel>(), View.OnClickListener {
     var mSchoolList = arrayListOf<SchoolModel.DataBean>()
+    var mSchoolId: String = ""
 
     override val layoutId: Int
         get() = R.layout.activity_teacher_new_account
@@ -34,7 +35,7 @@ class TeacherRegisterActivity : BaseActivity<TeacherRegisterViewModel>(), View.O
         // get school list
         mViewModel!!.getSchoolList().observe(this,
                 Observer<ArrayList<SchoolModel.DataBean>> { mData ->
-                        mSchoolList.addAll(mData)
+                    mSchoolList.addAll(mData)
                 })
 
         mViewModel!!.getProfile().observe(this,
@@ -96,6 +97,7 @@ class TeacherRegisterActivity : BaseActivity<TeacherRegisterViewModel>(), View.O
                         mSchoolList,
                         getString(R.string.select_school), InterfacesCall.Callback { pos ->
                     edtSchool.setText(mSchoolList[pos].schoolName.toString())
+                    mSchoolId = mSchoolList[pos]._id.toString()
                 }).show()
 
             }
@@ -144,7 +146,7 @@ class TeacherRegisterActivity : BaseActivity<TeacherRegisterViewModel>(), View.O
         model.confirmEmail = edtConfMail.text.toString()
         model.password = edtPassword.text.toString()
         model.confirmPassword = edtConfPassword.text.toString()
-        model.school = edtSchool.text.toString()
+        model.school = mSchoolId
         model.gender = edtGender.text.toString()
         model.verificationCard = edtId.text.toString()
         model.roleId = getAppPref().getInt(InterConst.ROLE_ID)

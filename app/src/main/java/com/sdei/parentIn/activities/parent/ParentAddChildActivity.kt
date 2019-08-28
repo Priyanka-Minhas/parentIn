@@ -65,27 +65,35 @@ class ParentAddChildActivity : BaseActivity<ParentAddChildViewModel>(), View.OnC
 
                 for (i in 0 until mChildList.size) {
                     val childNo = i + 1
-                    if (mChildList[i].firstName.isNullOrEmpty()) {
-                        showAlertSnackBar(txtCreateAccount, getString(R.string.errorChildFirstName) + " " + childNo)
-                        return
-                    } else if (mChildList[i].lastName.isNullOrEmpty()) {
-                        showAlertSnackBar(txtCreateAccount, getString(R.string.errorChildLastName) + " " + childNo)
-                        return
-                    } else if (mChildList[i].verificationCard.isNullOrEmpty()) {
-                        showAlertSnackBar(txtCreateAccount, getString(R.string.errorChildIdentification) + " " + childNo)
-                        return
-                    } else if (mChildList[i].gender.isNullOrEmpty()) {
-                        showAlertSnackBar(txtCreateAccount, getString(R.string.errorChildGender) + " " + childNo)
-                        return
-                    } else if (mChildList[i].birthDate.isNullOrEmpty()) {
-                        showAlertSnackBar(txtCreateAccount, getString(R.string.errorBirthday) + " " + childNo)
-                        return
-                    } else if (mChildList[i].school_name.isNullOrEmpty()) {
-                        showAlertSnackBar(txtCreateAccount, getString(R.string.errorSchool) + " " + childNo)
-                        return
-                    } else if (mChildList[i].teacher_name.isNullOrEmpty()) {
-                        showAlertSnackBar(txtCreateAccount, getString(R.string.errorTeacher) + " " + childNo)
-                        return
+                    when {
+                        mChildList[i].firstName.isNullOrEmpty() -> {
+                            showAlertSnackBar(txtCreateAccount, getString(R.string.errorChildFirstName) + " " + childNo)
+                            return
+                        }
+                        mChildList[i].lastName.isNullOrEmpty() -> {
+                            showAlertSnackBar(txtCreateAccount, getString(R.string.errorChildLastName) + " " + childNo)
+                            return
+                        }
+                        mChildList[i].verificationCard.isNullOrEmpty() -> {
+                            showAlertSnackBar(txtCreateAccount, getString(R.string.errorChildIdentification) + " " + childNo)
+                            return
+                        }
+                        mChildList[i].gender.isNullOrEmpty() -> {
+                            showAlertSnackBar(txtCreateAccount, getString(R.string.errorChildGender) + " " + childNo)
+                            return
+                        }
+                        mChildList[i].birthDate.isNullOrEmpty() -> {
+                            showAlertSnackBar(txtCreateAccount, getString(R.string.errorBirthday) + " " + childNo)
+                            return
+                        }
+                        mChildList[i].school_name.isNullOrEmpty() -> {
+                            showAlertSnackBar(txtCreateAccount, getString(R.string.errorSchool) + " " + childNo)
+                            return
+                        }
+                        mChildList[i].teacher_name.isNullOrEmpty() -> {
+                            showAlertSnackBar(txtCreateAccount, getString(R.string.errorTeacher) + " " + childNo)
+                            return
+                        }
                     }
                 }
 

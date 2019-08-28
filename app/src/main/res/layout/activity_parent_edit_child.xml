@@ -28,7 +28,7 @@
 			android:layout_height="wrap_content"
 			android:layout_centerInParent="true"
 			android:padding="@dimen/_12sdp"
-			android:text="@string/informaci_n_del_estudiante"
+			android:text="@string/update_child_information"
 			android:textColor="@color/black"
 			android:textSize="@dimen/_14ssp" />
 
@@ -43,7 +43,7 @@
 		android:layout_marginEnd="@dimen/_15sdp"
 		android:layout_marginBottom="@dimen/_15sdp"
 		android:gravity="center"
-		android:text="@string/ingresa_la_informaci_n_b_sica_del_ni_o_a_para_poder_continua"
+		android:text="@string/update_your_child_s_basic_information"
 		android:textColor="@color/black"
 		android:textSize="@dimen/_11ssp" />
 
@@ -62,6 +62,35 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_marginBottom="@dimen/_15sdp" />
+
+
+<!--			<LinearLayout-->
+<!--				android:id="@+id/btnAddChild"-->
+<!--				android:layout_width="match_parent"-->
+<!--				android:layout_height="wrap_content"-->
+<!--				android:visibility="gone"-->
+<!--				android:layout_marginStart="@dimen/_10sdp"-->
+<!--				android:layout_marginEnd="@dimen/_10sdp"-->
+<!--				android:background="@drawable/bg_blue_stroke_round"-->
+<!--				android:foreground="?selectableItemBackground"-->
+<!--				android:gravity="center"-->
+<!--				android:orientation="horizontal"-->
+<!--				android:padding="@dimen/_10sdp">-->
+
+<!--				<ImageView-->
+<!--					android:layout_width="wrap_content"-->
+<!--					android:layout_height="wrap_content"-->
+<!--					android:padding="@dimen/_5sdp"-->
+<!--					android:src="@mipmap/add" />-->
+
+<!--				<com.sdei.parentIn.customViews.SemiBoldTextView-->
+<!--					android:layout_width="wrap_content"-->
+<!--					android:layout_height="wrap_content"-->
+<!--					android:gravity="center"-->
+<!--					android:text="@string/agregar_hijo_a"-->
+<!--					android:textColor="@color/blue"-->
+<!--					android:textSize="@dimen/_11ssp" />-->
+<!--			</LinearLayout>-->
 
 
 			<com.sdei.parentIn.customViews.SemiBoldTextView

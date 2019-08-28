@@ -121,7 +121,6 @@ class ParentEditChildActivity : BaseActivity<ParentEditChildViewModel>(), View.O
     lateinit var mChildAdapter: EditChildAdapter
 
     override fun onCreate() {
-
         if (intent.hasExtra(InterConst.CHILD_DATA)) {
             val model = intent.getParcelableExtra(InterConst.CHILD_DATA) as ChildModel.DataBean
             mChildList.add(model)
