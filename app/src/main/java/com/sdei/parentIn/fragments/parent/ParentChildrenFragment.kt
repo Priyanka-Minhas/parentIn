@@ -24,10 +24,9 @@ class ParentChildrenFragment : BaseFragment<ParentLandingViewModel>(), ChildrenA
     override fun onClick(v: View?) {
         when (v!!.id) {
             R.id.btnAddChild -> {
-//                val intent = Intent(mContext, ParentEditChildActivity::class.java)
-//                startActivityForResult(intent, InterConst.RESULT_CHILDREN)
+                val intent = Intent(mContext, ParentEditChildActivity::class.java)
+                startActivityForResult(intent, InterConst.RESULT_CHILDREN)
 
-                TeacherAddChildDialog(mContext, R.style.pullBottomfromTop, R.layout.dialog_teacher_add_child).show()
             }
 
         }
