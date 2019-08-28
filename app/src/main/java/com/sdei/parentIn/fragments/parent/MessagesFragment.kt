@@ -8,7 +8,7 @@ import com.sdei.parentIn.fragments.BaseFragment
 import com.sdei.parentIn.viewModel.BaseViewModel
 import kotlinx.android.synthetic.main.fragment_message.*
 
-class MessageFragment : BaseFragment<BaseViewModel>() {
+class ParentMessageFragment : BaseFragment<BaseViewModel>() {
 
     var msgList = arrayListOf<String>()
     lateinit var messageAdapter: MessagesAdapter

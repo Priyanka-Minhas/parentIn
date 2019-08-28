@@ -6,7 +6,8 @@ import androidx.lifecycle.ViewModelProviders
 import com.sdei.parentIn.R
 import com.sdei.parentIn.activities.BaseActivity
 import com.sdei.parentIn.adapters.ViewPagerAdapter
-import com.sdei.parentIn.fragments.parent.MessageFragment
+import com.sdei.parentIn.fragments.parent.ParentMessageFragment
+import com.sdei.parentIn.fragments.teacher.ClassFragment
 import com.sdei.parentIn.viewModel.teacher.TeacherViewModel
 
 import kotlinx.android.synthetic.main.activity_parent_landing.*
@@ -28,7 +29,7 @@ class TeacherLeadingActivity : BaseActivity<TeacherViewModel>() {
     private fun setUpViewPager() {
         val adapter = ViewPagerAdapter(supportFragmentManager)
         adapter.addFragment(ClassFragment(),getString(R.string.Clase))
-        adapter.addFragment(MessageFragment(),getString(R.string.Mensajes))
+        adapter.addFragment(ParentMessageFragment(),getString(R.string.Mensajes))
         viewPager.adapter = adapter
     }
 

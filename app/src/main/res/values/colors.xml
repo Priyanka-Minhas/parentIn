@@ -9,6 +9,7 @@
 	<color name="blue">#1ACEEA</color>
 	<color name="colorToolbarStroke">#F1F1F1</color>
 	<color name="grey">#BDBDBD</color>
+	<color name="grayLight">#F5F5FA</color>
 	<color name="colorTabNormalText">#423E57</color>
 	<color name="colorYellow">#F3AB30</color>
 	<color name="colorDarkText">#221E3B</color>

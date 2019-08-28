@@ -1,4 +1,4 @@
-package com.sdei.parentIn.fragments
+package com.sdei.parentIn.fragments.parent
 
 import android.annotation.SuppressLint
 import androidx.lifecycle.Observer
@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sdei.parentIn.R
 import com.sdei.parentIn.adapters.ChildrenAdapter
+import com.sdei.parentIn.fragments.BaseFragment
 import com.sdei.parentIn.interfaces.InterConst
 import com.sdei.parentIn.model.ChildModel
 import com.sdei.parentIn.utils.getAppPref

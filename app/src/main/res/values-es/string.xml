@@ -128,6 +128,8 @@
 	<string name="parentin_matriculados">ParentIn Matriculados:</string>
 	<string name="encuestas_terminadas">Encuestas Terminadas:</string>
 	<string name="informaci_n_de_la_clase">Información de la Clase</string>
+	<string name="exportar_lista_de_alumnos">Exportar lista de alumnos</string>
+	<string name="a_adir_alumno_manualmente">Añadir alumno manualmente</string>
 
 
 </resources>

@@ -127,4 +127,11 @@
     <string name="parentin_matriculados">ParentIn Enrolled:</string>
     <string name="encuestas_terminadas">Surveys Completed:</string>
     <string name="informaci_n_de_la_clase">Class Information</string>
+    <string name="exportar_lista_de_alumnos">Export student list</string>
+    <string name="a_adir_alumno_manualmente">Add student manually</string>
+    <string name="estudiante">Estudiante</string>
+    <string name="fec_nac">Fec. Nac.</string>
+    <string name="padre">Padre</string>
+    <string name="encuesta">Encuesta</string>
+    <string name="escribir_mensaje_al_tutor">Escribir mensaje al tutor</string>
 </resources>

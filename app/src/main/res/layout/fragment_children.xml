@@ -3,39 +3,41 @@
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	android:orientation="vertical"
-	tools:context="com.sdei.parentIn.fragments.ParentChildrenFragment">
+	tools:context="com.sdei.parentIn.fragments.parent.ParentChildrenFragment">
 
-	<LinearLayout
-		android:id="@+id/btnAddChild"
-		android:layout_width="match_parent"
+<!--	<LinearLayout-->
+<!--		android:id="@+id/btnAddChild"-->
+<!--		android:layout_width="match_parent"-->
+<!--		android:layout_height="wrap_content"-->
+<!--		android:layout_alignParentBottom="true"-->
+<!--		android:layout_margin="@dimen/_14sdp"-->
+<!--		android:background="@drawable/bg_blue_stroke_round"-->
+<!--		android:foreground="?selectableItemBackground"-->
+<!--		android:gravity="center"-->
+<!--		android:orientation="horizontal"-->
+<!--		android:padding="@dimen/_10sdp"-->
+<!--		app:layout_constraintBottom_toBottomOf="parent"-->
+<!--		app:layout_constraintEnd_toEndOf="parent"-->
+<!--		app:layout_constraintStart_toStartOf="parent">-->
+
+<!--		<ImageView-->
+<!--			android:layout_width="wrap_content"-->
+<!--			android:layout_height="wrap_content"-->
+<!--			android:padding="@dimen/_5sdp"-->
+<!--			android:src="@mipmap/add" />-->
+
+	<!--	</LinearLayout>-->
+
+	<com.sdei.parentIn.customViews.SemiBoldTextView
+		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_alignParentBottom="true"
-		android:layout_margin="@dimen/_14sdp"
-		android:background="@drawable/bg_blue_stroke_round"
-		android:foreground="?selectableItemBackground"
 		android:gravity="center"
-		android:orientation="horizontal"
-		android:padding="@dimen/_10sdp"
+		android:text="@string/agregar_hijo_a"
+		android:textColor="@color/blue"
+		android:textSize="@dimen/_11ssp"
 		app:layout_constraintBottom_toBottomOf="parent"
 		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintStart_toStartOf="parent">
-
-		<ImageView
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:padding="@dimen/_5sdp"
-			android:src="@mipmap/add" />
-
-		<com.sdei.parentIn.customViews.SemiBoldTextView
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:gravity="center"
-			android:text="@string/agregar_hijo_a"
-			android:textColor="@color/blue"
-			android:textSize="@dimen/_11ssp" />
-
-	</LinearLayout>
+		app:layout_constraintStart_toStartOf="parent" />
 
 	<androidx.recyclerview.widget.RecyclerView
 		android:id="@+id/rvChildren"
@@ -46,7 +48,8 @@
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintHorizontal_bias="0.0"
 		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toTopOf="parent" />
+		app:layout_constraintTop_toTopOf="parent"
+		android:visibility="gone"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
