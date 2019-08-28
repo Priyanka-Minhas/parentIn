@@ -5,13 +5,15 @@ import android.content.Context
 import android.os.Build
 import android.view.Gravity
 import androidx.annotation.RequiresApi
+import com.sdei.parentIn.model.UserModel
 import kotlinx.android.synthetic.main.dialog_teacher_add_child.*
 import java.util.*
 
 class TeacherAddChildDialog(
         context: Context,
         themeResId: Int,
-        private val LayoutId: Int
+        private val LayoutId: Int,
+        returnValue: (UserModel) -> Unit
 ) : BaseDialog(context, themeResId) {
 
     init {

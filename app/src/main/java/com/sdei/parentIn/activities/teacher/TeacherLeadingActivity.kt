@@ -7,17 +7,17 @@ import com.sdei.parentIn.R
 import com.sdei.parentIn.activities.BaseActivity
 import com.sdei.parentIn.adapters.ViewPagerAdapter
 import com.sdei.parentIn.fragments.parent.ParentMessageFragment
-import com.sdei.parentIn.fragments.teacher.ClassFragment
-import com.sdei.parentIn.viewModel.teacher.TeacherLeadingViewModel
+import com.sdei.parentIn.fragments.teacher.TeacherClassFragment
+import com.sdei.parentIn.viewModel.teacher.TeacherClassViewModel
 
 
 import kotlinx.android.synthetic.main.activity_parent_landing.*
 
-class TeacherLeadingActivity : BaseActivity<TeacherLeadingViewModel>() {
+class TeacherLeadingActivity : BaseActivity<TeacherClassViewModel>() {
     override val layoutId: Int
         get() = R.layout.activity_teacher_landing
-    override val viewModel: TeacherLeadingViewModel
-        get() = ViewModelProviders.of(this).get(TeacherLeadingViewModel::class.java)
+    override val viewModel: TeacherClassViewModel
+        get() = ViewModelProviders.of(this).get(TeacherClassViewModel::class.java)
     override val context: Context
         get() = this@TeacherLeadingActivity
 
@@ -29,7 +29,7 @@ class TeacherLeadingActivity : BaseActivity<TeacherLeadingViewModel>() {
 
     private fun setUpViewPager() {
         val adapter = ViewPagerAdapter(supportFragmentManager)
-        adapter.addFragment(ClassFragment(),getString(R.string.Clase))
+        adapter.addFragment(TeacherClassFragment(),getString(R.string.Clase))
         adapter.addFragment(ParentMessageFragment(),getString(R.string.Mensajes))
         viewPager.adapter = adapter
     }

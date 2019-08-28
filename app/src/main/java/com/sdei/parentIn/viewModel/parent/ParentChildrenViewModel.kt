@@ -3,12 +3,12 @@ package com.sdei.parentIn.viewModel.parent
 import android.app.Application
 import androidx.lifecycle.MutableLiveData
 import com.sdei.parentIn.model.ChildModel
-import com.sdei.parentIn.repositories.ParentLandingRepository
+import com.sdei.parentIn.repositories.parent.ParentChildrenRepository
 import com.sdei.parentIn.viewModel.BaseViewModel
 
-class ParentLandingViewModel(application: Application) : BaseViewModel(application = application) {
+class ParentChildrenViewModel(application: Application) : BaseViewModel(application = application) {
 
-    private val mRepository: ParentLandingRepository = ParentLandingRepository()
+    private val mRepository: ParentChildrenRepository = ParentChildrenRepository()
 
 
     private var mChildModel: MutableLiveData<ChildModel>? = null

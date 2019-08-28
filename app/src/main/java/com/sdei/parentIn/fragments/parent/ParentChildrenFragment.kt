@@ -10,17 +10,16 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.sdei.parentIn.R
 import com.sdei.parentIn.activities.parent.ParentEditChildActivity
 import com.sdei.parentIn.adapters.ChildrenAdapter
-import com.sdei.parentIn.dialog.TeacherAddChildDialog
 import com.sdei.parentIn.fragments.BaseFragment
 import com.sdei.parentIn.interfaces.InterConst
 import com.sdei.parentIn.model.ChildModel
 import com.sdei.parentIn.utils.getAppPref
 import com.sdei.parentIn.utils.responseHandler
 import com.sdei.parentIn.utils.showProgess
-import com.sdei.parentIn.viewModel.parent.ParentLandingViewModel
+import com.sdei.parentIn.viewModel.parent.ParentChildrenViewModel
 import kotlinx.android.synthetic.main.fragment_parent_children.*
 
-class ParentChildrenFragment : BaseFragment<ParentLandingViewModel>(), ChildrenAdapter.ClickInterface, View.OnClickListener {
+class ParentChildrenFragment : BaseFragment<ParentChildrenViewModel>(), ChildrenAdapter.ClickInterface, View.OnClickListener {
     override fun onClick(v: View?) {
         when (v!!.id) {
             R.id.btnAddChild -> {
@@ -44,8 +43,8 @@ class ParentChildrenFragment : BaseFragment<ParentLandingViewModel>(), ChildrenA
     override val layoutId: Int
         get() = R.layout.fragment_parent_children
 
-    override val viewModel: ParentLandingViewModel
-        get() = ViewModelProviders.of(this).get(ParentLandingViewModel::class.java)
+    override val viewModel: ParentChildrenViewModel
+        get() = ViewModelProviders.of(this).get(ParentChildrenViewModel::class.java)
 
     override fun onCreateStuff() {
         setChildrenAdapter()

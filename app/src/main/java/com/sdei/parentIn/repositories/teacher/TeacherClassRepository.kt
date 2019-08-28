@@ -9,7 +9,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class TeacherLandingRepository {
+class TeacherClassRepository {
     fun getClassApi(id: String, returnValue: (ClassModel) -> Unit) {
         RetrofitClient.instance!!.getClassByTeacher(id).enqueue(object : Callback<ClassModel> {
             override fun onFailure(call: Call<ClassModel>?, t: Throwable?) {

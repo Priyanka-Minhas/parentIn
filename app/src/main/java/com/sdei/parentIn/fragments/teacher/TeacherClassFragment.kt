@@ -13,19 +13,20 @@ import com.sdei.parentIn.model.ClassModel
 import com.sdei.parentIn.utils.getAppPref
 import com.sdei.parentIn.utils.responseHandler
 import com.sdei.parentIn.utils.showProgess
-import com.sdei.parentIn.viewModel.teacher.ClassViewModel
-import com.sdei.parentIn.viewModel.teacher.TeacherLeadingViewModel
+import com.sdei.parentIn.viewModel.teacher.TeacherClassViewModel
 import kotlinx.android.synthetic.main.fragment_class.*
 
 /**
  * Fragment to show class list
  */
-class ClassFragment : BaseFragment<TeacherLeadingViewModel>(), View.OnClickListener {
+class TeacherClassFragment : BaseFragment<TeacherClassViewModel>(), View.OnClickListener {
     override fun onClick(v: View?) {
         when(v!!.id){
             R.id.btnAddStuManually->{
                 TeacherAddChildDialog(mContext, R.style.pullBottomfromTop,
-                        R.layout.dialog_teacher_add_child).show()
+                        R.layout.dialog_teacher_add_child){
+
+                }.show()
             }
         }
 
@@ -35,8 +36,8 @@ class ClassFragment : BaseFragment<TeacherLeadingViewModel>(), View.OnClickListe
     lateinit var classAdapter: ClassAdapter
     override val layoutId: Int
         get() = R.layout.fragment_class
-    override val viewModel: TeacherLeadingViewModel
-        get() = ViewModelProviders.of(this).get(TeacherLeadingViewModel::class.java)
+    override val viewModel: TeacherClassViewModel
+        get() = ViewModelProviders.of(this).get(TeacherClassViewModel::class.java)
 
     override fun onCreateStuff() {
         setClassListAdapter()

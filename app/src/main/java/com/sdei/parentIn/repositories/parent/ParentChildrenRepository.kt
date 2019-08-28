@@ -1,4 +1,4 @@
-package com.sdei.parentIn.repositories
+package com.sdei.parentIn.repositories.parent
 
 import com.sdei.parentIn.model.ChildModel
 import com.sdei.parentIn.network.RetrofitClient
@@ -8,7 +8,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class ParentLandingRepository {
+class ParentChildrenRepository {
     fun getChildApi(id: String, returnValue: (ChildModel) -> Unit) {
         RetrofitClient.instance!!.getChildList(id).enqueue(object : Callback<ChildModel> {
             override fun onFailure(call: Call<ChildModel>?, t: Throwable?) {
