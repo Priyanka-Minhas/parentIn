@@ -35,7 +35,7 @@ interface ApiInterface {
     fun updateChildbyParent(@Body child: ChildModel.DataBeanRequest
     ): Call<BaseModel>
 
-   // add child
+    // add child
     @POST("/student/addChildbyParent")
     fun addChildbyParent(@Body child: ChildModel.DataBeanRequest
     ): Call<BaseModel>
@@ -43,13 +43,16 @@ interface ApiInterface {
     // get class list by teacher
     @FormUrlEncoded
     @POST("/student/listChildbyTeacher")
-    fun getClassByTeacher(@Field("_id") id: String) : Call<ClassModel>
+    fun getClassByTeacher(@Field("_id") id: String): Call<ClassModel>
 
     // add student manually by teacher
 
     @POST("/student/addStudentbyTeacher")
     fun addStudentByTeacher(@Body child: AddStudentManullyRequest
     ): Call<BaseModel>
+
+    @GET("/survey/list")
+    fun getSurveyList(): Call<SurveysModel>
 
 //    @FormUrlEncoded
 //    @POST("/user/register")

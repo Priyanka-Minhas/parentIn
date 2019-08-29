@@ -147,7 +147,6 @@
 			android:singleLine="true"
 			android:textColorHint="@color/grey"
 			android:textColor="@color/black"
-
 			android:imeOptions="actionNext"/>
 
 		<EditText
