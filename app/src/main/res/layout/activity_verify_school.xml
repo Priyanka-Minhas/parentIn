@@ -122,24 +122,24 @@
                     android:layout_marginStart="@dimen/size_66dp"
                     android:textSize="@dimen/size_12sp"/>
 
-                <EditText
-                    android:id="@+id/edtSelectSchool"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginStart="@dimen/size_15dp"
-                    android:layout_marginTop="@dimen/size_15dp"
-                    android:layout_marginEnd="@dimen/size_15dp"
-                    android:background="@drawable/edit_text_selector"
-                    android:cursorVisible="false"
-                    android:drawableEnd="@mipmap/ic_dropdown"
-                    android:focusable="false"
-                    android:hint="@string/seleccione_escuela"
-                    android:inputType="none"
-                    android:padding="@dimen/size_12dp"
-                    android:textSize="@dimen/size_12sp"
-                    android:drawableStart="@drawable/ic_location"
-                    android:drawablePadding="@dimen/size_15dp"/>
+                    <EditText
+                        android:id="@+id/edtSelectSchool"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/size_15dp"
+                        android:layout_marginTop="@dimen/size_15dp"
+                        android:layout_marginEnd="@dimen/size_15dp"
+                        android:cursorVisible="false"
+                        android:background="@drawable/edit_text_selector"
+                        android:drawableEnd="@mipmap/ic_dropdown"
+                        android:focusable="false"
+                        android:hint="@string/seleccione_escuela"
+                        android:inputType="none"
+                        android:padding="@dimen/size_12dp"
+                        android:textSize="@dimen/size_12sp"
+                        android:drawableStart="@drawable/ic_location"
+                        android:drawablePadding="@dimen/size_15dp"/>
 
             </LinearLayout>
 
