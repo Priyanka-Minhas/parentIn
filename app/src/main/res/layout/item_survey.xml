@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/white">
+
+	<RelativeLayout
+		android:id="@+id/relativeLayout3"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:background="@drawable/stroke_toolbar"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent">
+
+		<ImageView
+			android:id="@+id/btnBack"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerVertical="true"
+			android:foreground="?selectableItemBackground"
+			android:padding="@dimen/_12sdp"
+			android:src="@mipmap/ic_back_arrow" />
+
+		<com.sdei.parentIn.customViews.SemiBoldTextView
+			android:id="@+id/txtTitle"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerInParent="true"
+			android:padding="@dimen/_12sdp"
+			android:text="@string/cuestionario"
+			android:textColor="@color/black"
+			android:textSize="@dimen/_14ssp" />
+	</RelativeLayout>
+
+	<androidx.core.widget.NestedScrollView
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:fillViewport="true"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/relativeLayout3">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+
+			<ImageView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:layout_marginTop="@dimen/_32sdp"
+				android:src="@mipmap/logo" />
+
+			<com.sdei.parentIn.customViews.HeavyTextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/app_name"
+				android:textColor="@color/black"
+				android:textSize="@dimen/_30ssp"
+				android:layout_gravity="center" />
+
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal"
+				android:layout_gravity="center_horizontal"
+				android:layout_marginTop="@dimen/_35sdp">
+
+				<com.sdei.parentIn.customViews.MediumTextView
+					android:id="@+id/txtCount"
+					android:layout_width="@dimen/_15sdp"
+					android:layout_height="@dimen/_15sdp"
+					android:background="@drawable/bg_round_blue" />
+
+				<com.sdei.parentIn.customViews.MediumTextView
+					android:id="@+id/txtTotalCount"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:gravity="bottom"
+					android:layout_gravity="bottom"
+					android:text="@string/de"
+					android:paddingStart="@dimen/_3sdp"
+					android:textSize="@dimen/_13ssp" />
+
+			</LinearLayout>
+
+			<com.sdei.parentIn.customViews.SemiBoldTextView
+				android:id="@+id/txtQuestion"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="@dimen/_16sdp"
+				android:layout_marginStart="@dimen/_45sdp"
+				android:layout_marginEnd="@dimen/_45sdp"
+				android:gravity="center_horizontal"
+				android:textSize="@dimen/_16sdp"
+				android:textAllCaps="true"
+				android:textColor="@color/colorPurpul"
+				android:text="¿POR CUANTO TIEMPO HAS ESTADO YENDO A ESTE CENTRO?" />
+
+			<!-- ==========Option question========== -->
+
+			<LinearLayout
+				android:id="@+id/lyQuestionOption"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone"
+				android:layout_marginTop="@dimen/_38sdp">
+
+				<RadioGroup
+					android:id="@+id/rgQuestionOption"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginStart="@dimen/_25sdp"
+					android:orientation="vertical">
+
+				<com.sdei.parentIn.customViews.CustomRadioButton
+					android:id="@+id/rbOne"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="De 1 mes a 6 meses"
+					android:padding="@dimen/_10sdp"
+					android:textSize="@dimen/_13ssp"
+					android:paddingStart="@dimen/_10sdp"
+					android:button="@drawable/rb_selector" />
+
+				<com.sdei.parentIn.customViews.CustomRadioButton
+					android:id="@+id/rbTwo"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:paddingStart="@dimen/_10sdp"
+					android:button="@drawable/rb_selector"
+					android:padding="@dimen/_10sdp"
+					android:textSize="@dimen/_13ssp"
+					android:text="De 6 meses a 12 meses" />
+
+				<com.sdei.parentIn.customViews.CustomRadioButton
+					android:id="@+id/rbThree"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:button="@drawable/rb_selector"
+					android:paddingStart="@dimen/_10sdp"
+					android:padding="@dimen/_10sdp"
+					android:textSize="@dimen/_13ssp"
+					android:text="De 1 año a 2 años" />
+
+				<com.sdei.parentIn.customViews.CustomRadioButton
+					android:id="@+id/rbFour"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:button="@drawable/rb_selector"
+					android:padding="@dimen/_10sdp"
+					android:paddingStart="@dimen/_10sdp"
+					android:textSize="@dimen/_13ssp"
+					android:text="Mas de 2 años" />
+
+				</RadioGroup>
+			</LinearLayout>
+			<!-- ============for dropdown question========== -->
+
+			<EditText
+				android:id="@+id/edtQuestionDropdown"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_vertical"
+				android:layout_marginStart="@dimen/_20sdp"
+				android:layout_marginTop="@dimen/_38sdp"
+				android:layout_marginEnd="@dimen/_20sdp"
+				android:background="@drawable/edit_text_selector"
+				android:cursorVisible="false"
+				android:drawableEnd="@mipmap/ic_dropdown"
+				android:focusable="false"
+				android:inputType="none"
+				android:visibility="gone"
+				android:padding="@dimen/_12sdp"
+				android:textSize="@dimen/_12ssp" />
+
+			<!-- ============ Range question ============= -->
+
+			<SeekBar
+				android:id="@+id/sbQuestion"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="@dimen/_38sdp"
+				android:progressDrawable="@color/blue"
+				android:maxHeight="@dimen/_2sdp"
+				android:minHeight="@dimen/_2sdp"
+				android:layout_marginStart="@dimen/_20sdp"
+				android:layout_marginEnd="@dimen/_20sdp"
+				android:max="5"
+				android:visibility="gone"
+				android:progress="0" />
+
+			<EditText
+				android:id="@+id/edtQuestionAnswer"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_vertical"
+				android:layout_marginStart="@dimen/_20sdp"
+				android:layout_marginTop="@dimen/_38sdp"
+				android:layout_marginEnd="@dimen/_20sdp"
+				android:background="@drawable/edit_text_selector"
+				android:drawablePadding="@dimen/_5sdp"
+				android:hint="Write answer"
+				android:padding="@dimen/_12sdp"
+				android:visibility="gone"
+				android:singleLine="true"
+				android:textSize="@dimen/_12ssp" />
+
+			<com.sdei.parentIn.customViews.SemiBoldTextView
+				android:id="@+id/btnFollow"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="@dimen/_15sdp"
+				android:layout_marginTop="@dimen/_35sdp"
+				android:layout_marginEnd="@dimen/_15sdp"
+				android:layout_marginBottom="@dimen/_25sdp"
+				android:background="@drawable/bg_blue_round_fill"
+				android:drawableEnd="@mipmap/ic_arrow"
+				android:foreground="?selectableItemBackground"
+				android:gravity="center"
+				android:padding="@dimen/_12sdp"
+				android:text="siguiente pregunta"
+				android:textAllCaps="true"
+				android:textColor="@color/white"
+				android:textSize="@dimen/_15ssp" />
+
+		</LinearLayout>
+	</androidx.core.widget.NestedScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,8 +6,8 @@
 	android:layout_height="match_parent"
 	tools:context="com.sdei.parentIn.activities.SurveyActivity">
 
-	<androidx.viewpager.widget.ViewPager
-		android:id="@+id/viewPager"
+	<com.sdei.parentIn.customViews.CustomViewPager
+		android:id="@+id/vpSurveys"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		app:layout_constraintBottom_toBottomOf="parent"

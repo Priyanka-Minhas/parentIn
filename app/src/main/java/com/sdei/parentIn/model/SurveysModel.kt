@@ -44,14 +44,8 @@ class SurveysModel : BaseModel {
         var area: String? = null
         var helptext: String? = null
         var __v: Int = 0
-        private var options: ArrayList<String>? = null
+        var options: ArrayList<String>? = null
 
-        fun getOptions(): List<String>? {
-            return options
-        }
 
-        fun setOptions(options: ArrayList<String>) {
-            this.options = options
-        }
     }
 }

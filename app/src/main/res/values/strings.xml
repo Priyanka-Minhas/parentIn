@@ -148,7 +148,7 @@
     <string name="parent_information">Parent Information</string>
     <string name="add_student_manually">Add Student Manually</string>
     <string name="Añadir_Alumno">Add Student</string>
-    <string name="cuestionario">Cuestionario</string>
-    <string name="de">de</string>
+    <string name="cuestionario">Questionnaire</string>
+    <string name="de">of</string>
 
 </resources>
