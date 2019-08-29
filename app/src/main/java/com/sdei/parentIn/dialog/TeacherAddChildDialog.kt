@@ -2,9 +2,7 @@ package com.sdei.parentIn.dialog
 
 import android.app.DatePickerDialog
 import android.content.Context
-import android.os.Build
 import android.view.Gravity
-import androidx.annotation.RequiresApi
 import com.sdei.parentIn.interfaces.InterConst
 import com.sdei.parentIn.model.AddStudentManullyRequest
 import com.sdei.parentIn.utils.getAppPref
@@ -27,7 +25,7 @@ class TeacherAddChildDialog(
 
     override fun onCreateStuff() {
         btnAddStudent.setOnClickListener{
-            var  mData=AddStudentManullyRequest()
+            val  mData=AddStudentManullyRequest()
 
             mData.firstName = edtParentFirstName.text.toString()
             mData.lastName =  edtParentLastName.text.toString()
@@ -39,8 +37,8 @@ class TeacherAddChildDialog(
             mData.child!!.lastName = edtChildLastName.text.toString()
             mData.child!!.birthDate = edtChildBirthDate.text.toString()
             mData.child!!.verificationCard = edtChildIdentityCard.text.toString()
-            mData.child!!.school = getAppPref()!!.getInt(InterConst.STUDENT_ID).toString()
-            mData.child!!.teacher= getAppPref()!!.getInt(InterConst.ROLE_ID).toString()
+            mData.child!!.school = getAppPref().getInt(InterConst.STUDENT_ID).toString()
+            mData.child!!.teacher= getAppPref().getInt(InterConst.ROLE_ID).toString()
             this.returnValue(mData)
         }
 
@@ -49,9 +47,9 @@ class TeacherAddChildDialog(
             val year = calender.get(Calendar.YEAR)
             val month = calender.get(Calendar.MONTH)
             val day = calender.get(Calendar.DAY_OF_MONTH)
-            val dpd = DatePickerDialog(context, DatePickerDialog.OnDateSetListener { _, year, monthOfYear, dayOfMonth ->
+            val dpd = DatePickerDialog(context, DatePickerDialog.OnDateSetListener { _, yearDate, monthOfYear, dayOfMonth ->
                 // Display Selected date in Toast
-                val date = "$year/${monthOfYear + 1}/$dayOfMonth"
+                val date = "$yearDate/${monthOfYear + 1}/$dayOfMonth"
                 edtChildBirthDate.setText(date)
 
             }, year, month, day)

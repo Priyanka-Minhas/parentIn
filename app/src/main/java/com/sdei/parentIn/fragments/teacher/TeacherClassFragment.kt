@@ -21,30 +21,30 @@ import kotlinx.android.synthetic.main.fragment_class.*
  */
 class TeacherClassFragment : BaseFragment<TeacherClassViewModel>(), View.OnClickListener {
     override fun onClick(v: View?) {
-        when(v!!.id){
-            R.id.btnAddStuManually->{
+        when (v!!.id) {
+            R.id.btnAddStuManually -> {
                 mDialog = TeacherAddChildDialog(mContext, R.style.pullBottomfromTop,
-                        R.layout.dialog_teacher_add_child){ mData ->
+                        R.layout.dialog_teacher_add_child) { mData ->
 
-                    if(mData.child!!.firstName!!.isEmpty()){
+                    if (mData.child!!.firstName!!.isEmpty()) {
                         mContext.showToast(getString(R.string.errorFirstName))
-                    }else if(mData.child!!.lastName!!.isEmpty()){
+                    } else if (mData.child!!.lastName!!.isEmpty()) {
                         mContext.showToast(getString(R.string.errorLastName))
-                    }else if(mData.child!!.birthDate!!.isEmpty()){
+                    } else if (mData.child!!.birthDate!!.isEmpty()) {
                         mContext.showToast(getString(R.string.errorBirthday))
-                    }else if(mData.child!!.verificationCard!!.isEmpty()){
+                    } else if (mData.child!!.verificationCard!!.isEmpty()) {
                         mContext.showToast(getString(R.string.errorIdentification))
-                    } else if(mData.firstName!!.isEmpty()){
+                    } else if (mData.firstName!!.isEmpty()) {
                         mContext.showToast(getString(R.string.errorFirstName))
-                    }else if(mData.lastName!!.isEmpty()){
+                    } else if (mData.lastName!!.isEmpty()) {
                         mContext.showToast(getString(R.string.errorLastName))
-                    }else if(mData.emailAddress!!.isEmpty()){
+                    } else if (mData.emailAddress!!.isEmpty()) {
                         mContext.showToast(getString(R.string.errorEmail))
-                    }else if(!mData.emailAddress!!.validEmail()){
+                    } else if (!mData.emailAddress!!.validEmail()) {
                         mContext.showToast(getString(R.string.errorValidEmail))
-                    }else{
+                    } else {
 
-                        if(mContext.connectedToInternet()){
+                        if (mContext.connectedToInternet()) {
                             mContext.showProgess()
                             mViewModel!!.sendRedToAddStudent(mData)
                         }
@@ -56,7 +56,7 @@ class TeacherClassFragment : BaseFragment<TeacherClassViewModel>(), View.OnClick
 
     }
 
-    lateinit var  mDialog: Unit
+    lateinit var mDialog: Unit
 
     var classList = ArrayList<ClassModel.DataBean>()
     lateinit var classAdapter: TeacherClassAdapter
@@ -73,7 +73,7 @@ class TeacherClassFragment : BaseFragment<TeacherClassViewModel>(), View.OnClick
 
         // get response
 
-        mViewModel!!.getClass().observe(this, Observer<ClassModel> {mData ->
+        mViewModel!!.getClass().observe(this, Observer<ClassModel> { mData ->
             if (mData != null && mContext.responseHandler(mData.statusCode, mData.message)) {
                 classList = mData.data
                 setClassListAdapter()
@@ -82,24 +82,21 @@ class TeacherClassFragment : BaseFragment<TeacherClassViewModel>(), View.OnClick
 
         // check add student status
 
-        mViewModel!!.getAddStudentStatus().observe(this, Observer<BaseModel> {mData ->
-             if(mData != null && mContext.responseHandler(mData.statusCode, mData.message)){
-                 (mDialog as TeacherAddChildDialog).dismiss()
-             }
+        mViewModel!!.getAddStudentStatus().observe(this, Observer<BaseModel> { mData ->
+            if (mData != null && mContext.responseHandler(mData.statusCode, mData.message)) {
+//                (mDialog as TeacherAddChildDialog).dismiss()
+            }
         })
 
     }
 
     private fun setClassListAdapter() {
         rvTeacherClass.layoutManager = LinearLayoutManager(mContext)
-        classAdapter = TeacherClassAdapter(mContext,classList)
+        classAdapter = TeacherClassAdapter(mContext, classList)
         rvTeacherClass.adapter = classAdapter
-
     }
 
     override fun initListeners() {
-      //rvTeacherClass.addOnItemTouchListener()
-
         btnAddStuManually.setOnClickListener(this)
     }
 
