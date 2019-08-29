@@ -17,7 +17,7 @@ import kotlinx.android.synthetic.main.activity_survey.*
 class SurveyActivity : BaseActivity<SurveyViewModel>(), SurveysViewPagerAdapter.ClickInterface {
     override fun moveToBackSurvey(currentPosition: Int) {
         if (currentPosition != 0)
-            vpSurveys.currentItem = currentPosition + 1
+            vpSurveys.currentItem = currentPosition - 1
     }
 
     override fun moveToNextSurvey(currentPosition: Int) {

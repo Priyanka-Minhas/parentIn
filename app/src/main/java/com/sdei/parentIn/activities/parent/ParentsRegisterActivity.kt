@@ -142,7 +142,7 @@ class ParentsRegisterActivity : BaseActivity<BaseViewModel>(), View.OnClickListe
         model.confirmPassword = edtConfPassword.text.toString()
         model.gender = edtGender.text.toString()
         model.roleId = getAppPref().getInt(InterConst.ROLE_ID)
-        model.isSameAddressAsStudent = rbYes.isEnabled
+        model.isSameAddressAsStudent = rbYes.isChecked
 
         val intent = Intent(mContext, ParentAddChildActivity::class.java)
         intent.putExtra(InterConst.PARENT_DATA, model)

@@ -37,13 +37,13 @@ class SurveysModel : BaseModel {
 
         var min: Int = 0
         var max: Int = 0
-        var _id: String? = null
-        var question: String? = null
-        var language: String? = null
-        var type: String? = null
-        var area: String? = null
-        var helptext: String? = null
-        var answer: String? = null
+        var _id: String? = ""
+        var question: String? = ""
+        var language: String? = ""
+        var type: String? = ""
+        var area: String? = ""
+        var helptext: String? = ""
+        var answer: String? = ""
         var __v: Int = 0
         var options: ArrayList<String>? = null
 

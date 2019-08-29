@@ -170,6 +170,7 @@
 				android:layout_marginStart="@dimen/_20sdp"
 				android:layout_marginTop="@dimen/_38sdp"
 				android:layout_marginEnd="@dimen/_20sdp"
+				android:hint="@string/select_answer"
 				android:background="@drawable/edit_text_selector"
 				android:cursorVisible="false"
 				android:drawableEnd="@mipmap/ic_dropdown"
