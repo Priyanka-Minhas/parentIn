@@ -43,6 +43,7 @@ class SurveysModel : BaseModel {
         var type: String? = null
         var area: String? = null
         var helptext: String? = null
+        var answer: String? = null
         var __v: Int = 0
         var options: ArrayList<String>? = null
 

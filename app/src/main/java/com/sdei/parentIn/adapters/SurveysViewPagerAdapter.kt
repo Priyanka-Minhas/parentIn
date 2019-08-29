@@ -37,6 +37,10 @@ class SurveysViewPagerAdapter(private val mContext: Context,
             mClick.moveToNextSurvey(position)
         }
 
+        layout.btnBack.setOnClickListener {
+            mClick.moveToBackSurvey(position)
+        }
+
         when {
             mData[position].type!! == "m" -> {
                 setMcqView(layout, position)
@@ -75,6 +79,25 @@ class SurveysViewPagerAdapter(private val mContext: Context,
 
     }
 
+    fun setAnswer(layout: ViewGroup, position: Int) {
+        when {
+            mData[position].type!! == "m" -> {
+
+                if(layout.rbOne.isEnabled){
+
+                }else if(layout.rbTwo.isEnabled)
+
+                mData[position].answer
+            }
+            mData[position].type!! == "s" -> {
+            }
+            mData[position].type!! == "d" -> {
+            }
+            mData[position].type!! == "t" -> {
+            }
+        }
+    }
+
     override fun destroyItem(collection: ViewGroup, position: Int, view: Any) {
         collection.removeView(view as View)
     }
@@ -89,6 +112,7 @@ class SurveysViewPagerAdapter(private val mContext: Context,
 
     interface ClickInterface {
         fun moveToNextSurvey(currentPosition: Int)
+        fun moveToBackSurvey(currentPosition: Int)
     }
 
 }
