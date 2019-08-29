@@ -4,11 +4,14 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SeekBar
 import androidx.viewpager.widget.PagerAdapter
 import com.sdei.parentIn.R
 import com.sdei.parentIn.model.SurveysModel
 import kotlinx.android.synthetic.main.item_survey.view.*
 import java.util.*
+
+
 
 class SurveysViewPagerAdapter(private val mContext: Context,
                                        private var mData: ArrayList<SurveysModel.DataBean>,var mClick: ClickInterface) : PagerAdapter() {
@@ -17,7 +20,6 @@ class SurveysViewPagerAdapter(private val mContext: Context,
         val inflater = LayoutInflater.from(mContext)
         val layout = inflater.inflate(R.layout.item_survey, collection, false) as ViewGroup
         collection.addView(layout)
-
         setView(layout, position)
 
         return layout
@@ -42,15 +44,40 @@ class SurveysViewPagerAdapter(private val mContext: Context,
         }
 
         when {
+            // for multiple choice
             mData[position].type!! == "m" -> {
                 setMcqView(layout, position)
             }
+            // for slider type
             mData[position].type!! == "s" -> {
                 layout.sbQuestion.visibility = View.VISIBLE
+                layout.sbQuestion.max = mData[position].max
+                layout.sbQuestion.progress = mData[position].min
+                layout.txtSeekValue.setText(layout.sbQuestion.progress.toString()+"/"+layout.sbQuestion.max)
+
+                layout.sbQuestion.setOnSeekBarChangeListener(object :SeekBar.OnSeekBarChangeListener{
+                    var progress = 0
+                    override fun onProgressChanged(seekBar: SeekBar?, progressValue: Int, p2: Boolean) {
+                        progress = progressValue
+                    }
+
+                    override fun onStartTrackingTouch(p0: SeekBar?) {
+
+                    }
+
+                    override fun onStopTrackingTouch(seekBar: SeekBar?) {
+                       layout.txtSeekValue.setText(progress.toString()+"/"+ seekBar!!.max)
+                    }
+
+                })
+
             }
+            // for dropdown type
             mData[position].type!! == "d" -> {
                 layout.edtQuestionDropdown.visibility = View.VISIBLE
+
             }
+            // for text type
             mData[position].type!! == "t" -> {
                 layout.edtQuestionAnswer.visibility = View.VISIBLE
             }
@@ -116,3 +143,4 @@ class SurveysViewPagerAdapter(private val mContext: Context,
     }
 
 }
+
