@@ -149,7 +149,15 @@
     <string name="add_student_manually">Add Student Manually</string>
     <string name="Añadir_Alumno">Add Student</string>
     <string name="cuestionario">Cuestionario</string>
+    <!-- survay -->
     <string name="de">de</string>
+    <!-- verify survay -->
+    <string name="gracias_por_comenzar_la_encuesta">Gracias por comenzar la encuesta</string>
+    <string name="la_encuesta_s_lo_te_tomar_5_minutos_y_su_opini_n_es_extremadamente_importante_para_nosotros">La encuesta sólo te tomará 5 minutos y su opinión es extremadamente importante para nosotros.</string>
+    <string name="escuela_seleccionado">Escuela Seleccionado</string>
+    <string name="recuerda_que_puedes_cambiar_la_escuela_en_la_lista_de_abajo">Recuerda que puedes cambiar la escuela en la lista de abajo</string>
+    <string name="seleccione_escuela">Seleccione escuela</string>
+    <string name="comenzar_cuestionario">COMENZAR CUESTIONARIO</string>
 
 
 </resources>
