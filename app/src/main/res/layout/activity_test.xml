@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context="com.sdei.parentIn.activities.TestActivity">
 
     <RelativeLayout
@@ -115,6 +116,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="De 1 mes a 6 meses"
+                    android:paddingStart="@dimen/_20sdp"
                     android:button="@drawable/rb_selector"
                     android:layout_marginStart="@dimen/_32sdp"/>
                 <com.sdei.parentIn.customViews.CustomRadioButton
@@ -124,6 +126,7 @@
                     android:button="@drawable/rb_selector"
                     android:layout_marginStart="@dimen/_32sdp"
                     android:layout_marginTop="@dimen/_36sdp"
+                    android:paddingStart="@dimen/_20sdp"
                     android:text="De 6 meses a 12 meses"/>
                 <com.sdei.parentIn.customViews.CustomRadioButton
                     android:id="@+id/rbThree"
@@ -132,6 +135,7 @@
                     android:layout_marginStart="@dimen/_32sdp"
                     android:button="@drawable/rb_selector"
                     android:layout_marginTop="@dimen/_36sdp"
+                    android:paddingStart="@dimen/_20sdp"
                     android:text="De 1 año a 2 años"/>
                 <com.sdei.parentIn.customViews.CustomRadioButton
                     android:id="@+id/rbFour"
@@ -140,6 +144,7 @@
                     android:layout_marginStart="@dimen/_32sdp"
                     android:button="@drawable/rb_selector"
                     android:layout_marginTop="@dimen/_36sdp"
+                    android:paddingStart="@dimen/_20sdp"
                     android:text="Mas de 2 años"/>
             </LinearLayout>
             <!-- ============for dropdown question========== -->
@@ -149,7 +154,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginStart="@dimen/_32sdp"
                 android:layout_marginTop="@dimen/_38sdp"
                 android:layout_marginEnd="@dimen/_15sdp"
                 android:background="@drawable/edit_text_selector"
@@ -171,8 +176,8 @@
                 android:progressDrawable="@color/blue"
                 android:maxHeight="@dimen/_2sdp"
                 android:minHeight="@dimen/_2sdp"
-                android:layout_marginStart="@dimen/_15sdp"
-                android:layout_marginEnd="@dimen/_15sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
                 android:max="5"
                 android:progress="0"/>
 
@@ -181,9 +186,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginStart="@dimen/_20sdp"
                 android:layout_marginTop="@dimen/_38sdp"
-                android:layout_marginEnd="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
                 android:background="@drawable/edit_text_selector"
                 android:drawablePadding="@dimen/_5sdp"
                 android:hint="Write answer"
