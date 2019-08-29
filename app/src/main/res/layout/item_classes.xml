@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -7,6 +6,7 @@
     android:background="@color/grayLight">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cvMain"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="@dimen/_12sdp"
@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
 			android:layout_gravity="center_horizontal"
-
+            android:background="@color/transparent"
 			android:paddingTop="@dimen/_10sdp"
 			android:paddingBottom="@dimen/_10sdp">
 
@@ -85,7 +85,7 @@
                 android:layout_marginTop="@dimen/_5sdp"/>
 
             <LinearLayout
-                android:id="@+id/llSendMessage"
+                android:id="@+id/lySendMessage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_purpul_stroke"
