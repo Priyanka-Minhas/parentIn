@@ -10,35 +10,38 @@ import kotlinx.android.synthetic.main.dialog_teacher_add_child.*
 import java.util.*
 
 class TeacherAddChildDialog(
-       context: Context,
+        context: Context,
         themeResId: Int,
         val LayoutId: Int,
         val returnValue: (AddStudentManullyRequest) -> Unit) : BaseDialog(context, themeResId) {
 
-
-
     init {
         val wmlp = this.window!!.attributes
-        wmlp.gravity =Gravity.CENTER
+        wmlp.gravity = Gravity.CENTER
         window!!.attributes = wmlp
     }
 
     override fun onCreateStuff() {
-        btnAddStudent.setOnClickListener{
-            val  mData=AddStudentManullyRequest()
+
+        imgClose.setOnClickListener {
+            dismissDialog()
+        }
+
+        btnAddStudent.setOnClickListener {
+            val mData = AddStudentManullyRequest()
 
             mData.firstName = edtParentFirstName.text.toString()
-            mData.lastName =  edtParentLastName.text.toString()
+            mData.lastName = edtParentLastName.text.toString()
             mData.emailAddress = edtParentEmail.text.toString()
 
             // add child
-            mData.child=AddStudentManullyRequest.DataBean()
+            mData.child = AddStudentManullyRequest.DataBean()
             mData.child!!.firstName = edtChildFirstName.text.toString()
             mData.child!!.lastName = edtChildLastName.text.toString()
             mData.child!!.birthDate = edtChildBirthDate.text.toString()
             mData.child!!.verificationCard = edtChildIdentityCard.text.toString()
             mData.child!!.school = getAppPref().getInt(InterConst.STUDENT_ID).toString()
-            mData.child!!.teacher= getAppPref().getInt(InterConst.ROLE_ID).toString()
+            mData.child!!.teacher = getAppPref().getInt(InterConst.ROLE_ID).toString()
             this.returnValue(mData)
         }
 
@@ -62,5 +65,24 @@ class TeacherAddChildDialog(
     override fun getContentView(): Int {
         return LayoutId
     }
+
+    fun showDialog() {
+        if (this.isShowing) {
+            return
+        } else {
+            this.show()
+        }
+
+    }
+
+    fun dismissDialog() {
+        if (this.isShowing) {
+            this.dismiss()
+        } else {
+            return
+        }
+
+    }
+
 
 }

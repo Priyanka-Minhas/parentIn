@@ -20,7 +20,7 @@
 <!--	</style>-->
 
 
-	<style name="pullBottomfromTop" parent="@android:style/Theme.Dialog">
+	<style name="pullBottomfromTop" parent="Theme.AppCompat.Dialog">
 		<item name="android:windowAnimationStyle">@style/dilog_slide_top_to_down</item>
 	</style>
 
@@ -28,6 +28,7 @@
 		<item name="android:windowEnterAnimation">@anim/slide_up</item>
 		<item name="android:windowExitAnimation">@anim/slide_down</item>
 	</style>
+
 	<style name="AppTheme.NoActionBar">
 		<item name="windowActionBar">false</item>
 		<item name="windowNoTitle">true</item>
