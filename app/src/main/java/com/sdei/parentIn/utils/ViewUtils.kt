@@ -91,7 +91,9 @@ fun Context.saveUserData(model: UserModel.DataBean) {
      */
     getAppPref().setString(InterConst.AUTH_TOKEN, model.token)
     getAppPref().setString(InterConst.ID, model._id)
-    getAppPref().setString(InterConst.STUDENT_ID, model.school)
+    if(model.school!=null){
+        getAppPref().setString(InterConst.STUDENT_ID, model.school)
+    }
     getAppPref().setString(InterConst.FIRST_NAME, model.firstName)
     getAppPref().setString(InterConst.LAST_NAME, model.lastName)
 

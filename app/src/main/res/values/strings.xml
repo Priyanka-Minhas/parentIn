@@ -162,5 +162,7 @@
     <string name="comenzar_cuestionario">COMENZAR CUESTIONARIO</string>
     <string name="comenzar_encuesta">COMENZAR ENCUESTA</string>
 
+    <string name="please_answer_this_question">Please answer this question first</string>
+    <string name="select_answer">SELECT ANSWER</string>
 
 </resources>
