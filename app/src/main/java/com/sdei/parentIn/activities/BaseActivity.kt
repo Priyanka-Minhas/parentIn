@@ -89,7 +89,7 @@ abstract class BaseActivity<V : ViewModel> : AppCompatActivity() {
     }
 
     override fun attachBaseContext(base: Context) {
-        super.attachBaseContext(LocaleHelper.setLocale(base,"es"))
+        super.attachBaseContext(LocaleHelper.setLocale(base,"en"))
     }
 
     //    private fun performDataBinding() {

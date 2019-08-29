@@ -168,7 +168,6 @@
 				android:focusable="false"
 				android:hint="@string/Género"
 				android:inputType="none"
-
 				android:padding="@dimen/_12sdp"
 				android:textSize="@dimen/_12ssp" />
 
