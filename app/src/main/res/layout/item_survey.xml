@@ -60,20 +60,26 @@
 				android:layout_height="wrap_content"
 				android:text="@string/app_name"
 				android:textColor="@color/black"
-				android:textSize="@dimen/_30ssp"
+				android:textSize="@dimen/_25ssp"
 				android:layout_gravity="center" />
 
 			<LinearLayout
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:orientation="horizontal"
+				android:gravity="center_horizontal"
 				android:layout_gravity="center_horizontal"
 				android:layout_marginTop="@dimen/_35sdp">
 
 				<com.sdei.parentIn.customViews.MediumTextView
 					android:id="@+id/txtCount"
-					android:layout_width="@dimen/_15sdp"
-					android:layout_height="@dimen/_15sdp"
+					android:layout_width="@dimen/_20sdp"
+					android:layout_height="@dimen/_20sdp"
+					android:gravity="center"
+					android:layout_gravity="center"
+					android:text="1"
+					android:textColor="@color/black"
+					android:textSize="@dimen/_10ssp"
 					android:background="@drawable/bg_round_blue" />
 
 				<com.sdei.parentIn.customViews.MediumTextView
@@ -96,7 +102,7 @@
 				android:layout_marginStart="@dimen/_45sdp"
 				android:layout_marginEnd="@dimen/_45sdp"
 				android:gravity="center_horizontal"
-				android:textSize="@dimen/_14sdp"
+				android:textSize="@dimen/_13ssp"
 				android:textAllCaps="true"
 				android:textColor="@color/colorPurpul"
 				android:text="¿POR CUANTO TIEMPO HAS ESTADO YENDO A ESTE CENTRO?" />
@@ -109,6 +115,7 @@
 				android:layout_height="wrap_content"
 				android:orientation="vertical"
 				android:visibility="gone"
+				android:layout_weight="1"
 				android:layout_marginTop="@dimen/_38sdp">
 
 				<RadioGroup
@@ -161,7 +168,12 @@
 				</RadioGroup>
 			</LinearLayout>
 			<!-- ============for dropdown question========== -->
-
+		<LinearLayout
+			android:id="@+id/llQuestionDropdown"
+			android:layout_width="match_parent"
+			android:layout_weight="1"
+			android:visibility="gone"
+			android:layout_height="wrap_content">
 			<EditText
 				android:id="@+id/edtQuestionDropdown"
 				android:layout_width="match_parent"
@@ -176,15 +188,17 @@
 				android:drawableEnd="@mipmap/ic_dropdown"
 				android:focusable="false"
 				android:inputType="none"
-				android:visibility="gone"
 				android:padding="@dimen/_12sdp"
 				android:textSize="@dimen/_12ssp" />
-
+		</LinearLayout>
 			<!-- ============ Range question ============= -->
 
             <LinearLayout
+				android:id="@+id/llSeekbar"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:visibility="gone"
 				android:orientation="vertical">
 				<SeekBar
 					android:id="@+id/sbQuestion"
@@ -196,7 +210,6 @@
 					android:minHeight="@dimen/_2sdp"
 					android:layout_marginStart="@dimen/_20sdp"
 					android:layout_marginEnd="@dimen/_20sdp"
-					android:visibility="gone"
 					android:progress="0" />
 				 <com.sdei.parentIn.customViews.SemiBoldTextView
 					 android:id="@+id/txtSeekValue"
@@ -207,22 +220,28 @@
 					 android:textSize="@dimen/_13ssp"/>
 			</LinearLayout>
 
+<LinearLayout
+	android:id="@+id/llQuestionAnswer"
+	android:layout_width="match_parent"
+	android:layout_weight="1"
+	android:visibility="gone"
+	android:layout_height="wrap_content">
 
-			<EditText
-				android:id="@+id/edtQuestionAnswer"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_gravity="center_vertical"
-				android:layout_marginStart="@dimen/_20sdp"
-				android:layout_marginTop="@dimen/_38sdp"
-				android:layout_marginEnd="@dimen/_20sdp"
-				android:background="@drawable/edit_text_selector"
-				android:drawablePadding="@dimen/_5sdp"
-				android:hint="Write answer"
-				android:padding="@dimen/_12sdp"
-				android:visibility="gone"
-				android:singleLine="true"
-				android:textSize="@dimen/_12ssp" />
+	<EditText
+		android:id="@+id/edtQuestionAnswer"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center_vertical"
+		android:layout_marginStart="@dimen/_20sdp"
+		android:layout_marginTop="@dimen/_38sdp"
+		android:layout_marginEnd="@dimen/_20sdp"
+		android:background="@drawable/edit_text_selector"
+		android:drawablePadding="@dimen/_5sdp"
+		android:hint="Write answer"
+		android:padding="@dimen/_12sdp"
+		android:textSize="@dimen/_12ssp" />
+</LinearLayout>
+
 
 			<com.sdei.parentIn.customViews.SemiBoldTextView
 				android:id="@+id/btnFollow"
@@ -231,7 +250,7 @@
 				android:layout_marginStart="@dimen/_15sdp"
 				android:layout_marginTop="@dimen/_35sdp"
 				android:layout_marginEnd="@dimen/_15sdp"
-				android:layout_marginBottom="@dimen/_25sdp"
+				android:layout_marginBottom="@dimen/_15sdp"
 				android:background="@drawable/bg_blue_round_fill"
 				android:drawableEnd="@mipmap/ic_arrow"
 				android:foreground="?selectableItemBackground"

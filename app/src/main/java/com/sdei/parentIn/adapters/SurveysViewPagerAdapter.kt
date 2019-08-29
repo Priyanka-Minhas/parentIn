@@ -1,6 +1,7 @@
 package com.sdei.parentIn.adapters
 
 import android.content.Context
+import android.os.Build
 import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
@@ -14,7 +15,6 @@ import com.sdei.parentIn.model.OptionsModel
 import com.sdei.parentIn.model.SurveysModel
 import com.sdei.parentIn.utils.showToast
 import kotlinx.android.synthetic.main.item_survey.view.*
-
 
 
 class SurveysViewPagerAdapter(private val mContext: Context,
@@ -72,19 +72,21 @@ class SurveysViewPagerAdapter(private val mContext: Context,
         }
 
         when {
-            // for multiple choice
             mData[position].type!! == "m" -> {
+                layout.lyQuestionOption.visibility = View.VISIBLE
                 setMcqView(layout, position)
             }
-            // for slider type
             mData[position].type!! == "s" -> {
-                layout.sbQuestion.visibility = View.VISIBLE
+                layout.llSeekbar.visibility = View.VISIBLE
                 layout.sbQuestion.max = mData[position].max
-                layout.sbQuestion.progress = mData[position].min
-                layout.txtSeekValue.setText(layout.sbQuestion.progress.toString()+"/"+layout.sbQuestion.max)
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    layout.sbQuestion.min = mData[position].min
+                }
+                var progress = mData[position].min
 
-                layout.sbQuestion.setOnSeekBarChangeListener(object :SeekBar.OnSeekBarChangeListener{
-                    var progress = 0
+                layout.txtSeekValue.text = layout.sbQuestion.progress.toString() + "/" + layout.sbQuestion.max
+
+                layout.sbQuestion.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
                     override fun onProgressChanged(seekBar: SeekBar?, progressValue: Int, p2: Boolean) {
                         progress = progressValue
                     }
@@ -94,26 +96,22 @@ class SurveysViewPagerAdapter(private val mContext: Context,
                     }
 
                     override fun onStopTrackingTouch(seekBar: SeekBar?) {
-                       layout.txtSeekValue.setText(progress.toString()+"/"+ seekBar!!.max)
+                        layout.txtSeekValue.text = progress.toString() + "/" + seekBar!!.max
                     }
 
                 })
 
             }
-            // for dropdown type
             mData[position].type!! == "d" -> {
-                layout.edtQuestionDropdown.visibility = View.VISIBLE
-
+                layout.llQuestionDropdown.visibility = View.VISIBLE
             }
-            // for text type
             mData[position].type!! == "t" -> {
-                layout.edtQuestionAnswer.visibility = View.VISIBLE
+                layout.llQuestionAnswer.visibility = View.VISIBLE
             }
         }
     }
 
     private fun setMcqView(layout: ViewGroup, position: Int) {
-        layout.lyQuestionOption.visibility = View.VISIBLE
         when {
             mData[position].options!!.size == 4 -> {
                 layout.rbOne.text = mData[position].options!![0]
