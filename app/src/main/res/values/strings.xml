@@ -160,8 +160,7 @@
     <string name="recuerda_que_puedes_cambiar_la_escuela_en_la_lista_de_abajo">Recuerda que puedes cambiar la escuela en la lista de abajo</string>
     <string name="seleccione_escuela">Seleccione escuela</string>
     <string name="comenzar_cuestionario">COMENZAR CUESTIONARIO</string>
-	<string name="please_answer_this_question">Please answer this question first</string>
-    <string name="select_answer">SELECT ANSWER</string>
+    <string name="comenzar_encuesta">COMENZAR ENCUESTA</string>
 
 
 </resources>
