@@ -36,6 +36,10 @@ class SurveysViewPagerAdapter(private val mContext: Context,
 
     private fun setView(layout: ViewGroup, position: Int) {
 
+        if (position == mData.size - 1) {
+            layout.btnFollow.text = mContext.getString(R.string.done)
+        }
+
         layout.txtQuestion.text = mData[position].question
         layout.txtCount.text = (position + 1).toString()
         layout.txtTotalCount.text = " " + mContext.resources.getString(R.string.de) + " " + mData.size
@@ -46,8 +50,9 @@ class SurveysViewPagerAdapter(private val mContext: Context,
 
         layout.edtQuestionDropdown.setOnClickListener {
             val mArrayList = ArrayList<OptionsModel>()
+
             for (i in 0 until mData[position].options!!.size) {
-                mArrayList.add(OptionsModel(i, mData[position].options!![i]))
+                mArrayList.add(OptionsModel(i, mData[position].options!![i].label!!))
             }
 
             OptionListDialog(mContext, R.style.pullBottomfromTop, R.layout.dialog_options,
@@ -56,7 +61,6 @@ class SurveysViewPagerAdapter(private val mContext: Context,
                     InterfacesCall.Callback { pos ->
                         layout.edtQuestionDropdown.setText(mArrayList[pos].name)
                     }).show()
-
         }
 
         layout.btnFollow.setOnClickListener {
@@ -78,60 +82,119 @@ class SurveysViewPagerAdapter(private val mContext: Context,
             }
             mData[position].type!! == "s" -> {
                 layout.llSeekbar.visibility = View.VISIBLE
-                layout.sbQuestion.max = mData[position].max
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                    layout.sbQuestion.min = mData[position].min
-                }
-                var progress = mData[position].min
-
-                layout.txtSeekValue.text = layout.sbQuestion.progress.toString() + "/" + layout.sbQuestion.max
-
-                layout.sbQuestion.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
-                    override fun onProgressChanged(seekBar: SeekBar?, progressValue: Int, p2: Boolean) {
-                        progress = progressValue
-                    }
-
-                    override fun onStartTrackingTouch(p0: SeekBar?) {
-
-                    }
-
-                    override fun onStopTrackingTouch(seekBar: SeekBar?) {
-                        layout.txtSeekValue.text = progress.toString() + "/" + seekBar!!.max
-                    }
-
-                })
-
+                setSeekBarView(layout, position)
             }
             mData[position].type!! == "d" -> {
                 layout.llQuestionDropdown.visibility = View.VISIBLE
+
+                if (!TextUtils.isEmpty(mData[position].answer)) {
+                    layout.edtQuestionDropdown.setText(mData[position].answer!!)
+                }
             }
             mData[position].type!! == "t" -> {
                 layout.llQuestionAnswer.visibility = View.VISIBLE
+
+                if (!TextUtils.isEmpty(mData[position].answer)) {
+                    layout.edtQuestionAnswer.setText(mData[position].answer!!)
+                }
             }
         }
+    }
+
+    private fun setSeekBarView(layout: ViewGroup, position: Int) {
+        layout.sbQuestion.max = mData[position].max
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            layout.sbQuestion.min = mData[position].min
+        }
+        var progress = mData[position].min
+
+        if (!TextUtils.isEmpty(mData[position].answer)) {
+            layout.sbQuestion.progress = mData[position].answer!!.toInt()
+        }
+
+        layout.txtSeekValue.text = layout.sbQuestion.progress.toString() + "/" + layout.sbQuestion.max
+
+        layout.sbQuestion.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar?, progressValue: Int, p2: Boolean) {
+                progress = progressValue
+            }
+
+            override fun onStartTrackingTouch(p0: SeekBar?) {
+
+            }
+
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {
+                layout.txtSeekValue.text = progress.toString() + "/" + seekBar!!.max
+            }
+        })
+
     }
 
     private fun setMcqView(layout: ViewGroup, position: Int) {
         when {
             mData[position].options!!.size == 4 -> {
-                layout.rbOne.text = mData[position].options!![0]
-                layout.rbTwo.text = mData[position].options!![1]
-                layout.rbThree.text = mData[position].options!![2]
-                layout.rbFour.text = mData[position].options!![3]
+
+                layout.rbOne.text = mData[position].options!![0].label
+                layout.rbTwo.text = mData[position].options!![1].label
+                layout.rbThree.text = mData[position].options!![2].label
+                layout.rbFour.text = mData[position].options!![3].label
+
+                if (!TextUtils.isEmpty(mData[position].answer)) {
+                    when {
+                        mData[position].answer == mData[position].options!![0].label -> {
+                            layout.rbOne.isChecked = true
+                        }
+                        mData[position].answer == mData[position].options!![1].label -> {
+                            layout.rbTwo.isChecked = true
+                        }
+                        mData[position].answer == mData[position].options!![2].label -> {
+                            layout.rbThree.isChecked = true
+                        }
+                        mData[position].answer == mData[position].options!![3].label -> {
+                            layout.rbFour.isChecked = true
+                        }
+                    }
+                }
             }
             mData[position].options!!.size == 3 -> {
-                layout.rbOne.text = mData[position].options!![0]
-                layout.rbTwo.text = mData[position].options!![1]
-                layout.rbThree.text = mData[position].options!![2]
+
+                layout.rbOne.text = mData[position].options!![0].label
+                layout.rbTwo.text = mData[position].options!![1].label
+                layout.rbThree.text = mData[position].options!![2].label
 
                 layout.rbFour.visibility = View.GONE
+                if (!TextUtils.isEmpty(mData[position].answer)) {
+                    when {
+                        mData[position].answer == mData[position].options!![0].label -> {
+                            layout.rbOne.isChecked = true
+                        }
+                        mData[position].answer == mData[position].options!![1].label -> {
+                            layout.rbTwo.isChecked = true
+                        }
+                        mData[position].answer == mData[position].options!![2].label -> {
+                            layout.rbThree.isChecked = true
+                        }
+                    }
+                }
             }
             mData[position].options!!.size == 2 -> {
-                layout.rbOne.text = mData[position].options!![0]
-                layout.rbTwo.text = mData[position].options!![1]
+
+                layout.rbOne.text = mData[position].options!![0].label
+                layout.rbTwo.text = mData[position].options!![1].label
 
                 layout.rbThree.visibility = View.GONE
                 layout.rbFour.visibility = View.GONE
+
+                if (!TextUtils.isEmpty(mData[position].answer)) {
+                    when {
+                        mData[position].answer == mData[position].options!![0].label -> {
+                            layout.rbOne.isChecked = true
+                        }
+                        mData[position].answer == mData[position].options!![1].label -> {
+                            layout.rbTwo.isChecked = true
+                        }
+                    }
+                }
             }
         }
 
@@ -141,17 +204,30 @@ class SurveysViewPagerAdapter(private val mContext: Context,
         when {
             mData[position].type!! == "m" -> {
                 if (layout.rbOne.visibility == View.VISIBLE && layout.rbOne.isChecked) {
+
                     mData[position].answer = layout.rbOne.text.toString()
+                    mData[position].answerPoints = mData[position].options!![0].point
+
                 } else if (layout.rbTwo.visibility == View.VISIBLE && layout.rbTwo.isChecked) {
+
                     mData[position].answer = layout.rbTwo.text.toString()
+                    mData[position].answerPoints = mData[position].options!![1].point
+
                 } else if (layout.rbThree.visibility == View.VISIBLE && layout.rbThree.isChecked) {
+
                     mData[position].answer = layout.rbThree.text.toString()
+                    mData[position].answerPoints = mData[position].options!![2].point
+
                 } else if (layout.rbFour.visibility == View.VISIBLE && layout.rbFour.isChecked) {
+
                     mData[position].answer = layout.rbFour.text.toString()
+                    mData[position].answerPoints = mData[position].options!![3].point
+
                 }
             }
             mData[position].type!! == "s" -> {
                 mData[position].answer = layout.sbQuestion.progress.toString()
+                mData[position].answerPoints = layout.sbQuestion.progress
             }
             mData[position].type!! == "d" -> {
                 mData[position].answer = layout.edtQuestionDropdown.text.toString()

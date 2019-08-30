@@ -2,6 +2,7 @@ package com.sdei.parentIn.utils
 
 import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import android.view.View
 import android.widget.EditText
@@ -11,7 +12,9 @@ import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
 import com.sdei.parentIn.AppApplication
 import com.sdei.parentIn.R
+import com.sdei.parentIn.activities.WelcomeActivity
 import com.sdei.parentIn.interfaces.InterConst
+import com.sdei.parentIn.interfaces.InterConst.CODE_SESSION_EXPIRED
 import com.sdei.parentIn.interfaces.InterConst.CODE_SUCCESS
 import com.sdei.parentIn.model.UserModel
 import org.json.JSONObject
@@ -55,6 +58,9 @@ fun Context.responseHandler(statusCode: Int, message: String): Boolean {
     return when (statusCode) {
         CODE_SUCCESS -> true
         else -> {
+            if (statusCode == CODE_SESSION_EXPIRED) {
+//                logOut()
+            }
             showToast(message)
             false
         }
@@ -66,6 +72,13 @@ fun handleJson(response: String): Pair<String, String> {
     val statusCode = obj.getString("statusCode")
     val message = obj.getString("message")
     return Pair(statusCode, message)
+}
+
+fun Activity.logOut() {
+    val intent = Intent(this, WelcomeActivity::class.java)
+    startActivity(intent)
+    getAppPref().clearShf()
+    finishAffinity()
 }
 
 fun getAppPref(): AppPreference {

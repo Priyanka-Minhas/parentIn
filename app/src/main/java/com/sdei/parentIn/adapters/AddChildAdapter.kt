@@ -57,10 +57,10 @@ class AddChildAdapter(var con: Context,
             val year = calender.get(Calendar.YEAR)
             val month = calender.get(Calendar.MONTH)
             val day = calender.get(Calendar.DAY_OF_MONTH)
-            val dpd = DatePickerDialog(con, DatePickerDialog.OnDateSetListener { _, year, monthOfYear, dayOfMonth ->
+            val dpd = DatePickerDialog(con, DatePickerDialog.OnDateSetListener { _, yearDate, monthOfYear, dayOfMonth ->
 
                 // Display Selected date in Toast
-                val date = "$year/${monthOfYear + 1}/$dayOfMonth"
+                val date = "$yearDate/${monthOfYear + 1}/$dayOfMonth"
                 holder.birthdate.setText(date)
                 mData[position].birthDate = holder.birthdate.text.toString()
                 //showAlertSnackBar(txtCreateAccount, getString(R.string.errorChild))

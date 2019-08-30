@@ -16,12 +16,15 @@ public interface InterConst {
 
     int CODE_SUCCESS = 200;
     int CODE_ERROR = 404;
+    int CODE_SESSION_EXPIRED = 401;
     int CODE_WARNING = 303;
 
     @NotNull
     String PARENT_DATA = "parent_data";
     @Nullable
     String CHILD_DATA="child_data";
+  @Nullable
+    String CHILD_ID="child_ic";
 
     @NotNull
     String ID = "_id";
@@ -36,4 +39,6 @@ public interface InterConst {
     String AUTH_TOKEN = "auth_token";
 
     int RESULT_CHILDREN=1001;
+    @Nullable
+    int RESULT_SURVEY=1002;
 }

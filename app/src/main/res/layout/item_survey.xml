@@ -71,14 +71,14 @@
 				android:layout_gravity="center_horizontal"
 				android:layout_marginTop="@dimen/_35sdp">
 
-				<com.sdei.parentIn.customViews.MediumTextView
+				<com.sdei.parentIn.customViews.SemiBoldTextView
 					android:id="@+id/txtCount"
 					android:layout_width="@dimen/_20sdp"
 					android:layout_height="@dimen/_20sdp"
 					android:gravity="center"
 					android:layout_gravity="center"
 					android:text="1"
-					android:textColor="@color/black"
+					android:textColor="@color/white"
 					android:textSize="@dimen/_10ssp"
 					android:background="@drawable/bg_round_blue" />
 
