@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sdei.parentIn.R
 import com.sdei.parentIn.adapters.TeacherClassAdapter
+import com.sdei.parentIn.dialog.ExportCsvFileDialog
 import com.sdei.parentIn.dialog.TeacherAddChildDialog
 import com.sdei.parentIn.fragments.BaseFragment
 import com.sdei.parentIn.interfaces.InterConst
@@ -25,12 +26,17 @@ class TeacherClassFragment : BaseFragment<TeacherClassViewModel>(), View.OnClick
             R.id.btnAddStuManually -> {
                 mDialog.showDialog()
             }
+
+            R.id.btnExportStuList ->{
+              exportDialog.showDialog()
+            }
         }
 
     }
 
 
     lateinit var mDialog: TeacherAddChildDialog
+    lateinit var exportDialog : ExportCsvFileDialog
 
     var classList = ArrayList<ClassModel.DataBean>()
     lateinit var classAdapter: TeacherClassAdapter
@@ -88,6 +94,11 @@ class TeacherClassFragment : BaseFragment<TeacherClassViewModel>(), View.OnClick
             }
         })
 
+
+        // export  csv dialog
+        exportDialog = ExportCsvFileDialog(mContext,R.style.pullBottomfromTop,R.layout.dialog_export_csv)
+
+
     }
 
     private fun setClassListAdapter() {
@@ -98,6 +109,7 @@ class TeacherClassFragment : BaseFragment<TeacherClassViewModel>(), View.OnClick
 
     override fun initListeners() {
         btnAddStuManually.setOnClickListener(this)
+        btnExportStuList.setOnClickListener(this)
     }
 
 }

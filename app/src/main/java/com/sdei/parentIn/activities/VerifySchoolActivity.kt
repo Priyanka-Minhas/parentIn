@@ -1,6 +1,7 @@
 package com.sdei.parentIn.activities
 
 import android.content.Context
+import android.content.Intent
 import android.view.View
 import androidx.lifecycle.ViewModelProviders
 import com.sdei.parentIn.R
@@ -46,7 +47,8 @@ class VerifySchoolActivity : BaseActivity<BaseViewModel>(), View.OnClickListener
                        }).show()
            }
            R.id.btnStartQuestion ->{
-
+             var intent = Intent(mContext,SurveyActivity::class.java)
+               startActivity(intent)
            }
         }
 
