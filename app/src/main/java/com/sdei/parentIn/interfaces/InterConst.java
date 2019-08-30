@@ -16,6 +16,7 @@ public interface InterConst {
 
     int CODE_SUCCESS = 200;
     int CODE_ERROR = 404;
+    int CODE_SESSION_EXPIRED = 401;
     int CODE_WARNING = 303;
 
     @NotNull

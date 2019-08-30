@@ -19,7 +19,6 @@ class ParentMessageFragment : BaseFragment<BaseViewModel>() {
 
     override fun onCreateStuff() {
         setMessageAdapter()
-
     }
 
     private fun setMessageAdapter() {

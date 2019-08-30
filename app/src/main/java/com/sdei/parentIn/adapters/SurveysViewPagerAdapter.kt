@@ -46,6 +46,7 @@ class SurveysViewPagerAdapter(private val mContext: Context,
 
         layout.edtQuestionDropdown.setOnClickListener {
             val mArrayList = ArrayList<OptionsModel>()
+
             for (i in 0 until mData[position].options!!.size) {
                 mArrayList.add(OptionsModel(i, mData[position].options!![i]))
             }
@@ -56,7 +57,6 @@ class SurveysViewPagerAdapter(private val mContext: Context,
                     InterfacesCall.Callback { pos ->
                         layout.edtQuestionDropdown.setText(mArrayList[pos].name)
                     }).show()
-
         }
 
         layout.btnFollow.setOnClickListener {
@@ -78,60 +78,119 @@ class SurveysViewPagerAdapter(private val mContext: Context,
             }
             mData[position].type!! == "s" -> {
                 layout.llSeekbar.visibility = View.VISIBLE
-                layout.sbQuestion.max = mData[position].max
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                    layout.sbQuestion.min = mData[position].min
-                }
-                var progress = mData[position].min
-
-                layout.txtSeekValue.text = layout.sbQuestion.progress.toString() + "/" + layout.sbQuestion.max
-
-                layout.sbQuestion.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
-                    override fun onProgressChanged(seekBar: SeekBar?, progressValue: Int, p2: Boolean) {
-                        progress = progressValue
-                    }
-
-                    override fun onStartTrackingTouch(p0: SeekBar?) {
-
-                    }
-
-                    override fun onStopTrackingTouch(seekBar: SeekBar?) {
-                        layout.txtSeekValue.text = progress.toString() + "/" + seekBar!!.max
-                    }
-
-                })
-
+                setSeekBarView(layout, position)
             }
             mData[position].type!! == "d" -> {
                 layout.llQuestionDropdown.visibility = View.VISIBLE
+
+                if (!TextUtils.isEmpty(mData[position].answer)) {
+                    layout.edtQuestionDropdown.setText(mData[position].answer!!)
+                }
             }
             mData[position].type!! == "t" -> {
                 layout.llQuestionAnswer.visibility = View.VISIBLE
+
+                if (!TextUtils.isEmpty(mData[position].answer)) {
+                    layout.edtQuestionAnswer.setText(mData[position].answer!!)
+                }
             }
         }
+    }
+
+    private fun setSeekBarView(layout: ViewGroup, position: Int) {
+        layout.sbQuestion.max = mData[position].max
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            layout.sbQuestion.min = mData[position].min
+        }
+        var progress = mData[position].min
+
+        layout.txtSeekValue.text = layout.sbQuestion.progress.toString() + "/" + layout.sbQuestion.max
+
+        layout.sbQuestion.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar?, progressValue: Int, p2: Boolean) {
+                progress = progressValue
+            }
+
+            override fun onStartTrackingTouch(p0: SeekBar?) {
+
+            }
+
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {
+                layout.txtSeekValue.text = progress.toString() + "/" + seekBar!!.max
+            }
+
+        })
+        if (!TextUtils.isEmpty(mData[position].answer)) {
+            layout.sbQuestion.progress = mData[position].answer!!.toInt()
+        }
+
     }
 
     private fun setMcqView(layout: ViewGroup, position: Int) {
         when {
             mData[position].options!!.size == 4 -> {
+
                 layout.rbOne.text = mData[position].options!![0]
                 layout.rbTwo.text = mData[position].options!![1]
                 layout.rbThree.text = mData[position].options!![2]
                 layout.rbFour.text = mData[position].options!![3]
+
+                if (!TextUtils.isEmpty(mData[position].answer)) {
+                    when {
+                        mData[position].answer == mData[position].options!![0] -> {
+                            layout.rbOne.isChecked = true
+                        }
+                        mData[position].answer == mData[position].options!![1] -> {
+                            layout.rbTwo.isChecked = true
+                        }
+                        mData[position].answer == mData[position].options!![2] -> {
+                            layout.rbThree.isChecked = true
+                        }
+                        mData[position].answer == mData[position].options!![3] -> {
+                            layout.rbFour.isChecked = true
+                        }
+                    }
+                }
             }
             mData[position].options!!.size == 3 -> {
+
                 layout.rbOne.text = mData[position].options!![0]
                 layout.rbTwo.text = mData[position].options!![1]
                 layout.rbThree.text = mData[position].options!![2]
 
                 layout.rbFour.visibility = View.GONE
+                if (!TextUtils.isEmpty(mData[position].answer)) {
+                    when {
+                        mData[position].answer == mData[position].options!![0] -> {
+                            layout.rbOne.isChecked = true
+                        }
+                        mData[position].answer == mData[position].options!![1] -> {
+                            layout.rbTwo.isChecked = true
+                        }
+                        mData[position].answer == mData[position].options!![2] -> {
+                            layout.rbThree.isChecked = true
+                        }
+                    }
+                }
             }
             mData[position].options!!.size == 2 -> {
+
                 layout.rbOne.text = mData[position].options!![0]
                 layout.rbTwo.text = mData[position].options!![1]
 
                 layout.rbThree.visibility = View.GONE
                 layout.rbFour.visibility = View.GONE
+
+                if (!TextUtils.isEmpty(mData[position].answer)) {
+                    when {
+                        mData[position].answer == mData[position].options!![0] -> {
+                            layout.rbOne.isChecked = true
+                        }
+                        mData[position].answer == mData[position].options!![1] -> {
+                            layout.rbTwo.isChecked = true
+                        }
+                    }
+                }
             }
         }
 
