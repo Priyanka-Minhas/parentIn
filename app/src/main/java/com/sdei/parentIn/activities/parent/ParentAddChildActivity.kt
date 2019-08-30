@@ -10,7 +10,7 @@ import com.sdei.parentIn.R
 import com.sdei.parentIn.activities.BaseActivity
 import com.sdei.parentIn.activities.WelcomeActivity
 import com.sdei.parentIn.adapters.AddChildAdapter
-import com.sdei.parentIn.dialog.SchoolListListDialog
+import com.sdei.parentIn.dialog.SchoolListDialog
 import com.sdei.parentIn.dialog.TeacherListListDialog
 import com.sdei.parentIn.interfaces.InterConst.PARENT_DATA
 import com.sdei.parentIn.interfaces.InterfacesCall
@@ -25,7 +25,7 @@ import kotlinx.android.synthetic.main.activity_parent_add_child.*
 class ParentAddChildActivity : BaseActivity<ParentAddChildViewModel>(), View.OnClickListener, AddChildAdapter.ClickInterface {
 
     fun getSchoolList(returnValue: (SchoolModel.DataBean) -> Unit) {
-        SchoolListListDialog(mContext, R.style.pullBottomfromTop, R.layout.dialog_options,
+        SchoolListDialog(mContext, R.style.pullBottomfromTop, R.layout.dialog_options,
                 mSchoolList,
                 getString(R.string.select_school),
                 InterfacesCall.Callback { pos ->

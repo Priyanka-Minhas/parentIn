@@ -1,5 +1,6 @@
 package com.sdei.parentIn.fragments.teacher
 
+import android.annotation.SuppressLint
 import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -110,6 +111,17 @@ class TeacherClassFragment : BaseFragment<TeacherClassViewModel>(), View.OnClick
     override fun initListeners() {
         btnAddStuManually.setOnClickListener(this)
         btnExportStuList.setOnClickListener(this)
+    }
+
+
+    companion object {
+        @SuppressLint("StaticFieldLeak")
+        lateinit var instance: TeacherClassFragment
+
+        fun newInstance(): TeacherClassFragment {
+            instance = TeacherClassFragment()
+            return instance
+        }
     }
 
 }

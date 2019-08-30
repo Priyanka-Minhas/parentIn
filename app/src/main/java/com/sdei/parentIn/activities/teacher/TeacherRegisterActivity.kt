@@ -9,7 +9,7 @@ import com.sdei.parentIn.R
 import com.sdei.parentIn.activities.BaseActivity
 import com.sdei.parentIn.activities.WelcomeActivity
 import com.sdei.parentIn.dialog.OptionListDialog
-import com.sdei.parentIn.dialog.SchoolListListDialog
+import com.sdei.parentIn.dialog.SchoolListDialog
 import com.sdei.parentIn.interfaces.InterConst
 import com.sdei.parentIn.interfaces.InterfacesCall
 import com.sdei.parentIn.model.SchoolModel
@@ -93,7 +93,7 @@ class TeacherRegisterActivity : BaseActivity<TeacherRegisterViewModel>(), View.O
                 }
             }
             R.id.edtSchool -> {
-                SchoolListListDialog(mContext, R.style.pullBottomfromTop, R.layout.dialog_options,
+                SchoolListDialog(mContext, R.style.pullBottomfromTop, R.layout.dialog_options,
                         mSchoolList,
                         getString(R.string.select_school), InterfacesCall.Callback { pos ->
                     edtSchool.setText(mSchoolList[pos].schoolName.toString())

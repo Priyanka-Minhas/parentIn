@@ -11,7 +11,7 @@
         android:layout_marginStart="@dimen/_12sdp"
         android:layout_marginEnd="@dimen/_12sdp">
         <ImageView
-            android:id="@+id/imgChild"
+            android:id="@+id/txtChild"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@mipmap/ic_launcher_round"
@@ -21,7 +21,7 @@
             android:id="@+id/txtChildName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/imgChild"
+            android:layout_toRightOf="@+id/txtChild"
             android:textSize="@dimen/_14sdp"
             android:textColor="@color/colorTabNormalText"
             android:layout_marginStart="@dimen/_8sdp"
@@ -34,7 +34,7 @@
             android:background="@drawable/ic_attach"
             android:layout_below="@+id/txtChildName"
             android:layout_marginStart="@dimen/_8sdp"
-            android:layout_toRightOf="@+id/imgChild"/>
+            android:layout_toRightOf="@+id/txtChild"/>
 
         <com.sdei.parentIn.customViews.RegularTextView
             android:id="@+id/txtChildDob"
@@ -63,7 +63,7 @@
         <com.sdei.parentIn.customViews.MediumTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/imgChild"
+            android:layout_below="@+id/txtChild"
             android:layout_marginTop="@dimen/_6sdp"
             android:textSize="@dimen/_8ssp"
             android:textColor="@color/colorTabNormalText"
@@ -73,7 +73,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/imgAttach"
-            android:layout_toRightOf="@+id/imgChild"
+            android:layout_toRightOf="@+id/txtChild"
             android:textSize="@dimen/_8ssp"
             android:text="Responder"
             android:paddingStart="@dimen/_10sdp"
@@ -90,7 +90,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/imgChild"
+            android:layout_below="@+id/txtChild"
             android:background="@drawable/bg_purpul_stroke"
             android:foreground="?selectableItemBackground"
             android:gravity="center"

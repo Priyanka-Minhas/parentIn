@@ -25,7 +25,6 @@ class ParentChildrenFragment : BaseFragment<ParentChildrenViewModel>(), Children
             R.id.btnAddChild -> {
                 val intent = Intent(mContext, ParentEditChildActivity::class.java)
                 startActivityForResult(intent, InterConst.RESULT_CHILDREN)
-
             }
 
         }

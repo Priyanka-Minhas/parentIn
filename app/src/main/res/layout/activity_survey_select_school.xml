@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context="com.sdei.parentIn.activities.VerifySchoolActivity">
+    tools:context="com.sdei.parentIn.activities.SurveySelectSchoolActivity">
     <RelativeLayout
         android:id="@+id/relativeLayoutHeader"
         android:layout_width="0dp"
@@ -46,6 +46,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_15sdp"
+			android:layout_marginEnd="@dimen/_15sdp"
             android:orientation="vertical">
 
             <LinearLayout
@@ -66,11 +68,11 @@
                     android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@+id/imageView"
+                    android:layout_gravity="center"
                     android:text="@string/app_name"
                     android:textColor="@color/black"
-                    android:layout_gravity="center"
-                    android:layout_below="@+id/imageView"
-                    android:textSize="30sp"/>
+                    android:textSize="@dimen/_25ssp" />
 
                 <com.sdei.parentIn.customViews.SemiBoldTextView
                     android:id="@+id/textView2"
@@ -81,7 +83,7 @@
                     android:text="@string/gracias_por_comenzar_la_encuesta"
                     android:textAllCaps="true"
                     android:textColor="@color/colorPurpul"
-                    android:textSize="16sp"
+                    android:textSize="@dimen/_13sdp"
                     android:layout_below="@+id/textView"
                     android:layout_gravity="center"
                     android:gravity="center"
@@ -93,20 +95,18 @@
                     android:layout_height="wrap_content"
                     android:text="@string/la_encuesta_s_lo_te_tomar_5_minutos_y_su_opini_n_es_extremadamente_importante_para_nosotros"
                     android:gravity="center"
+					android:layout_marginTop="@dimen/_8sdp"
                     android:layout_below="@+id/textView2"
-                    android:layout_marginStart="@dimen/size_40dp"
-                    android:layout_marginEnd="@dimen/size_40dp"
-                    android:layout_marginTop="@dimen/size_8dp"
-                    android:textSize="@dimen/size_15sp"
+                    android:textSize="@dimen/_13ssp"
                     android:textColor="@color/colorDarkText"/>
 
                 <com.sdei.parentIn.customViews.SemiBoldTextView
                     android:id="@+id/textView4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+					android:layout_marginTop="@dimen/_35sdp"
                     android:text="@string/escuela_seleccionado"
-                    android:layout_marginTop="@dimen/size_50dp"
-                    android:textSize="@dimen/size_15sp"
+                    android:textSize="@dimen/_13ssp"
                     android:textColor="@color/colorDarkText"
                     android:layout_gravity="center"
                     android:layout_below="@+id/textView3"/>
@@ -115,52 +115,58 @@
                     android:id="@+id/textView5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+					android:textSize="@dimen/_10ssp"
+					android:layout_marginStart="@dimen/_45sdp"
+					android:layout_marginEnd="@dimen/_45sdp"
                     android:text="@string/recuerda_que_puedes_cambiar_la_escuela_en_la_lista_de_abajo"
                     android:layout_marginTop="@dimen/_10sdp"
-                    android:gravity="center"
-                    android:layout_marginEnd="@dimen/size_66dp"
-                    android:layout_marginStart="@dimen/size_66dp"
-                    android:textSize="@dimen/size_12sp"/>
+                    android:gravity="center"/>
 
                     <EditText
                         android:id="@+id/edtSelectSchool"
                         android:layout_width="match_parent"
-                        android:layout_height="48dp"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
-                        android:layout_marginStart="@dimen/size_15dp"
-                        android:layout_marginTop="@dimen/size_15dp"
-                        android:layout_marginEnd="@dimen/size_15dp"
                         android:cursorVisible="false"
+						android:padding="@dimen/_12sdp"
+						android:layout_marginTop="@dimen/_10sdp"
+						android:drawablePadding="@dimen/_5sdp"
                         android:background="@drawable/edit_text_selector"
                         android:drawableEnd="@mipmap/ic_dropdown"
                         android:focusable="false"
+						android:textSize="@dimen/_13ssp"
                         android:hint="@string/seleccione_escuela"
                         android:inputType="none"
-                        android:padding="@dimen/size_12dp"
-                        android:textSize="@dimen/size_12sp"
                         android:drawableStart="@drawable/ic_location"
-                        android:drawablePadding="@dimen/size_15dp"/>
+                   />
 
-            </LinearLayout>
+				<com.sdei.parentIn.customViews.SemiBoldTextView
+					android:id="@+id/txtChildName"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="@dimen/_15sdp"
+					android:textSize="@dimen/_13ssp"
+					android:textColor="@color/colorDarkText"
+					android:layout_gravity="center"/>
+
+
+			</LinearLayout>
 
 
             <com.sdei.parentIn.customViews.SemiBoldTextView
                 android:id="@+id/btnStartQuestion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/size_15dp"
-                android:layout_marginEnd="@dimen/size_15dp"
-                android:layout_marginBottom="@dimen/size_20dp"
-                android:layout_marginTop="@dimen/size_70dp"
                 android:background="@drawable/bg_blue_round_fill"
                 android:drawableEnd="@mipmap/ic_arrow"
                 android:foreground="?selectableItemBackground"
                 android:gravity="center"
-                android:padding="@dimen/size_12dp"
+				android:textSize="@dimen/_14ssp"
+				android:padding="@dimen/_15sdp"
+				android:layout_marginBottom="@dimen/_10sdp"
                 android:text="@string/comenzar_cuestionario"
                 android:textAllCaps="true"
-                android:textColor="@color/white"
-                android:textSize="@dimen/size_16sp"/>
+                android:textColor="@color/white"/>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 

@@ -6,7 +6,7 @@ import android.view.View
 import androidx.lifecycle.ViewModelProviders
 import com.sdei.parentIn.R
 import com.sdei.parentIn.activities.parent.ParentLandingActivity
-import com.sdei.parentIn.activities.teacher.TeacherLeadingActivity
+import com.sdei.parentIn.activities.teacher.TeacherLandingActivity
 import com.sdei.parentIn.interfaces.InterConst
 import com.sdei.parentIn.utils.getAppPref
 import com.sdei.parentIn.viewModel.WelcomeViewModel
@@ -52,7 +52,7 @@ class WelcomeActivity : BaseActivity<WelcomeViewModel>(), View.OnClickListener {
            val intent = if (getAppPref().getInt(InterConst.ROLE_ID) == InterConst.ROLE_PARENT) {
                 Intent(mContext, ParentLandingActivity::class.java)
             } else {
-                Intent(mContext, TeacherLeadingActivity::class.java)
+                Intent(mContext, TeacherLandingActivity::class.java)
             }
             startActivity(intent)
             finish()

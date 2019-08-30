@@ -1,0 +1,122 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:orientation="vertical">
+
+
+	    <androidx.cardview.widget.CardView
+	        android:id="@+id/cvSurvay"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:visibility="visible"
+			app:cardCornerRadius="@dimen/_5ssp"
+	        android:layout_margin="@dimen/_12sdp">
+
+	        <RelativeLayout
+	            android:layout_width="match_parent"
+				android:paddingTop="@dimen/_10sdp"
+	            android:layout_height="wrap_content">
+
+				<com.sdei.parentIn.customViews.SemiBoldTextView
+					android:id="@+id/txtShortName"
+					android:layout_width="@dimen/_42sdp"
+					android:layout_height="@dimen/_42sdp"
+					android:gravity="center"
+					android:layout_gravity="center"
+					app:textAllCaps="true"
+					android:text="BF"
+					android:layout_marginStart="@dimen/_10sdp"
+					android:textColor="@color/white"
+					android:textSize="@dimen/_18ssp"
+					android:background="@drawable/bg_round_yellow" />
+
+
+				<com.sdei.parentIn.customViews.SemiBoldTextView
+	                android:id="@+id/txtName"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_toRightOf="@+id/txtShortName"
+	                android:layout_marginStart="@dimen/_6sdp"
+	                android:textSize="@dimen/_14ssp"
+	                android:textColor="@color/colorDarkText"
+	                android:text="Bienvenido a FamiliasIn"/>
+
+	            <com.sdei.parentIn.customViews.SemiBoldTextView
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_below="@+id/txtName"
+	                android:layout_toRightOf="@+id/txtShortName"
+	                android:layout_marginStart="@dimen/_6sdp"
+	                android:layout_marginTop="@dimen/_1sdp"
+	                android:textColor="@color/colorGrayDark"
+	                android:text="Toma la primera encuesta aquí"/>
+
+
+	            <com.sdei.parentIn.customViews.SemiBoldTextView
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:textColor="@color/colorPrimaryDark"
+	                android:layout_alignParentRight="true"
+	                android:layout_marginEnd="@dimen/_8sdp"
+	                android:textSize="@dimen/_10ssp"
+	                android:text="9/06/19"/>
+
+				<com.sdei.parentIn.customViews.SemiBoldTextView
+					android:id="@+id/btnForSurvay"
+					android:layout_width="match_parent"
+					android:layout_below="@id/txtShortName"
+					android:layout_height="wrap_content"
+					android:layout_margin="@dimen/_10sdp"
+					android:background="@drawable/bg_purpul_stroke"
+					android:drawableEnd="@mipmap/ic_arrow"
+					android:foreground="?selectableItemBackground"
+					android:gravity="center"
+					android:padding="@dimen/_10sdp"
+					android:text="comenzar encuesta"
+					android:textAllCaps="true"
+					android:textColor="@color/colorPurpul"
+					android:textSize="@dimen/_13ssp" />
+			</RelativeLayout>
+
+		</androidx.cardview.widget.CardView>
+
+
+	<!--    <androidx.recyclerview.widget.RecyclerView-->
+	<!--        android:id="@+id/rvMessages"-->
+	<!--        android:layout_width="match_parent"-->
+	<!--        android:layout_height="match_parent"-->
+	<!--        android:layout_below="@+id/btnForSurvay"-->
+	<!--        android:layout_above="@+id/btnAddChild"/>-->
+
+
+
+	<LinearLayout
+		android:id="@+id/btnAddChild"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:visibility="gone"
+		android:layout_alignParentBottom="true"
+		android:layout_margin="@dimen/_14sdp"
+		android:background="@drawable/bg_blue_round_fill"
+		android:foreground="?selectableItemBackground"
+		android:gravity="center"
+		android:orientation="horizontal"
+		android:padding="@dimen/_10sdp">
+
+		<ImageView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="@dimen/_5sdp" />
+
+		<com.sdei.parentIn.customViews.SemiBoldTextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:gravity="center"
+			android:text="@string/escribir_nuevo_mensaje"
+			android:textColor="@color/colorWhite"
+			android:textSize="@dimen/_15ssp" />
+	</LinearLayout>
+
+
+</LinearLayout>

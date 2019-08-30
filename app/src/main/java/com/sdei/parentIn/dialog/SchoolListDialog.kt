@@ -10,7 +10,7 @@ import com.sdei.parentIn.interfaces.InterfacesCall
 import com.sdei.parentIn.model.SchoolModel
 import kotlinx.android.synthetic.main.dialog_options.*
 
-class SchoolListListDialog(
+class SchoolListDialog(
         context: Context,
         themeResId: Int,
         private val LayoutId: Int,

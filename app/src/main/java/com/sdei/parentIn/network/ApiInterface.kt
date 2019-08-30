@@ -54,6 +54,14 @@ interface ApiInterface {
     @GET("/survey/list")
     fun getSurveyList(): Call<SurveysModel>
 
+    @FormUrlEncoded
+    @POST("/student/getSchoolListforSurvey")
+    fun getSchoolListforSurvey(@Field("_id") _id: String):Call<SurveySchoolModel>
+
+    @POST("/survey/saveSurvey")
+    fun saveSurvey(@Body child: SurveysModel.DataBeanRequest): Call<BaseModel>
+
+
 //    @FormUrlEncoded
 //    @POST("/user/register")
 //    fun register(

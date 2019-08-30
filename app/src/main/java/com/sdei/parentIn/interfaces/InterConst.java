@@ -23,6 +23,8 @@ public interface InterConst {
     String PARENT_DATA = "parent_data";
     @Nullable
     String CHILD_DATA="child_data";
+  @Nullable
+    String CHILD_ID="child_ic";
 
     @NotNull
     String ID = "_id";
@@ -37,4 +39,6 @@ public interface InterConst {
     String AUTH_TOKEN = "auth_token";
 
     int RESULT_CHILDREN=1001;
+    @Nullable
+    int RESULT_SURVEY=1002;
 }

@@ -1,7 +1,5 @@
 package com.sdei.parentIn.model
 
-import java.util.*
-
 class SurveysModel : BaseModel {
 
     constructor(message: String) {
@@ -23,30 +21,73 @@ class SurveysModel : BaseModel {
 
     class DataBean {
         /**
-         * options : ["Si","No","no sé"]
+         * options : [{"label":"1","point":0},{"label":"2","point":2},{"label":"3","point":3},{"label":"4","point":4},{"label":"5","point":5}]
          * min : 1
          * max : 5
-         * _id : 5d664e191a5e6c425b53f3fd
-         * question : ¿Los niños/as tienen oportunidades para realizar actividades creativas abiertas y sin restricciones? Por ejemplo, ¿pueden proponer juegos y llevarlos a cabo?
-         * language : es
-         * type : m
+         * _id : 5d663afa1a5e6c425b53f3e2
+         * question : How excited is your child to go to the pre-school in the morning?
+         * language : en
+         * type : s
          * area : knowledge
-         * helptext : Si / No / no sé
+         * helptext : Scale of 1-5, where 1 means ‘Not at all’, and 5 means ‘A lot’.
          * __v : 0
          */
 
         var min: Int = 0
         var max: Int = 0
-        var _id: String? = ""
-        var question: String? = ""
-        var language: String? = ""
-        var type: String? = ""
-        var area: String? = ""
-        var helptext: String? = ""
-        var answer: String? = ""
+        var _id: String? = null
+        var question: String? = null
+        var language: String? = null
+        var type: String? = null
+        var area: String? = null
+        var helptext: String? = null
         var __v: Int = 0
-        var options: ArrayList<String>? = null
+        var options: ArrayList<OptionsBean>? = null
 
+        var answer: String? = ""
+        var answerPoints: Int? = 0
+        class OptionsBean {
+            /**
+             * label : 1
+             * point : 0
+             */
 
+            var label: String? = ""
+            var point: Int = 0
+        }
     }
+
+
+    class DataBeanRequest {
+        /**
+         * _id : 5d661f79320948394d423511
+         * childId : 5d661f79320948394d423513
+         * surveyPoints : 5
+         * survey : [{"questionId":"5d663a651a5e6c425b53f3dd","answer":"Yes","point":0},{"questionId":"5d663a741a5e6c425b53f3de","answer":"Yes","point":5}]
+         */
+
+        var _id: String? = null
+        var childId: String? = null
+        var surveyPoints: Int = 0
+        var survey: ArrayList<SurveyBean>? = null
+
+        class SurveyBean{
+            /**
+             * questionId : 5d663a651a5e6c425b53f3dd
+             * answer : Yes
+             * point : 0
+             */
+            var questionId: String? = null
+            var answer: String? = null
+            var point: Int = 0
+
+            constructor(_id: String?, answer: String?, answerPoints: Int?){
+                this.questionId=_id
+                this.answer=answer
+                this.point=answerPoints!!
+            }
+
+        }
+    }
+
 }
