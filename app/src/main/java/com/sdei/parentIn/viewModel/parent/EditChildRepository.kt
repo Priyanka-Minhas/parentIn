@@ -99,6 +99,10 @@ class EditChildRepository {
         requestModel.child.lastName = model.lastName
         requestModel.child.school = model.school
         requestModel.child.teacher = model.teacher
+
+        requestModel.child.sameAddressAsStudent = model.sameAddressAsStudent
+        requestModel.child.homeAddress = model.homeAddress
+
         requestModel.child.verificationCard = model.verificationCard
         requestModel.child.gender = model.gender
         return requestModel

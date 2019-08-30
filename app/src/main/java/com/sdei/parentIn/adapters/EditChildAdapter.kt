@@ -23,7 +23,6 @@ class EditChildAdapter(var con: Context,
                        var mData: ArrayList<ChildModel.DataBean>,
                        var mClick: ClickInterface) : RecyclerView.Adapter<EditChildAdapter.ViewHolder>() {
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.item_add_child, parent, false)
         return ViewHolder(v)
@@ -44,7 +43,18 @@ class EditChildAdapter(var con: Context,
             holder.identityCard.setText(mData[position].verificationCard)
         }
 
-
+        holder.rgYesNo.setOnCheckedChangeListener { _, id ->
+            when (id) {
+                R.id.rbYes -> {
+                    holder.edtAddress.visibility = View.GONE
+                    mData[position].sameAddressAsStudent = true
+                }
+                R.id.rbNo -> {
+                    holder.edtAddress.visibility = View.VISIBLE
+                    mData[position].sameAddressAsStudent = false
+                }
+            }
+        }
 
         holder.imgDelete.setOnClickListener {
             mClick.deleteChild(position)
@@ -98,6 +108,7 @@ class EditChildAdapter(var con: Context,
                 showAlertSnackBar(holder.teacherName, con.getString(R.string.errorSchool) + " " + p)
                 return@setOnClickListener
             }
+
             (con as ParentEditChildActivity).getTeacherList(mData[position].school) {
                 holder.teacherName.setText(it.firstName.toString())
 
@@ -116,6 +127,18 @@ class EditChildAdapter(var con: Context,
             override fun onTextChanged(s: CharSequence, start: Int,
                                        before: Int, count: Int) {
                 mData[position].firstName = holder.firstName.text.toString()
+            }
+        })
+
+        holder.edtAddress.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {}
+            override fun beforeTextChanged(s: CharSequence, start: Int,
+                                           count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence, start: Int,
+                                       before: Int, count: Int) {
+                mData[position].homeAddress = holder.edtAddress.text.toString()
             }
         })
 
@@ -165,6 +188,8 @@ class EditChildAdapter(var con: Context,
         var birthdate = itemView.edtChildBirthDate!!
         var schoolName = itemView.edtChildSchool!!
         var teacherName = itemView.edtChildTeacher!!
+        var rgYesNo = itemView.rgYesNo!!
+        var edtAddress = itemView.edtAddress!!
     }
 
     interface ClickInterface {

@@ -46,11 +46,36 @@ class AddChildAdapter(var con: Context,
                     con.getGender(),
                     con.getString(R.string.select_gender),
                     InterfacesCall.Callback { pos ->
-                        holder.gender.setText(con.getGender()[pos].name.toString())
+                        holder.gender.setText(con.getGender()[pos].name)
                         mData[position].gender = holder.gender.text.toString()
 
                     }).show()
         }
+
+        holder.rgYesNo.setOnCheckedChangeListener { _, id ->
+            when (id) {
+                R.id.rbYes -> {
+                    holder.edtAddress.visibility = View.GONE
+                    mData[position].isSameAddressAsStudent = true
+                }
+                R.id.rbNo -> {
+                    holder.edtAddress.visibility = View.VISIBLE
+                    mData[position].isSameAddressAsStudent = false
+                }
+            }
+        }
+
+        holder.edtAddress.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {}
+            override fun beforeTextChanged(s: CharSequence, start: Int,
+                                           count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence, start: Int,
+                                       before: Int, count: Int) {
+                mData[position].homeAddress = holder.edtAddress.text.toString()
+            }
+        })
 
         holder.birthdate.setOnClickListener {
             val calender = Calendar.getInstance()
@@ -156,6 +181,8 @@ class AddChildAdapter(var con: Context,
         var birthdate = itemView.edtChildBirthDate!!
         var schoolName = itemView.edtChildSchool!!
         var teacherName = itemView.edtChildTeacher!!
+        var rgYesNo = itemView.rgYesNo!!
+        var edtAddress = itemView.edtAddress!!
     }
 
     interface ClickInterface {

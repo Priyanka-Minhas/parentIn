@@ -2,7 +2,6 @@ package com.sdei.parentIn.fragments.teacher
 
 import android.Manifest
 import android.annotation.SuppressLint
-
 import android.content.pm.PackageManager
 import android.os.Build
 import android.view.View
@@ -54,11 +53,10 @@ class TeacherClassFragment : BaseFragment<TeacherClassViewModel>(), View.OnClick
 
     override fun onCreateStuff() {
         setClassListAdapter()
-        mContext.showProgess()
-
-        // make request
-        mViewModel!!.hitClassListByTeacherApi(getAppPref().getString(InterConst.ID)!!)
-
+        if (mContext.connectedToInternet(rvTeacherClass)) {
+            mContext.showProgess()
+            mViewModel!!.hitClassListByTeacherApi(getAppPref().getString(InterConst.ID)!!)
+        }
         // get response
         mViewModel!!.getClass().observe(this, Observer<ClassModel> { mData ->
             if (mData != null && mContext.responseHandler(mData.statusCode, mData.message)) {

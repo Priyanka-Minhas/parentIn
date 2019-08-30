@@ -8,6 +8,10 @@ class WelcomeViewModel(application: Application) : BaseViewModel(application = a
     private val mRepository: WelcomeRepository = WelcomeRepository()
 
     init {
+        getSchoolList()
+    }
+
+     fun getSchoolList() {
         mRepository.getSchoolDataApi(getApplication())
     }
 

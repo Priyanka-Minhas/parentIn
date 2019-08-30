@@ -88,6 +88,10 @@ class ParentEditChildActivity : BaseActivity<ParentEditChildViewModel>(), View.O
                             showAlertSnackBar(txtCreateAccount, getString(R.string.errorTeacher) + " " + childNo)
                             return
                         }
+                        mChildList[i].sameAddressAsStudent==false && mChildList[i].homeAddress.isNullOrEmpty() -> {
+                            showAlertSnackBar(txtCreateAccount, getString(R.string.errorStudentAddress))
+                            return
+                        }
                     }
                 }
 

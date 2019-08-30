@@ -9,7 +9,6 @@ import java.util.ArrayList;
 
 public class ChildModel extends BaseModel implements Parcelable {
 
-
     private ArrayList<DataBean> data;
 
     public ChildModel(@NotNull String message) {
@@ -64,6 +63,24 @@ public class ChildModel extends BaseModel implements Parcelable {
         private String parent;
         private String parentFirstName;
         private String parentLastName;
+        private Boolean isSameAddressAsStudent;
+        private String homeAddress;
+
+        public Boolean getSameAddressAsStudent() {
+            return isSameAddressAsStudent;
+        }
+
+        public void setSameAddressAsStudent(Boolean sameAddressAsStudent) {
+            isSameAddressAsStudent = sameAddressAsStudent;
+        }
+
+        public String getHomeAddress() {
+            return homeAddress;
+        }
+
+        public void setHomeAddress(String homeAddress) {
+            this.homeAddress = homeAddress;
+        }
 
         public String get_id() {
             return _id;
@@ -185,6 +202,9 @@ public class ChildModel extends BaseModel implements Parcelable {
             this.parentLastName = parentLastName;
         }
 
+        public DataBean() {
+        }
+
         @Override
         public int describeContents() {
             return 0;
@@ -207,9 +227,8 @@ public class ChildModel extends BaseModel implements Parcelable {
             dest.writeString(this.parent);
             dest.writeString(this.parentFirstName);
             dest.writeString(this.parentLastName);
-        }
-
-        public DataBean() {
+            dest.writeValue(this.isSameAddressAsStudent);
+            dest.writeString(this.homeAddress);
         }
 
         protected DataBean(Parcel in) {
@@ -228,9 +247,11 @@ public class ChildModel extends BaseModel implements Parcelable {
             this.parent = in.readString();
             this.parentFirstName = in.readString();
             this.parentLastName = in.readString();
+            this.isSameAddressAsStudent = (Boolean) in.readValue(Boolean.class.getClassLoader());
+            this.homeAddress = in.readString();
         }
 
-        public static final Parcelable.Creator<DataBean> CREATOR = new Parcelable.Creator<DataBean>() {
+        public static final Creator<DataBean> CREATOR = new Creator<DataBean>() {
             @Override
             public DataBean createFromParcel(Parcel source) {
                 return new DataBean(source);
@@ -297,7 +318,7 @@ public class ChildModel extends BaseModel implements Parcelable {
             this.child = child;
         }
 
-        public static class ChildBean {
+        public static class ChildBean implements Parcelable {
             /**
              * _id : 5d63b4558a53087261a09838
              * firstName : Demo
@@ -316,7 +337,26 @@ public class ChildModel extends BaseModel implements Parcelable {
             private String gender;
             private String birthDate;
             private String school;
+
+            public Boolean getSameAddressAsStudent() {
+                return isSameAddressAsStudent;
+            }
+
+            public void setSameAddressAsStudent(Boolean sameAddressAsStudent) {
+                isSameAddressAsStudent = sameAddressAsStudent;
+            }
+
+            public String getHomeAddress() {
+                return homeAddress;
+            }
+
+            public void setHomeAddress(String homeAddress) {
+                this.homeAddress = homeAddress;
+            }
+
             private String teacher;
+            private Boolean isSameAddressAsStudent;
+            private String homeAddress;
 
             public String get_id() {
                 return _id;
@@ -381,6 +421,53 @@ public class ChildModel extends BaseModel implements Parcelable {
             public void setTeacher(String teacher) {
                 this.teacher = teacher;
             }
+
+            @Override
+            public int describeContents() {
+                return 0;
+            }
+
+            @Override
+            public void writeToParcel(Parcel dest, int flags) {
+                dest.writeString(this._id);
+                dest.writeString(this.firstName);
+                dest.writeString(this.lastName);
+                dest.writeString(this.verificationCard);
+                dest.writeString(this.gender);
+                dest.writeString(this.birthDate);
+                dest.writeString(this.school);
+                dest.writeString(this.teacher);
+                dest.writeValue(this.isSameAddressAsStudent);
+                dest.writeString(this.homeAddress);
+            }
+
+            public ChildBean() {
+            }
+
+            protected ChildBean(Parcel in) {
+                this._id = in.readString();
+                this.firstName = in.readString();
+                this.lastName = in.readString();
+                this.verificationCard = in.readString();
+                this.gender = in.readString();
+                this.birthDate = in.readString();
+                this.school = in.readString();
+                this.teacher = in.readString();
+                this.isSameAddressAsStudent = (Boolean) in.readValue(Boolean.class.getClassLoader());
+                this.homeAddress = in.readString();
+            }
+
+            public static final Creator<ChildBean> CREATOR = new Creator<ChildBean>() {
+                @Override
+                public ChildBean createFromParcel(Parcel source) {
+                    return new ChildBean(source);
+                }
+
+                @Override
+                public ChildBean[] newArray(int size) {
+                    return new ChildBean[size];
+                }
+            };
         }
     }
 

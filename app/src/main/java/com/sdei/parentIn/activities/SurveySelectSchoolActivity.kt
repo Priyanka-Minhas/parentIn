@@ -12,6 +12,7 @@ import com.sdei.parentIn.dialog.SurveySchoolListDialog
 import com.sdei.parentIn.interfaces.InterConst
 import com.sdei.parentIn.interfaces.InterfacesCall
 import com.sdei.parentIn.model.SurveySchoolModel
+import com.sdei.parentIn.utils.connectedToInternet
 import com.sdei.parentIn.utils.responseHandler
 import com.sdei.parentIn.utils.showAlertSnackBar
 import com.sdei.parentIn.utils.showProgess
@@ -34,14 +35,15 @@ class SurveySelectSchoolActivity : BaseActivity<SurveySelectSchoolViewModel>(), 
     var childId: String = ""
 
     override fun onCreate() {
-
-        showProgess()
-        mViewModel!!.getSchoolList().observe(this,
-                Observer<SurveySchoolModel> { mData ->
-                    if (mData != null && responseHandler(mData.statusCode, mData.message)) {
-                        mSchoolList = mData.data!!
-                    }
-                })
+        if (connectedToInternet(btnBack)) {
+            showProgess()
+            mViewModel!!.getSchoolList().observe(this,
+                    Observer<SurveySchoolModel> { mData ->
+                        if (mData != null && responseHandler(mData.statusCode, mData.message)) {
+                            mSchoolList = mData.data!!
+                        }
+                    })
+        }
 
     }
 

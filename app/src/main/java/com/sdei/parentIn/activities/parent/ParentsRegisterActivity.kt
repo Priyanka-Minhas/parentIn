@@ -18,8 +18,6 @@ import kotlinx.android.synthetic.main.activity_parents_new_account.*
 
 class ParentsRegisterActivity : BaseActivity<BaseViewModel>(), View.OnClickListener {
 
-    var isSameAddressAsStudent: Boolean = true
-
     override val layoutId: Int
         get() = R.layout.activity_parents_new_account
     override val viewModel: BaseViewModel
@@ -38,16 +36,6 @@ class ParentsRegisterActivity : BaseActivity<BaseViewModel>(), View.OnClickListe
         edtNoOfStudent.setOnClickListener(this)
         btnFollow.setOnClickListener(this)
         btnBack.setOnClickListener(this)
-        rgYesNo.setOnCheckedChangeListener { _, id ->
-            when (id) {
-                R.id.rbYes -> {
-                    isSameAddressAsStudent = true
-                }
-                R.id.rbNo -> {
-                    isSameAddressAsStudent = false
-                }
-            }
-        }
     }
 
     override fun onClick(view: View?) {
@@ -101,7 +89,7 @@ class ParentsRegisterActivity : BaseActivity<BaseViewModel>(), View.OnClickListe
                     showAlertSnackBar(btnFollow, getString(R.string.errorValidPassword))
                 } else if (!edtConfPassword.nonEmpty()) {
                     showAlertSnackBar(btnFollow, getString(R.string.errorEnterConfPass))
-                } else if (!edtConfPassword.text.toString().equals(edtPassword.text.toString())) {
+                } else if (edtConfPassword.text.toString() != edtPassword.text.toString()) {
                     showAlertSnackBar(btnFollow, getString(R.string.errorConfirmPassword))
                 } else if (!edtAddress.nonEmpty()) {
                     showAlertSnackBar(btnFollow, getString(R.string.errorAddress))
@@ -111,9 +99,7 @@ class ParentsRegisterActivity : BaseActivity<BaseViewModel>(), View.OnClickListe
                     showAlertSnackBar(btnFollow, getString(R.string.errorRelationship))
                 } else if (!edtId.nonEmpty()) {
                     showAlertSnackBar(btnFollow, getString(R.string.errorIdentification))
-                } else if (rgYesNo.checkedRadioButtonId == -1) {
-                    showAlertSnackBar(btnFollow, getString(R.string.errorStudentAddress))
-                } else if (!edtLevelOfEducation.nonEmpty()) {
+                }  else if (!edtLevelOfEducation.nonEmpty()) {
                     showAlertSnackBar(btnFollow, getString(R.string.errorLevelOfEducation))
                 } else if (!edtNoOfStudent.nonEmpty()) {
                     showAlertSnackBar(btnFollow, getString(R.string.errorNoOfSchools))
@@ -142,7 +128,6 @@ class ParentsRegisterActivity : BaseActivity<BaseViewModel>(), View.OnClickListe
         model.confirmPassword = edtConfPassword.text.toString()
         model.gender = edtGender.text.toString()
         model.roleId = getAppPref().getInt(InterConst.ROLE_ID)
-        model.isSameAddressAsStudent = rbYes.isChecked
 
         val intent = Intent(mContext, ParentAddChildActivity::class.java)
         intent.putExtra(InterConst.PARENT_DATA, model)

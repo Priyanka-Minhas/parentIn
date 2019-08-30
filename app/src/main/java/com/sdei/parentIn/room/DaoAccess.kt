@@ -18,9 +18,6 @@ interface DaoAccess {
 //    @Update
 //    fun update(note: UserModel.DataBean)
 //
-//    @Delete
-//    fun delete(note: UserModel.DataBean)
-
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertSingleSchoolRecord(act: SchoolModel.DataBean)
 

@@ -11,6 +11,7 @@ import com.sdei.parentIn.adapters.SurveysViewPagerAdapter
 import com.sdei.parentIn.interfaces.InterConst
 import com.sdei.parentIn.model.BaseModel
 import com.sdei.parentIn.model.SurveysModel
+import com.sdei.parentIn.utils.connectedToInternet
 import com.sdei.parentIn.utils.getAppPref
 import com.sdei.parentIn.utils.responseHandler
 import com.sdei.parentIn.utils.showProgess
@@ -22,7 +23,7 @@ class SurveyActivity : BaseActivity<SurveyViewModel>(), SurveysViewPagerAdapter.
 
     override fun moveToBackSurvey(currentPosition: Int) {
         if (currentPosition != 0) {
-            mSurveyListAnswer.removeAt(currentPosition-1)
+            mSurveyListAnswer.removeAt(currentPosition - 1)
             vpSurveys.currentItem = currentPosition - 1
         }
     }
@@ -45,8 +46,10 @@ class SurveyActivity : BaseActivity<SurveyViewModel>(), SurveysViewPagerAdapter.
             for (i in 0 until mSurveyListAnswer.size) {
                 mSaveModel.surveyPoints = mSaveModel.surveyPoints + mSurveyListAnswer[i].point
             }
-            showProgess()
-            mViewModel!!.saveSurvey(mSaveModel)
+            if (connectedToInternet(vpSurveys)) {
+                showProgess()
+                mViewModel!!.saveSurvey(mSaveModel)
+            }
         }
 
     }
@@ -67,16 +70,16 @@ class SurveyActivity : BaseActivity<SurveyViewModel>(), SurveysViewPagerAdapter.
 
     override fun onCreate() {
         setSurveyAdapter()
-
-        showProgess()
-        mViewModel!!.getSurveyList().observe(this,
-                Observer<SurveysModel> { mData ->
-                    if (mData != null && responseHandler(mData.statusCode, mData.message)) {
-                        mSurveyList = mData.data!!
-                        mSurveyAdapter.notifyList(mSurveyList)
-                    }
-                })
-
+        if (mContext.connectedToInternet(vpSurveys)) {
+            showProgess()
+            mViewModel!!.getSurveyList().observe(this,
+                    Observer<SurveysModel> { mData ->
+                        if (mData != null && responseHandler(mData.statusCode, mData.message)) {
+                            mSurveyList = mData.data!!
+                            mSurveyAdapter.notifyList(mSurveyList)
+                        }
+                    })
+        }
         mViewModel!!.setSurveyResponse().observe(this,
                 Observer<BaseModel> { mData ->
                     if (mData != null && responseHandler(mData.statusCode, mData.message)) {

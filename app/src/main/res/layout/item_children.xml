@@ -135,7 +135,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/_5sdp"
-                android:src="@mipmap/add" />
+                android:src="@drawable/ic_mail" />
 
             <com.sdei.parentIn.customViews.SemiBoldTextView
                 android:layout_width="wrap_content"

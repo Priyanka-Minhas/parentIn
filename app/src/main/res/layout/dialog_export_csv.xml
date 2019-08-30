@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_marginStart="@dimen/_30sdp"
+    android:layout_marginEnd="@dimen/_30sdp"
     android:layout_height="wrap_content"
     android:background="@drawable/bg_white_round_corners"
     android:gravity="center"
@@ -25,6 +27,7 @@
         android:layout_marginEnd="@dimen/_10sdp"
         android:layout_marginStart="@dimen/_10sdp"
         android:textColor="@color/black"
+        android:textSize="@dimen/_11ssp"
         android:text="@string/se_guardar_un_archivo_con_la_informaci_n_de_los_alumnos_en_csv"/>
     <View
         android:layout_width="match_parent"
@@ -43,7 +46,9 @@
             android:layout_height="wrap_content"
             android:text="@string/cancelar"
             android:textSize="@dimen/_15ssp"
+            android:padding="@dimen/_5sdp"
             android:layout_weight="1"
+            android:foreground="?selectableItemBackground"
             android:textColor="@color/colorGrayDark"
             android:paddingTop="@dimen/_10sdp"
             android:gravity="center"/>
@@ -55,8 +60,10 @@
         <com.sdei.parentIn.customViews.SemiBoldTextView
             android:id="@+id/txtExport"
             android:layout_width="match_parent"
+            android:padding="@dimen/_5sdp"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:foreground="?selectableItemBackground"
             android:layout_weight="1"
             android:textColor="@color/colorPurpul"
             android:textSize="@dimen/_15ssp"

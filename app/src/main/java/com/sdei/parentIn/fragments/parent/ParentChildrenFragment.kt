@@ -13,6 +13,7 @@ import com.sdei.parentIn.adapters.ChildrenAdapter
 import com.sdei.parentIn.fragments.BaseFragment
 import com.sdei.parentIn.interfaces.InterConst
 import com.sdei.parentIn.model.ChildModel
+import com.sdei.parentIn.utils.connectedToInternet
 import com.sdei.parentIn.utils.getAppPref
 import com.sdei.parentIn.utils.responseHandler
 import com.sdei.parentIn.utils.showProgess
@@ -47,9 +48,10 @@ class ParentChildrenFragment : BaseFragment<ParentChildrenViewModel>(), Children
 
     override fun onCreateStuff() {
         setChildrenAdapter()
-        mContext.showProgess()
-        mViewModel!!.hitChildListApi(getAppPref().getString(InterConst.ID)!!)
-
+        if (mContext.connectedToInternet(btnAddChild)) {
+            mContext.showProgess()
+            mViewModel!!.hitChildListApi(getAppPref().getString(InterConst.ID)!!)
+        }
         mViewModel!!.getChild().observe(this,
                 Observer<ChildModel> { mData ->
                     if (mData != null && mContext.responseHandler(mData.statusCode, mData.message)) {

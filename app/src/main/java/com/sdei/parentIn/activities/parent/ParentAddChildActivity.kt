@@ -34,15 +34,17 @@ class ParentAddChildActivity : BaseActivity<ParentAddChildViewModel>(), View.OnC
     }
 
     fun getTeacherList(schoolId: String, returnValue: (TeacherModel.DataBean) -> Unit) {
-        showProgess()
-        mViewModel!!.hitTeacherListApi(schoolId) {
-            if (responseHandler(it.statusCode, it.message)) {
-                TeacherListListDialog(mContext, R.style.pullBottomfromTop, R.layout.dialog_options,
-                        it.data,
-                        getString(R.string.select_teacher),
-                        InterfacesCall.Callback { pos ->
-                            returnValue(it.data!![pos])
-                        }).show()
+        if (connectedToInternet(btnAddChild)) {
+            showProgess()
+            mViewModel!!.hitTeacherListApi(schoolId) {
+                if (responseHandler(it.statusCode, it.message)) {
+                    TeacherListListDialog(mContext, R.style.pullBottomfromTop, R.layout.dialog_options,
+                            it.data,
+                            getString(R.string.select_teacher),
+                            InterfacesCall.Callback { pos ->
+                                returnValue(it.data!![pos])
+                            }).show()
+                }
             }
         }
     }
@@ -92,6 +94,10 @@ class ParentAddChildActivity : BaseActivity<ParentAddChildViewModel>(), View.OnC
                         }
                         mChildList[i].teacher_name.isNullOrEmpty() -> {
                             showAlertSnackBar(txtCreateAccount, getString(R.string.errorTeacher) + " " + childNo)
+                            return
+                        }
+                        !mChildList[i].isSameAddressAsStudent && mChildList[i].homeAddress.isNullOrEmpty() -> {
+                            showAlertSnackBar(txtCreateAccount, getString(R.string.errorStudentAddress))
                             return
                         }
                     }

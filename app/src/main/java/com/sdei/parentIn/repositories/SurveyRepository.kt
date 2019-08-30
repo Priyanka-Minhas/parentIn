@@ -33,13 +33,11 @@ class SurveyRepository {
 
     }
     fun saveSurveyListApi(model: SurveysModel.DataBeanRequest,  returnValue: (BaseModel) -> Unit) {
-
         RetrofitClient.instance!!.saveSurvey(model).enqueue(object : Callback<BaseModel> {
             override fun onFailure(call: Call<BaseModel>?, t: Throwable?) {
                 hideProgress()
                 returnValue(BaseModel(t!!.message!!))
             }
-
             override fun onResponse(call: Call<BaseModel>?, response: Response<BaseModel>?) {
                 hideProgress()
                 when {

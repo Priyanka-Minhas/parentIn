@@ -203,41 +203,7 @@
 				android:singleLine="true"
 				android:textSize="@dimen/_12ssp" />
 
-			<com.sdei.parentIn.customViews.RegularTextView
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_marginStart="@dimen/_15sdp"
-				android:layout_marginTop="@dimen/_20sdp"
-				android:text="@string/Es_esta_la_misma_dirección_que_el_estudiante"
-				android:textColor="@color/black"
-				android:textSize="@dimen/_11ssp" />
 
-			<RadioGroup
-				android:id="@+id/rgYesNo"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_marginStart="@dimen/_15sdp"
-				android:layout_marginTop="@dimen/_15sdp"
-				android:orientation="horizontal">
-
-				<RadioButton
-					android:id="@+id/rbYes"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:button="@drawable/rb_selector"
-					android:paddingStart="@dimen/_8sdp"
-					android:text="@string/Si" />
-
-				<RadioButton
-					android:id="@+id/rbNo"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:layout_marginStart="@dimen/_15sdp"
-					android:button="@drawable/rb_selector"
-					android:paddingStart="@dimen/_8sdp"
-					android:text="@string/No" />
-
-			</RadioGroup>
 
 			<EditText
 				android:id="@+id/edtLevelOfEducation"

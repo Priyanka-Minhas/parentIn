@@ -32,11 +32,11 @@ class ChildrenAdapter(var context: Context, var mData: ArrayList<ChildModel.Data
             }
         }
 
-        if (position != 0 && position / 2 != 0) {
-            holder.txtShortNameChild.background=context.resources.getDrawable(R.drawable.bg_round_dark_blue)
+        if (position != 0 && position / 2 != 1) {
+            holder.txtShortNameChild.background = context.resources.getDrawable(R.drawable.bg_round_dark_blue)
             holder.imgEditChild.setImageResource(R.drawable.ic_dark_blue_edit)
-        }else{
-            holder.txtShortNameChild.background=context.resources.getDrawable(R.drawable.bg_round_yellow)
+        } else {
+            holder.txtShortNameChild.background = context.resources.getDrawable(R.drawable.bg_round_yellow)
             holder.imgEditChild.setImageResource(R.drawable.ic_yellow_child_edit)
         }
 

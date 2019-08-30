@@ -8,6 +8,8 @@ import com.sdei.parentIn.R
 import com.sdei.parentIn.activities.parent.ParentLandingActivity
 import com.sdei.parentIn.activities.teacher.TeacherLandingActivity
 import com.sdei.parentIn.interfaces.InterConst
+import com.sdei.parentIn.room.RoomDb
+import com.sdei.parentIn.utils.connectedToInternet
 import com.sdei.parentIn.utils.getAppPref
 import com.sdei.parentIn.viewModel.WelcomeViewModel
 import kotlinx.android.synthetic.main.activity_welcome.*
@@ -18,22 +20,33 @@ import kotlinx.android.synthetic.main.activity_welcome.*
 
 class WelcomeActivity : BaseActivity<WelcomeViewModel>(), View.OnClickListener {
     override fun onClick(v: View?) {
-        when (v!!.id)  {
-            R.id.cdParent -> {
-                getAppPref().setInt(InterConst.ROLE_ID, InterConst.ROLE_PARENT)
-                val intent = Intent(mContext, LoginActivity::class.java)
-                startActivity(intent)
-            }
+        if(connectedToInternet(cdParent)) {
+            when (v!!.id) {
+                R.id.cdParent -> {
+                    if(RoomDb.getInstance(application).noteDao().fetchSchoolList().isEmpty()) {
+                        mViewModel!!.getSchoolList()
+                    }
+                    getAppPref().setInt(InterConst.ROLE_ID, InterConst.ROLE_PARENT)
+                    val intent = Intent(mContext, LoginActivity::class.java)
+                    startActivity(intent)
+                }
 
-            R.id.cdTeacher -> {
-                getAppPref().setInt(InterConst.ROLE_ID, InterConst.ROLE_TEACHER)
-                val intent = Intent(mContext, LoginActivity::class.java)
-                startActivity(intent)
-            }
+                R.id.cdTeacher -> {
+                    if(RoomDb.getInstance(application).noteDao().fetchSchoolList().isEmpty()) {
+                        mViewModel!!.getSchoolList()
+                    }
+                    getAppPref().setInt(InterConst.ROLE_ID, InterConst.ROLE_TEACHER)
+                    val intent = Intent(mContext, LoginActivity::class.java)
+                    startActivity(intent)
+                }
 
-            R.id.btnAboutFamiliasIn -> {
-                val intent = Intent(mContext, AboutActivity::class.java)
-                startActivity(intent)
+                R.id.btnAboutFamiliasIn -> {
+                    if(RoomDb.getInstance(application).noteDao().fetchSchoolList().isEmpty()) {
+                        mViewModel!!.getSchoolList()
+                    }
+                    val intent = Intent(mContext, AboutActivity::class.java)
+                    startActivity(intent)
+                }
             }
         }
     }

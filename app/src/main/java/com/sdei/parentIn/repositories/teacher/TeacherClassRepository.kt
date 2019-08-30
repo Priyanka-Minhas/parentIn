@@ -33,7 +33,6 @@ class TeacherClassRepository {
 
     }
     // add student by teacher
-
     fun addStudentApi(mData: AddStudentManullyRequest ,returnValue: (BaseModel) -> Unit) {
         RetrofitClient.instance!!.addStudentByTeacher(mData).enqueue(object : Callback<BaseModel> {
             override fun onFailure(call: Call<BaseModel>?, t: Throwable?) {
