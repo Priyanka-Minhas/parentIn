@@ -61,6 +61,8 @@ interface ApiInterface {
     @POST("/survey/saveSurvey")
     fun saveSurvey(@Body child: SurveysModel.DataBeanRequest): Call<BaseModel>
 
+    fun getCSVFile(id: String): Any
+
 
 //    @FormUrlEncoded
 //    @POST("/user/register")

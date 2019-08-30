@@ -35,6 +35,5 @@ class TeacherLandingActivity : BaseActivity<TeacherClassViewModel>() {
     override fun initListeners() {
 
     }
-
-
 }
+
