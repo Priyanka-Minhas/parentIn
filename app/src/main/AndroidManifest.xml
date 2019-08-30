@@ -84,7 +84,11 @@
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />
+        <service android:name=".utils.DownloadFileService"
+            android:enabled="true"
+            android:exported="false"/>
     </application>
+
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <uses-permission android:name="android.permission.INTERNET" />

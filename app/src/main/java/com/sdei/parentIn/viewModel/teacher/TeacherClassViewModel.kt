@@ -50,13 +50,13 @@ class TeacherClassViewModel(application: Application):BaseViewModel(application 
     // export csv
 
     fun sendReqForCSVFile(id: String?): MutableLiveData<ExportCsvModel> {
-      mRepository.reqForCSV(id!!){
-          if (exportCsvLiveData == null) {
-              exportCsvLiveData = MutableLiveData()
-              exportCsvLiveData!!.value =it
-          }
+        if (exportCsvLiveData == null) {
+            exportCsvLiveData = MutableLiveData()
+            mRepository.reqForCSV(id!!) {
+                exportCsvLiveData!!.value =it
+            }
+        }
 
-      }
       return  exportCsvLiveData as MutableLiveData<ExportCsvModel>
     }
 
