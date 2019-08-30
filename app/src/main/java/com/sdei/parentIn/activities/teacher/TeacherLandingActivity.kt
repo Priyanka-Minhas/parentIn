@@ -2,9 +2,11 @@ package com.sdei.parentIn.activities.teacher
 
 
 import android.content.Context
+import android.content.Intent
 import androidx.lifecycle.ViewModelProviders
 import com.sdei.parentIn.R
 import com.sdei.parentIn.activities.BaseActivity
+import com.sdei.parentIn.activities.SettingActivity
 import com.sdei.parentIn.adapters.ViewPagerAdapter
 import com.sdei.parentIn.fragments.parent.ParentMessagesFragment
 import com.sdei.parentIn.fragments.teacher.TeacherClassFragment
@@ -23,6 +25,10 @@ class TeacherLandingActivity : BaseActivity<TeacherClassViewModel>() {
         setUpViewPager()
         // add in tab layout
         tabs.setupWithViewPager(viewPager)
+        imgSetting.setOnClickListener {
+            val intent = Intent(context, SettingActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun setUpViewPager() {

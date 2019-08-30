@@ -89,10 +89,10 @@ abstract class BaseActivity<V : ViewModel> : AppCompatActivity() {
     }
 
     override fun attachBaseContext(base: Context) {
-        super.attachBaseContext(LocaleHelper.setLocale(base,"en"))
+        super.attachBaseContext(LocaleHelper.setLocale(base,"es"))
     }
 
-    //    private fun performDataBinding() {
+//    private fun performDataBinding() {
 //        mViewDataBinding = DataBindingUtil.setContentView(this, getLayoutId())
 //        this.mViewModel = if (mViewModel == null) getViewModel() else mViewModel
 //        mViewDataBinding.setVariable(getBindingVariable(), mViewModel)

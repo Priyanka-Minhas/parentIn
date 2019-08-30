@@ -35,6 +35,13 @@ class LoginActivity : BaseActivity<LoginViewModel>(), View.OnClickListener {
         get() = this@LoginActivity
 
     override fun onCreate() {
+
+
+        if (getAppPref().getInt(InterConst.ROLE_ID) == InterConst.ROLE_TEACHER) {
+            txtHeader.text = mContext.resources.getString(R.string.BIENVENIDO) + " " + mContext.resources.getString(R.string.Maestro)
+        }
+
+
         mViewModel!!.getUser().observe(this,
                 Observer<UserModel> { mData ->
                     if (mData != null && responseHandler(mData.statusCode, mData.message)) {

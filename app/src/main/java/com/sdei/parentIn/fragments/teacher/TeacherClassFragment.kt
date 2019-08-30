@@ -115,15 +115,13 @@ class TeacherClassFragment : BaseFragment<TeacherClassViewModel>(), View.OnClick
     }
 
     private fun makeReqForCSV() {
-        if (mContext.connectedToInternet()) {
+        if (mContext.connectedToInternet(rvTeacherClass)) {
             viewModel.sendReqForCSVFile(getAppPref().getString(InterConst.ID)).observe(this, Observer { mData ->
                 if (mData != null && mContext.responseHandler(mData.statusCode, mData.message)) {
                     exportDialog.dismissDialog()
                     mContext.startService(DownloadFileService.getDownloadService(mContext,mData.data.toString(), DirectoryHelper.ROOT_DIRECTORY_NAME+"/File"))
                 }
             })
-
-
         }
     }
 

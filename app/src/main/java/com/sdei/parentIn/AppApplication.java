@@ -39,7 +39,7 @@ public class AppApplication extends Application {
     protected void attachBaseContext(Context base) {
 //        es - spanish
 
-        super.attachBaseContext(LocaleHelper.setLocale(base,"en"));
+        super.attachBaseContext(LocaleHelper.setLocale(base,"es"));
 
     }
 

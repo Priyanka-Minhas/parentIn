@@ -196,6 +196,8 @@
 				android:layout_marginStart="@dimen/_15sdp"
 				android:layout_marginTop="@dimen/_12sdp"
 				android:layout_marginEnd="@dimen/_15sdp"
+				android:inputType="number"
+				android:maxLength="8"
 				android:background="@drawable/edit_text_selector"
 				android:hint="@string/Cédula"
 				android:imeOptions="actionDone"

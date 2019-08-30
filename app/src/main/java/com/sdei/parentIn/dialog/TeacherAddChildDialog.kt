@@ -40,7 +40,7 @@ class TeacherAddChildDialog(
             mData.child!!.lastName = edtChildLastName.text.toString()
             mData.child!!.birthDate = edtChildBirthDate.text.toString()
             mData.child!!.verificationCard = edtChildIdentityCard.text.toString()
-            mData.child!!.school = getAppPref().getInt(InterConst.STUDENT_ID).toString()
+            mData.child!!.school = getAppPref().getString(InterConst.STUDENT_ID).toString()
             mData.child!!.teacher = getAppPref().getInt(InterConst.ROLE_ID).toString()
             this.returnValue(mData)
         }

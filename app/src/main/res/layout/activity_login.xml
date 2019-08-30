@@ -57,6 +57,7 @@
 				android:textSize="@dimen/_30ssp" />
 
 			<com.sdei.parentIn.customViews.SemiBoldTextView
+				android:id="@+id/txtHeader"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_marginTop="@dimen/_23sdp"

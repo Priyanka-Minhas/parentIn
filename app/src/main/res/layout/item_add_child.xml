@@ -71,6 +71,8 @@
 		android:drawablePadding="@dimen/_10sdp"
 		android:padding="@dimen/_12sdp"
 		android:hint="@string/Cédula"
+		android:inputType="number"
+		android:maxLength="8"
 		android:textSize="@dimen/_12ssp"
 		android:imeOptions="actionDone"
 		android:singleLine="true"/>
