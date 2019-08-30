@@ -5,7 +5,6 @@
     android:background="@drawable/bg_white_round_corners"
     android:gravity="center"
     android:layout_gravity="center"
-    android:layout_margin="@dimen/_15sdp"
     android:orientation="vertical">
     <com.sdei.parentIn.customViews.SemiBoldTextView
         android:layout_width="wrap_content"
@@ -14,18 +13,19 @@
         android:layout_marginTop="@dimen/_20sdp"
         android:layout_marginStart="@dimen/_20sdp"
         android:layout_marginEnd="@dimen/_20sdp"
-        android:textColor="@color/colorGrayDark"
-        android:text="Exportar Lista como CSV"/>
+        android:textColor="@color/black"
+        android:textSize="@dimen/_15ssp"
+        android:text="@string/exportar_lista_como_csv"/>
 
     <com.sdei.parentIn.customViews.RegularTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_marginTop="@dimen/_5sdp"
-        android:layout_marginEnd="@dimen/_5sdp"
-        android:layout_marginStart="@dimen/_5sdp"
-        android:textColor="@color/colorGrayDark"
-        android:text="Se guardará un archivo con la información de los alumnos en CSV"/>
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:textColor="@color/black"
+        android:text="@string/se_guardar_un_archivo_con_la_informaci_n_de_los_alumnos_en_csv"/>
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
@@ -35,25 +35,33 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingBottom="@dimen/_5sdp">
+        android:orientation="horizontal">
 
-        <com.sdei.parentIn.customViews.SemiBoldTextView
+        <com.sdei.parentIn.customViews.RegularTextView
+            android:id="@+id/txtCancel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Cancelar"
+            android:text="@string/cancelar"
+            android:textSize="@dimen/_15ssp"
             android:layout_weight="1"
             android:textColor="@color/colorGrayDark"
+            android:paddingTop="@dimen/_10sdp"
             android:gravity="center"/>
+        <View
+            android:layout_width="1dp"
+            android:layout_height="@dimen/_35sdp"
+            android:background="@color/colorGrayDark"/>
 
         <com.sdei.parentIn.customViews.SemiBoldTextView
+            android:id="@+id/txtExport"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_weight="1"
-            android:textColor="@color/colorGrayDark"
-            android:text="Exportar"/>
-
+            android:textColor="@color/colorPurpul"
+            android:textSize="@dimen/_15ssp"
+            android:paddingTop="@dimen/_10sdp"
+            android:text="@string/exportar"/>
     </LinearLayout>
 
 

@@ -1,18 +1,15 @@
 package com.sdei.parentIn.dialog
 
-import android.app.DatePickerDialog
 import android.content.Context
 import android.view.Gravity
-import com.sdei.parentIn.interfaces.InterConst
-import com.sdei.parentIn.model.AddStudentManullyRequest
-import com.sdei.parentIn.utils.getAppPref
-import kotlinx.android.synthetic.main.dialog_teacher_add_child.*
-import java.util.*
+import com.sdei.parentIn.interfaces.InterfacesCall
+import kotlinx.android.synthetic.main.dialog_export_csv.*
 
 class ExportCsvFileDialog(
         context: Context,
         themeResId: Int,
-        val LayoutId: Int) : BaseDialog(context, themeResId) {
+        val LayoutId: Int,
+        private val callback: InterfacesCall.BtnClick) : BaseDialog(context, themeResId) {
 
     init {
         val wmlp = this.window!!.attributes
@@ -22,13 +19,15 @@ class ExportCsvFileDialog(
 
     override fun onCreateStuff() {
 
-        /*imgClose.setOnClickListener {
+        txtCancel.setOnClickListener {
             dismissDialog()
-        }*/
+        }
 
-       /* btnAddStudent.setOnClickListener {
+        txtExport.setOnClickListener {
+          callback.onClick()
+        }
 
-        }*/
+
 
 
     }
@@ -54,6 +53,5 @@ class ExportCsvFileDialog(
         }
 
     }
-
 
 }

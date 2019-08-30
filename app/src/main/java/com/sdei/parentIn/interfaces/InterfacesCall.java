@@ -17,4 +17,8 @@ public class InterfacesCall {
         void selected(int pos);
     }
 
+    public interface BtnClick{
+        void onClick();
+    }
+
 }

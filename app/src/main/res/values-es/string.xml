@@ -160,8 +160,14 @@
 	<string name="recuerda_que_puedes_cambiar_la_escuela_en_la_lista_de_abajo">Recuerda que puedes cambiar la escuela en la lista de abajo</string>
 	<string name="seleccione_escuela">Seleccione escuela</string>
 	<string name="comenzar_cuestionario">COMENZAR CUESTIONARIO</string>
-	<string name="please_answer_this_question">Please answer this question first</string>
-	<string name="select_answer">SELECT ANSWER</string>
+	<string name="comenzar_encuesta">COMENZAR ENCUESTA</string>
+
+	<string name="please_answer_this_question">Por favor responda esta pregunta primero</string>
+	<string name="select_answer">SELECCIONE RESPUESTA</string>
+	<string name="se_guardar_un_archivo_con_la_informaci_n_de_los_alumnos_en_csv">Se guardará un archivo con la \ninformación de los alumnos en CSV</string>
+	<string name="cancelar">Cancelar</string>
+	<string name="exportar">Exportar</string>
+	<string name="exportar_lista_como_csv">Exportar Lista como CSV</string>
 
 
 </resources>

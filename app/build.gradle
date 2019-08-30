@@ -86,6 +86,9 @@ dependencies {
 
     //validations
     implementation "com.wajahatkarim3.easyvalidation:easyvalidation-core:1.0.1"
+    implementation'com.huxq17.pump:download:1.2.1'
+    implementation 'com.squareup.okhttp3:okhttp:3.11.0'
+    implementation 'com.afollestad:assent:2.3.1'
 
 }
 

@@ -1,9 +1,6 @@
 package com.sdei.parentIn.repositories.teacher
 
-import com.sdei.parentIn.model.AddStudentManullyRequest
-import com.sdei.parentIn.model.BaseModel
-import com.sdei.parentIn.model.ClassModel
-import com.sdei.parentIn.model.UserModel
+import com.sdei.parentIn.model.*
 import com.sdei.parentIn.network.RetrofitClient
 import com.sdei.parentIn.utils.handleJson
 import com.sdei.parentIn.utils.hideProgress
@@ -53,5 +50,30 @@ class TeacherClassRepository {
             }
         })
     }
+
+
+    // Request for CSV file
+
+    fun reqForCSV(id: String, returnValue: (ExportCsvModel) -> Unit){
+
+        RetrofitClient.instance!!.getCSVFile(id).enqueue(object :Callback<ExportCsvModel>{
+            override fun onFailure(call: Call<ExportCsvModel>, t: Throwable) {
+                returnValue(ExportCsvModel(t!!.message!!))
+            }
+
+            override fun onResponse(call: Call<ExportCsvModel>, response: Response<ExportCsvModel>) {
+                when {
+                    response!!.body() != null -> returnValue(response.body()!!)
+                    response.errorBody() != null -> {
+                        val (statusCode, message) = handleJson(response.errorBody()!!.string())
+                        returnValue(ExportCsvModel(statusCode.toInt(), message))
+                    }
+                    else -> returnValue(ExportCsvModel(response.code(), response.message().toString()))
+                }
+            }
+
+        })
+    }
+
 
 }

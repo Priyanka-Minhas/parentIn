@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import com.sdei.parentIn.model.AddStudentManullyRequest
 import com.sdei.parentIn.model.BaseModel
 import com.sdei.parentIn.model.ClassModel
+import com.sdei.parentIn.model.ExportCsvModel
 import com.sdei.parentIn.repositories.teacher.TeacherClassRepository
 import com.sdei.parentIn.viewModel.BaseViewModel
 
@@ -15,6 +16,7 @@ class TeacherClassViewModel(application: Application):BaseViewModel(application 
 
     private var mTeacherClassModel: MutableLiveData<ClassModel>? = null
     private var mAddStudent : MutableLiveData<BaseModel>? = null
+    private var exportCsvLiveData : MutableLiveData<ExportCsvModel>? = null
 
     fun getClass(): MutableLiveData<ClassModel> {
         if (mTeacherClassModel == null) {
@@ -43,6 +45,19 @@ class TeacherClassViewModel(application: Application):BaseViewModel(application 
         }
 
         return  mAddStudent as MutableLiveData<BaseModel>
+    }
+
+    // export csv
+
+    fun sendReqForCSVFile(id: String?): MutableLiveData<ExportCsvModel> {
+      mRepository.reqForCSV(id!!){
+          if (exportCsvLiveData == null) {
+              exportCsvLiveData = MutableLiveData()
+              exportCsvLiveData!!.value =it
+          }
+
+      }
+      return  exportCsvLiveData as MutableLiveData<ExportCsvModel>
     }
 
 }

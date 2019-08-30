@@ -54,6 +54,11 @@ interface ApiInterface {
     @GET("/survey/list")
     fun getSurveyList(): Call<SurveysModel>
 
+    // for CSV file
+    @FormUrlEncoded
+    @POST("/student/listChildbyTeacherCSV")
+    fun getCSVFile(@Field("_id")id: String):Call<ExportCsvModel>
+
 //    @FormUrlEncoded
 //    @POST("/user/register")
 //    fun register(
