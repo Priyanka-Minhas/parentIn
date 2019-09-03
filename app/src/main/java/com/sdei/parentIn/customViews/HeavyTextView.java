@@ -22,6 +22,7 @@ public class HeavyTextView  extends AppCompatTextView {
     public HeavyTextView(@NonNull Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init();
+
     }
 
     private void init() {

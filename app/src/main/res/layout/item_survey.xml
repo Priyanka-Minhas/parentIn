@@ -191,6 +191,23 @@
 				android:padding="@dimen/_12sdp"
 				android:textSize="@dimen/_12ssp" />
 		</LinearLayout>
+
+<!--			  ============for dropdown question========== -->
+			<LinearLayout
+				android:id="@+id/llMultiSelection"
+				android:layout_width="match_parent"
+				android:layout_weight="1"
+				android:layout_marginStart="@dimen/_50sdp"
+				android:layout_marginEnd="@dimen/_45sdp"
+				android:visibility="visible"
+				android:layout_height="wrap_content">
+
+				<androidx.recyclerview.widget.RecyclerView
+					android:id="@+id/rvMultiSelection"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"/>
+
+			</LinearLayout>
 			<!-- ============ Range question ============= -->
 
             <LinearLayout

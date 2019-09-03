@@ -46,6 +46,7 @@ class SurveysModel : BaseModel {
 
         var answer: String? = ""
         var answerPoints: Int? = 0
+
         class OptionsBean {
             /**
              * label : 1
@@ -53,6 +54,7 @@ class SurveysModel : BaseModel {
              */
 
             var label: String? = ""
+            var isChecked: Boolean = false
             var point: Int = 0
         }
     }
@@ -71,7 +73,7 @@ class SurveysModel : BaseModel {
         var surveyPoints: Int = 0
         var survey: ArrayList<SurveyBean>? = null
 
-        class SurveyBean{
+        class SurveyBean {
             /**
              * questionId : 5d663a651a5e6c425b53f3dd
              * answer : Yes
@@ -81,10 +83,10 @@ class SurveysModel : BaseModel {
             var answer: String? = null
             var point: Int = 0
 
-            constructor(_id: String?, answer: String?, answerPoints: Int?){
-                this.questionId=_id
-                this.answer=answer
-                this.point=answerPoints!!
+            constructor(_id: String?, answer: String?, answerPoints: Int?) {
+                this.questionId = _id
+                this.answer = answer
+                this.point = answerPoints!!
             }
 
         }

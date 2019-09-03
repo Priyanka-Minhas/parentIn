@@ -18,7 +18,6 @@ import com.sdei.parentIn.utils.showProgess
 import com.sdei.parentIn.viewModel.SurveyViewModel
 import kotlinx.android.synthetic.main.activity_survey.*
 
-
 class SurveyActivity : BaseActivity<SurveyViewModel>(), SurveysViewPagerAdapter.ClickInterface {
 
     override fun moveToBackSurvey(currentPosition: Int) {
@@ -29,29 +28,28 @@ class SurveyActivity : BaseActivity<SurveyViewModel>(), SurveysViewPagerAdapter.
     }
 
     override fun moveToNextSurvey(currentPosition: Int) {
-
         mSurveyListAnswer.add(SurveysModel.DataBeanRequest.SurveyBean(
                 mSurveyList[currentPosition]._id,
                 mSurveyList[currentPosition].answer,
                 mSurveyList[currentPosition].answerPoints))
 
         if (currentPosition != mSurveyList.size - 1) {
-
             vpSurveys.currentItem = currentPosition + 1
-
         } else if (mSurveyList.size - 1 == currentPosition) {
+
             mSaveModel._id = getAppPref().getString(InterConst.ID)
             mSaveModel.childId = intent.getStringExtra(InterConst.CHILD_ID)
             mSaveModel.survey = mSurveyListAnswer
+
             for (i in 0 until mSurveyListAnswer.size) {
                 mSaveModel.surveyPoints = mSaveModel.surveyPoints + mSurveyListAnswer[i].point
             }
+
             if (connectedToInternet(vpSurveys)) {
                 showProgess()
                 mViewModel!!.saveSurvey(mSaveModel)
             }
         }
-
     }
 
     override val viewModel: SurveyViewModel

@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SeekBar
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager.widget.PagerAdapter
 import com.sdei.parentIn.R
 import com.sdei.parentIn.dialog.OptionListDialog
@@ -19,6 +20,7 @@ import kotlinx.android.synthetic.main.item_survey.view.*
 
 class SurveysViewPagerAdapter(private val mContext: Context,
                               private var mData: ArrayList<SurveysModel.DataBean>, var mClick: ClickInterface) : PagerAdapter() {
+
 
     override fun instantiateItem(collection: ViewGroup, position: Int): Any {
         val inflater = LayoutInflater.from(mContext)
@@ -33,6 +35,9 @@ class SurveysViewPagerAdapter(private val mContext: Context,
         this.mData = data
         notifyDataSetChanged()
     }
+
+    lateinit var mAdapter: MultiAnsSurveyAdapter
+
 
     private fun setView(layout: ViewGroup, position: Int) {
 
@@ -86,11 +91,17 @@ class SurveysViewPagerAdapter(private val mContext: Context,
             }
             mData[position].type!! == "d" -> {
                 layout.llQuestionDropdown.visibility = View.VISIBLE
-
                 if (!TextUtils.isEmpty(mData[position].answer)) {
                     layout.edtQuestionDropdown.setText(mData[position].answer!!)
                 }
+//                layout.llMultiSelection.visibility=View.VISIBLE
+//                setMultiAnsAdapter(layout, position)
             }
+            mData[position].type!! == "c" -> {
+                layout.llMultiSelection.visibility = View.VISIBLE
+                setMultiAnsAdapter(layout, position)
+            }
+
             mData[position].type!! == "t" -> {
                 layout.llQuestionAnswer.visibility = View.VISIBLE
 
@@ -99,6 +110,50 @@ class SurveysViewPagerAdapter(private val mContext: Context,
                 }
             }
         }
+    }
+
+    private fun setMultiAnsAdapter(layout: ViewGroup, position: Int) {
+
+        if (!TextUtils.isEmpty(mData[position].answer!!)) {
+            if (mData[position].answer!!.startsWith(",")) {
+                mData[position].answer = mData[position].answer!!.substring(1, mData[position].answer!!.length - 1)
+            }
+            val data = mData[position].answer!!.split(",")
+            for (j in 0 until mData[position].options!!.size) {
+                for (i in 0 until data.size - 1) {
+                    if (mData[position].options!![j].label!!.contains(data[i])) {
+                        mData[position].options!![j].isChecked = true
+                    }
+                }
+            }
+        }
+
+        layout.rvMultiSelection.layoutManager = LinearLayoutManager(mContext)
+        mAdapter = MultiAnsSurveyAdapter(mContext, mData[position].options!!, object : MultiAnsSurveyAdapter.ClickInterface {
+            override fun removeAnswer(pos: Int) {
+                if (mData[position].answer!!.startsWith(",")) {
+                    mData[position].answer = mData[position].answer!!.substring(1, mData[position].answer!!.length - 1)
+                }
+                if (mData[position].answer!!.contains("," + mData[position].options!![pos].label)) {
+                    mData[position].answer = mData[position].answer!!.replace("," + mData[position].options!![pos].label, "")
+                }
+                if (mData[position].answerPoints!! > 0) {
+                    mData[position].answerPoints = mData[position].answerPoints!! - mData[position].options!![pos].point
+                }
+            }
+
+            override fun addAnswer(pos: Int) {
+                if (mData[position].answer!!.startsWith(",")) {
+                    mData[position].answer = mData[position].answer!!.substring(1, mData[position].answer!!.length - 1)
+                }
+                mData[position].answer = mData[position].answer + "," + mData[position].options!![pos].label
+                mData[position].answerPoints = mData[position].answerPoints!! + mData[position].options!![pos].point
+            }
+        })
+
+        layout.rvMultiSelection.adapter = mAdapter
+
+
     }
 
     private fun setSeekBarView(layout: ViewGroup, position: Int) {
@@ -113,7 +168,6 @@ class SurveysViewPagerAdapter(private val mContext: Context,
         }
 
         layout.txtSeekValue.text = layout.sbQuestion.progress.toString() + "/" + layout.sbQuestion.max
-
         layout.sbQuestion.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progressValue: Int, p2: Boolean) {
                 progress = progressValue
