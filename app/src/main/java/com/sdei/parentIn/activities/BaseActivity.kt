@@ -11,6 +11,7 @@ import android.view.inputmethod.InputMethodManager
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModel
+import com.sdei.parentIn.utils.LOCALE_KEY
 import com.sdei.parentIn.utils.LocaleHelper
 
 /**
@@ -89,7 +90,7 @@ abstract class BaseActivity<V : ViewModel> : AppCompatActivity() {
     }
 
     override fun attachBaseContext(base: Context) {
-        super.attachBaseContext(LocaleHelper.setLocale(base,"es"))
+        super.attachBaseContext(LocaleHelper.setLocale(base, LOCALE_KEY))
     }
 
 //    private fun performDataBinding() {

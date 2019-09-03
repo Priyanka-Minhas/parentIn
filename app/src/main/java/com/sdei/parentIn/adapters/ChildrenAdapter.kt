@@ -65,7 +65,7 @@ class ChildrenAdapter(var context: Context, var mData: ArrayList<ChildModel.Data
         var txtSchool = itemView.txtSchool
         var txtTeacher = itemView.txtTeacher
         var imgEditChild = itemView.imgEditChild
-        var txtShortNameChild = itemView.txtChild
+        var txtShortNameChild = itemView.imgChild
     }
 
 

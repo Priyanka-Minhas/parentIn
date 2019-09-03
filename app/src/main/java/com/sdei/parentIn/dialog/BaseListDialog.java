@@ -20,8 +20,6 @@ import com.sdei.parentIn.interfaces.InterfacesCall;
 
 public abstract class BaseListDialog extends Dialog implements InterfacesCall.IndexClick {
 
-
-
 	InterfacesCall.IndexClick indexClick;
 	Snackbar mSnackbar;
 	private int contentView;

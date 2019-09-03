@@ -5,8 +5,8 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-
 import com.sdei.parentIn.utils.LocaleHelper;
+import static com.sdei.parentIn.utils.ConstantsKt.LOCALE_KEY;
 
 public class AppApplication extends Application {
 
@@ -38,8 +38,7 @@ public class AppApplication extends Application {
     @Override
     protected void attachBaseContext(Context base) {
 //        es - spanish
-
-        super.attachBaseContext(LocaleHelper.setLocale(base,"es"));
+        super.attachBaseContext(LocaleHelper.setLocale(base,LOCALE_KEY));
 
     }
 
