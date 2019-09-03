@@ -51,7 +51,7 @@ interface ApiInterface {
     fun addStudentByTeacher(@Body child: AddStudentManullyRequest
     ): Call<BaseModel>
 
-    @GET("/survey/list")
+    @GET("/survey/list2")
     fun getSurveyList(): Call<SurveysModel>
 
     @FormUrlEncoded
