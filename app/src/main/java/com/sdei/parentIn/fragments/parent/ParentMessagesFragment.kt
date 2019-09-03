@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sdei.parentIn.R
+import com.sdei.parentIn.activities.NewMessageActivity
 import com.sdei.parentIn.activities.SurveySelectSchoolActivity
 import com.sdei.parentIn.adapters.ParentMessagesAdapter
 import com.sdei.parentIn.adapters.ParentMessagesAdapter.*
@@ -31,6 +32,11 @@ class ParentMessagesFragment : BaseFragment<BaseViewModel>(){
                 val intent = Intent(mContext, SurveySelectSchoolActivity::class.java)
                 startActivity(intent)
             }
+        }
+
+        btnNewMessage.setOnClickListener {
+            val intent = Intent(mContext, NewMessageActivity::class.java)
+            startActivity(intent)
         }
 
         /*if (getAppPref().getInt(InterConst.ROLE_ID) == InterConst.ROLE_TEACHER) {

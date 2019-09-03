@@ -168,6 +168,15 @@
 	<string name="cancelar">Cancelar</string>
 	<string name="exportar">Exportar</string>
 	<string name="exportar_lista_como_csv">Exportar Lista como CSV</string>
+	<!-- Message -->
+	<string name="responder">Responder</string>
+	<string name="eliminar_mensaje">Eliminar mensaje</string>
+	<string name="nuevo_mensaje">Nuevo Mensaje</string>
+	<string name="enviar">Enviar</string>
+	<string name="para">Para:</string>
+	<string name="mensaje">Mensaje:</string>
+	<string name="mensaje_va_ir_aqu">Mensaje va ir aquí.</string>
+	<string name="adjuntar_archivo">Adjuntar archivo</string>
 
 
 </resources>

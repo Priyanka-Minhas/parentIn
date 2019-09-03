@@ -5,109 +5,109 @@
 	android:layout_height="match_parent"
 	xmlns:app="http://schemas.android.com/apk/res-auto">
 
-	<androidx.core.widget.NestedScrollView
-		android:layout_width="0dp"
-		android:layout_height="0dp"
-		android:fillViewport="true"
-		app:layout_constraintBottom_toTopOf="@+id/btnAddChild"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toTopOf="parent">
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@+id/btnNewMessage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-		<LinearLayout
-			android:layout_width="match_parent"
-			android:layout_height="match_parent"
-			android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-			<androidx.cardview.widget.CardView
-				android:id="@+id/cvSurvay"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_margin="@dimen/_12sdp"
-				android:visibility="visible"
-				app:cardCornerRadius="@dimen/_5ssp">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvSurvay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_12sdp"
+                android:visibility="visible"
+                app:cardCornerRadius="@dimen/_5ssp">
 
-				<RelativeLayout
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:paddingTop="@dimen/_10sdp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/_10sdp">
 
-					<com.sdei.parentIn.customViews.MediumTextView
-						android:id="@+id/txtName"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:layout_marginStart="@dimen/_5sdp"
-						android:layout_toRightOf="@+id/txtShortName"
-						android:text="Bienvenido a FamiliasIn"
-						android:textColor="@color/colorDarkText"
-						android:textSize="@dimen/_14ssp" />
-
-
-					<com.sdei.parentIn.customViews.RegularTextView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:layout_below="@+id/txtName"
-						android:layout_marginStart="@dimen/_5sdp"
-						android:layout_marginTop="@dimen/_1sdp"
-						android:layout_toRightOf="@+id/txtShortName"
-						android:text="Toma la primera encuesta aquí"
-						android:textColor="@color/colorGrayDark"
-						android:textSize="@dimen/_10ssp" />
-
-					<com.sdei.parentIn.customViews.SemiBoldTextView
-						android:id="@+id/txtShortName"
-						android:layout_width="@dimen/_42sdp"
-						android:layout_height="@dimen/_42sdp"
-						android:layout_gravity="center"
-						android:layout_marginStart="@dimen/_10sdp"
-						android:background="@drawable/bg_round_yellow"
-						android:gravity="center"
-						android:text="BF"
-						android:textColor="@color/white"
-						android:textSize="@dimen/_18ssp"
-						app:textAllCaps="true" />
+                    <com.sdei.parentIn.customViews.MediumTextView
+                        android:id="@+id/txtName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_toRightOf="@+id/txtShortName"
+                        android:text="Bienvenido a FamiliasIn"
+                        android:textColor="@color/colorDarkText"
+                        android:textSize="@dimen/_14ssp" />
 
 
-					<com.sdei.parentIn.customViews.SemiBoldTextView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:layout_alignParentRight="true"
-						android:layout_marginTop="@dimen/_5sdp"
-						android:layout_marginEnd="@dimen/_6sdp"
-						android:gravity="center_horizontal"
-						android:text="9/06/19"
-						android:textColor="@color/colorPrimaryDark"
-						android:textSize="@dimen/_9ssp" />
+                    <com.sdei.parentIn.customViews.RegularTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtName"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_1sdp"
+                        android:layout_toRightOf="@+id/txtShortName"
+                        android:text="Toma la primera encuesta aquí"
+                        android:textColor="@color/colorGrayDark"
+                        android:textSize="@dimen/_10ssp" />
 
-					<com.sdei.parentIn.customViews.SemiBoldTextView
-						android:id="@+id/btnForSurvay"
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:layout_below="@id/txtShortName"
-						android:layout_margin="@dimen/_10sdp"
-						android:background="@drawable/bg_purpul_stroke"
-						android:drawableEnd="@mipmap/ic_arrow"
-						android:foreground="?selectableItemBackground"
-						android:gravity="center"
-						android:padding="@dimen/_10sdp"
-						android:text="comenzar encuesta"
-						android:textAllCaps="true"
-						android:textColor="@color/colorPurpul"
-						android:textSize="@dimen/_13ssp" />
-				</RelativeLayout>
+                    <com.sdei.parentIn.customViews.SemiBoldTextView
+                        android:id="@+id/txtShortName"
+                        android:layout_width="@dimen/_42sdp"
+                        android:layout_height="@dimen/_42sdp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:background="@drawable/bg_round_yellow"
+                        android:gravity="center"
+                        android:text="BF"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_18ssp"
+                        app:textAllCaps="true" />
 
-			</androidx.cardview.widget.CardView>
 
-			<androidx.recyclerview.widget.RecyclerView
-				android:id="@+id/rvParentMessages"
-				android:layout_width="match_parent"
-				android:layout_height="match_parent"/>
+                    <com.sdei.parentIn.customViews.SemiBoldTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_6sdp"
+                        android:gravity="center_horizontal"
+                        android:text="9/06/19"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="@dimen/_9ssp" />
 
-		</LinearLayout>
-	</androidx.core.widget.NestedScrollView>
+                    <com.sdei.parentIn.customViews.SemiBoldTextView
+                        android:id="@+id/btnForSurvay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txtShortName"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:background="@drawable/bg_purpul_stroke"
+                        android:drawableEnd="@mipmap/ic_arrow"
+                        android:foreground="?selectableItemBackground"
+                        android:gravity="center"
+                        android:padding="@dimen/_10sdp"
+                        android:text="comenzar encuesta"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorPurpul"
+                        android:textSize="@dimen/_13ssp" />
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvParentMessages"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
 	<LinearLayout
-		android:id="@+id/btnAddChild"
+		android:id="@+id/btnNewMessage"
 		android:layout_width="match_parent"
 		android:layout_height="0dp"
 		android:layout_alignParentBottom="true"
