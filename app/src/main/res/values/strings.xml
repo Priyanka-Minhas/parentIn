@@ -168,5 +168,10 @@
     <string name="cancelar">Cancel</string>
     <string name="exportar">To export</string>
     <string name="exportar_lista_como_csv">Export List as CSV</string>
+    <string name="responder">Responder</string>
+    <string name="eliminar_mensaje">Eliminar mensaje</string>
+    <string name="nuevo_mensaje">Nuevo Mensaje</string>
+    <string name="enviar">Enviar</string>
+    <string name="para">Para:</string>
 
 </resources>

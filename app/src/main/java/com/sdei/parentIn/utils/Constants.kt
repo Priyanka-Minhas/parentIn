@@ -44,3 +44,10 @@ fun Context.getLevelOfEducation(): ArrayList<OptionsModel> {
     return arrayList
 }
 
+
+
+// Locale key constant for
+// English = "en"
+// Spanish = "es"
+ const val LOCALE_KEY = "en"
+
