@@ -2,11 +2,11 @@ package com.sdei.parentIn.dialog
 
 import android.content.Context
 import android.view.Gravity
-import kotlinx.android.synthetic.main.dialog_message.*
+import kotlinx.android.synthetic.main.dialog_reply_message.*
 
-class MessageDialog(context: Context,
-                    themeResId: Int,
-                    val LayoutId: Int ):BaseDialog(context, themeResId) {
+class MessageReplyDialog(context: Context,
+                         themeResId: Int,
+                         val LayoutId: Int ):BaseDialog(context, themeResId) {
 
     init {
         val wmlp = this.window!!.attributes

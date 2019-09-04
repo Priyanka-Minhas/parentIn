@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:layout_margin="@dimen/_5sdp"
+	android:background="@drawable/bg_white_round_corners">
+
+	<EditText
+		android:id="@+id/editText"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="@dimen/_10sdp"
+		android:layout_marginTop="@dimen/_18sdp"
+		android:layout_marginEnd="@dimen/_8sdp"
+		android:layout_marginBottom="@dimen/_16sdp"
+		android:background="@drawable/style_send_msg_ovel"
+		android:drawableEnd="@drawable/ic_send_msg"
+		android:drawablePadding="@dimen/_5sdp"
+		android:hint="Responder aquí…"
+		android:inputType="textMultiLine"
+		android:isScrollContainer="true"
+		android:overScrollMode="always"
+		android:paddingStart="@dimen/_10sdp"
+		android:paddingTop="@dimen/_5sdp"
+		android:paddingEnd="@dimen/_10sdp"
+		android:paddingBottom="@dimen/_5sdp"
+		android:scrollbarStyle="insideInset"
+		android:scrollbars="vertical"
+		android:textColor="@color/colorDarkText"
+		android:textSize="@dimen/_10ssp"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/txtDelete" />
+
+	<ImageView
+		android:id="@+id/img"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="@dimen/_10sdp"
+		android:layout_marginTop="@dimen/_24sdp"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/view"
+		app:srcCompat="@drawable/img_mtra_purpl"
+		tools:ignore="VectorDrawableCompat" />
+
+	<ImageView
+		android:id="@+id/imgClose"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentRight="true"
+		android:layout_marginEnd="@dimen/_8sdp"
+		android:background="@drawable/ic_close"
+		app:layout_constraintBottom_toBottomOf="@+id/view"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toTopOf="@+id/view" />
+
+	<View
+		android:id="@+id/view"
+		android:layout_width="@dimen/_35sdp"
+		android:layout_height="@dimen/_4sdp"
+		android:layout_centerHorizontal="true"
+		android:layout_marginTop="@dimen/_12sdp"
+		android:background="@drawable/style_gray_ovel"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<com.sdei.parentIn.customViews.RegularTextView
+		android:id="@+id/txtDescription"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="@dimen/_5sdp"
+		android:layout_marginTop="@dimen/_8sdp"
+		android:layout_marginEnd="@dimen/_6sdp"
+		android:text="Recibirás mensajes sobre la clase y otros documentos necesarios para la inscripción del alumno a nuestro colegio y materiales para comenzar el ciclo escolar."
+		android:textColor="@color/grey"
+		android:textSize="@dimen/_10ssp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toEndOf="@+id/img"
+		app:layout_constraintTop_toBottomOf="@+id/txtName" />
+
+	<com.sdei.parentIn.customViews.SemiBoldTextView
+		android:id="@+id/txtName"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="@dimen/_5sdp"
+		android:layout_marginTop="@dimen/_2sdp"
+		android:text="Mtro. Rodrigo Baez"
+		android:textColor="@color/colorDarkText"
+		android:textSize="@dimen/_12ssp"
+		app:layout_constraintStart_toEndOf="@+id/img"
+		app:layout_constraintTop_toTopOf="@+id/img" />
+
+	<com.sdei.parentIn.customViews.SemiBoldTextView
+		android:id="@+id/txtDelete"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="@dimen/_8sdp"
+		android:layout_marginEnd="@dimen/_8sdp"
+		android:text="@string/eliminar_mensaje"
+		android:textColor="@color/colorPurpulLight"
+		android:textSize="@dimen/_12ssp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/txtDescription" />
+
+	<com.sdei.parentIn.customViews.SemiBoldTextView
+		android:id="@+id/txtDate"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginEnd="@dimen/_8sdp"
+		android:text="11/06/19"
+		android:textColor="@color/colorPurpulLight"
+		android:textSize="@dimen/_10ssp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toTopOf="@+id/txtName" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

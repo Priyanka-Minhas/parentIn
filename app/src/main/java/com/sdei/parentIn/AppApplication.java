@@ -37,9 +37,7 @@ public class AppApplication extends Application {
 
     @Override
     protected void attachBaseContext(Context base) {
-//        es - spanish
         super.attachBaseContext(LocaleHelper.setLocale(base,LOCALE_KEY));
-
     }
 
     @Override
