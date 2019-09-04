@@ -177,5 +177,6 @@
     <string name="mensaje">Message:</string>
     <string name="mensaje_va_ir_aqu">Message will go here.</string>
     <string name="adjuntar_archivo">Attach file</string>
+    <string name="responder_aqu">Reply here…</string>
 
 </resources>

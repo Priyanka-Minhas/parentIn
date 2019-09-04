@@ -1,6 +1,11 @@
 package com.sdei.parentIn.model
+
+import androidx.annotation.NonNull
+import androidx.room.Entity
+import androidx.room.Index
+import androidx.room.PrimaryKey
+
 class ClassModel : BaseModel{
-    //var data: ArrayList<DataBean?>? = null
     var data = ArrayList<DataBean>()
 
     constructor(message: String) : super(message)
@@ -9,25 +14,30 @@ class ClassModel : BaseModel{
         super.message = message
         super.statusCode = statusCode
     }
-
+    @Entity(tableName = "ClassDataBean", indices = [Index(value = ["id"], unique = true)])
     class DataBean{
-        val id: String? = null
-        val firstName: String? = null
-        val lastName: String? = null
-        val verificationCard: String? = null
-        val gender: String? = null
-        val birthDate: String? = null
-        val isSurvey: Boolean? = null
-        val school: String? = null
-        val schoolName: String? = null
-        val schoolAddress: String? = null
-        val teacher: String? = null
-        val teacherFirstName: String? = null
-        val teacherLastName: String? = null
-        val parent: String? = null
-        val parentFirstName: String? = null
-        val parentLastName: String? = null
-        val parentEmailAddress: String? = null
+
+        @PrimaryKey
+        @NonNull
+        var id: String? = null
+        var firstName: String? = null
+        var lastName: String? = null
+        var verificationCard: String? = null
+        var gender: String? = null
+        var birthDate: String? = null
+        var isSurvey: Boolean? = null
+        var school: String? = null
+        var schoolName: String? = null
+        var schoolAddress: String? = null
+        var teacher: String? = null
+        var teacherFirstName: String? = null
+        var teacherLastName: String? = null
+        var parent: String? = null
+        var parentFirstName: String? = null
+        var parentLastName: String? = null
+        var parentEmailAddress: String? = null
+
+
     }
 
 }

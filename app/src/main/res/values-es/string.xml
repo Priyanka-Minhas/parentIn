@@ -177,6 +177,7 @@
 	<string name="mensaje">Mensaje:</string>
 	<string name="mensaje_va_ir_aqu">Mensaje va ir aquí.</string>
 	<string name="adjuntar_archivo">Adjuntar archivo</string>
+	<string name="responder_aqu">Responder aquí…</string>
 
 
 </resources>

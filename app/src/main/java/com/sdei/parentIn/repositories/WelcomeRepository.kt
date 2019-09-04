@@ -19,7 +19,7 @@ class WelcomeRepository {
                 if (response.body() != null) {
                     for (i in 0 until response.body()!!.data!!.size) {
                         RoomDb.getInstance(application)
-                                .noteDao()
+                                .getDao()
                                 .insertSingleSchoolRecord(response.body()!!.data!![i])
                     }
                 }

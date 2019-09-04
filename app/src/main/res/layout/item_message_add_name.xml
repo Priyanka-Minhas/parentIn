@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:layout_marginStart="@dimen/_12sdp"
+	android:layout_marginTop="@dimen/_8sdp"
+	android:layout_marginEnd="@dimen/_12sdp"
+	android:animateLayoutChanges="true"
+	android:orientation="horizontal"
+	android:layout_gravity="center_horizontal"
+	android:gravity="center_horizontal"
+	android:background="@color/colorAccent"
+	app:cardCornerRadius="@dimen/_5sdp">
+
+	<com.sdei.parentIn.customViews.SemiBoldTextView
+		android:id="@+id/imgChild"
+		android:layout_width="@dimen/_42sdp"
+		android:layout_height="@dimen/_42sdp"
+		android:layout_gravity="center"
+		android:background="@drawable/bg_round_yellow"
+		android:gravity="center"
+		android:text="SV"
+		android:textColor="@color/white"
+		android:textSize="@dimen/_18ssp"
+		app:textAllCaps="true" />
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_weight="1"
+		android:orientation="vertical"
+		android:layout_marginStart="@dimen/_8sdp"
+		android:layout_marginEnd="@dimen/_8sdp"
+		android:paddingTop="@dimen/_5sdp"
+		android:layout_gravity="center_horizontal"
+		android:gravity="center_vertical">
+
+		<com.sdei.parentIn.customViews.MediumTextView
+			android:id="@+id/txtChildName"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Gonzalo Pontevedra"
+			android:textColor="@color/colorGrayDark"
+			android:textSize="@dimen/_10ssp" />
+
+		<com.sdei.parentIn.customViews.MediumTextView
+			android:id="@+id/txtChildDob"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="24 JulIo 2013"
+			android:textColor="@color/black"
+			android:textSize="@dimen/_12ssp" />
+	</LinearLayout>
+
+	<ImageView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center_vertical"
+		android:padding="@dimen/_5sdp"
+		android:src="@drawable/ic_cross"
+		/>
+
+</LinearLayout>

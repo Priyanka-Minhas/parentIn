@@ -23,7 +23,7 @@ class WelcomeActivity : BaseActivity<WelcomeViewModel>(), View.OnClickListener {
         if(connectedToInternet(cdParent)) {
             when (v!!.id) {
                 R.id.cdParent -> {
-                    if(RoomDb.getInstance(application).noteDao().fetchSchoolList().isEmpty()) {
+                    if(RoomDb.getInstance(application).getDao().fetchSchoolList().isEmpty()) {
                         mViewModel!!.getSchoolList()
                     }
                     getAppPref().setInt(InterConst.ROLE_ID, InterConst.ROLE_PARENT)
@@ -32,7 +32,7 @@ class WelcomeActivity : BaseActivity<WelcomeViewModel>(), View.OnClickListener {
                 }
 
                 R.id.cdTeacher -> {
-                    if(RoomDb.getInstance(application).noteDao().fetchSchoolList().isEmpty()) {
+                    if(RoomDb.getInstance(application).getDao().fetchSchoolList().isEmpty()) {
                         mViewModel!!.getSchoolList()
                     }
                     getAppPref().setInt(InterConst.ROLE_ID, InterConst.ROLE_TEACHER)
@@ -41,7 +41,7 @@ class WelcomeActivity : BaseActivity<WelcomeViewModel>(), View.OnClickListener {
                 }
 
                 R.id.btnAboutFamiliasIn -> {
-                    if(RoomDb.getInstance(application).noteDao().fetchSchoolList().isEmpty()) {
+                    if(RoomDb.getInstance(application).getDao().fetchSchoolList().isEmpty()) {
                         mViewModel!!.getSchoolList()
                     }
                     val intent = Intent(mContext, AboutActivity::class.java)
