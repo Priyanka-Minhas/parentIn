@@ -3,10 +3,15 @@ package com.sdei.parentIn.dialog
 import android.app.DatePickerDialog
 import android.content.Context
 import android.view.Gravity
+import com.sdei.parentIn.R
 import com.sdei.parentIn.interfaces.InterConst
+import com.sdei.parentIn.interfaces.InterfacesCall
 import com.sdei.parentIn.model.AddStudentManullyRequest
 import com.sdei.parentIn.utils.getAppPref
+import com.sdei.parentIn.utils.getGender
+import kotlinx.android.synthetic.main.activity_parents_new_account.*
 import kotlinx.android.synthetic.main.dialog_teacher_add_child.*
+import kotlinx.android.synthetic.main.dialog_teacher_add_child.edtGender
 import java.util.*
 
 class TeacherAddChildDialog(
@@ -25,7 +30,25 @@ class TeacherAddChildDialog(
 
         imgClose.setOnClickListener {
             dismissDialog()
+            edtParentFirstName.setText("")
+            edtParentLastName.setText("")
+            edtParentEmail.setText("")
+            edtChildFirstName.setText("")
+            edtChildLastName.setText("")
+            edtChildBirthDate.setText("")
+            edtChildIdentityCard.setText("")
+            edtGender.setText("")
+
         }
+        edtGender.setOnClickListener {
+            OptionListDialog(context, R.style.pullBottomfromTop, R.layout.dialog_options,
+                    context.getGender(),
+                    context.getString(R.string.select_gender),
+                    InterfacesCall.Callback { pos ->
+                        edtGender.setText(context.getGender()[pos].name.toString())
+                    }).show()
+        }
+
 
         btnAddStudent.setOnClickListener {
             val mData = AddStudentManullyRequest()
@@ -39,6 +62,7 @@ class TeacherAddChildDialog(
             mData.child!!.firstName = edtChildFirstName.text.toString()
             mData.child!!.lastName = edtChildLastName.text.toString()
             mData.child!!.birthDate = edtChildBirthDate.text.toString()
+            mData.child!!.gender = edtGender.text.toString()
             mData.child!!.verificationCard = edtChildIdentityCard.text.toString()
             mData.child!!.school = getAppPref().getString(InterConst.STUDENT_ID).toString()
             mData.child!!.teacher = getAppPref().getInt(InterConst.ROLE_ID).toString()

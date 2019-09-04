@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.sdei.parentIn.R
 import com.sdei.parentIn.model.ChildModel
@@ -33,10 +34,10 @@ class ChildrenAdapter(var context: Context, var mData: ArrayList<ChildModel.Data
         }
 
         if (position != 0 && position / 2 != 1) {
-            holder.txtShortNameChild.background = context.resources.getDrawable(R.drawable.bg_round_dark_blue)
+            holder.txtShortNameChild.background = ContextCompat.getDrawable(context,R.drawable.bg_round_dark_blue)
             holder.imgEditChild.setImageResource(R.drawable.ic_dark_blue_edit)
         } else {
-            holder.txtShortNameChild.background = context.resources.getDrawable(R.drawable.bg_round_yellow)
+            holder.txtShortNameChild.background = ContextCompat.getDrawable(context,R.drawable.bg_round_yellow)
             holder.imgEditChild.setImageResource(R.drawable.ic_yellow_child_edit)
         }
 

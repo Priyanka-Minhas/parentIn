@@ -33,7 +33,7 @@
 
 
 	<!--COMMON-->
-	<string name="select_gender">SELECCIONE GÉNERO</string>
+	<string name="select_gender">SELECCIONE Sexo</string>
 	<string name="male">MASCULINO</string>
 	<string name="female">HEMBRA</string>
 	<string name="select_relation">SELECCIONE RELACIÓN</string>
@@ -81,7 +81,7 @@
 	<string name="primer_nombre">Primer nombre</string>
 	<string name="Apellido">Apellido</string>
 	<string name="Dirección">Dirección</string>
-	<string name="Género">Género</string>
+	<string name="Género">Sexo</string>
 	<string name="Relación_con_el_niño">Relación con el niño</string>
 	<string name="Cédula">Cédula</string>
 	<string name="Es_esta_la_misma_dirección_que_el_estudiante">¿Es esta la misma dirección que el estudiante?</string>
@@ -177,6 +177,15 @@
 	<string name="mensaje">Mensaje:</string>
 	<string name="mensaje_va_ir_aqu">Mensaje va ir aquí.</string>
 	<string name="adjuntar_archivo">Adjuntar archivo</string>
+
+	<string name="mensajes">Mensajes</string>
+	<!-- Supervisor -->
+	<string name="escribe_un_nuevo_mensaje_aqu">Escribe un nuevo mensaje aquí….</string>
+	<string name="in">In</string>
+	<string name="familias">Familias</string>
+	<string name="olvidaste_la_contrase_a">Olvidaste la contraseña?</string>
+	<string name="a_n_no_tienes_cuenta">Aún no tienes cuenta?</string>
+	<string name="registrate_aqu">Registrate aquí</string>
 
 
 </resources>

@@ -91,7 +91,9 @@
 				android:hint="@string/email"
 				android:inputType="textEmailAddress"
 				android:padding="@dimen/_12sdp"
-				android:textSize="@dimen/_12ssp" />
+				android:textSize="@dimen/_12ssp"
+				android:singleLine="true"
+				android:imeOptions="actionNext"/>
 
 			<EditText
 				android:id="@+id/edtPassword"
@@ -107,7 +109,9 @@
 				android:hint="@string/Contraseña"
 				android:inputType="textPassword"
 				android:padding="@dimen/_12sdp"
-				android:textSize="@dimen/_12ssp" />
+				android:textSize="@dimen/_12ssp"
+				android:singleLine="true"
+				android:imeOptions="actionDone"/>
 
 
 			<com.sdei.parentIn.customViews.SemiBoldTextView

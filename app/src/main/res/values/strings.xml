@@ -33,7 +33,7 @@
 
 
     <!--COMMON-->
-    <string name="select_gender">SELECT GENDER</string>
+    <string name="select_gender">SELECT SEX</string>
     <string name="male">MALE</string>
     <string name="female">FEMALE</string>
     <string name="select_relation">SELECT RELATION</string>
@@ -80,7 +80,7 @@
     <string name="primer_nombre">First Name</string>
     <string name="Apellido">Last Name</string>
     <string name="Dirección">Address</string>
-    <string name="Género">Gender</string>
+    <string name="Género">Sex</string>
     <string name="Relación_con_el_niño">Relationship with the child</string>
     <string name="Cédula">Identification number</string>
     <string name="Es_esta_la_misma_dirección_que_el_estudiante">Is this the same address as the student?</string>
@@ -177,5 +177,14 @@
     <string name="mensaje">Message:</string>
     <string name="mensaje_va_ir_aqu">Message will go here.</string>
     <string name="adjuntar_archivo">Attach file</string>
+    <string name="mensajes">Messages</string>
+    <string name="escribe_un_nuevo_mensaje_aqu">Write a new message here….</string>
+    <!-- Supervisor -->
+
+    <string name="in">In</string>
+    <string name="familias">Familias</string>
+    <string name="olvidaste_la_contrase_a">Forgot password?</string>
+    <string name="a_n_no_tienes_cuenta">You don\'t have an account yet?</string>
+    <string name="registrate_aqu">sign up here</string>
 
 </resources>

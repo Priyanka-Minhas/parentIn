@@ -1,6 +1,7 @@
 package com.sdei.parentIn.activities
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -42,6 +43,10 @@ class NewMessageActivity : BaseActivity<BaseViewModel>(), View.OnClickListener {
              }
              R.id.layoutAttach -> {
 
+             }
+             R.id.txtSubmit -> {
+                 val intent = Intent(this,MessageActivity::class.java)
+                 startActivity(intent)
              }
          }
     }

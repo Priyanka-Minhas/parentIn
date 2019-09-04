@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/colorWhite"
+    android:layout_height="wrap_content"
+   android:paddingBottom="@dimen/_15sdp">
+
+
+    <TextView
+        android:id="@+id/imgViewMsg"
+        android:layout_width="@dimen/_42sdp"
+        android:layout_height="@dimen/_42sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:text="RB"
+        android:visibility="visible"
+        android:textColor="@color/colorWhite"
+        android:gravity="center"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:background="@drawable/bg_round_light_purpul"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.sdei.parentIn.customViews.MediumTextView
+        android:id="@+id/txtMsgChildName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ana Lucia Pontevedra"
+        android:layout_marginTop="@dimen/_23sdp"
+        android:textSize="@dimen/_11ssp"
+        android:layout_marginStart="@dimen/_55sdp"
+        android:textColor="@color/colorGrayDark"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.sdei.parentIn.customViews.SemiBoldTextView
+        android:id="@+id/txtMsgDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="11/06/19"
+        android:textSize="@dimen/_9ssp"
+        android:textColor="@color/colorPurpulLight"
+        android:layout_marginEnd="@dimen/_20sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/txtMsgChildName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txtMsgChildName"/>
+
+    <com.sdei.parentIn.customViews.SemiBoldTextView
+        android:id="@+id/txtMsgChildSubName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Leandro Pontevedra"
+        android:layout_marginStart="@dimen/_55sdp"
+        android:textSize="@dimen/_13ssp"
+        android:textColor="@color/colorDarkText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtMsgChildName" />
+
+    <com.sdei.parentIn.customViews.RegularTextView
+        android:id="@+id/txtMsgFull"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_55sdp"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:layout_marginEnd="@dimen/_30sdp"
+        android:text="Tengo una pregunta acerca de las botanas para la siguiente reunion y cada niño tiene que traer alguna botana para el convivio del próximo Viernes por la tarde."
+        android:textColor="@color/colorGrayDark"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtMsgChildSubName" />
+
+    <ImageView
+        android:id="@+id/imgMsgPic"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_110sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginStart="@dimen/_55sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtMsgFull"
+        app:srcCompat="@drawable/ic_launcher_background"
+        tools:ignore="VectorDrawableCompat"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
