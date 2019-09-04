@@ -177,7 +177,6 @@
 	<string name="mensaje">Mensaje:</string>
 	<string name="mensaje_va_ir_aqu">Mensaje va ir aquí.</string>
 	<string name="adjuntar_archivo">Adjuntar archivo</string>
-	<string name="responder_aqu">Responder aquí…</string>
 
 	<string name="mensajes">Mensajes</string>
 	<!-- Supervisor -->
@@ -186,7 +185,11 @@
 	<string name="familias">Familias</string>
 	<string name="olvidaste_la_contrase_a">Olvidaste la contraseña?</string>
 	<string name="a_n_no_tienes_cuenta">Aún no tienes cuenta?</string>
-	<string name="registrate_aqu">Registrate aquí</string>
+	<string name="registrate_aqu">Registrate aquí…</string>
+	<string name="responder_aqu">Reply here…</string>
+	<string name="search">Buscar…</string>
+	<string name="select_name">SELECCIONE NOMBRE</string>
+	<string name="no_result">SIN RESULTADOS</string>
 
 
 </resources>

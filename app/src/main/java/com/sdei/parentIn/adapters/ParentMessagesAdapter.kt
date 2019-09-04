@@ -1,12 +1,14 @@
 package com.sdei.parentIn.adapters
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.sdei.parentIn.R
+import com.sdei.parentIn.activities.MessageActivity
 import kotlinx.android.synthetic.main.item_messages_fragment.view.*
 import java.util.*
 
@@ -39,6 +41,11 @@ class ParentMessagesAdapter(var context: Context, var msgList: ArrayList<String>
             mCallback.getIndex(position)
         }
 
+
+        holder.rvMain.setOnClickListener {
+            val intent = Intent(context, MessageActivity::class.java)
+            context.startActivity(intent)
+        }
     }
 
     override fun getItemViewType(position: Int): Int {
@@ -46,9 +53,10 @@ class ParentMessagesAdapter(var context: Context, var msgList: ArrayList<String>
     }
 
     inner class MessagesViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var imgChild = itemView.imgChild
+        var imgChild = itemView.txtShortName
         var txtMsgDate = itemView.txtMsgDate
         var btnResponder = itemView.btnResponder
+        var rvMain = itemView.rvMain
     }
 
     interface Callback {
