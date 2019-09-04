@@ -45,7 +45,6 @@ class ParentMessagesAdapter(var context: Context, var msgList: ArrayList<String>
         return position
     }
 
-
     inner class MessagesViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var imgChild = itemView.imgChild
         var txtMsgDate = itemView.txtMsgDate

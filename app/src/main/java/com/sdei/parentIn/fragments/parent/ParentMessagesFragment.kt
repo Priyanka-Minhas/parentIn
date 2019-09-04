@@ -8,8 +8,8 @@ import com.sdei.parentIn.R
 import com.sdei.parentIn.activities.NewMessageActivity
 import com.sdei.parentIn.activities.SurveySelectSchoolActivity
 import com.sdei.parentIn.adapters.ParentMessagesAdapter
-import com.sdei.parentIn.adapters.ParentMessagesAdapter.*
-import com.sdei.parentIn.dialog.MessageDialog
+import com.sdei.parentIn.adapters.ParentMessagesAdapter.Callback
+import com.sdei.parentIn.dialog.MessageReplyDialog
 import com.sdei.parentIn.fragments.BaseFragment
 import com.sdei.parentIn.utils.connectedToInternet
 import com.sdei.parentIn.viewModel.BaseViewModel
@@ -19,7 +19,7 @@ class ParentMessagesFragment : BaseFragment<BaseViewModel>(){
 
     var list = arrayListOf<String>("Khem","Subham","C","D")
     lateinit var parentMsgAdapter : ParentMessagesAdapter
-    var messageDialog : MessageDialog? = null
+    var messageReplyDialog : MessageReplyDialog? = null
     override val layoutId: Int
         get() = R.layout.fragment_parent_messages
     override val viewModel: BaseViewModel
@@ -51,10 +51,9 @@ class ParentMessagesFragment : BaseFragment<BaseViewModel>(){
         rvParentMessages.layoutManager = LinearLayoutManager(mContext)
         rvParentMessages.adapter = ParentMessagesAdapter(mContext,list,object:Callback{
             override fun getIndex(pos: Int) {
-             messageDialog = MessageDialog(mContext,R.style.pullBottomfromTop,R.layout.dialog_message)
-             messageDialog!!.show()
+             messageReplyDialog = MessageReplyDialog(mContext,R.style.pullBottomfromTop,R.layout.dialog_reply_message)
+             messageReplyDialog!!.show()
             }
-
         })
 
     }
