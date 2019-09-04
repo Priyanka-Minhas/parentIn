@@ -1,24 +1,86 @@
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+<com.google.android.material.appbar.AppBarLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true">
-
-    </androidx.core.widget.NestedScrollView>
-
-    <RelativeLayout
+    <LinearLayout
         android:id="@+id/relativeLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingStart="@dimen/_12sdp"
-        android:paddingTop="@dimen/_16sdp"
-        android:paddingEnd="@dimen/_12sdp"
-        app:layout_constraintTop_toTopOf="parent">
+       android:padding="@dimen/_10sdp"
+        android:orientation="vertical"
+        app:layout_scrollFlags="scroll|enterAlways">
+        <com.sdei.parentIn.customViews.SemiBoldTextView
+            android:id="@+id/txtClassInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/informaci_n_de_la_clase"
+            android:textColor="@color/colorDarkText"
+            android:textSize="@dimen/_14ssp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <com.sdei.parentIn.customViews.SemiBoldTextView
+                android:id="@+id/txtTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtClassInfo"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text="@string/parentin_matriculados"
+                android:textColor="@color/colorLightText"
+                android:textSize="@dimen/_10ssp" />
+
+
+            <com.sdei.parentIn.customViews.RegularTextView
+                android:id="@+id/txtMatriculados"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtClassInfo"
+                android:layout_marginStart="@dimen/_2sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:gravity="center"
+                android:textSize="@dimen/_10ssp"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/txtTitle"
+                android:text="90% (18 de 20 niños)" />
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.sdei.parentIn.customViews.SemiBoldTextView
+                android:id="@+id/txtTitle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtTitle"
+                android:textColor="@color/colorLightText"
+                android:text="@string/encuestas_terminadas"
+                android:textSize="@dimen/_10ssp" />
+
+            <com.sdei.parentIn.customViews.RegularTextView
+                android:id="@+id/txtEncuestas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtMatriculados"
+                android:layout_marginStart="@dimen/_2sdp"
+                android:layout_toRightOf="@+id/txtTitle1"
+                android:layout_centerVertical="true"
+                android:textSize="@dimen/_10ssp"
+                android:text="70% (14 de 20 encuestas)" />
+
+
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/btnAddStuManually"
@@ -73,63 +135,13 @@
                 android:textColor="@color/blue"
                 android:textSize="@dimen/_11ssp" />
         </LinearLayout>
-
-        <com.sdei.parentIn.customViews.RegularTextView
-            android:id="@+id/txtMatriculados"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/txtClassInfo"
-            android:layout_marginStart="@dimen/_2sdp"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:gravity="center"
-            android:layout_centerVertical="true"
-            android:layout_toRightOf="@+id/txtTitle"
-            android:text="90% (18 de 20 niños)" />
-
-        <com.sdei.parentIn.customViews.RegularTextView
-            android:id="@+id/txtEncuestas"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/txtMatriculados"
-            android:layout_marginStart="@dimen/_2sdp"
-            android:layout_toRightOf="@+id/txtTitle1"
-            android:layout_marginTop="@dimen/_6sdp"
-           android:layout_centerVertical="true"
-            android:text="70% (14 de 20 encuestas)" />
-
-        <com.sdei.parentIn.customViews.SemiBoldTextView
-            android:id="@+id/txtTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/txtClassInfo"
-            android:layout_marginTop="@dimen/_8sdp"
-            android:text="@string/parentin_matriculados"
-            android:textColor="@color/colorLightText"
-            android:textSize="@dimen/_12ssp" />
-
-        <com.sdei.parentIn.customViews.SemiBoldTextView
-            android:id="@+id/txtClassInfo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/informaci_n_de_la_clase"
-            android:textColor="@color/colorDarkText"
-            android:textSize="@dimen/_14ssp" />
-
-        <com.sdei.parentIn.customViews.SemiBoldTextView
-            android:id="@+id/txtTitle1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/txtTitle"
-            android:text="@string/encuestas_terminadas"
-            android:textSize="@dimen/_12ssp" />
-    </RelativeLayout>
+    </LinearLayout>
 
     <!-- =============== Table header ================= -->
     <LinearLayout
         android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_16sdp"
         android:background="@color/blue"
         android:orientation="horizontal"
         android:padding="@dimen/_10sdp"
@@ -145,9 +157,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
+            android:singleLine="true"
             android:text="@string/estudiante"
             android:textColor="@color/white"
-            android:textSize="@dimen/_11ssp" />
+            android:textSize="@dimen/_10ssp" />
 
         <com.sdei.parentIn.customViews.SemiBoldTextView
             android:layout_width="0dp"
@@ -155,39 +168,52 @@
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
             android:gravity="start"
+            android:singleLine="true"
             android:text="@string/fec_nac"
             android:textColor="@color/white"
-            android:textSize="@dimen/_11ssp" />
+            android:textSize="@dimen/_10ssp" />
 
         <com.sdei.parentIn.customViews.SemiBoldTextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
+            android:singleLine="true"
             android:text="@string/padre"
             android:textColor="@color/white"
-            android:textSize="@dimen/_11ssp" />
+            android:textSize="@dimen/_10ssp" />
 
         <com.sdei.parentIn.customViews.SemiBoldTextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
+            android:singleLine="true"
             android:text="@string/encuesta"
             android:textColor="@color/white"
-            android:textSize="@dimen/_11ssp" />
+            android:textSize="@dimen/_10ssp" />
 
     </LinearLayout>
     <!-- End -->
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvTeacherClass"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:background="@color/grayLight"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/header"/>
+</com.google.android.material.appbar.AppBarLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+  <androidx.core.widget.NestedScrollView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+      <androidx.recyclerview.widget.RecyclerView
+          android:id="@+id/rvTeacherClass"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="@color/grayLight"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/header"/>
+
+  </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

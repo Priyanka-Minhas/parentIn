@@ -93,10 +93,25 @@
 		android:hint="@string/fecha_nacimiento"
 		android:textColorHint="@color/grey"
 		android:textColor="@color/black"
-
 		android:inputType="none"
 		android:focusable="false"
 		android:cursorVisible="false"
+		android:textSize="@dimen/_12ssp" />
+	<EditText
+		android:id="@+id/edtGender"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center_vertical"
+		android:layout_marginTop="@dimen/_12sdp"
+		android:background="@drawable/edit_text_selector"
+		android:cursorVisible="false"
+		android:drawableEnd="@mipmap/ic_dropdown"
+		android:focusable="false"
+		android:textColor="@color/black"
+		android:textColorHint="@color/grey"
+		android:hint="@string/Género"
+		android:inputType="none"
+		android:padding="@dimen/_12sdp"
 		android:textSize="@dimen/_12ssp" />
 
 
