@@ -3,14 +3,15 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/_16sdp"
+    android:layout_marginStart="@dimen/_16sdp"
+    android:layout_marginEnd="@dimen/_16sdp"
+    android:paddingTop="@dimen/_10ssp"
     android:background="@color/colorAccent">
         <ImageView
             android:id="@+id/imgChild"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/img_mtra_purpl"
-            android:layout_marginTop="@dimen/_12sdp"/>
+            android:background="@drawable/img_mtra_purpl"/>
 
         <com.sdei.parentIn.customViews.MediumTextView
             android:id="@+id/txtChildName"
@@ -20,7 +21,7 @@
             android:textSize="@dimen/_12ssp"
             android:textColor="@color/colorTabNormalText"
             android:layout_marginStart="@dimen/_10sdp"
-            android:layout_marginTop="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_3sdp"
             android:text="Gonzalo Pontevedra" />
         <ImageView
             android:id="@+id/imgAttach"
@@ -46,18 +47,18 @@
             android:id="@+id/txtMsgDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_16sdp"
             android:layout_alignParentEnd="true"
             android:textColor="@color/colorPrimary"
             android:textSize="@dimen/_9ssp"
             android:layout_marginEnd="@dimen/_5sdp"
             android:text="9/06/19"/>
+
         <com.sdei.parentIn.customViews.MediumTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/imgChild"
             android:layout_marginTop="@dimen/_6sdp"
-            android:textSize="@dimen/_8ssp"
+            android:textSize="@dimen/_7ssp"
             android:gravity="center"
             android:textColor="@color/colorTabNormalText"
             android:layout_toLeftOf="@+id/btnResponder"
@@ -71,10 +72,11 @@
             android:layout_toRightOf="@+id/imgChild"
             android:textSize="@dimen/_8ssp"
             android:text="@string/responder"
+            android:foreground="?selectableItemBackground"
             android:paddingStart="@dimen/_10sdp"
             android:paddingRight="@dimen/_10sdp"
-            android:paddingTop="@dimen/_1sdp"
-            android:paddingBottom="@dimen/_1sdp"
+            android:paddingTop="@dimen/_2sdp"
+            android:paddingBottom="@dimen/_2sdp"
             android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_8sdp"
             android:background="@drawable/style_purpul_ovel"/>

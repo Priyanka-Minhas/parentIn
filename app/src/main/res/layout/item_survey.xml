@@ -105,7 +105,7 @@
 				android:textSize="@dimen/_13ssp"
 				android:textAllCaps="true"
 				android:textColor="@color/colorPurpul"
-				android:text="¿POR CUANTO TIEMPO HAS ESTADO YENDO A ESTE CENTRO?" />
+				android:text="" />
 
 			<!-- ==========Option question========== -->
 
