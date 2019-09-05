@@ -20,7 +20,7 @@ class EditChildRepository {
         returnValue(RoomDb.getInstance(application).getDao().fetchSchoolList() as ArrayList<SchoolModel.DataBean>)
     }
 
-    // make call to get school list
+    // make call to get school mDialoglist
     fun getTeacherList(schoolId: String, returnValue: (TeacherModel) -> Unit) {
         RetrofitClient.instance!!.teacherListBySchool(schoolId).enqueue(object : Callback<TeacherModel> {
             override fun onFailure(call: Call<TeacherModel>, t: Throwable) {

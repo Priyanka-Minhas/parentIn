@@ -61,7 +61,7 @@ class SurveySelectSchoolActivity : BaseActivity<SurveySelectSchoolViewModel>(), 
                         getString(R.string.select_school),
                         InterfacesCall.Callback { pos ->
                             edtSelectSchool.setText(mSchoolList[pos].schoolName)
-                            txtChildName.text = mSchoolList[pos].firstName + " " + mSchoolList[pos].lastName
+                            txtName.text = mSchoolList[pos].firstName + " " + mSchoolList[pos].lastName
                             childId = mSchoolList[pos]._id.toString()
                         }).show()
             }

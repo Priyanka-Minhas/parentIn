@@ -34,7 +34,7 @@ class TeacherRegisterActivity : BaseActivity<TeacherRegisterViewModel>(), View.O
     override fun onCreate() {
 
 
-        // get school list
+        // get school mDialoglist
         mViewModel!!.getSchoolList().observe(this,
                 Observer<ArrayList<SchoolModel.DataBean>> { mData ->
                     mSchoolList.addAll(mData)

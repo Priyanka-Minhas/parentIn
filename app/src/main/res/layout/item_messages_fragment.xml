@@ -15,7 +15,7 @@
             android:background="@drawable/img_mtra_purpl"/>
 
         <com.sdei.parentIn.customViews.MediumTextView
-            android:id="@+id/txtChildName"
+            android:id="@+id/txtName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/txtShortName"
@@ -29,15 +29,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/ic_attach"
-            android:layout_below="@+id/txtChildName"
+            android:layout_below="@+id/txtName"
             android:layout_marginStart="@dimen/_10sdp"
             android:layout_toRightOf="@+id/txtShortName"/>
 
         <com.sdei.parentIn.customViews.RegularTextView
-            android:id="@+id/txtChildDob"
+            android:id="@+id/txtshortmsg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/txtChildName"
+            android:layout_below="@+id/txtName"
             android:layout_toRightOf="@+id/imgAttach"
             android:textColor="@color/colorGrayDark"
             android:layout_marginStart="@dimen/_8sdp"

@@ -61,8 +61,8 @@ class ChildrenAdapter(var context: Context, var mData: ArrayList<ChildModel.Data
     inner class ChildrenViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var rvMain = itemView.rvMain
         var llSendMessage = itemView.llSendMessage
-        var txtChildName = itemView.txtChildName
-        var txtChildDob = itemView.txtChildDob
+        var txtChildName = itemView.txtName
+        var txtChildDob = itemView.txtshortmsg
         var txtSchool = itemView.txtSchool
         var txtTeacher = itemView.txtTeacher
         var imgEditChild = itemView.imgEditChild

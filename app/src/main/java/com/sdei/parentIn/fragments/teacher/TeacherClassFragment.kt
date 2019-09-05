@@ -24,7 +24,7 @@ import com.wajahatkarim3.easyvalidation.core.view_ktx.validEmail
 import kotlinx.android.synthetic.main.fragment_teacher_class.*
 
 /**
- * Fragment to show class list
+ * Fragment to show class mDialoglist
  */
 class TeacherClassFragment : BaseFragment<TeacherClassViewModel>(), View.OnClickListener {
     private val WRITE_EXTERNAL_STORAGE_REQUEST_CODE = 54654

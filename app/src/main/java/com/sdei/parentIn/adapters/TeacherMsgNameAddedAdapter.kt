@@ -41,7 +41,7 @@ class TeacherMsgNameAddedAdapter(var context: Context, var mData: ArrayList<Clas
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var txtChildName = itemView.txtChildName
+        var txtChildName = itemView.txtName
         var txtParentName = itemView.txtParentName
         var imgDelete = itemView.imgDelete
         var txtShortName = itemView.txtShortName

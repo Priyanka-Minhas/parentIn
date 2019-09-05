@@ -7,18 +7,19 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.sdei.parentIn.R
 import com.sdei.parentIn.activities.SurveySelectSchoolActivity
 import com.sdei.parentIn.activities.parent.NewParentMessageActivity
-import com.sdei.parentIn.adapters.ParentMessagesAdapter
-import com.sdei.parentIn.adapters.ParentMessagesAdapter.Callback
+import com.sdei.parentIn.adapters.MessagesDialogAdapter
+import com.sdei.parentIn.adapters.MessagesDialogAdapter.Callback
 import com.sdei.parentIn.dialog.MessageReplyDialog
 import com.sdei.parentIn.fragments.BaseFragment
+import com.sdei.parentIn.model.MessagesModel
 import com.sdei.parentIn.utils.connectedToInternet
 import com.sdei.parentIn.viewModel.BaseViewModel
 import kotlinx.android.synthetic.main.fragment_parent_messages.*
 
 class ParentMessagesFragment : BaseFragment<BaseViewModel>(){
 
-    var list = arrayListOf<String>("Khem","Subham","C","D")
-    lateinit var parentMsgAdapter : ParentMessagesAdapter
+    var mDialoglist = arrayListOf<MessagesModel.DataBean>()
+
     var messageReplyDialog : MessageReplyDialog? = null
     override val layoutId: Int
         get() = R.layout.fragment_parent_messages
@@ -39,17 +40,12 @@ class ParentMessagesFragment : BaseFragment<BaseViewModel>(){
             startActivity(intent)
         }
 
-        /*if (getAppPref().getInt(InterConst.ROLE_ID) == InterConst.ROLE_TEACHER) {
-            cvSurvay.visibility = View.GONE
-        }*/
-
-        // set adapter
         setParentMessageAdapter()
     }
 
     private fun setParentMessageAdapter() {
         rvParentMessages.layoutManager = LinearLayoutManager(mContext)
-        rvParentMessages.adapter = ParentMessagesAdapter(mContext,list,object:Callback{
+        rvParentMessages.adapter = MessagesDialogAdapter(mContext,mDialoglist,object:Callback{
             override fun getIndex(pos: Int) {
              messageReplyDialog = MessageReplyDialog(mContext,R.style.pullBottomfromTop,R.layout.dialog_reply_message)
              messageReplyDialog!!.show()

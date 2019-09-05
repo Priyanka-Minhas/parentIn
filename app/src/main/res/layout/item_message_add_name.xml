@@ -34,7 +34,7 @@
 		android:gravity="center_vertical">
 
 		<com.sdei.parentIn.customViews.MediumTextView
-			android:id="@+id/txtChildName"
+			android:id="@+id/txtName"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:text="Gonzalo Pontevedra"

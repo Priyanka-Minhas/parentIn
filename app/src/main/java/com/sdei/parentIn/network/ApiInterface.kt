@@ -23,7 +23,7 @@ interface ApiInterface {
     fun register(@Body userModel: UserModel.DataBeanRequest): Call<UserModel>
 
     // Get School List
-    @GET("school/list")
+    @GET("school/mDialoglist")
     fun getSchoolList(): Call<SchoolModel>
 
     // Get child List
@@ -42,7 +42,7 @@ interface ApiInterface {
     fun addChildbyParent(@Body child: ChildModel.DataBeanRequest
     ): Call<BaseModel>
 
-    // get class list by teacher
+    // get class mDialoglist by teacher
     @FormUrlEncoded
     @POST("/student/listChildbyTeacher")
     fun getClassByTeacher(@Field("_id") id: String): Call<ClassModel>
@@ -58,24 +58,30 @@ interface ApiInterface {
 
     @FormUrlEncoded
     @POST("/student/getSchoolListforSurvey")
-    fun getSchoolListforSurvey(@Field("_id") _id: String):Call<SurveySchoolModel>
+    fun getSchoolListforSurvey(@Field("_id") _id: String): Call<SurveySchoolModel>
 
     @POST("/survey/saveSurvey")
     fun saveSurvey(@Body child: SurveysModel.DataBeanRequest): Call<BaseModel>
 
     @FormUrlEncoded
     @POST("/student/listChildbyTeacherCSV")
-    fun getCSVFile(@Field("_id") _id: String):Call<ExportCsvModel>
+    fun getCSVFile(@Field("_id") _id: String): Call<ExportCsvModel>
+
+
+    @FormUrlEncoded
+    @POST("/message/list")
+    fun getMessageList(@Field("_id") _id: String,
+                       @Field("isfilter") isfilter: Boolean): Call<MessagesModel>
 
 
     @Multipart
     @POST("/message/create")
     fun createMessage(attachment: MultipartBody.Part,
-            @Part("to") to: List<RequestBody>,
-            @Part("toName") toName: List<RequestBody>,
-            @Part("from") from: RequestBody,
-            @Part("fromName") fromName: RequestBody,
-            @Part("message") message: RequestBody
+                      @Part("to") to: List<RequestBody>,
+                      @Part("toName") toName: List<RequestBody>,
+                      @Part("from") from: RequestBody,
+                      @Part("fromName") fromName: RequestBody,
+                      @Part("message") message: RequestBody
     ): Call<MessagesModel>
 
 //    @FormUrlEncoded

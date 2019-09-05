@@ -43,7 +43,7 @@
 			   android:background="@drawable/bg_round_yellow" />
 
         <com.sdei.parentIn.customViews.MediumTextView
-            android:id="@+id/txtChildName"
+            android:id="@+id/txtName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/txtShortName"
@@ -54,10 +54,10 @@
             android:text="Gonzalo Pontevedra" />
 
         <com.sdei.parentIn.customViews.MediumTextView
-            android:id="@+id/txtChildDob"
+            android:id="@+id/txtshortmsg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/txtChildName"
+            android:layout_below="@+id/txtName"
             android:layout_toRightOf="@+id/txtShortName"
             android:textColor="@color/colorTabNormalText"
             android:layout_marginStart="@dimen/_12ssp"
