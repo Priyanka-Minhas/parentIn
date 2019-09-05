@@ -205,4 +205,9 @@
     <string name="cerrar_sesi_n">Sign off</string>
     <string name="informacion_del_padre_o_tutor">Parent or Guardian Information</string>
 
+    <string name="responder_aqu">Responder aquí…</string>
+    <string name="search">Search…</string>
+    <string name="select_name">SELECT NAME</string>
+    <string name="no_result">NO RESULT</string>
+
 </resources>

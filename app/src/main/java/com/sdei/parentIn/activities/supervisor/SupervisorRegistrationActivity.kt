@@ -9,7 +9,6 @@ import com.sdei.parentIn.dialog.OptionListDialog
 import com.sdei.parentIn.interfaces.InterfacesCall
 import com.sdei.parentIn.utils.connectedToInternet
 import com.sdei.parentIn.utils.getGender
-import com.sdei.parentIn.utils.getOrganization
 import com.sdei.parentIn.utils.showAlertSnackBar
 import com.sdei.parentIn.viewModel.BaseViewModel
 import com.wajahatkarim3.easyvalidation.core.view_ktx.validEmail
