@@ -15,7 +15,7 @@
 	<string name="errorEnterConfPass">Por favor ingrese confirmar contraseña</string>
 	<string name="errorConfirmPassword">Las contraseñas no coinciden</string>
 	<string name="errorAddress">Por favor ingrese su dirección</string>
-	<string name="errorGender"> Por favor seleccione el género</string>
+	<string name="errorGender"> Por favor seleccione el sexo</string>
 	<string name="errorRelationship">Por favor seleccione relación con el niño</string>
 	<string name="errorIdentification">Por favor, introduzca el número de identificación</string>
 	<string name="errorStudentAddress">Por favor confirme la dirección del estudiante</string>
@@ -27,10 +27,11 @@
 	<string name="errorTeacher">Por favor ingrese el maestro de su hijo</string>
 	<string name="errorChildFirstName">Por favor ingrese el nombre de su hijo</string>
 	<string name="errorChildLastName">Por favor ingrese el apellido de su hijo</string>
-	<string name="errorChildGender">Por favor ingrese el género de su hijo</string>
+	<string name="errorChildGender">Por favor ingrese el sexo de su hijo</string>
 	<string name="errorChildIdentification">Por favor, introduzca la tarjeta de identificación no. de tu hijo</string>
 	<string name="errorPhone">Por favor ingrese el número de teléfono</string>
-
+	<string name="errorOrganization">Por favor ingrese la organización</string>
+	<string name="errorTitle">Por favor ingrese el título</string>
 
 	<!--COMMON-->
 	<string name="select_gender">SELECCIONE Sexo</string>
@@ -190,6 +191,25 @@
 	<string name="search">Buscar…</string>
 	<string name="select_name">SELECCIONE NOMBRE</string>
 	<string name="no_result">SIN RESULTADOS</string>
+
+	<!-- Supervisor Signup -->
+	<string name="nueva_cuenta">Nueva Cuenta</string>
+	<string name="informaci_n_del_supervisor">Información del Supervisor</string>
+	<string name="ingresa_tu_informaci_n_b_sica_para_crear_tu_nueva_cuenta">Ingresa tu información básica para \ncrear tu nueva cuenta</string>
+	<string name="organizaci_n">Organización</string>
+	<string name="correo_electr_nico">Correo Electrónico</string>
+	<string name="confirma_el_correo_electr_nico">Confirma el correo electrónico</string>
+	<string name="permiso">¿Está interesado en ver los datos o desea solicitar permiso para enviar mensajes a los usuarios?</string>
+	<string name="desea_solicitar_permiso_para_enviar_nuevas_encuestas_a_usuarios">¿Desea solicitar permiso para enviar nuevas encuestas a usuarios?</string>
+	<string name="t_tulo">Título</string>
+	<!-- setting -->
+	<string name="ajustes">Ajustes</string>
+	<string name="aqu_puedes_ver_la_informacion_o_editarla_cerrar_o_eliminar_la_sesi_n">Aquí puedes ver la informacion o editarla,\ncerrar o eliminar la sesión.</string>
+	<string name="selecciona_una_opci_n">Selecciona una opción</string>
+	<string name="informacion_del_maestro">Informacion del Maestro</string>
+	<string name="ayuda_y_soporte">Ayuda y soporte</string>
+	<string name="cerrar_sesi_n">Cerrar Sesión</string>
+	<string name="informacion_del_padre_o_tutor">Informacion del Padre o tutor</string>
 
 
 </resources>

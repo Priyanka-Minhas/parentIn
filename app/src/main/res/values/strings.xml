@@ -15,7 +15,7 @@
     <string name="errorEnterConfPass">Please enter confirm password</string>
     <string name="errorConfirmPassword">Password not match</string>
     <string name="errorAddress">Please enter your Address</string>
-    <string name="errorGender"> Please select Gender</string>
+    <string name="errorGender"> Please select Sex</string>
     <string name="errorRelationship">Please select relationship with child</string>
     <string name="errorIdentification">Please enter Identification card no.</string>
     <string name="errorStudentAddress">Please confirm student address </string>
@@ -27,10 +27,11 @@
     <string name="errorTeacher">Please enter teacher of your child</string>
     <string name="errorChildFirstName">Please enter first name of your child</string>
     <string name="errorChildLastName">Please enter last name of your child</string>
-    <string name="errorChildGender">Please enter gender of your child</string>
+    <string name="errorChildGender">Please enter sex of your child</string>
     <string name="errorChildIdentification">Please enter Identification card no. of your child</string>
     <string name="errorPhone">Please enter phone number</string>
-
+    <string name="errorOrganization">Please enter organization</string>
+    <string name="errorTitle">Please enter title</string>
 
     <!--COMMON-->
     <string name="select_gender">SELECT SEX</string>
@@ -179,15 +180,29 @@
     <string name="adjuntar_archivo">Attach file</string>
     <string name="mensajes">Messages</string>
     <string name="escribe_un_nuevo_mensaje_aqu">Write a new message here….</string>
-    <!-- Supervisor -->
-
+    <!-- Supervisor Login-->
     <string name="in">In</string>
     <string name="familias">Familias</string>
     <string name="olvidaste_la_contrase_a">Forgot password?</string>
     <string name="a_n_no_tienes_cuenta">You don\'t have an account yet?</string>
     <string name="registrate_aqu">sign up here</string>
-    <string name="responder_aqu">Responder aquí…</string>
-	<string name="search">Search…</string>
-	<string name="select_name">SELECT NAME</string>
-	<string name="no_result">NO RESULT</string>
+    <!-- Supervisor Signup -->
+    <string name="nueva_cuenta">New account</string>
+    <string name="informaci_n_del_supervisor">Supervisor Information</string>
+    <string name="ingresa_tu_informaci_n_b_sica_para_crear_tu_nueva_cuenta">Enter your basic information to \ncreate your new account</string>
+    <string name="organizaci_n">Organization</string>
+    <string name="correo_electr_nico">Email</string>
+    <string name="confirma_el_correo_electr_nico">Confirm Email</string>
+    <string name="permiso">Are you interested in viewing the data or do you want to request permission to send messages to users?</string>
+    <string name="desea_solicitar_permiso_para_enviar_nuevas_encuestas_a_usuarios">Do you want to request permission to send new user surveys?</string>
+    <string name="t_tulo">Title</string>
+    <!-- setting -->
+    <string name="ajustes">Settings</string>
+    <string name="aqu_puedes_ver_la_informacion_o_editarla_cerrar_o_eliminar_la_sesi_n">Here you can see the information or edit it, \nclose or delete the session.</string>
+    <string name="selecciona_una_opci_n">Select an option</string>
+    <string name="informacion_del_maestro">Teacher Information</string>
+    <string name="ayuda_y_soporte">Help and Support</string>
+    <string name="cerrar_sesi_n">Sign off</string>
+    <string name="informacion_del_padre_o_tutor">Parent or Guardian Information</string>
+
 </resources>

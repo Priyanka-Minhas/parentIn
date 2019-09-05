@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="com.sdei.parentIn.activities.supervisor.SupervisorRegistrationActivity">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/stroke_toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:foreground="?selectableItemBackground"
+            android:padding="@dimen/_12sdp"
+            android:src="@mipmap/ic_back_arrow" />
+
+        <com.sdei.parentIn.customViews.SemiBoldTextView
+            android:id="@+id/txtTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:padding="@dimen/_12sdp"
+            android:text="@string/nueva_cuenta"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp" />
+
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout6">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_12sdp">
+            <com.sdei.parentIn.customViews.SemiBoldTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:textSize="@dimen/_14ssp"
+                android:textColor="@color/colorPurpul"
+                android:textAllCaps="true"
+                android:text="@string/informaci_n_del_supervisor"/>
+            <com.sdei.parentIn.customViews.RegularTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:textSize="@dimen/_11ssp"
+                android:textColor="@color/colorLightText"
+                android:text="@string/ingresa_tu_informaci_n_b_sica_para_crear_tu_nueva_cuenta"/>
+
+            <EditText
+                android:id="@+id/edtSupFirstName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:background="@drawable/edit_text_selector"
+                android:drawablePadding="@dimen/_5sdp"
+                android:hint="@string/primer_nombre"
+                android:imeOptions="actionNext"
+                android:padding="@dimen/_12sdp"
+                android:singleLine="true"
+                android:textSize="@dimen/_12ssp" />
+
+            <EditText
+                android:id="@+id/edtSupLastName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/edit_text_selector"
+                android:drawablePadding="@dimen/_5sdp"
+                android:hint="@string/Apellido"
+                android:imeOptions="actionNext"
+                android:padding="@dimen/_12sdp"
+                android:singleLine="true"
+                android:textSize="@dimen/_12ssp" />
+
+            <EditText
+                android:id="@+id/edtSupGender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/edit_text_selector"
+                android:cursorVisible="false"
+                android:drawableEnd="@mipmap/ic_dropdown"
+                android:focusable="false"
+                android:hint="@string/Género"
+                android:inputType="none"
+                android:padding="@dimen/_12sdp"
+                android:textSize="@dimen/_12ssp" />
+            <EditText
+                android:id="@+id/edtSupIdCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/edit_text_selector"
+                android:drawablePadding="@dimen/_5sdp"
+                android:hint="@string/Cédula"
+                android:imeOptions="actionNext"
+                android:padding="@dimen/_12sdp"
+                android:singleLine="true"
+                android:inputType="number"
+                android:maxLength="8"
+                android:textSize="@dimen/_12ssp" />
+            <EditText
+                android:id="@+id/edtSupOrganization"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/edit_text_selector"
+                android:hint="@string/organizaci_n"
+                android:inputType="none"
+                android:padding="@dimen/_12sdp"
+                android:textSize="@dimen/_12ssp" />
+            <EditText
+                android:id="@+id/edtSupTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/edit_text_selector"
+                android:drawablePadding="@dimen/_5sdp"
+                android:hint="@string/t_tulo"
+                android:imeOptions="actionNext"
+                android:padding="@dimen/_12sdp"
+                android:singleLine="true"
+                android:textSize="@dimen/_12ssp" />
+            <EditText
+                android:id="@+id/edtSupEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/edit_text_selector"
+                android:drawablePadding="@dimen/_5sdp"
+                android:hint="@string/correo_electr_nico"
+                android:imeOptions="actionNext"
+                android:padding="@dimen/_12sdp"
+                android:inputType="textEmailAddress"
+                android:singleLine="true"
+                android:textSize="@dimen/_12ssp" />
+            <EditText
+                android:id="@+id/edtSupConfEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/edit_text_selector"
+                android:drawablePadding="@dimen/_5sdp"
+                android:hint="@string/confirma_el_correo_electr_nico"
+                android:imeOptions="actionNext"
+                android:padding="@dimen/_12sdp"
+                android:singleLine="true"
+                android:textSize="@dimen/_12ssp" />
+            <EditText
+                android:id="@+id/edtSupPass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/edit_text_selector"
+                android:drawablePadding="@dimen/_5sdp"
+                android:hint="@string/Contraseña"
+                android:imeOptions="actionNext"
+                android:padding="@dimen/_12sdp"
+                android:singleLine="true"
+                android:inputType="textPassword"
+                android:textSize="@dimen/_12ssp" />
+            <EditText
+                android:id="@+id/edtSupConfPass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:background="@drawable/edit_text_selector"
+                android:drawablePadding="@dimen/_5sdp"
+                android:hint="@string/Confirmar_contraseña"
+                android:imeOptions="actionDone"
+                android:padding="@dimen/_12sdp"
+                android:singleLine="true"
+                android:inputType="textPassword"
+                android:textSize="@dimen/_12ssp" />
+            <com.sdei.parentIn.customViews.RegularTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textSize="@dimen/_11ssp"
+                android:textColor="@color/colorLightText"
+                android:text="@string/permiso"/>
+
+            <RadioGroup
+                android:id="@+id/rgSupYesNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rbYes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/rb_selector"
+                    android:checked="true"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:paddingStart="@dimen/_8sdp"
+                    android:text="@string/Si" />
+
+                <RadioButton
+                    android:id="@+id/rbNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:button="@drawable/rb_selector"
+                    android:paddingStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:text="@string/No" />
+
+            </RadioGroup>
+
+
+            <com.sdei.parentIn.customViews.RegularTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:textSize="@dimen/_11ssp"
+                android:textColor="@color/colorLightText"
+                android:text="@string/desea_solicitar_permiso_para_enviar_nuevas_encuestas_a_usuarios"/>
+
+            <RadioGroup
+                android:id="@+id/rgSupSurveyYesNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rbSurveyYes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/rb_selector"
+                    android:checked="true"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:paddingStart="@dimen/_8sdp"
+                    android:text="@string/Si" />
+
+                <RadioButton
+                    android:id="@+id/rbSurveyNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:button="@drawable/rb_selector"
+                    android:paddingStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:text="@string/No" />
+
+            </RadioGroup>
+
+            <com.sdei.parentIn.customViews.SemiBoldTextView
+                android:id="@+id/btnSupCreateAccount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:background="@drawable/bg_primary_round"
+                android:drawableEnd="@mipmap/ic_arrow"
+                android:foreground="?selectableItemBackground"
+                android:gravity="center"
+                android:padding="@dimen/_12sdp"
+                android:text="@string/Crear_cuenta"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12ssp" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

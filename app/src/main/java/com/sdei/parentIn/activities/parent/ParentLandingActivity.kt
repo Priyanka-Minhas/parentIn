@@ -5,7 +5,7 @@ import android.content.Intent
 import androidx.lifecycle.ViewModelProviders
 import com.sdei.parentIn.R
 import com.sdei.parentIn.activities.BaseActivity
-import com.sdei.parentIn.activities.SettingActivity
+import com.sdei.parentIn.activities.SettingsActivity
 import com.sdei.parentIn.adapters.ViewPagerAdapter
 import com.sdei.parentIn.fragments.parent.ParentChildrenFragment
 import com.sdei.parentIn.fragments.parent.ParentMessagesFragment
@@ -27,7 +27,7 @@ class ParentLandingActivity : BaseActivity<BaseViewModel>() {
         setUpViewPager()
         tabs.setupWithViewPager(viewPager)
         imgSetting.setOnClickListener {
-            val intent = Intent(context, SettingActivity::class.java)
+            val intent = Intent(context, SettingsActivity::class.java)
             startActivity(intent)
         }
     }

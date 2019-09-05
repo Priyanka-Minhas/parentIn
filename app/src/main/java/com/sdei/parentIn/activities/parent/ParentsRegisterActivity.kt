@@ -77,31 +77,31 @@ class ParentsRegisterActivity : BaseActivity<BaseViewModel>(), View.OnClickListe
             }
 
             R.id.btnFollow -> {
-                if (!edtFirstName.nonEmpty()) {
+                if (edtFirstName.text.trim().toString().isEmpty()) {
                     showAlertSnackBar(btnFollow, getString(R.string.errorFirstName))
-                } else if (!edtLastName.nonEmpty()) {
+                } else if (edtLastName.text.trim().toString().isEmpty()) {
                     showAlertSnackBar(btnFollow, getString(R.string.errorLastName))
-                } else if (!edtEmail.nonEmpty()) {
+                } else if (edtEmail.text.trim().toString().isEmpty()) {
                     showAlertSnackBar(btnFollow, getString(R.string.errorEmail))
                 } else if (!edtEmail.validEmail()) {
                     showAlertSnackBar(btnFollow, getString(R.string.errorValidEmail))
-                } else if (!edtPassword.nonEmpty()) {
+                } else if (edtPassword.text.trim().toString().isEmpty()) {
                     showAlertSnackBar(btnFollow, getString(R.string.errorValidPassword))
-                } else if (!edtConfPassword.nonEmpty()) {
+                } else if (edtConfPassword.text.trim().toString().isEmpty()) {
                     showAlertSnackBar(btnFollow, getString(R.string.errorEnterConfPass))
                 } else if (edtConfPassword.text.toString() != edtPassword.text.toString()) {
                     showAlertSnackBar(btnFollow, getString(R.string.errorConfirmPassword))
-                } else if (!edtAddress.nonEmpty()) {
+                } else if (edtAddress.text.trim().toString().isEmpty()) {
                     showAlertSnackBar(btnFollow, getString(R.string.errorAddress))
-                } else if (!edtGender.nonEmpty()) {
+                } else if (edtGender.text.trim().toString().isEmpty()) {
                     showAlertSnackBar(btnFollow, getString(R.string.errorGender))
-                } else if (!edtRelationshipChild.nonEmpty()) {
+                } else if (edtRelationshipChild.text.trim().toString().isEmpty()) {
                     showAlertSnackBar(btnFollow, getString(R.string.errorRelationship))
-                } else if (!edtId.nonEmpty()) {
+                } else if (edtId.text.trim().toString().isEmpty()) {
                     showAlertSnackBar(btnFollow, getString(R.string.errorIdentification))
-                }  else if (!edtLevelOfEducation.nonEmpty()) {
+                }  else if (edtLevelOfEducation.text.trim().toString().isEmpty()) {
                     showAlertSnackBar(btnFollow, getString(R.string.errorLevelOfEducation))
-                } else if (!edtNoOfStudent.nonEmpty()) {
+                } else if (edtNoOfStudent.text.trim().toString().isEmpty()) {
                     showAlertSnackBar(btnFollow, getString(R.string.errorNoOfSchools))
                 } else {
                     sendDataToNext()

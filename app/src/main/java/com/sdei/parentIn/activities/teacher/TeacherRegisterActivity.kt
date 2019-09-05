@@ -62,29 +62,29 @@ class TeacherRegisterActivity : BaseActivity<TeacherRegisterViewModel>(), View.O
     override fun onClick(view: View?) {
         when (view!!.id) {
             R.id.btnCreateAccount -> {
-                if (!edtFirstName.nonEmpty()) {
+                if (edtFirstName.text.toString().isEmpty()) {
                     showAlertSnackBar(btnCreateAccount, getString(R.string.errorFirstName))
-                } else if (!edtLastName.nonEmpty()) {
+                } else if (edtLastName.text.toString().isEmpty()) {
                     showAlertSnackBar(btnCreateAccount, getString(R.string.errorLastName))
-                } else if (!edtGender.nonEmpty()) {
+                } else if (edtGender.text.toString().isEmpty()) {
                     showAlertSnackBar(btnCreateAccount, getString(R.string.errorGender))
-                } else if (!edtId.nonEmpty()) {
+                } else if (edtId.text.toString().isEmpty()) {
                     showAlertSnackBar(btnCreateAccount, getString(R.string.errorIdentification))
-                } else if (!edtSchool.nonEmpty()) {
+                } else if (edtSchool.text.toString().isEmpty()) {
                     showAlertSnackBar(btnCreateAccount, getString(R.string.errorSchool))
-                } else if (!edtNumberOfStu.nonEmpty()) {
+                } else if (edtNumberOfStu.text.toString().isEmpty()) {
                     showAlertSnackBar(btnCreateAccount, getString(R.string.errorNoOfSchools))
-                } else if (!edtLevelOfEducation.nonEmpty()) {
+                } else if (edtLevelOfEducation.text.toString().isEmpty()) {
                     showAlertSnackBar(btnCreateAccount, getString(R.string.errorLevelOfEducation))
-                } else if (!edtEmail.nonEmpty()) {
+                } else if (edtEmail.text.toString().isEmpty()) {
                     showAlertSnackBar(btnCreateAccount, getString(R.string.errorEmail))
                 } else if (!edtEmail.validEmail()) {
                     showAlertSnackBar(btnCreateAccount, getString(R.string.errorValidEmail))
                 } else if (!edtConfMail.text.toString().equals(edtEmail.text.toString())) {
                     showAlertSnackBar(btnCreateAccount, getString(R.string.errorConfEmail))
-                } else if (!edtPassword.nonEmpty()) {
+                } else if (edtPassword.text.toString().isEmpty()) {
                     showAlertSnackBar(btnCreateAccount, getString(R.string.errorValidPassword))
-                } else if (!edtConfPassword.nonEmpty()) {
+                } else if (edtConfPassword.text.toString().isEmpty()) {
                     showAlertSnackBar(btnCreateAccount, getString(R.string.errorConfirmPassword))
                 } else if (!edtPassword.text.toString().equals(edtConfPassword.text.toString())) {
                     showAlertSnackBar(btnCreateAccount, getString(R.string.errorConfirmPassword))
