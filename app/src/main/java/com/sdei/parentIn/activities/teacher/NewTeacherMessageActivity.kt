@@ -15,6 +15,7 @@ import com.sdei.parentIn.viewModel.teacher.NewTeacherMessageViewModel
 import kotlinx.android.synthetic.main.activity_new_message.*
 
 class NewTeacherMessageActivity: BaseActivity<NewTeacherMessageViewModel>(), View.OnClickListener, TeacherMsgNameAddedAdapter.ClickInterface {
+
     override fun deleteChild(pos: Int) {
         mNameList.removeAt(pos)
         setAddNameAdapter()

@@ -210,6 +210,7 @@
 	<string name="ayuda_y_soporte">Ayuda y soporte</string>
 	<string name="cerrar_sesi_n">Cerrar Sesión</string>
 	<string name="informacion_del_padre_o_tutor">Informacion del Padre o tutor</string>
+	<string name="select_all">Seleccionar todo</string>
 
 
 </resources>

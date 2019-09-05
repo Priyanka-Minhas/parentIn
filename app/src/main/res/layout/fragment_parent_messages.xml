@@ -90,7 +90,7 @@
                         android:foreground="?selectableItemBackground"
                         android:gravity="center"
                         android:padding="@dimen/_10sdp"
-                        android:text="comenzar encuesta"
+                        android:text="@string/comenzar_encuesta"
                         android:textAllCaps="true"
                         android:textColor="@color/colorPurpul"
                         android:textSize="@dimen/_13ssp" />

@@ -87,6 +87,7 @@
             android:windowSoftInputMode="adjustPan" />
         <activity android:name=".activities.teacher.NewTeacherMessageActivity" />
 		<activity android:name=".activities.MessageActivity" />
+		<activity android:name=".activities.SettingsActivity" />
 
 		<service
             android:name=".utils.DownloadFileService"

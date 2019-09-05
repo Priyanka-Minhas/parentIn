@@ -15,7 +15,6 @@ import com.sdei.parentIn.model.ChildModel
 import kotlinx.android.synthetic.main.dialog_message_select_name.*
 
 
-
 class ParentMessageSelectNameDialog(context: Context,
                                     themeResId: Int,
                                     private val LayoutId: Int,
@@ -46,45 +45,39 @@ class ParentMessageSelectNameDialog(context: Context,
 
             }
 
-            override fun beforeTextChanged(s: CharSequence, start: Int,count: Int, after: Int) {
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
 
             }
 
-            override fun onTextChanged(s: CharSequence, start: Int,before: Int, count: Int) {
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
                 tempList.clear()
-                if(TextUtils.isEmpty(s.toString())){
+                if (TextUtils.isEmpty(s.toString())) {
                     tempList.addAll(list)
-                }else {
+                } else {
                     for (k in 0 until list.size) {
                         if (list[k].firstName.toUpperCase().startsWith(s.toString().toUpperCase())) {
                             tempList.add(list[k])
                         }
                     }
                 }
-                if(tempList.isEmpty()){
-                    txtNoResult.visibility=View.VISIBLE
-                }else{
-                    txtNoResult.visibility=View.GONE
+                if (tempList.isEmpty()) {
+                    txtNoResult.visibility = View.VISIBLE
+                } else {
+                    txtNoResult.visibility = View.GONE
                 }
 
                 setAdapter()
             }
         })
 
-        txtSelectAll.setOnClickListener {
-            callback.clickIndex(ChildModel.DataBean())
-            dismiss()
-        }
-
+        txtSelectAll.visibility = View.GONE
         setAdapter()
     }
 
     private fun setAdapter() {
-        if (list.isNotEmpty()) {
             recyclerView!!.layoutManager = LinearLayoutManager(context)
             mAdapterParent = ParentMessageAddNameAdapter(context, tempList, indexClick)
             recyclerView!!.adapter = mAdapterParent
-        }
     }
 
     override fun getContentView(): Int {

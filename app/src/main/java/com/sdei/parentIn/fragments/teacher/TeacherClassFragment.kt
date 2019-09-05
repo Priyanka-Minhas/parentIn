@@ -21,7 +21,7 @@ import com.sdei.parentIn.model.ClassModel
 import com.sdei.parentIn.utils.*
 import com.sdei.parentIn.viewModel.teacher.TeacherClassViewModel
 import com.wajahatkarim3.easyvalidation.core.view_ktx.validEmail
-import kotlinx.android.synthetic.main.fragment_class.*
+import kotlinx.android.synthetic.main.fragment_teacher_class.*
 
 /**
  * Fragment to show class list
@@ -47,7 +47,7 @@ class TeacherClassFragment : BaseFragment<TeacherClassViewModel>(), View.OnClick
     var classList = ArrayList<ClassModel.DataBean>()
     lateinit var classAdapter: TeacherClassAdapter
     override val layoutId: Int
-        get() = R.layout.fragment_class
+        get() = R.layout.fragment_teacher_class
     override val viewModel: TeacherClassViewModel
         get() = ViewModelProviders.of(this).get(TeacherClassViewModel::class.java)
 

@@ -84,6 +84,11 @@ class NewParentMessageActivity : BaseActivity<NewParentMessageViewModel>(), View
     }
 
     private fun setAddNameAdapter() {
+        if (mNameList.size >= 1) {
+            imgAdd.visibility = View.GONE
+        }else{
+            imgAdd.visibility = View.VISIBLE
+        }
         rvAddName.layoutManager = LinearLayoutManager(mContext)
         mAddAdapter = ParentMsgNameAddedAdapter(mContext, mNameList, this)
         rvAddName.adapter = mAddAdapter

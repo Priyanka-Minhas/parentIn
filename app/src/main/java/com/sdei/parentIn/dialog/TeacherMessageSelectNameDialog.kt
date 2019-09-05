@@ -45,15 +45,15 @@ class TeacherMessageSelectNameDialog(context: Context,
 
             }
 
-            override fun beforeTextChanged(s: CharSequence, start: Int,count: Int, after: Int) {
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
 
             }
 
-            override fun onTextChanged(s: CharSequence, start: Int,before: Int, count: Int) {
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
                 tempList.clear()
-                if(TextUtils.isEmpty(s.toString())){
+                if (TextUtils.isEmpty(s.toString())) {
                     tempList.addAll(list)
-                }else {
+                } else {
                     for (k in 0 until list.size) {
                         if (list[k].firstName!!.toUpperCase().startsWith(s.toString().toUpperCase())) {
                             tempList.add(list[k])
@@ -61,10 +61,10 @@ class TeacherMessageSelectNameDialog(context: Context,
                     }
                 }
 
-                if(tempList.isEmpty()){
-                    txtNoResult.visibility= View.VISIBLE
-                }else{
-                    txtNoResult.visibility= View.GONE
+                if (tempList.isEmpty()) {
+                    txtNoResult.visibility = View.VISIBLE
+                } else {
+                    txtNoResult.visibility = View.GONE
                 }
                 setAdapter()
             }
@@ -78,11 +78,9 @@ class TeacherMessageSelectNameDialog(context: Context,
     }
 
     private fun setAdapter() {
-        if (list.isNotEmpty()) {
-            recyclerView!!.layoutManager = LinearLayoutManager(context)
-            mAdapterParent = TeacherMessageAddNameAdapter(context, list, indexClick)
-            recyclerView!!.adapter = mAdapterParent
-        }
+        recyclerView!!.layoutManager = LinearLayoutManager(context)
+        mAdapterParent = TeacherMessageAddNameAdapter(context, tempList, indexClick)
+        recyclerView!!.adapter = mAdapterParent
     }
 
     override fun getContentView(): Int {
@@ -90,6 +88,7 @@ class TeacherMessageSelectNameDialog(context: Context,
     }
 
     override fun clickIndex(pos: Int) {
+        dismiss()
         callback.clickIndex(tempList[pos])
         mAdapterParent.notifyDataSetChanged()
     }

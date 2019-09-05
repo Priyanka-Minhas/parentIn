@@ -5,14 +5,12 @@ import android.content.Intent
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sdei.parentIn.R
-import com.sdei.parentIn.activities.SurveySelectSchoolActivity
 import com.sdei.parentIn.activities.teacher.NewTeacherMessageActivity
 import com.sdei.parentIn.adapters.ParentMessagesAdapter
 import com.sdei.parentIn.dialog.MessageReplyDialog
 import com.sdei.parentIn.fragments.BaseFragment
-import com.sdei.parentIn.utils.connectedToInternet
 import com.sdei.parentIn.viewModel.BaseViewModel
-import kotlinx.android.synthetic.main.fragment_parent_messages.*
+import kotlinx.android.synthetic.main.fragment_teacher_messages.*
 
 class TeacherMessageFragment : BaseFragment<BaseViewModel>(){
 
@@ -23,23 +21,16 @@ class TeacherMessageFragment : BaseFragment<BaseViewModel>(){
     var messageReplyDialog : MessageReplyDialog? = null
 
     override val layoutId: Int
-        get() = R.layout.fragment_parent_messages
+        get() = R.layout.fragment_teacher_messages
 
     override val viewModel: BaseViewModel
         get() = ViewModelProviders.of(this).get(BaseViewModel::class.java)
 
     override fun onCreateStuff() {
-        btnForSurvay.setOnClickListener {
-            if (mContext.connectedToInternet(btnForSurvay)) {
-                val intent = Intent(mContext, SurveySelectSchoolActivity::class.java)
-                startActivity(intent)
-            }
-        }
         btnNewMessage.setOnClickListener {
             val intent = Intent(mContext, NewTeacherMessageActivity::class.java)
             startActivity(intent)
         }
-
         setParentMessageAdapter()
     }
 

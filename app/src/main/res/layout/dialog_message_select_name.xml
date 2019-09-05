@@ -47,7 +47,7 @@
 		android:gravity="center"
 		android:textSize="@dimen/_14ssp"
 		android:padding="@dimen/_5sdp"
-		android:text="Select All"
+		android:text="@string/select_all"
 		/>
 
 	<androidx.recyclerview.widget.RecyclerView
