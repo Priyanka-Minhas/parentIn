@@ -3,6 +3,11 @@ package com.sdei.parentIn.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import androidx.annotation.NonNull;
+import androidx.room.Entity;
+import androidx.room.Index;
+import androidx.room.PrimaryKey;
+
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -28,7 +33,8 @@ public class ChildModel extends BaseModel implements Parcelable {
         this.data = data;
     }
 
-
+    @Entity(tableName = "ChildDataBean", indices = {@Index(value = {"_id"},
+            unique = true)})
     public static class DataBean implements Parcelable {
         /**
          * _id : 5d63b4558a53087261a09838
@@ -47,7 +53,8 @@ public class ChildModel extends BaseModel implements Parcelable {
          * parentFirstName : Lucifer
          * parentLastName : Morningstar
          */
-
+        @PrimaryKey
+        @NonNull
         private String _id;
         private String firstName;
         private String lastName;

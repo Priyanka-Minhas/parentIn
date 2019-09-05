@@ -9,14 +9,14 @@ import com.sdei.parentIn.model.ExportCsvModel
 import com.sdei.parentIn.repositories.teacher.TeacherClassRepository
 import com.sdei.parentIn.viewModel.BaseViewModel
 
-class TeacherClassViewModel(application: Application):BaseViewModel(application = application) {
+class TeacherClassViewModel(application: Application) : BaseViewModel(application = application) {
 
     private val mRepository: TeacherClassRepository = TeacherClassRepository()
 
 
     private var mTeacherClassModel: MutableLiveData<ClassModel>? = null
-    private var mAddStudent : MutableLiveData<BaseModel>? = null
-    private var exportCsvLiveData : MutableLiveData<ExportCsvModel>? = null
+    private var mAddStudent: MutableLiveData<BaseModel>? = null
+    private var exportCsvLiveData: MutableLiveData<ExportCsvModel>? = null
 
     fun getClass(): MutableLiveData<ClassModel> {
         if (mTeacherClassModel == null) {
@@ -25,8 +25,8 @@ class TeacherClassViewModel(application: Application):BaseViewModel(application 
         return mTeacherClassModel as MutableLiveData<ClassModel>
     }
 
-    fun hitClassListByTeacherApi(id:String) {
-        mRepository.getClassApi(id) {
+    fun hitClassListByTeacherApi(id: String) {
+        mRepository.getClassApi(id, getApplication()) {
             mTeacherClassModel!!.value = it
         }
     }
@@ -34,17 +34,17 @@ class TeacherClassViewModel(application: Application):BaseViewModel(application 
     // add student
 
     fun sendRedToAddStudent(mData: AddStudentManullyRequest) {
-        mRepository.addStudentApi(mData){
-           mAddStudent!!.value =it
+        mRepository.addStudentApi(mData) {
+            mAddStudent!!.value = it
         }
     }
 
-    fun getAddStudentStatus():MutableLiveData<BaseModel>{
-        if(mAddStudent ==null){
-           mAddStudent = MutableLiveData()
+    fun getAddStudentStatus(): MutableLiveData<BaseModel> {
+        if (mAddStudent == null) {
+            mAddStudent = MutableLiveData()
         }
 
-        return  mAddStudent as MutableLiveData<BaseModel>
+        return mAddStudent as MutableLiveData<BaseModel>
     }
 
     // export csv
@@ -53,11 +53,11 @@ class TeacherClassViewModel(application: Application):BaseViewModel(application 
         if (exportCsvLiveData == null) {
             exportCsvLiveData = MutableLiveData()
             mRepository.reqForCSV(id!!) {
-                exportCsvLiveData!!.value =it
+                exportCsvLiveData!!.value = it
             }
         }
 
-      return  exportCsvLiveData as MutableLiveData<ExportCsvModel>
+        return exportCsvLiveData as MutableLiveData<ExportCsvModel>
     }
 
 }

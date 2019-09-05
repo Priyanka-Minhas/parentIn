@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:layout_marginStart="@dimen/_5sdp"
+	android:layout_marginEnd="@dimen/_5sdp"
+	android:background="@drawable/bg_top_white_round_corners"
+	android:orientation="vertical"
+	android:padding="@dimen/_5sdp">
+
+
+	<com.sdei.parentIn.customViews.SemiBoldTextView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:textColor="@color/black"
+		android:layout_margin="@dimen/_5sdp"
+		android:gravity="center"
+		android:textSize="@dimen/_14ssp"
+		android:padding="@dimen/_5sdp"
+		android:text="@string/select_name"
+		/>
+
+	<EditText
+		android:id="@+id/edtSearch"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="@dimen/_5sdp"
+		android:layout_gravity="center_vertical"
+		android:layout_marginBottom="@dimen/_5sdp"
+		android:background="@drawable/edit_text_selector"
+		android:drawablePadding="@dimen/_5sdp"
+		android:hint="@string/search"
+		android:textColorHint="@color/colorGrayDark"
+		android:textColor="@color/black"
+		android:inputType="text"
+		android:padding="@dimen/_12sdp"
+		android:singleLine="true"
+		android:textSize="@dimen/_12ssp" />
+
+	<com.sdei.parentIn.customViews.SemiBoldTextView
+		android:id="@+id/txtSelectAll"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:foreground="?selectableItemBackground"
+		android:textColor="@color/colorPrimaryDark"
+		android:layout_margin="@dimen/_5sdp"
+		android:gravity="center"
+		android:textSize="@dimen/_14ssp"
+		android:padding="@dimen/_5sdp"
+		android:text="Select All"
+		/>
+
+	<androidx.recyclerview.widget.RecyclerView
+		android:id="@+id/recyclerView"
+		android:layout_margin="@dimen/_5sdp"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent" />
+
+	<com.sdei.parentIn.customViews.SemiBoldTextView
+		android:id="@+id/txtNoResult"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:textColor="@color/black"
+		android:layout_margin="@dimen/_5sdp"
+		android:gravity="center"
+		android:visibility="gone"
+		android:textSize="@dimen/_14ssp"
+		android:padding="@dimen/_5sdp"
+		android:text="@string/no_result"/>
+
+</LinearLayout>

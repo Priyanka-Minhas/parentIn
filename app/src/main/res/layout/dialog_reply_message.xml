@@ -18,7 +18,7 @@
 		android:background="@drawable/style_send_msg_ovel"
 		android:drawableEnd="@drawable/ic_send_msg"
 		android:drawablePadding="@dimen/_5sdp"
-		android:hint="Responder aquí…"
+		android:hint="@string/responder_aqu"
 		android:inputType="textMultiLine"
 		android:isScrollContainer="true"
 		android:overScrollMode="always"

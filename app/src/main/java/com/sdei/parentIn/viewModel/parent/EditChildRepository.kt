@@ -17,7 +17,7 @@ import retrofit2.Response
 class EditChildRepository {
 
     fun getSchoolList(application: Application, returnValue: (ArrayList<SchoolModel.DataBean>) -> Unit) {
-        returnValue(RoomDb.getInstance(application).noteDao().fetchSchoolList() as ArrayList<SchoolModel.DataBean>)
+        returnValue(RoomDb.getInstance(application).getDao().fetchSchoolList() as ArrayList<SchoolModel.DataBean>)
     }
 
     // make call to get school list

@@ -8,8 +8,8 @@ import com.sdei.parentIn.R
 import com.sdei.parentIn.activities.BaseActivity
 import com.sdei.parentIn.activities.SettingsActivity
 import com.sdei.parentIn.adapters.ViewPagerAdapter
-import com.sdei.parentIn.fragments.parent.ParentMessagesFragment
 import com.sdei.parentIn.fragments.teacher.TeacherClassFragment
+import com.sdei.parentIn.fragments.teacher.TeacherMessageFragment
 import com.sdei.parentIn.viewModel.teacher.TeacherClassViewModel
 import kotlinx.android.synthetic.main.activity_parent_landing.*
 
@@ -34,7 +34,7 @@ class TeacherLandingActivity : BaseActivity<TeacherClassViewModel>() {
     private fun setUpViewPager() {
         val adapter = ViewPagerAdapter(supportFragmentManager)
         adapter.addFragment(TeacherClassFragment.newInstance(), getString(R.string.Clase))
-        adapter.addFragment(ParentMessagesFragment.newInstance(), getString(R.string.Mensajes))
+        adapter.addFragment(TeacherMessageFragment.newInstance(), getString(R.string.Mensajes))
         viewPager.adapter = adapter
     }
 

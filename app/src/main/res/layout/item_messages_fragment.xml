@@ -6,9 +6,10 @@
     android:layout_marginStart="@dimen/_16sdp"
     android:layout_marginEnd="@dimen/_16sdp"
     android:paddingTop="@dimen/_10ssp"
+    android:id="@+id/rvMain"
     android:background="@color/colorAccent">
         <ImageView
-            android:id="@+id/imgChild"
+            android:id="@+id/txtShortName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/img_mtra_purpl"/>
@@ -17,7 +18,7 @@
             android:id="@+id/txtChildName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/imgChild"
+            android:layout_toRightOf="@+id/txtShortName"
             android:textSize="@dimen/_12ssp"
             android:textColor="@color/colorTabNormalText"
             android:layout_marginStart="@dimen/_10sdp"
@@ -30,7 +31,7 @@
             android:background="@drawable/ic_attach"
             android:layout_below="@+id/txtChildName"
             android:layout_marginStart="@dimen/_10sdp"
-            android:layout_toRightOf="@+id/imgChild"/>
+            android:layout_toRightOf="@+id/txtShortName"/>
 
         <com.sdei.parentIn.customViews.RegularTextView
             android:id="@+id/txtChildDob"
@@ -56,7 +57,7 @@
         <com.sdei.parentIn.customViews.MediumTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/imgChild"
+            android:layout_below="@+id/txtShortName"
             android:layout_marginTop="@dimen/_6sdp"
             android:textSize="@dimen/_7ssp"
             android:gravity="center"
@@ -69,7 +70,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/imgAttach"
-            android:layout_toRightOf="@+id/imgChild"
+            android:layout_toRightOf="@+id/txtShortName"
             android:textSize="@dimen/_8ssp"
             android:text="@string/responder"
             android:foreground="?selectableItemBackground"

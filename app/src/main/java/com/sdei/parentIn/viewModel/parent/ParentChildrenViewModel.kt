@@ -10,7 +10,6 @@ class ParentChildrenViewModel(application: Application) : BaseViewModel(applicat
 
     private val mRepository: ParentChildrenRepository = ParentChildrenRepository()
 
-
     private var mChildModel: MutableLiveData<ChildModel>? = null
 
     fun getChild(): MutableLiveData<ChildModel> {
@@ -21,7 +20,7 @@ class ParentChildrenViewModel(application: Application) : BaseViewModel(applicat
     }
 
     fun hitChildListApi(id:String) {
-        mRepository.getChildApi(id) {
+        mRepository.getChildApi(id,getApplication()) {
             mChildModel!!.value = it
         }
     }

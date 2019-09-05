@@ -13,34 +13,8 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="n">
-        <activity android:name=".activities.supervisor.SupervisorRegistrationActivity"
-            android:configChanges="layoutDirection|locale"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan"/>
-        <activity android:name=".activities.supervisor.SupervisorLoginActivity"
-            android:configChanges="layoutDirection|locale"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan">
-        </activity>
-        <activity
-            android:name=".activities.MessageActivity"
-            android:configChanges="layoutDirection|locale"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan" />
-        <activity
-            android:name=".activities.NewMessageActivity"
-            android:configChanges="layoutDirection|locale"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan" />
-        <activity android:name=".activities.SettingsActivity"
-            android:configChanges="layoutDirection|locale"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan"/>
+        <activity android:name=".activities.parent.NewParentMessageActivity"></activity>
+        <activity android:name=".activities.SettingActivity" />
         <activity
             android:name=".activities.parent.ParentEditChildActivity"
             android:configChanges="layoutDirection|locale"
@@ -111,8 +85,10 @@
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".activities.teacher.NewTeacherMessageActivity" />
+		<activity android:name=".activities.MessageActivity" />
 
-        <service
+		<service
             android:name=".utils.DownloadFileService"
             android:enabled="true"
             android:exported="false" />
