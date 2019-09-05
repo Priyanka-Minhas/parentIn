@@ -61,7 +61,7 @@ class NewTeacherMessageActivity: BaseActivity<NewTeacherMessageViewModel>(), Vie
                         mClassList,
                         object : TeacherMessageSelectNameDialog.IndexClick {
                             override fun clickIndex(pos: ClassModel.DataBean) {
-                                if (TextUtils.isEmpty(pos.id)) {
+                                if (TextUtils.isEmpty(pos._id)) {
                                     mNameList.clear()
                                     mNameList.addAll(mClassList)
                                 } else {

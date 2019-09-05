@@ -14,12 +14,12 @@ class ClassModel : BaseModel{
         super.message = message
         super.statusCode = statusCode
     }
-    @Entity(tableName = "ClassDataBean", indices = [Index(value = ["id"], unique = true)])
+    @Entity(tableName = "ClassDataBean", indices = [Index(value = ["_id"], unique = true)])
     class DataBean{
 
         @PrimaryKey
         @NonNull
-        var id: String? = null
+        var _id: String? = null
         var firstName: String? = null
         var lastName: String? = null
         var verificationCard: String? = null
