@@ -1,6 +1,8 @@
 package com.sdei.parentIn.network
 
 import com.sdei.parentIn.model.*
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -66,22 +68,15 @@ interface ApiInterface {
     fun getCSVFile(@Field("_id") _id: String):Call<ExportCsvModel>
 
 
-//    @FormUrlEncoded
-//    @POST("/user/register")
-//    fun register(
-//            @Field("firstName") firstName: String,
-//            @Field("lastName") lastName: String,
-//            @Field("phoneNumber") phoneNumber: String,
-//            @Field("relationWithChild") relationWithChild: String,
-//            @Field("homeAddress") homeAddress: String,
-//            @Field("isSameAddressAsStudent") isSameAddressAsStudent: String,
-//            @Field("levelOfEducation") levelOfEducation: String,
-//            @Field("noOfStudents") noOfStudents: String,
-//            @Field("password") password: String,
-//            @Field("roleId") roleId: String,
-//            @Field("child") child: String
-//    ): Call<UserModel>
-//
+    @Multipart
+    @POST("/message/create")
+    fun createMessage(attachment: MultipartBody.Part,
+            @Part("to") to: List<RequestBody>,
+            @Part("toName") toName: List<RequestBody>,
+            @Part("from") from: RequestBody,
+            @Part("fromName") fromName: RequestBody,
+            @Part("message") message: RequestBody
+    ): Call<MessagesModel>
 
 //    @FormUrlEncoded
 //    @POST("users/authenticate")

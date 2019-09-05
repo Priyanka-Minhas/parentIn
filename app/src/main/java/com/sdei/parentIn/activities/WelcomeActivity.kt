@@ -21,7 +21,7 @@ import kotlinx.android.synthetic.main.activity_welcome.*
 
 class WelcomeActivity : BaseActivity<WelcomeViewModel>(), View.OnClickListener {
     override fun onClick(v: View?) {
-        if(connectedToInternet(cdParent)) {
+        if (connectedToInternet(cdParent)) {
             when (v!!.id) {
                 R.id.cdParent -> {
                     getStudentList(cdParent)
@@ -44,8 +44,8 @@ class WelcomeActivity : BaseActivity<WelcomeViewModel>(), View.OnClickListener {
                     startActivity(intent)
                 }
 
-                R.id.cvSupervisor ->{
-                     getStudentList(cvSupervisor)
+                R.id.cvSupervisor -> {
+                    getStudentList(cvSupervisor)
                     getAppPref().setInt(InterConst.ROLE_ID, InterConst.ROLE_SUPERVISOR)
                     val intent = Intent(mContext, SupervisorLoginActivity::class.java)
                     startActivity(intent)
@@ -55,7 +55,7 @@ class WelcomeActivity : BaseActivity<WelcomeViewModel>(), View.OnClickListener {
     }
 
     private fun getStudentList(view: CardView) {
-        if(connectedToInternet(view)){
+        if (connectedToInternet(view)) {
             mViewModel!!.getSchoolList()
         }
     }
@@ -70,8 +70,8 @@ class WelcomeActivity : BaseActivity<WelcomeViewModel>(), View.OnClickListener {
         get() = this@WelcomeActivity
 
     override fun onCreate() {
-        if(!getAppPref().getString(InterConst.AUTH_TOKEN).isNullOrEmpty()){
-           val intent = if (getAppPref().getInt(InterConst.ROLE_ID) == InterConst.ROLE_PARENT) {
+        if (!getAppPref().getString(InterConst.AUTH_TOKEN).isNullOrEmpty()) {
+            val intent = if (getAppPref().getInt(InterConst.ROLE_ID) == InterConst.ROLE_PARENT) {
                 Intent(mContext, ParentLandingActivity::class.java)
             } else {
                 Intent(mContext, TeacherLandingActivity::class.java)

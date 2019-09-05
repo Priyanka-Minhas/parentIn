@@ -1,171 +1,175 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context="com.sdei.parentIn.activities.parent.NewParentMessageActivity">
+	android:fillViewport="true"
+    android:layout_height="match_parent">
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="@color/white"
+		tools:context="com.sdei.parentIn.activities.parent.NewParentMessageActivity">
 
-    <RelativeLayout
-        android:id="@+id/relativeLayout4"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/stroke_toolbar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+		<EditText
+			android:id="@+id/edtMessage"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:minHeight="@dimen/_100ssp"
+			android:background="@android:color/transparent"
+			android:gravity="top"
+			android:hint="@string/mensaje_va_ir_aqu"
+			android:imeOptions="actionDone"
+			android:inputType="textMultiLine"
+			android:padding="@dimen/_5sdp"
+			android:paddingStart="@dimen/_12sdp"
+			android:paddingEnd="@dimen/_12sdp"
+			android:textColor="@color/black"
+			android:textColorHint="@color/colorGrayDark"
+			android:textSize="@dimen/_12ssp"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintHorizontal_bias="0.0"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
-        <ImageView
-            android:id="@+id/btnBack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:padding="@dimen/_12sdp"
-            android:foreground="?selectableItemBackground"
-            android:src="@mipmap/ic_back_arrow" />
+		<ImageView
+			android:id="@+id/imgAdd"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/_10sdp"
+			android:padding="@dimen/_5sdp"
+			android:src="@mipmap/add"
+			app:layout_constraintBottom_toTopOf="@+id/rvAddName"
+			app:layout_constraintStart_toEndOf="@+id/txtFrom"
+			app:layout_constraintTop_toBottomOf="@+id/relativeLayout4" />
 
-        <com.sdei.parentIn.customViews.SemiBoldTextView
-            android:id="@+id/txtTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:padding="@dimen/_12sdp"
-            android:text="@string/nuevo_mensaje"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_14ssp" />
+		<LinearLayout
+			android:id="@+id/layoutAttach"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:gravity="center_vertical"
+			android:orientation="horizontal"
+			android:padding="@dimen/_12sdp"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/rvAddName">
 
-        <com.sdei.parentIn.customViews.SemiBoldTextView
-            android:id="@+id/txtSubmit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerInParent="true"
-            android:padding="@dimen/_12sdp"
-            android:text="@string/enviar"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_12ssp" />
+			<ImageView
+				android:id="@+id/imgViewAttach"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:paddingEnd="@dimen/_5sdp"
+				app:srcCompat="@drawable/ic_attach"
+				tools:ignore="VectorDrawableCompat" />
 
-    </RelativeLayout>
+			<com.sdei.parentIn.customViews.RegularTextView
+				android:id="@+id/textView9"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/adjuntar_archivo"
+				android:textSize="@dimen/_12ssp" />
 
-    <com.sdei.parentIn.customViews.SemiBoldTextView
-        android:id="@+id/txtFrom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:gravity="start"
-        android:paddingStart="@dimen/_12sdp"
-        android:paddingEnd="@dimen/_5sdp"
-        android:text="@string/para"
-        android:textColor="@color/colorDarkText"
-        android:textSize="@dimen/_12ssp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout4" />
+		</LinearLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvAddName"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:paddingStart="@dimen/_12sdp"
-        android:paddingEnd="@dimen/_12sdp"
-        android:paddingBottom="@dimen/_5sdp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtFrom" />
+		<RelativeLayout
+			android:id="@+id/relativeLayout4"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:background="@drawable/stroke_toolbar"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent">
 
-    <ImageView
-        android:id="@+id/imgAdd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:padding="@dimen/_5sdp"
-        android:src="@mipmap/add"
-        app:layout_constraintBottom_toTopOf="@+id/rvAddName"
-        app:layout_constraintStart_toEndOf="@+id/txtFrom"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout4" />
+			<ImageView
+				android:id="@+id/btnBack"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:foreground="?selectableItemBackground"
+				android:padding="@dimen/_12sdp"
+				android:src="@mipmap/ic_back_arrow" />
 
-    <View
-        android:id="@+id/view1"
-        android:layout_width="wrap_content"
-        android:layout_height="1dp"
-        android:background="@color/grey"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/layoutAttach" />
+			<com.sdei.parentIn.customViews.SemiBoldTextView
+				android:id="@+id/txtTitle"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerInParent="true"
+				android:padding="@dimen/_12sdp"
+				android:text="@string/nuevo_mensaje"
+				android:textColor="@color/black"
+				android:textSize="@dimen/_14ssp" />
 
-    <LinearLayout
-        android:id="@+id/layoutAttach"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:padding="@dimen/_12sdp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rvAddName">
+			<com.sdei.parentIn.customViews.SemiBoldTextView
+				android:id="@+id/txtSubmit"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignParentRight="true"
+				android:layout_centerInParent="true"
+				android:padding="@dimen/_12sdp"
+				android:text="@string/enviar"
+				android:textColor="@color/black"
+				android:textSize="@dimen/_12ssp" />
 
-        <ImageView
-            android:id="@+id/imgViewAttach"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingEnd="@dimen/_5sdp"
-            app:srcCompat="@drawable/ic_attach"
-            tools:ignore="VectorDrawableCompat" />
+		</RelativeLayout>
 
-        <com.sdei.parentIn.customViews.RegularTextView
-            android:id="@+id/textView9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/adjuntar_archivo"
-            android:textSize="@dimen/_12ssp" />
+		<View
+			android:id="@+id/View2"
+			android:layout_width="wrap_content"
+			android:layout_height="1dp"
+			android:background="@color/grey"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/layoutAttach" />
 
-    </LinearLayout>
-
-
-
-    <View
-        android:id="@+id/View2"
-        android:layout_width="wrap_content"
-        android:layout_height="1dp"
-        android:background="@color/grey"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layoutAttach" />
-
-    <com.sdei.parentIn.customViews.SemiBoldTextView
-        android:id="@+id/textView11"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/mensaje"
-        android:paddingStart="@dimen/_12sdp"
-        android:paddingEnd="@dimen/_12sdp"
-        android:textColor="@color/colorDarkText"
-        android:textSize="@dimen/_12ssp"
-        android:layout_marginTop="@dimen/_10sdp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/View2" />
-
-    <EditText
-        android:id="@+id/edtMessage"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@android:color/transparent"
-        android:gravity="top"
-        android:hint="@string/mensaje_va_ir_aqu"
-        android:imeOptions="actionDone"
-        android:inputType="textMultiLine"
-        android:padding="@dimen/_5sdp"
-        android:paddingStart="@dimen/_12sdp"
-        android:paddingEnd="@dimen/_12sdp"
-        android:textColor="@color/black"
-        android:textColorHint="@color/colorGrayDark"
-        android:textSize="@dimen/_12ssp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11"
-        app:layout_constraintVertical_bias="0.0" />
+		<View
+			android:id="@+id/view1"
+			android:layout_width="wrap_content"
+			android:layout_height="1dp"
+			android:background="@color/grey"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="@+id/layoutAttach" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+		<androidx.recyclerview.widget.RecyclerView
+			android:id="@+id/rvAddName"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:paddingStart="@dimen/_12sdp"
+			android:paddingEnd="@dimen/_12sdp"
+			android:paddingBottom="@dimen/_5sdp"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/txtFrom" />
+
+		<com.sdei.parentIn.customViews.SemiBoldTextView
+			android:id="@+id/textView11"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/_10sdp"
+			android:paddingStart="@dimen/_12sdp"
+			android:paddingEnd="@dimen/_12sdp"
+			android:text="@string/mensaje"
+			android:textColor="@color/colorDarkText"
+			android:textSize="@dimen/_12ssp"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/View2" />
+
+		<com.sdei.parentIn.customViews.SemiBoldTextView
+			android:id="@+id/txtFrom"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/_10sdp"
+			android:gravity="start"
+			android:paddingStart="@dimen/_12sdp"
+			android:paddingEnd="@dimen/_5sdp"
+			android:text="@string/para"
+			android:textColor="@color/colorDarkText"
+			android:textSize="@dimen/_12ssp"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/relativeLayout4" />
+
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

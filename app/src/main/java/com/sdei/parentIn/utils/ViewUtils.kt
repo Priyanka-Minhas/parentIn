@@ -10,6 +10,7 @@ import android.widget.ImageView
 import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
+import com.google.gson.Gson
 import com.sdei.parentIn.AppApplication
 import com.sdei.parentIn.R
 import com.sdei.parentIn.activities.WelcomeActivity
@@ -85,7 +86,8 @@ fun getAppPref(): AppPreference {
     return AppPreference(AppApplication.getInstance())
 }
 
-fun Context.saveUserData(model: UserModel.DataBean) {
+fun saveUserData(model: UserModel.DataBean) {
+
     /**
      * _id : 5d5f7fb41c7e4c024e5a2c7c
      * firstName : Lucifer
@@ -102,6 +104,7 @@ fun Context.saveUserData(model: UserModel.DataBean) {
      * childs : [{"_id":"5d5f7fb41c7e4c024e5a2c7d","firstName":"Demo","lastName":"Name","verificationCard":"45983434755","gender":"M","birthDate":"11-10-1991","school":"5d5e322baaa88c670cb0babb","teacher":"5d5e7f8a439fae1351a2914b"}]
      * __v : 0
      */
+    getAppPref().setString(InterConst.USER_DATA, Gson().toJson(model))
     getAppPref().setString(InterConst.AUTH_TOKEN, model.token)
     getAppPref().setString(InterConst.ID, model._id)
     if (model.school != null) {
@@ -109,8 +112,12 @@ fun Context.saveUserData(model: UserModel.DataBean) {
     }
     getAppPref().setString(InterConst.FIRST_NAME, model.firstName)
     getAppPref().setString(InterConst.LAST_NAME, model.lastName)
-
 }
+
+fun getUserData(): UserModel.DataBean {
+    return Gson().fromJson(getAppPref().getString(InterConst.USER_DATA, ""), UserModel.DataBean::class.java)
+}
+
 
 fun showSnackBar(view: View, message: String) {
     Snackbar.make(view, message, Snackbar.LENGTH_SHORT).show()

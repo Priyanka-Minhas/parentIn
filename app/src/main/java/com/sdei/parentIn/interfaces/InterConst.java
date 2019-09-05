@@ -41,4 +41,8 @@ public interface InterConst {
     int RESULT_CHILDREN=1001;
     @Nullable
     int RESULT_SURVEY=1002;
+    @NotNull
+    String USER_DATA="user_data";
+    @NotNull
+    String SETTINGS="setting";
 }

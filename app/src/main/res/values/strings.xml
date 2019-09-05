@@ -211,5 +211,7 @@
     <string name="no_result">NO RESULT</string>
 
 	<string name="select_all">Select All</string>
+	<string name="add_student_to_send_messages">Please add Students to send messages</string>
+    <string name="add_child_to_send_messages">Please add Child to send messages</string>
 
 </resources>

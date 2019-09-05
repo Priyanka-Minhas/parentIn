@@ -6,6 +6,7 @@ import android.content.Intent
 import android.view.View
 import androidx.lifecycle.ViewModelProviders
 import com.sdei.parentIn.R
+import com.sdei.parentIn.activities.teacher.TeacherRegisterActivity
 import com.sdei.parentIn.interfaces.InterConst
 import com.sdei.parentIn.utils.getAppPref
 import com.sdei.parentIn.viewModel.BaseViewModel
@@ -24,14 +25,14 @@ class SettingsActivity : BaseActivity<BaseViewModel>(), View.OnClickListener {
 
     override fun onCreate() {
 
-        if(getAppPref().getInt(InterConst.ROLE_ID) == InterConst.ROLE_PARENT){
-          cvParentsInfo.visibility = View.VISIBLE
-          cvStuInfo.visibility = View.VISIBLE
+        if (getAppPref().getInt(InterConst.ROLE_ID) == InterConst.ROLE_PARENT) {
+            cvParentsInfo.visibility = View.VISIBLE
+            cvStuInfo.visibility = View.VISIBLE
             // For Teacher
             cvExportList.visibility = View.GONE
             cvHelpSupport.visibility = View.GONE
             cvTeacherInfo.visibility = View.GONE
-        }else{
+        } else {
             cvParentsInfo.visibility = View.GONE
             cvStuInfo.visibility = View.GONE
             // For Teacher
@@ -52,15 +53,22 @@ class SettingsActivity : BaseActivity<BaseViewModel>(), View.OnClickListener {
         cvStuInfo.setOnClickListener(this)
         btnBack.setOnClickListener(this)
     }
+
     override fun onClick(view: View?) {
-        when(view!!.id){
-          R.id.cvLogOut ->{
-            getAppPref().clearShf()
-             val intent = Intent(this,WelcomeActivity::class.java)
-              startActivity(intent)
-              finishAffinity()
-          }R.id.btnBack ->{
+        when (view!!.id) {
+            R.id.cvLogOut -> {
+                getAppPref().clearShf()
+                val intent = Intent(this, WelcomeActivity::class.java)
+                startActivity(intent)
+                finishAffinity()
+            }
+            R.id.btnBack -> {
                 finish()
+            }
+            R.id.cvTeacherInfo -> {
+                val intent = Intent(mContext, TeacherRegisterActivity::class.java)
+                intent.putExtra(InterConst.SETTINGS, InterConst.SETTINGS)
+                startActivity(intent)
             }
         }
     }

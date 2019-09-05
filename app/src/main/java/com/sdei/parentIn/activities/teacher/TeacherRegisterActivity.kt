@@ -16,11 +16,11 @@ import com.sdei.parentIn.model.SchoolModel
 import com.sdei.parentIn.model.UserModel
 import com.sdei.parentIn.utils.*
 import com.sdei.parentIn.viewModel.teacher.TeacherRegisterViewModel
-import com.wajahatkarim3.easyvalidation.core.view_ktx.nonEmpty
 import com.wajahatkarim3.easyvalidation.core.view_ktx.validEmail
 import kotlinx.android.synthetic.main.activity_teacher_new_account.*
 
 class TeacherRegisterActivity : BaseActivity<TeacherRegisterViewModel>(), View.OnClickListener {
+
     var mSchoolList = arrayListOf<SchoolModel.DataBean>()
     var mSchoolId: String = ""
 
@@ -32,6 +32,8 @@ class TeacherRegisterActivity : BaseActivity<TeacherRegisterViewModel>(), View.O
         get() = this@TeacherRegisterActivity
 
     override fun onCreate() {
+
+
         // get school list
         mViewModel!!.getSchoolList().observe(this,
                 Observer<ArrayList<SchoolModel.DataBean>> { mData ->
@@ -48,6 +50,22 @@ class TeacherRegisterActivity : BaseActivity<TeacherRegisterViewModel>(), View.O
                         finishAffinity()
                     }
                 })
+
+        if (intent.hasExtra(InterConst.SETTINGS)) {
+            val mUserData = getUserData()
+            edtFirstName.setText(mUserData.firstName.toString())
+            edtLastName.setText(mUserData.lastName.toString())
+            edtLevelOfEducation.setText(mUserData.levelOfEducation.toString())
+            edtNumberOfStu.setText(mUserData.noOfStudents.toString())
+            edtEmail.setText(mUserData.emailAddress.toString())
+//            edtConfMail.setText(mUserData.confirmEmail)
+            edtPassword.setText(mUserData.password.toString())
+//            edtConfPassword.setText(mUserData.confirmPassword)
+            edtSchool.setText(mUserData.school.toString())
+//            edtGender.setText(mUserData.gender)
+//            edtId.setText(mUserData.verificationCard.toString())
+        }
+
     }
 
     override fun initListeners() {

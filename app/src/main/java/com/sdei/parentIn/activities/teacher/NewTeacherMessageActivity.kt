@@ -11,10 +11,11 @@ import com.sdei.parentIn.activities.BaseActivity
 import com.sdei.parentIn.adapters.TeacherMsgNameAddedAdapter
 import com.sdei.parentIn.dialog.TeacherMessageSelectNameDialog
 import com.sdei.parentIn.model.ClassModel
+import com.sdei.parentIn.utils.showAlertSnackBar
 import com.sdei.parentIn.viewModel.teacher.NewTeacherMessageViewModel
 import kotlinx.android.synthetic.main.activity_new_message.*
 
-class NewTeacherMessageActivity: BaseActivity<NewTeacherMessageViewModel>(), View.OnClickListener, TeacherMsgNameAddedAdapter.ClickInterface {
+class NewTeacherMessageActivity : BaseActivity<NewTeacherMessageViewModel>(), View.OnClickListener, TeacherMsgNameAddedAdapter.ClickInterface {
 
     override fun deleteChild(pos: Int) {
         mNameList.removeAt(pos)
@@ -58,21 +59,25 @@ class NewTeacherMessageActivity: BaseActivity<NewTeacherMessageViewModel>(), Vie
             }
 
             R.id.imgAdd -> {
-                TeacherMessageSelectNameDialog(mContext, R.style.pullBottomfromTop, R.layout.dialog_message_select_name,
-                        mClassList,
-                        object : TeacherMessageSelectNameDialog.IndexClick {
-                            override fun clickIndex(pos: ClassModel.DataBean) {
-                                if (TextUtils.isEmpty(pos._id)) {
-                                    mNameList.clear()
-                                    mNameList.addAll(mClassList)
-                                } else {
-                                    if (!mNameList.contains(pos)) {
-                                        mNameList.add(pos)
+                if (mClassList.isNotEmpty()) {
+                    TeacherMessageSelectNameDialog(mContext, R.style.pullBottomfromTop, R.layout.dialog_message_select_name,
+                            mClassList,
+                            object : TeacherMessageSelectNameDialog.IndexClick {
+                                override fun clickIndex(pos: ClassModel.DataBean) {
+                                    if (TextUtils.isEmpty(pos._id)) {
+                                        mNameList.clear()
+                                        mNameList.addAll(mClassList)
+                                    } else {
+                                        if (!mNameList.contains(pos)) {
+                                            mNameList.add(pos)
+                                        }
                                     }
+                                    setAddNameAdapter()
                                 }
-                                setAddNameAdapter()
-                            }
-                        }).show()
+                            }).show()
+                } else {
+                    showAlertSnackBar(imgAdd, getString(R.string.add_student_to_send_messages))
+                }
             }
             R.id.layoutAttach -> {
 

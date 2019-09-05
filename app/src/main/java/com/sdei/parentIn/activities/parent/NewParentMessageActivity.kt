@@ -12,6 +12,8 @@ import com.sdei.parentIn.adapters.ParentMsgNameAddedAdapter
 import com.sdei.parentIn.dialog.ParentMessageSelectNameDialog
 import com.sdei.parentIn.dialog.ParentMessageSelectNameDialog.IndexClick
 import com.sdei.parentIn.model.ChildModel
+import com.sdei.parentIn.model.MessagesModel
+import com.sdei.parentIn.utils.showAlertSnackBar
 import com.sdei.parentIn.viewModel.parent.NewParentMessageViewModel
 import kotlinx.android.synthetic.main.activity_new_message.*
 
@@ -43,6 +45,13 @@ class NewParentMessageActivity : BaseActivity<NewParentMessageViewModel>(), View
                         mChildrenList = mData
                     }
                 })
+
+        mViewModel!!.messageCreated().observe(this,
+                Observer<MessagesModel> { mData ->
+                    if (mData != null) {
+//                        mChildrenList = mData
+                    }
+                })
     }
 
     override fun initListeners() {
@@ -58,23 +67,30 @@ class NewParentMessageActivity : BaseActivity<NewParentMessageViewModel>(), View
             R.id.btnBack -> {
                 finish()
             }
+            R.id.txtSubmit -> {
+//                mViewModel!!.createMessage()
+            }
 
             R.id.imgAdd -> {
-                ParentMessageSelectNameDialog(mContext, R.style.pullBottomfromTop, R.layout.dialog_message_select_name,
-                        mChildrenList,
-                        object : IndexClick {
-                            override fun clickIndex(pos: ChildModel.DataBean) {
-                                if (TextUtils.isEmpty(pos._id)) {
-                                    mNameList.clear()
-                                    mNameList.addAll(mChildrenList)
-                                } else {
-                                    if (!mNameList.contains(pos)) {
-                                        mNameList.add(pos)
+                if (mChildrenList.isNotEmpty()) {
+                    ParentMessageSelectNameDialog(mContext, R.style.pullBottomfromTop, R.layout.dialog_message_select_name,
+                            mChildrenList,
+                            object : IndexClick {
+                                override fun clickIndex(pos: ChildModel.DataBean) {
+                                    if (TextUtils.isEmpty(pos._id)) {
+                                        mNameList.clear()
+                                        mNameList.addAll(mChildrenList)
+                                    } else {
+                                        if (!mNameList.contains(pos)) {
+                                            mNameList.add(pos)
+                                        }
                                     }
+                                    setAddNameAdapter()
                                 }
-                                setAddNameAdapter()
-                            }
-                        }).show()
+                            }).show()
+                } else {
+                    showAlertSnackBar(imgAdd, getString(R.string.add_child_to_send_messages))
+                }
             }
 
             R.id.layoutAttach -> {
@@ -86,7 +102,7 @@ class NewParentMessageActivity : BaseActivity<NewParentMessageViewModel>(), View
     private fun setAddNameAdapter() {
         if (mNameList.size >= 1) {
             imgAdd.visibility = View.GONE
-        }else{
+        } else {
             imgAdd.visibility = View.VISIBLE
         }
         rvAddName.layoutManager = LinearLayoutManager(mContext)
