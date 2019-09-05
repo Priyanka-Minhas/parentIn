@@ -3,12 +3,13 @@ package com.sdei.parentIn.activities
 import android.content.Context
 import android.content.Intent
 import android.view.View
+import androidx.cardview.widget.CardView
 import androidx.lifecycle.ViewModelProviders
 import com.sdei.parentIn.R
 import com.sdei.parentIn.activities.parent.ParentLandingActivity
+import com.sdei.parentIn.activities.supervisor.SupervisorLoginActivity
 import com.sdei.parentIn.activities.teacher.TeacherLandingActivity
 import com.sdei.parentIn.interfaces.InterConst
-import com.sdei.parentIn.room.RoomDb
 import com.sdei.parentIn.utils.connectedToInternet
 import com.sdei.parentIn.utils.getAppPref
 import com.sdei.parentIn.viewModel.WelcomeViewModel
@@ -23,31 +24,39 @@ class WelcomeActivity : BaseActivity<WelcomeViewModel>(), View.OnClickListener {
         if(connectedToInternet(cdParent)) {
             when (v!!.id) {
                 R.id.cdParent -> {
-                    if(RoomDb.getInstance(application).noteDao().fetchSchoolList().isEmpty()) {
-                        mViewModel!!.getSchoolList()
-                    }
+                    getStudentList(cdParent)
                     getAppPref().setInt(InterConst.ROLE_ID, InterConst.ROLE_PARENT)
                     val intent = Intent(mContext, LoginActivity::class.java)
                     startActivity(intent)
                 }
 
                 R.id.cdTeacher -> {
-                    if(RoomDb.getInstance(application).noteDao().fetchSchoolList().isEmpty()) {
-                        mViewModel!!.getSchoolList()
-                    }
+                    getStudentList(cdTeacher)
+                    mViewModel!!.getSchoolList()
                     getAppPref().setInt(InterConst.ROLE_ID, InterConst.ROLE_TEACHER)
                     val intent = Intent(mContext, LoginActivity::class.java)
                     startActivity(intent)
                 }
 
                 R.id.btnAboutFamiliasIn -> {
-                    if(RoomDb.getInstance(application).noteDao().fetchSchoolList().isEmpty()) {
-                        mViewModel!!.getSchoolList()
-                    }
+                    getStudentList(cvSupervisor)
                     val intent = Intent(mContext, AboutActivity::class.java)
                     startActivity(intent)
                 }
+
+                R.id.cvSupervisor ->{
+                     getStudentList(cvSupervisor)
+                    getAppPref().setInt(InterConst.ROLE_ID, InterConst.ROLE_SUPERVISOR)
+                    val intent = Intent(mContext, SupervisorLoginActivity::class.java)
+                    startActivity(intent)
+                }
             }
+        }
+    }
+
+    private fun getStudentList(view: CardView) {
+        if(connectedToInternet(view)){
+            mViewModel!!.getSchoolList()
         }
     }
 
@@ -76,6 +85,7 @@ class WelcomeActivity : BaseActivity<WelcomeViewModel>(), View.OnClickListener {
         cdParent.setOnClickListener(this)
         cdTeacher.setOnClickListener(this)
         btnAboutFamiliasIn.setOnClickListener(this)
+        cvSupervisor.setOnClickListener(this)
     }
 
 }

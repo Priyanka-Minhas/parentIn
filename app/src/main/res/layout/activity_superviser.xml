@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/bg_supervisor"
-    tools:context="com.sdei.parentIn.activities.supervisor.SupervisorActivity">
+    tools:context="com.sdei.parentIn.activities.supervisor.SupervisorLoginActivity">
 
 
     <LinearLayout
@@ -49,14 +49,14 @@
         </LinearLayout>
 
         <EditText
-            android:id="@+id/edtEmail"
+            android:id="@+id/edtSupervisorEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginStart="@dimen/_15sdp"
             android:layout_marginTop="@dimen/_80sdp"
             android:layout_marginEnd="@dimen/_15sdp"
-            android:background="@drawable/edit_text_selector"
+            android:background="@drawable/edit_text_supervisor_selector"
             android:drawableStart="@drawable/ic_supervisor_email"
             android:drawablePadding="@dimen/_5sdp"
             android:hint="@string/email"
@@ -69,14 +69,14 @@
             android:textColorHint="@color/colorGrayDark"/>
 
         <EditText
-            android:id="@+id/edtPassword"
+            android:id="@+id/edtSupervisorPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginStart="@dimen/_15sdp"
             android:layout_marginTop="@dimen/_12sdp"
             android:layout_marginEnd="@dimen/_15sdp"
-            android:background="@drawable/edit_text_selector"
+            android:background="@drawable/edit_text_supervisor_selector"
             android:drawableStart="@drawable/ic_supervisor_pass"
             android:drawablePadding="@dimen/_5sdp"
             android:hint="@string/Contraseña"
@@ -90,6 +90,7 @@
 
 
         <com.sdei.parentIn.customViews.RegularTextView
+            android:id="@+id/txtForgetPass"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -99,7 +100,7 @@
             android:textColor="@color/colorWhite" />
 
         <com.sdei.parentIn.customViews.SemiBoldTextView
-            android:id="@+id/btnCreateAccount"
+            android:id="@+id/btnSupervisorLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_15sdp"
@@ -134,7 +135,7 @@
             android:textSize="@dimen/_11ssp"
             android:textColor="@color/colorWhite" />
         <com.sdei.parentIn.customViews.SemiBoldTextView
-            android:id="@+id/semiBoldTextView"
+            android:id="@+id/txtRegistration"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
