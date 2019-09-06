@@ -12,12 +12,8 @@ import com.sdei.parentIn.utils.getGender
 import com.sdei.parentIn.utils.showAlertSnackBar
 import com.sdei.parentIn.viewModel.BaseViewModel
 import com.wajahatkarim3.easyvalidation.core.view_ktx.validEmail
-import kotlinx.android.synthetic.main.activity_parent_edit_child.*
-import kotlinx.android.synthetic.main.activity_parents_new_account.*
 import kotlinx.android.synthetic.main.activity_supervisor_registration.*
 import kotlinx.android.synthetic.main.activity_supervisor_registration.btnBack
-import kotlinx.android.synthetic.main.dialog_reply_message.*
-
 class SupervisorRegistrationActivity : BaseActivity<BaseViewModel>(), View.OnClickListener {
 
 

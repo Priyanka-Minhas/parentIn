@@ -53,4 +53,8 @@ fun Context.getLevelOfEducation(): ArrayList<OptionsModel> {
 // spanish --> es-UY
 // english --> en-US
  const val NETWORK_LOCALE_KEY = "en-US"
+// camera request code
+
+const val TAKE_PICTURE = 1
+
 
