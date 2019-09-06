@@ -5,6 +5,7 @@ import android.view.Gravity
 import com.sdei.parentIn.interfaces.InterConst
 import com.sdei.parentIn.model.MessagesModel
 import com.sdei.parentIn.utils.getAppPref
+import com.sdei.parentIn.utils.getFormatDate
 import kotlinx.android.synthetic.main.dialog_reply_message.*
 
 class MessageReplyDialog(context: Context,
@@ -32,7 +33,7 @@ class MessageReplyDialog(context: Context,
         }
 
         txtDescription.text = model.message.toString()
-        txtDate.text = model.createdAt.toString()
+        txtDate.text = context.getFormatDate(model.createdAt.toString())
 
         imgSend.setOnClickListener {
             mClick.clickIndex(editText.text.toString())
