@@ -2,6 +2,7 @@ package com.sdei.parentIn.fragments.parent
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sdei.parentIn.R
@@ -13,34 +14,32 @@ import com.sdei.parentIn.dialog.MessageReplyDialog
 import com.sdei.parentIn.fragments.BaseFragment
 import com.sdei.parentIn.model.MessagesModel
 import com.sdei.parentIn.utils.connectedToInternet
-import com.sdei.parentIn.viewModel.BaseViewModel
+import com.sdei.parentIn.utils.responseHandler
+import com.sdei.parentIn.viewModel.MessageDialogVM
 import kotlinx.android.synthetic.main.fragment_parent_messages.*
 
-class ParentMessagesFragment : BaseFragment<BaseViewModel>(){
+class ParentMessagesFragment : BaseFragment<MessageDialogVM>(){
 
     var mDialoglist = arrayListOf<MessagesModel.DataBean>()
 
     var messageReplyDialog : MessageReplyDialog? = null
     override val layoutId: Int
         get() = R.layout.fragment_parent_messages
-    override val viewModel: BaseViewModel
-        get() = ViewModelProviders.of(this).get(BaseViewModel::class.java)
+    override val viewModel: MessageDialogVM
+        get() = ViewModelProviders.of(this).get(MessageDialogVM::class.java)
 
     override fun onCreateStuff() {
-
-        btnForSurvay.setOnClickListener {
-            if (mContext.connectedToInternet(btnForSurvay)) {
-                val intent = Intent(mContext, SurveySelectSchoolActivity::class.java)
-                startActivity(intent)
-            }
-        }
-
-        btnNewMessage.setOnClickListener {
-            val intent = Intent(mContext, NewParentMessageActivity::class.java)
-            startActivity(intent)
-        }
-
         setParentMessageAdapter()
+
+        mViewModel!!.getMessageList().observe(this,
+                Observer<MessagesModel> { mData ->
+                    if (mData != null && mContext.responseHandler(mData.statusCode, mData.message)) {
+                        mDialoglist = mData.data
+                        setParentMessageAdapter()
+                    }
+                })
+
+
     }
 
     private fun setParentMessageAdapter() {
@@ -55,6 +54,17 @@ class ParentMessagesFragment : BaseFragment<BaseViewModel>(){
 
     override fun initListeners() {
 
+        btnForSurvay.setOnClickListener {
+            if (mContext.connectedToInternet(btnForSurvay)) {
+                val intent = Intent(mContext, SurveySelectSchoolActivity::class.java)
+                startActivity(intent)
+            }
+        }
+
+        btnNewMessage.setOnClickListener {
+            val intent = Intent(mContext, NewParentMessageActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     companion object {

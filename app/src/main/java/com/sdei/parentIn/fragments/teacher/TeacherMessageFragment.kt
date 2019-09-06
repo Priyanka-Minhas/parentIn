@@ -32,10 +32,6 @@ class TeacherMessageFragment : BaseFragment<MessageDialogVM>() {
 
         setParentMessageAdapter()
 
-        btnNewMessage.setOnClickListener {
-            val intent = Intent(mContext, NewTeacherMessageActivity::class.java)
-            startActivity(intent)
-        }
         mViewModel!!.getMessageList().observe(this,
                 Observer<MessagesModel> { mData ->
                     if (mData != null && mContext.responseHandler(mData.statusCode, mData.message)) {
@@ -58,7 +54,10 @@ class TeacherMessageFragment : BaseFragment<MessageDialogVM>() {
     }
 
     override fun initListeners() {
-
+        btnNewMessage.setOnClickListener {
+            val intent = Intent(mContext, NewTeacherMessageActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     companion object {
