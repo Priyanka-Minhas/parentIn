@@ -13,7 +13,10 @@ import com.sdei.parentIn.dialog.ParentMessageSelectNameDialog
 import com.sdei.parentIn.dialog.ParentMessageSelectNameDialog.IndexClick
 import com.sdei.parentIn.model.ChildModel
 import com.sdei.parentIn.model.MessagesModel
+import com.sdei.parentIn.utils.connectedToInternet
+import com.sdei.parentIn.utils.responseHandler
 import com.sdei.parentIn.utils.showAlertSnackBar
+import com.sdei.parentIn.utils.showProgess
 import com.sdei.parentIn.viewModel.parent.NewParentMessageViewModel
 import kotlinx.android.synthetic.main.activity_new_message.*
 
@@ -48,7 +51,8 @@ class NewParentMessageActivity : BaseActivity<NewParentMessageViewModel>(), View
 
         mViewModel!!.messageCreated().observe(this,
                 Observer<MessagesModel> { mData ->
-                    if (mData != null) {
+                    if (mData != null && responseHandler(mData.statusCode, mData.message)) {
+                        finish()
 //                        mChildrenList = mData
                     }
                 })
@@ -68,7 +72,25 @@ class NewParentMessageActivity : BaseActivity<NewParentMessageViewModel>(), View
                 finish()
             }
             R.id.txtSubmit -> {
-//                mViewModel!!.createMessage()
+                if (mNameList.isEmpty()) {
+                    showAlertSnackBar(imgAdd, getString(R.string.add_child_to_send_messages))
+
+                    return
+                } else if (edtMessage.text.trim().toString().isEmpty()) {
+                    showAlertSnackBar(imgAdd, getString(R.string.please_enter_message_first))
+                    return
+                }
+                if (connectedToInternet(txtSubmit)) {
+                    val toId = arrayListOf<String>()
+                    val toFrom = arrayListOf<String>()
+
+                    for (i in 0 until mNameList.size) {
+                        toId.add(mNameList[i].teacher!!)
+                        toFrom.add(mNameList[i].teacherFirstName!! + mNameList[i].teacherLastName!!)
+                    }
+                    showProgess()
+                    mViewModel!!.sendMessage(toId, toFrom, edtMessage.text.trim().toString())
+                }
             }
 
             R.id.imgAdd -> {

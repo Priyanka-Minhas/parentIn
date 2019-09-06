@@ -1,7 +1,6 @@
 package com.sdei.parentIn.network
 
 import com.sdei.parentIn.model.*
-import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.http.*
@@ -73,16 +72,9 @@ interface ApiInterface {
     fun getMessageList(@Field("_id") _id: String,
                        @Field("isfilter") isfilter: Boolean): Call<MessagesModel>
 
-
-    @Multipart
     @POST("/message/create")
-    fun createMessage(attachment: MultipartBody.Part,
-                      @Part("to") to: List<RequestBody>,
-                      @Part("toName") toName: List<RequestBody>,
-                      @Part("from") from: RequestBody,
-                      @Part("fromName") fromName: RequestBody,
-                      @Part("message") message: RequestBody
-    ): Call<MessagesModel>
+    fun createMessage(@Body file: RequestBody):
+            Call<MessagesModel>
 
 //    @FormUrlEncoded
 //    @POST("users/authenticate")

@@ -213,6 +213,7 @@
 	<string name="select_all">Seleccionar todo</string>
 	<string name="add_student_to_send_messages">Agregue Estudiantes para enviar mensajes.</string>
 	<string name="add_child_to_send_messages">Agregue Niño para enviar mensajes.</string>
+	<string name="please_enter_message_first">Por favor ingrese el mensaje primero</string>
 
 
 </resources>

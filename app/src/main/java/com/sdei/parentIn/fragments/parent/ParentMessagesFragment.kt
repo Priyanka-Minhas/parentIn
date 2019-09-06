@@ -18,11 +18,11 @@ import com.sdei.parentIn.utils.responseHandler
 import com.sdei.parentIn.viewModel.MessageDialogVM
 import kotlinx.android.synthetic.main.fragment_parent_messages.*
 
-class ParentMessagesFragment : BaseFragment<MessageDialogVM>(){
+class ParentMessagesFragment : BaseFragment<MessageDialogVM>() {
 
     var mDialoglist = arrayListOf<MessagesModel.DataBean>()
 
-    var messageReplyDialog : MessageReplyDialog? = null
+    var messageReplyDialog: MessageReplyDialog? = null
     override val layoutId: Int
         get() = R.layout.fragment_parent_messages
     override val viewModel: MessageDialogVM
@@ -31,7 +31,7 @@ class ParentMessagesFragment : BaseFragment<MessageDialogVM>(){
     override fun onCreateStuff() {
         setParentMessageAdapter()
 
-        mViewModel!!.getMessageList().observe(this,
+        mViewModel!!.messageListResponse().observe(this,
                 Observer<MessagesModel> { mData ->
                     if (mData != null && mContext.responseHandler(mData.statusCode, mData.message)) {
                         mDialoglist = mData.data
@@ -44,10 +44,10 @@ class ParentMessagesFragment : BaseFragment<MessageDialogVM>(){
 
     private fun setParentMessageAdapter() {
         rvParentMessages.layoutManager = LinearLayoutManager(mContext)
-        rvParentMessages.adapter = MessagesDialogAdapter(mContext,mDialoglist,object:Callback{
+        rvParentMessages.adapter = MessagesDialogAdapter(mContext, mDialoglist, object : Callback {
             override fun getIndex(pos: Int) {
-             messageReplyDialog = MessageReplyDialog(mContext,R.style.pullBottomfromTop,R.layout.dialog_reply_message)
-             messageReplyDialog!!.show()
+                messageReplyDialog = MessageReplyDialog(mContext, R.style.pullBottomfromTop, R.layout.dialog_reply_message)
+                messageReplyDialog!!.show()
             }
         })
     }
@@ -65,6 +65,11 @@ class ParentMessagesFragment : BaseFragment<MessageDialogVM>(){
             val intent = Intent(mContext, NewParentMessageActivity::class.java)
             startActivity(intent)
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        mViewModel!!.getMessageList()
     }
 
     companion object {

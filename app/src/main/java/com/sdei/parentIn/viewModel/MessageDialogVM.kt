@@ -10,16 +10,19 @@ class MessageDialogVM(application: Application) : BaseViewModel(application = ap
     private val mRepository: MessageDialogRepository = MessageDialogRepository()
     private var mMessageList: MutableLiveData<MessagesModel>? = null
 
-    fun getMessageList(): MutableLiveData<MessagesModel> {
+    fun messageListResponse(): MutableLiveData<MessagesModel> {
         if (mMessageList == null) {
             mMessageList = MutableLiveData()
-            mRepository.getMessageListApi {
-                mMessageList!!.value=it
-            }
+            getMessageList()
         }
         return mMessageList as MutableLiveData<MessagesModel>
     }
 
+    fun getMessageList() {
+        mRepository.getMessageListApi {
+            mMessageList!!.value = it
+        }
+    }
 
 
 }

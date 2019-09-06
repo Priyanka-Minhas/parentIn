@@ -11,9 +11,14 @@ import com.sdei.parentIn.activities.BaseActivity
 import com.sdei.parentIn.adapters.TeacherMsgNameAddedAdapter
 import com.sdei.parentIn.dialog.TeacherMessageSelectNameDialog
 import com.sdei.parentIn.model.ClassModel
+import com.sdei.parentIn.model.MessagesModel
+import com.sdei.parentIn.utils.connectedToInternet
+import com.sdei.parentIn.utils.responseHandler
 import com.sdei.parentIn.utils.showAlertSnackBar
+import com.sdei.parentIn.utils.showProgess
 import com.sdei.parentIn.viewModel.teacher.NewTeacherMessageViewModel
 import kotlinx.android.synthetic.main.activity_new_message.*
+
 
 class NewTeacherMessageActivity : BaseActivity<NewTeacherMessageViewModel>(), View.OnClickListener, TeacherMsgNameAddedAdapter.ClickInterface {
 
@@ -43,13 +48,20 @@ class NewTeacherMessageActivity : BaseActivity<NewTeacherMessageViewModel>(), Vi
                         mClassList = mData
                     }
                 })
+        mViewModel!!.messageCreated().observe(this,
+                Observer<MessagesModel> { mData ->
+                    if (mData != null && responseHandler(mData.statusCode, mData.message)) {
+                        finish()
+                    }
+                })
+
+
     }
 
     override fun initListeners() {
         btnBack.setOnClickListener(this)
         txtSubmit.setOnClickListener(this)
         imgAdd.setOnClickListener(this)
-        layoutAttach.setOnClickListener(this)
     }
 
     override fun onClick(view: View?) {
@@ -79,8 +91,26 @@ class NewTeacherMessageActivity : BaseActivity<NewTeacherMessageViewModel>(), Vi
                     showAlertSnackBar(imgAdd, getString(R.string.add_student_to_send_messages))
                 }
             }
-            R.id.layoutAttach -> {
 
+            R.id.txtSubmit -> {
+                if (mNameList.isEmpty()) {
+                    showAlertSnackBar(imgAdd, getString(R.string.add_student_to_send_messages))
+                    return
+                } else if (edtMessage.text.trim().toString().isEmpty()) {
+                    showAlertSnackBar(imgAdd, getString(R.string.please_enter_message_first))
+                    return
+                }
+                if (connectedToInternet(txtSubmit)) {
+                    val toId = arrayListOf<String>()
+                    val toFrom = arrayListOf<String>()
+
+                    for (i in 0 until mNameList.size) {
+                        toId.add(mNameList[i].parent!!)
+                        toFrom.add(mNameList[i].parentFirstName!! + mNameList[i].parentLastName!!)
+                    }
+                    showProgess()
+                    mViewModel!!.sendMessage(toId, toFrom, edtMessage.text.trim().toString())
+                }
             }
         }
     }
@@ -91,5 +121,6 @@ class NewTeacherMessageActivity : BaseActivity<NewTeacherMessageViewModel>(), Vi
         mAddAdapter = TeacherMsgNameAddedAdapter(mContext, mNameList, this)
         rvAddName.adapter = mAddAdapter
     }
+
 
 }

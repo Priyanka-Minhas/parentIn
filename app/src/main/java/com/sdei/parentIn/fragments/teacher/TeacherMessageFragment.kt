@@ -32,7 +32,7 @@ class TeacherMessageFragment : BaseFragment<MessageDialogVM>() {
 
         setParentMessageAdapter()
 
-        mViewModel!!.getMessageList().observe(this,
+        mViewModel!!.messageListResponse().observe(this,
                 Observer<MessagesModel> { mData ->
                     if (mData != null && mContext.responseHandler(mData.statusCode, mData.message)) {
                         mDialoglist = mData.data
