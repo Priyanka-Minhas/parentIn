@@ -42,7 +42,12 @@ class MessagesDialogAdapter(var context: Context, var mData: ArrayList<MessagesM
         }
 
         holder.btnResponder.setOnClickListener {
-            mCallback.getIndex(position)
+            if (getAppPref().getString(InterConst.ID) != mData[position].from) {
+                mCallback.getIndex(position,mData[position].from,mData[position].fromName)
+            } else {
+                mCallback.getIndex(position,mData[position].to,mData[position].toName)
+            }
+
         }
 
         holder.rvMain.setOnClickListener {
@@ -75,6 +80,6 @@ class MessagesDialogAdapter(var context: Context, var mData: ArrayList<MessagesM
     }
 
     interface Callback {
-        fun getIndex(pos: Int)
+        fun getIndex(pos: Int, from: String, fromName: String)
     }
 }

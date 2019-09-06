@@ -15,7 +15,10 @@ import com.sdei.parentIn.fragments.BaseFragment
 import com.sdei.parentIn.model.MessagesModel
 import com.sdei.parentIn.utils.connectedToInternet
 import com.sdei.parentIn.utils.responseHandler
+import com.sdei.parentIn.utils.showAlertSnackBar
+import com.sdei.parentIn.utils.showProgess
 import com.sdei.parentIn.viewModel.MessageDialogVM
+import kotlinx.android.synthetic.main.activity_new_message.*
 import kotlinx.android.synthetic.main.fragment_parent_messages.*
 
 class ParentMessagesFragment : BaseFragment<MessageDialogVM>() {
@@ -30,7 +33,6 @@ class ParentMessagesFragment : BaseFragment<MessageDialogVM>() {
 
     override fun onCreateStuff() {
         setParentMessageAdapter()
-
         mViewModel!!.messageListResponse().observe(this,
                 Observer<MessagesModel> { mData ->
                     if (mData != null && mContext.responseHandler(mData.statusCode, mData.message)) {
@@ -38,22 +40,41 @@ class ParentMessagesFragment : BaseFragment<MessageDialogVM>() {
                         setParentMessageAdapter()
                     }
                 })
-
-
+        mViewModel!!.messageCreated().observe(this,
+                Observer<MessagesModel> { mData ->
+                    if (mData != null && mContext.responseHandler(mData.statusCode, mData.message)) {
+                        messageReplyDialog!!.dismiss()
+                        mViewModel!!.getMessageList()
+                    }
+                })
     }
 
     private fun setParentMessageAdapter() {
         rvParentMessages.layoutManager = LinearLayoutManager(mContext)
         rvParentMessages.adapter = MessagesDialogAdapter(mContext, mDialoglist, object : Callback {
-            override fun getIndex(pos: Int) {
-                messageReplyDialog = MessageReplyDialog(mContext, R.style.pullBottomfromTop, R.layout.dialog_reply_message)
+            override fun getIndex(pos: Int, from: String, fromName: String) {
+                messageReplyDialog = MessageReplyDialog(mContext, R.style.pullBottomfromTop, R.layout.dialog_reply_message,mDialoglist[pos], object : MessageReplyDialog.IndexClick {
+                    override fun clickIndex(message: String) {
+                        if (message.isEmpty()) {
+                            showAlertSnackBar(imgAdd, getString(R.string.please_enter_message_first))
+                            return
+                        }
+                        if (mContext.connectedToInternet(btnForSurvay)) {
+                            val toId = arrayListOf<String>()
+                            val toFrom = arrayListOf<String>()
+                            toId.add(from)
+                            toFrom.add(fromName)
+                            mContext.showProgess()
+                            mViewModel!!.sendMessage(toId, toFrom, message)
+                        }
+                    }
+                })
                 messageReplyDialog!!.show()
             }
         })
     }
 
     override fun initListeners() {
-
         btnForSurvay.setOnClickListener {
             if (mContext.connectedToInternet(btnForSurvay)) {
                 val intent = Intent(mContext, SurveySelectSchoolActivity::class.java)

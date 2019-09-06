@@ -2,11 +2,16 @@ package com.sdei.parentIn.dialog
 
 import android.content.Context
 import android.view.Gravity
+import com.sdei.parentIn.interfaces.InterConst
+import com.sdei.parentIn.model.MessagesModel
+import com.sdei.parentIn.utils.getAppPref
 import kotlinx.android.synthetic.main.dialog_reply_message.*
 
 class MessageReplyDialog(context: Context,
                          themeResId: Int,
-                         val LayoutId: Int ):BaseDialog(context, themeResId) {
+                         val LayoutId: Int,
+                         val model: MessagesModel.DataBean,
+                         val mClick: IndexClick) : BaseDialog(context, themeResId) {
 
     init {
         val wmlp = this.window!!.attributes
@@ -20,10 +25,22 @@ class MessageReplyDialog(context: Context,
             dismissDialog()
         }
 
+        if (getAppPref().getString(InterConst.ID) != model.from) {
+            txtName.text = model.fromName.toString()
+        } else {
+            txtName.text = model.toName.toString()
+        }
+
+        txtDescription.text = model.message.toString()
+        txtDate.text = model.createdAt.toString()
+
+        imgSend.setOnClickListener {
+            mClick.clickIndex(editText.text.toString())
+        }
     }
 
     override fun getContentView(): Int {
-       return LayoutId
+        return LayoutId
     }
 
     fun showDialog() {
@@ -43,4 +60,9 @@ class MessageReplyDialog(context: Context,
         }
 
     }
+
+    interface IndexClick {
+        fun clickIndex(message: String)
+    }
+
 }

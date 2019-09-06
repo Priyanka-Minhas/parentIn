@@ -58,7 +58,6 @@
 				android:id="@+id/imgViewAttach"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:paddingEnd="@dimen/_5sdp"
 				app:srcCompat="@drawable/ic_attach"
 				tools:ignore="VectorDrawableCompat" />
 
@@ -68,6 +67,14 @@
 				android:layout_height="wrap_content"
 				android:text="@string/adjuntar_archivo"
 				android:textSize="@dimen/_12ssp" />
+
+			<ImageView
+				android:id="@+id/imgUploaded"
+				android:visibility="gone"
+				android:layout_width="@dimen/_100sdp"
+				android:layout_height="@dimen/_100sdp"
+				android:scaleType="centerCrop"
+				tools:ignore="VectorDrawableCompat" />
 
 		</LinearLayout>
 

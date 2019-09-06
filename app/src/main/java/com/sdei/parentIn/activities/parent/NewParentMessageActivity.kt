@@ -1,6 +1,10 @@
 package com.sdei.parentIn.activities.parent
 
+import `in`.mayanknagwanshi.imagepicker.ImageSelectActivity
+import android.app.Activity
 import android.content.Context
+import android.content.Intent
+import android.graphics.BitmapFactory
 import android.text.TextUtils
 import android.view.View
 import androidx.lifecycle.Observer
@@ -20,12 +24,19 @@ import com.sdei.parentIn.utils.showProgess
 import com.sdei.parentIn.viewModel.parent.NewParentMessageViewModel
 import kotlinx.android.synthetic.main.activity_new_message.*
 
+
 class NewParentMessageActivity : BaseActivity<NewParentMessageViewModel>(), View.OnClickListener, ParentMsgNameAddedAdapter.ClickInterface {
 
     override fun deleteChild(pos: Int) {
         mNameList.removeAt(pos)
         setAddNameAdapter()
     }
+
+    private val RC_SIGN_IN = 1
+    private val GALLERY = 2
+    private val CAMERA = 3
+    private val CAMERA_PERMISSION = 1
+    private val PIC = 12
 
     override val layoutId: Int
         get() = R.layout.activity_new_message
@@ -53,7 +64,6 @@ class NewParentMessageActivity : BaseActivity<NewParentMessageViewModel>(), View
                 Observer<MessagesModel> { mData ->
                     if (mData != null && responseHandler(mData.statusCode, mData.message)) {
                         finish()
-//                        mChildrenList = mData
                     }
                 })
     }
@@ -116,10 +126,29 @@ class NewParentMessageActivity : BaseActivity<NewParentMessageViewModel>(), View
             }
 
             R.id.layoutAttach -> {
-
+                val intent = Intent(this, ImageSelectActivity::class.java)
+                intent.putExtra(ImageSelectActivity.FLAG_COMPRESS, false)//default is true
+                intent.putExtra(ImageSelectActivity.FLAG_CAMERA, true)//default is true
+                intent.putExtra(ImageSelectActivity.FLAG_GALLERY, false)//default is true
+                startActivityForResult(intent, 1213)
             }
         }
     }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == 1213 && resultCode == Activity.RESULT_OK) {
+            val filePath = data!!.getStringExtra(ImageSelectActivity.RESULT_FILE_PATH)
+            val selectedImage = BitmapFactory.decodeFile(filePath)
+            if (selectedImage != null) {
+                imgUploaded.visibility = View.VISIBLE
+                imgViewAttach.visibility = View.GONE
+                textView9.visibility = View.GONE
+                imgUploaded.setImageBitmap(selectedImage)
+            }
+        }
+    }
+
 
     private fun setAddNameAdapter() {
         if (mNameList.size >= 1) {
@@ -131,5 +160,6 @@ class NewParentMessageActivity : BaseActivity<NewParentMessageViewModel>(), View
         mAddAdapter = ParentMsgNameAddedAdapter(mContext, mNameList, this)
         rvAddName.adapter = mAddAdapter
     }
+
 
 }

@@ -9,6 +9,7 @@ class MessageDialogVM(application: Application) : BaseViewModel(application = ap
 
     private val mRepository: MessageDialogRepository = MessageDialogRepository()
     private var mMessageList: MutableLiveData<MessagesModel>? = null
+    private var mSendMessage: MutableLiveData<MessagesModel>? = null
 
     fun messageListResponse(): MutableLiveData<MessagesModel> {
         if (mMessageList == null) {
@@ -23,6 +24,19 @@ class MessageDialogVM(application: Application) : BaseViewModel(application = ap
             mMessageList!!.value = it
         }
     }
+    fun messageCreated(): MutableLiveData<MessagesModel> {
+        if (mSendMessage == null) {
+            mSendMessage = MutableLiveData()
+        }
+        return mSendMessage as MutableLiveData<MessagesModel>
+    }
 
+    fun sendMessage(to: ArrayList<String>,
+                    toName: ArrayList<String>,
+                    message: String) {
+        mRepository.sendMessage(to, toName, message) {
+            mSendMessage!!.value = it
+        }
+    }
 
 }

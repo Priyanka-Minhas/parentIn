@@ -7,7 +7,6 @@ import androidx.cardview.widget.CardView
 import androidx.lifecycle.ViewModelProviders
 import com.sdei.parentIn.R
 import com.sdei.parentIn.activities.parent.ParentLandingActivity
-import com.sdei.parentIn.activities.supervisor.SupervisorLoginActivity
 import com.sdei.parentIn.activities.teacher.TeacherLandingActivity
 import com.sdei.parentIn.interfaces.InterConst
 import com.sdei.parentIn.utils.connectedToInternet
@@ -45,10 +44,10 @@ class WelcomeActivity : BaseActivity<WelcomeViewModel>(), View.OnClickListener {
                 }
 
                 R.id.cvSupervisor -> {
-                    getStudentList(cvSupervisor)
-                    getAppPref().setInt(InterConst.ROLE_ID, InterConst.ROLE_SUPERVISOR)
-                    val intent = Intent(mContext, SupervisorLoginActivity::class.java)
-                    startActivity(intent)
+//                    getStudentList(cvSupervisor)
+//                    getAppPref().setInt(InterConst.ROLE_ID, InterConst.ROLE_SUPERVISOR)
+//                    val intent = Intent(mContext, SupervisorLoginActivity::class.java)
+//                    startActivity(intent)
                 }
             }
         }
