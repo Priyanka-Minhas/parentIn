@@ -21,8 +21,7 @@
 	android:layout_marginBottom="@dimen/_16sdp"
 	android:background="@drawable/style_send_msg_ovel"
 	app:layout_constraintStart_toStartOf="parent"
-	app:layout_constraintTop_toBottomOf="@+id/txtDelete"
-	>
+	app:layout_constraintTop_toBottomOf="@+id/txtDelete">
 	<EditText
 		android:id="@+id/editText"
 		android:layout_width="match_parent"

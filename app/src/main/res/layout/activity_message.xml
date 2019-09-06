@@ -51,21 +51,38 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/colorGrayDark"
-        app:layout_constraintBottom_toTopOf="@+id/edtTextSendMsg"
+        app:layout_constraintBottom_toTopOf="@+id/layoutSendMsg"
         tools:layout_editor_absoluteX="0dp" />
-
-    <EditText
-        android:id="@+id/edtTextSendMsg"
+    <LinearLayout
+        android:id="@+id/layoutSendMsg"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:inputType="textMultiLine"
+        android:orientation="horizontal"
         android:paddingTop="@dimen/_16sdp"
         android:paddingBottom="@dimen/_16sdp"
         android:paddingStart="@dimen/_10sdp"
-        android:background="@android:color/transparent"
-        android:hint="@string/escribe_un_nuevo_mensaje_aqu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" >
+        <EditText
+            android:id="@+id/edtTextSendMsg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="textMultiLine"
+            android:background="@null"
+            android:isScrollContainer="true"
+            android:overScrollMode="always"
+            android:hint="@string/escribe_un_nuevo_mensaje_aqu"/>
+        <ImageView
+        android:id="@+id/imgSend"
+        android:layout_width="wrap_content"
+        android:src="@mipmap/ic_send_msg_blue"
+        android:foreground="?selectableItemBackground"
+        android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
