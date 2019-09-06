@@ -18,7 +18,13 @@ import com.sdei.parentIn.interfaces.InterConst
 import com.sdei.parentIn.interfaces.InterConst.CODE_SESSION_EXPIRED
 import com.sdei.parentIn.interfaces.InterConst.CODE_SUCCESS
 import com.sdei.parentIn.model.UserModel
+import okhttp3.MediaType
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import org.json.JSONObject
+import java.io.File
+
+
 
 /**
  * Created by shubham on 12/06/19.
@@ -161,3 +167,22 @@ private fun View.ifNotDestroyed(block: () -> Unit) {
         block()
     }
 }
+
+ fun prepareMultiFilePart(mFile: File, field_name: String): MultipartBody.Part {
+    val requestFile = RequestBody.create(MediaType.parse("image/*"), mFile)
+    return MultipartBody.Part.createFormData(field_name, mFile.name, requestFile)
+}
+
+//fun prepareMultiPartLsit(value: ArrayList<String>, field_name: String): MultipartBody.Part{
+//    val descriptionList = ArrayList<MultipartBody.Part>()
+//    for(i in 0 until value.size) {
+//        descriptionList.add()
+//    }
+//    return MultipartBody.Part.createFormData(field_name, value)
+//}
+
+fun createPartFromString(data: String): RequestBody {
+    return RequestBody.create(MediaType.parse("text/plain"), data)
+}
+
+
