@@ -31,10 +31,10 @@ class NewParentMessageViewModel(application: Application) : BaseViewModel(applic
         return mSendMessage as MutableLiveData<MessagesModel>
     }
 
-    fun sendMessage(to: ArrayList<String>,
+    fun sendMessage(filepath:String,to: ArrayList<String>,
                     toName: ArrayList<String>,
                     message: String) {
-        mRepository.sendMessage(to, toName, message) {
+        mRepository.sendMessage(filepath,to, toName, message) {
             mSendMessage!!.value = it
         }
     }

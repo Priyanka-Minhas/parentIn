@@ -32,12 +32,6 @@ class NewParentMessageActivity : BaseActivity<NewParentMessageViewModel>(), View
         setAddNameAdapter()
     }
 
-    private val RC_SIGN_IN = 1
-    private val GALLERY = 2
-    private val CAMERA = 3
-    private val CAMERA_PERMISSION = 1
-    private val PIC = 12
-
     override val layoutId: Int
         get() = R.layout.activity_new_message
     override val viewModel: NewParentMessageViewModel
@@ -49,6 +43,7 @@ class NewParentMessageActivity : BaseActivity<NewParentMessageViewModel>(), View
     var mNameList = arrayListOf<ChildModel.DataBean>()
 
     lateinit var mAddAdapter: ParentMsgNameAddedAdapter
+    var filePath: String? = ""
 
     override fun onCreate() {
         setAddNameAdapter()
@@ -99,7 +94,7 @@ class NewParentMessageActivity : BaseActivity<NewParentMessageViewModel>(), View
                         toFrom.add(mNameList[i].teacherFirstName!! + mNameList[i].teacherLastName!!)
                     }
                     showProgess()
-                    mViewModel!!.sendMessage(toId, toFrom, edtMessage.text.trim().toString())
+                    mViewModel!!.sendMessage(filePath!!,toId, toFrom, edtMessage.text.trim().toString())
                 }
             }
 
@@ -138,7 +133,8 @@ class NewParentMessageActivity : BaseActivity<NewParentMessageViewModel>(), View
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == 1213 && resultCode == Activity.RESULT_OK) {
-            val filePath = data!!.getStringExtra(ImageSelectActivity.RESULT_FILE_PATH)
+            filePath = data!!.getStringExtra(ImageSelectActivity.RESULT_FILE_PATH)
+
             val selectedImage = BitmapFactory.decodeFile(filePath)
             if (selectedImage != null) {
                 imgUploaded.visibility = View.VISIBLE

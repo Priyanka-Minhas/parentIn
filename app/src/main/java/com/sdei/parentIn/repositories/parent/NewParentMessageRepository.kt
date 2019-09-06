@@ -1,6 +1,7 @@
 package com.sdei.parentIn.repositories.parent
 
 import android.app.Application
+import android.text.TextUtils
 import com.sdei.parentIn.interfaces.InterConst
 import com.sdei.parentIn.model.ChildModel
 import com.sdei.parentIn.model.MessagesModel
@@ -9,11 +10,13 @@ import com.sdei.parentIn.room.RoomDb
 import com.sdei.parentIn.utils.getAppPref
 import com.sdei.parentIn.utils.handleJson
 import com.sdei.parentIn.utils.hideProgress
+import okhttp3.MediaType
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.io.File
 
 
 class NewParentMessageRepository {
@@ -22,11 +25,12 @@ class NewParentMessageRepository {
         returnValue(RoomDb.getInstance(application).getDao().fetchParentChildList() as ArrayList<ChildModel.DataBean>)
     }
 
-    fun sendMessage(to: ArrayList<String>
+    fun sendMessage(filepath:String,to: ArrayList<String>
                     , toName: ArrayList<String>
                     , message: String, returnValue: (MessagesModel) -> Unit) {
         RetrofitClient.instance!!.createMessage(
                 createBuilder(
+                        filepath,
                         to,
                         toName,
                         getAppPref().getString(InterConst.ID).toString(),
@@ -51,7 +55,7 @@ class NewParentMessageRepository {
         })
     }
 
-    private fun createBuilder(to: ArrayList<String>, toName: ArrayList<String>,
+    private fun createBuilder(filepath:String,to: ArrayList<String>, toName: ArrayList<String>,
                               from: String,
                               fromName: String,
                               message: String): RequestBody {
@@ -68,6 +72,15 @@ class NewParentMessageRepository {
         for (name in toName) {
             builder.addFormDataPart("toName", name)
         }
+
+        // Images
+        if(!TextUtils.isEmpty(filepath)){
+                val file = File(filepath)
+                if (file.exists()) {
+                    builder.addFormDataPart("attachment", file.name, RequestBody.create(MediaType.parse("image/jpg"), file))
+                }
+        }
+
         return builder.build()
     }
 
