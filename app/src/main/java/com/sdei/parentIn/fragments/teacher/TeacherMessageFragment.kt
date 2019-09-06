@@ -11,7 +11,9 @@ import com.sdei.parentIn.adapters.MessagesDialogAdapter
 import com.sdei.parentIn.dialog.MessageReplyDialog
 import com.sdei.parentIn.fragments.BaseFragment
 import com.sdei.parentIn.model.MessagesModel
+import com.sdei.parentIn.utils.connectedToInternet
 import com.sdei.parentIn.utils.responseHandler
+import com.sdei.parentIn.utils.showProgess
 import com.sdei.parentIn.viewModel.MessageDialogVM
 import kotlinx.android.synthetic.main.fragment_teacher_messages.*
 
@@ -29,16 +31,16 @@ class TeacherMessageFragment : BaseFragment<MessageDialogVM>() {
         get() = ViewModelProviders.of(this).get(MessageDialogVM::class.java)
 
     override fun onCreateStuff() {
-
-        setParentMessageAdapter()
-
-        mViewModel!!.messageListResponse().observe(this,
-                Observer<MessagesModel> { mData ->
-                    if (mData != null && mContext.responseHandler(mData.statusCode, mData.message)) {
-                        mDialoglist = mData.data
-                        setParentMessageAdapter()
-                    }
-                })
+         if(mContext.connectedToInternet(rvParentMessages)){
+             mContext.showProgess()
+             mViewModel!!.messageListResponse().observe(this,
+                     Observer<MessagesModel> { mData ->
+                         if (mData != null && mContext.responseHandler(mData.statusCode, mData.message)) {
+                             mDialoglist = mData.data
+                             setParentMessageAdapter()
+                         }
+                     })
+         }
 
     }
 

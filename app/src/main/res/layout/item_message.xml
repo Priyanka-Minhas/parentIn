@@ -28,9 +28,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Ana Lucia Pontevedra"
-        android:layout_marginTop="@dimen/_23sdp"
+        android:layout_marginTop="@dimen/_15sdp"
         android:textSize="@dimen/_11ssp"
         android:layout_marginStart="@dimen/_55sdp"
+        android:visibility="invisible"
         android:textColor="@color/colorGrayDark"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -39,7 +40,8 @@
         android:id="@+id/txtMsgDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="11/06/19"
+        android:text="dfgdf"
+        android:visibility="invisible"
         android:textSize="@dimen/_9ssp"
         android:textColor="@color/colorPurpulLight"
         android:layout_marginEnd="@dimen/_20sdp"
@@ -57,6 +59,19 @@
         android:textColor="@color/colorDarkText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtMsgChildName" />
+
+
+    <com.sdei.parentIn.customViews.SemiBoldTextView
+        android:id="@+id/txtMsgSubDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="dfgdf"
+        android:textSize="@dimen/_9ssp"
+        android:textColor="@color/colorPurpulLight"
+        android:layout_marginEnd="@dimen/_20sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/txtMsgChildSubName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txtMsgChildSubName"/>
 
     <com.sdei.parentIn.customViews.RegularTextView
         android:id="@+id/txtMsgFull"

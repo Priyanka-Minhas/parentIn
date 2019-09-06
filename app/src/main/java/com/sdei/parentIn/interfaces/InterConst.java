@@ -45,4 +45,8 @@ public interface InterConst {
     String USER_DATA="user_data";
     @NotNull
     String SETTINGS="setting";
+    @NotNull
+    String KEY_FROM="from";
+    @NotNull
+    String KEY_TO ="to";
 }

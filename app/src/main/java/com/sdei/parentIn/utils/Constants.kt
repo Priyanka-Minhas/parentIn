@@ -1,8 +1,19 @@
 package com.sdei.parentIn.utils
 
 import android.content.Context
+import android.net.ParseException
 import com.sdei.parentIn.R
 import com.sdei.parentIn.model.OptionsModel
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
+
+
+
+
+
+
+
 
 fun Context.getGender(): ArrayList<OptionsModel> {
     val arrayList = ArrayList<OptionsModel>()
@@ -42,6 +53,20 @@ fun Context.getLevelOfEducation(): ArrayList<OptionsModel> {
     arrayList.add(OptionsModel(2,this.getString(R.string.Bachelor)))
     arrayList.add(OptionsModel(3,this.getString(R.string.Under_Graduate)))
     return arrayList
+}
+
+fun  Context.getFormatDate(timeStamp:String) : String{
+    //2019-09-06T06:13:02.224Z
+    //yyyy-MM-dd'T'HH:mm:ss.SSSZ
+    val input = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
+        input.timeZone = TimeZone.getTimeZone("UTC")
+    val output = SimpleDateFormat("dd/MM/yy")
+    try{
+        val date = input.parse(timeStamp)
+        return output.format(date)
+    }catch (P: ParseException){
+        return ""
+    }
 }
 
 
