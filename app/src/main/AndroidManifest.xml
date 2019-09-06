@@ -14,7 +14,7 @@
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="n">
         <activity android:name=".activities.parent.NewParentMessageActivity"></activity>
-        <activity android:name=".activities.SettingActivity" />
+        <activity android:name=".activities.SettingsActivity" />
         <activity
             android:name=".activities.parent.ParentEditChildActivity"
             android:configChanges="layoutDirection|locale"
@@ -87,7 +87,6 @@
             android:windowSoftInputMode="adjustPan" />
         <activity android:name=".activities.teacher.NewTeacherMessageActivity" />
         <activity android:name=".activities.MessageActivity" />
-        <activity android:name=".activities.SettingsActivity" />
 
         <service
             android:name=".utils.DownloadFileService"
@@ -97,5 +96,4 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
 </manifest>

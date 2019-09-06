@@ -42,6 +42,7 @@ class NewTeacherMessageActivity : BaseActivity<NewTeacherMessageViewModel>(), Vi
 
     var mClassList = arrayListOf<ClassModel.DataBean>()
     var mNameList = arrayListOf<ClassModel.DataBean>()
+    var filePath: String? = ""
 
     lateinit var mAddAdapter: TeacherMsgNameAddedAdapter
 
@@ -114,13 +115,13 @@ class NewTeacherMessageActivity : BaseActivity<NewTeacherMessageViewModel>(), Vi
                         toFrom.add(mNameList[i].parentFirstName!! + mNameList[i].parentLastName!!)
                     }
                     showProgess()
-                    mViewModel!!.sendMessage(toId, toFrom, edtMessage.text.trim().toString())
+                    mViewModel!!.sendMessage(filePath!!, toId, toFrom, edtMessage.text.trim().toString())
                 }
             }
 
             R.id.layoutAttach -> {
                 val intent = Intent(this, ImageSelectActivity::class.java)
-                intent.putExtra(ImageSelectActivity.FLAG_COMPRESS, false)//default is true
+                intent.putExtra(ImageSelectActivity.FLAG_COMPRESS, true)//default is true
                 intent.putExtra(ImageSelectActivity.FLAG_CAMERA, true)//default is true
                 intent.putExtra(ImageSelectActivity.FLAG_GALLERY, false)//default is true
                 startActivityForResult(intent, 1213)
@@ -131,7 +132,7 @@ class NewTeacherMessageActivity : BaseActivity<NewTeacherMessageViewModel>(), Vi
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == 1213 && resultCode == Activity.RESULT_OK) {
-            val filePath = data!!.getStringExtra(ImageSelectActivity.RESULT_FILE_PATH)
+            filePath = data!!.getStringExtra(ImageSelectActivity.RESULT_FILE_PATH)
             val selectedImage = BitmapFactory.decodeFile(filePath)
             if (selectedImage != null) {
                 imgUploaded.visibility = View.VISIBLE
@@ -142,12 +143,9 @@ class NewTeacherMessageActivity : BaseActivity<NewTeacherMessageViewModel>(), Vi
         }
     }
 
-
     private fun setAddNameAdapter() {
         rvAddName.layoutManager = LinearLayoutManager(mContext)
         mAddAdapter = TeacherMsgNameAddedAdapter(mContext, mNameList, this)
         rvAddName.adapter = mAddAdapter
     }
-
-
 }

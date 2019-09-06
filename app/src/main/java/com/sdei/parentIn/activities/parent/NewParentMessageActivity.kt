@@ -122,7 +122,7 @@ class NewParentMessageActivity : BaseActivity<NewParentMessageViewModel>(), View
 
             R.id.layoutAttach -> {
                 val intent = Intent(this, ImageSelectActivity::class.java)
-                intent.putExtra(ImageSelectActivity.FLAG_COMPRESS, false)//default is true
+                intent.putExtra(ImageSelectActivity.FLAG_COMPRESS, true)//default is true
                 intent.putExtra(ImageSelectActivity.FLAG_CAMERA, true)//default is true
                 intent.putExtra(ImageSelectActivity.FLAG_GALLERY, false)//default is true
                 startActivityForResult(intent, 1213)
