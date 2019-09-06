@@ -76,6 +76,13 @@ interface ApiInterface {
     fun createMessage(@Body file: RequestBody):
             Call<MessagesModel>
 
+    //  get single user message
+
+    @FormUrlEncoded
+    @POST("/message/find")
+    fun getMessageForSingleUser(@Field("from") from:String,
+                                @Field("to") to:String):Call<MessagesModel>
+
 //    @FormUrlEncoded
 //    @POST("users/authenticate")
 //    fun authenticate_user(

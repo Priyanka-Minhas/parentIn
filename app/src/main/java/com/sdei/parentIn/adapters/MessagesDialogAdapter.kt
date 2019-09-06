@@ -52,7 +52,9 @@ class MessagesDialogAdapter(var context: Context, var mData: ArrayList<MessagesM
 
         holder.rvMain.setOnClickListener {
             val intent = Intent(context, MessageActivity::class.java)
-            context.startActivity(intent)
+             intent.putExtra(InterConst.KEY_FROM,mData[position].from)
+             intent.putExtra(InterConst.KEY_TO,mData[position].to)
+             context.startActivity(intent)
         }
 
         holder.txtshortmsg.text = mData[position].message
