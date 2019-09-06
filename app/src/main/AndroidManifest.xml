@@ -13,6 +13,7 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="n">
+
         <activity android:name=".activities.parent.NewParentMessageActivity"
             android:configChanges="layoutDirection|locale"
             android:launchMode="singleTop"
@@ -118,23 +119,11 @@
             android:name=".utils.DownloadFileService"
             android:enabled="true"
             android:exported="false" />
-        <provider
-            android:name="androidx.core.content.FileProvider"
-            android:authorities="com.sdei.parentI.fileprovider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_path"></meta-data>
-        </provider>
+
     </application>
-    <uses-feature
-        android:name="android.hardware.camera"
-        android:required="false" />
+
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
     <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA"/>
 

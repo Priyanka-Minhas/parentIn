@@ -33,6 +33,7 @@ class ParentMessagesFragment : BaseFragment<MessageDialogVM>() {
 
     override fun onCreateStuff() {
         setParentMessageAdapter()
+
         mViewModel!!.messageListResponse().observe(this,
                 Observer<MessagesModel> { mData ->
                     if (mData != null && mContext.responseHandler(mData.statusCode, mData.message)) {

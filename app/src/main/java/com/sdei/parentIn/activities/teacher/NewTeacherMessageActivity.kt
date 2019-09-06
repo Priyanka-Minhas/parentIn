@@ -1,6 +1,10 @@
 package com.sdei.parentIn.activities.teacher
 
+import `in`.mayanknagwanshi.imagepicker.ImageSelectActivity
+import android.app.Activity
 import android.content.Context
+import android.content.Intent
+import android.graphics.BitmapFactory
 import android.text.TextUtils
 import android.view.View
 import androidx.lifecycle.Observer
@@ -62,6 +66,7 @@ class NewTeacherMessageActivity : BaseActivity<NewTeacherMessageViewModel>(), Vi
         btnBack.setOnClickListener(this)
         txtSubmit.setOnClickListener(this)
         imgAdd.setOnClickListener(this)
+        layoutAttach.setOnClickListener(this)
     }
 
     override fun onClick(view: View?) {
@@ -111,6 +116,28 @@ class NewTeacherMessageActivity : BaseActivity<NewTeacherMessageViewModel>(), Vi
                     showProgess()
                     mViewModel!!.sendMessage(toId, toFrom, edtMessage.text.trim().toString())
                 }
+            }
+
+            R.id.layoutAttach -> {
+                val intent = Intent(this, ImageSelectActivity::class.java)
+                intent.putExtra(ImageSelectActivity.FLAG_COMPRESS, false)//default is true
+                intent.putExtra(ImageSelectActivity.FLAG_CAMERA, true)//default is true
+                intent.putExtra(ImageSelectActivity.FLAG_GALLERY, false)//default is true
+                startActivityForResult(intent, 1213)
+            }
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == 1213 && resultCode == Activity.RESULT_OK) {
+            val filePath = data!!.getStringExtra(ImageSelectActivity.RESULT_FILE_PATH)
+            val selectedImage = BitmapFactory.decodeFile(filePath)
+            if (selectedImage != null) {
+                imgUploaded.visibility = View.VISIBLE
+                imgViewAttach.visibility = View.GONE
+                textView9.visibility = View.GONE
+                imgUploaded.setImageBitmap(selectedImage)
             }
         }
     }
