@@ -10,13 +10,35 @@ class MessageSingleViewModel(application: Application) : BaseViewModel(applicati
     private val mRepository: MessageSingleUserRepository = MessageSingleUserRepository()
     private var mMessageList: MutableLiveData<MessagesModel>? = null
 
+    private var mSendMessage: MutableLiveData<MessagesModel>? = null
+
+
     fun getSingleMessageList(from:String,to:String): MutableLiveData<MessagesModel> {
         if (mMessageList == null) {
             mMessageList = MutableLiveData()
-            mRepository.getSingleMessageApi(from,to) {
-                mMessageList!!.value=it
-            }
+            hitMessageListApi(from, to)
         }
         return mMessageList as MutableLiveData<MessagesModel>
+    }
+
+    fun hitMessageListApi(from: String, to: String) {
+        mRepository.getSingleMessageApi(from, to) {
+            mMessageList!!.value = it
+        }
+    }
+
+    fun messageCreated(): MutableLiveData<MessagesModel> {
+        if (mSendMessage == null) {
+            mSendMessage = MutableLiveData()
+        }
+        return mSendMessage as MutableLiveData<MessagesModel>
+    }
+
+    fun sendMessage(to: ArrayList<String>,
+                    toName: ArrayList<String>,
+                    message: String) {
+        mRepository.sendMessage(to, toName, message) {
+            mSendMessage!!.value = it
+        }
     }
 }

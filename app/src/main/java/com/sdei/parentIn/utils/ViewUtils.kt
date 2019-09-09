@@ -18,6 +18,7 @@ import com.sdei.parentIn.interfaces.InterConst
 import com.sdei.parentIn.interfaces.InterConst.CODE_SESSION_EXPIRED
 import com.sdei.parentIn.interfaces.InterConst.CODE_SUCCESS
 import com.sdei.parentIn.model.UserModel
+import com.sdei.parentIn.room.RoomDb
 import okhttp3.MediaType
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -82,9 +83,13 @@ fun handleJson(response: String): Pair<String, String> {
 }
 
 fun Activity.logOut() {
+    RoomDb.getInstance(application).getDao().deleteParentChildDb()
+    RoomDb.getInstance(application).getDao().deleteSchoolDb()
+    RoomDb.getInstance(application).getDao().deleteTeacherClassDb()
+    getAppPref().clearShf()
+
     val intent = Intent(this, WelcomeActivity::class.java)
     startActivity(intent)
-    getAppPref().clearShf()
     finishAffinity()
 }
 

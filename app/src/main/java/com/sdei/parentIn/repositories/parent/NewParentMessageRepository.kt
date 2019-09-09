@@ -55,7 +55,8 @@ class NewParentMessageRepository {
         })
     }
 
-    private fun createBuilder(filepath:String,to: ArrayList<String>, toName: ArrayList<String>,
+    private fun createBuilder(filepath:String,to: ArrayList<String>,
+                              toName: ArrayList<String>,
                               from: String,
                               fromName: String,
                               message: String): RequestBody {
@@ -72,6 +73,10 @@ class NewParentMessageRepository {
         for (name in toName) {
             builder.addFormDataPart("toName", name)
         }
+
+//        for (child in Child) {
+//            builder.addFormDataPart("childName", child)
+//        }
 
         // Images
         if(!TextUtils.isEmpty(filepath)){

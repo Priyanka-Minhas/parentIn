@@ -1,7 +1,6 @@
 package com.sdei.parentIn.activities
 
 import android.content.Context
-import android.content.Intent
 import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -53,10 +52,7 @@ class SettingsActivity : BaseActivity<SettingsViewModel>(), View.OnClickListener
     override fun onClick(view: View?) {
         when (view!!.id) {
             R.id.cvLogOut -> {
-                getAppPref().clearShf()
-                val intent = Intent(this, WelcomeActivity::class.java)
-                startActivity(intent)
-                finishAffinity()
+                logOut()
             }
             R.id.btnBack -> {
                 finish()
@@ -66,11 +62,11 @@ class SettingsActivity : BaseActivity<SettingsViewModel>(), View.OnClickListener
                 //intent.putExtra(InterConst.SETTINGS, InterConst.SETTINGS)
                 //startActivity(intent)
             }
-            R.id.cvExportList ->{
+            R.id.cvExportList -> {
                 if (mContext.connectedToInternet(cvTeacherInfo)) {
                     viewModel.sendReqForCSVFile(getAppPref().getString(InterConst.ID)).observe(this, Observer { mData ->
                         if (mData != null && mContext.responseHandler(mData.statusCode, mData.message)) {
-                            mContext.startService(DownloadFileService.getDownloadService(mContext,mData.data.toString(), DirectoryHelper.ROOT_DIRECTORY_NAME+"/File"))
+                            mContext.startService(DownloadFileService.getDownloadService(mContext, mData.data.toString(), DirectoryHelper.ROOT_DIRECTORY_NAME + "/File"))
                         }
                     })
                 }

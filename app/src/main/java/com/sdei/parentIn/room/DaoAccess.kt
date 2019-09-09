@@ -25,6 +25,8 @@ interface DaoAccess {
     @Query("SELECT * FROM SchoolDataBean")
     fun fetchSchoolList(): List<SchoolModel.DataBean>
 
+    @Query("DELETE FROM SchoolDataBean")
+    fun deleteSchoolDb()
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertSingleParentChild(model: ChildModel.DataBean)
@@ -32,12 +34,17 @@ interface DaoAccess {
     @Query("SELECT * FROM ChildDataBean")
     fun fetchParentChildList(): List<ChildModel.DataBean>
 
+    @Query("DELETE FROM ChildDataBean")
+    fun deleteParentChildDb()
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertSingleTeacherClass(model: ClassModel.DataBean)
 
     @Query("SELECT * FROM ClassDataBean")
     fun fetchTeacherClassList(): List<ClassModel.DataBean>
+
+    @Query("DELETE FROM ClassDataBean")
+    fun deleteTeacherClassDb()
 
 //    @Insert
 //    fun insertSchoolList(friends: ArrayList<SchoolModel.DataBean>)

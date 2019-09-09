@@ -5,17 +5,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:background="@color/colorWhite"
-    android:layout_height="wrap_content"
-   android:paddingBottom="@dimen/_15sdp">
+    android:layout_height="wrap_content">
 
-
-    <TextView
+    <com.sdei.parentIn.customViews.RegularTextView
         android:id="@+id/imgViewMsg"
-        android:layout_width="@dimen/_42sdp"
-        android:layout_height="@dimen/_42sdp"
-        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_width="@dimen/_32sdp"
+        android:layout_height="@dimen/_32sdp"
         android:text="RB"
+        android:textSize="@dimen/_12ssp"
         android:visibility="visible"
+        android:layout_marginTop="@dimen/_5sdp"
+
         android:textColor="@color/colorWhite"
         android:gravity="center"
         android:layout_marginStart="@dimen/_10sdp"
@@ -28,10 +28,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Ana Lucia Pontevedra"
-        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_5sdp"
         android:textSize="@dimen/_11ssp"
         android:layout_marginStart="@dimen/_55sdp"
-        android:visibility="invisible"
+        android:visibility="gone"
         android:textColor="@color/colorGrayDark"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -43,6 +43,7 @@
         android:text="dfgdf"
         android:visibility="invisible"
         android:textSize="@dimen/_9ssp"
+
         android:textColor="@color/colorPurpulLight"
         android:layout_marginEnd="@dimen/_20sdp"
         app:layout_constraintBottom_toBottomOf="@+id/txtMsgChildName"
@@ -54,6 +55,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Leandro Pontevedra"
+        android:layout_marginTop="@dimen/_10sdp"
         android:layout_marginStart="@dimen/_55sdp"
         android:textSize="@dimen/_13ssp"
         android:textColor="@color/colorDarkText"
@@ -95,6 +97,7 @@
         android:layout_marginTop="@dimen/_8sdp"
         android:layout_marginStart="@dimen/_55sdp"
         android:layout_marginEnd="@dimen/_20sdp"
+        android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtMsgFull"

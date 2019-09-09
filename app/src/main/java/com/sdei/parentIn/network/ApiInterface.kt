@@ -22,7 +22,7 @@ interface ApiInterface {
     fun register(@Body userModel: UserModel.DataBeanRequest): Call<UserModel>
 
     // Get School List
-    @GET("school/mDialoglist")
+    @GET("school/list")
     fun getSchoolList(): Call<SchoolModel>
 
     // Get child List

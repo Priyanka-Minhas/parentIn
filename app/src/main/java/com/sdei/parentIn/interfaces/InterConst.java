@@ -46,7 +46,7 @@ public interface InterConst {
     @NotNull
     String SETTINGS="setting";
     @NotNull
-    String KEY_FROM="from";
+    String KEY_TO ="toName";
     @NotNull
-    String KEY_TO ="to";
+    String KEY_TO_NAME ="to";
 }

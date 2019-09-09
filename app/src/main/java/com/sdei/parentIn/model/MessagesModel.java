@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class MessagesModel extends BaseModel{
     /**
      * statusCode : 200
-     * data : [{"attachment":"http://54.71.18.74:4589/uploads/attachments/","message":"messagexdfgsdfgsd","status":false,"_id":"5d70f3d3f1dec57c323b2b36","to":"5d661f79320948394d423511","toName":"T","from":"5d661f79320948394d423511","fromName":"From Name","createdAt":"2019-09-05T11:38:59.477Z"},{"attachment":"http://54.71.18.74:4589/uploads/attachments/","message":"messagexdfgsdfgsd","status":false,"_id":"5d70f3d3f1dec57c323b2b37","to":"5d661f79320948394d423511","toName":"o","from":"5d661f79320948394d423511","fromName":"From Name","createdAt":"2019-09-05T11:38:59.481Z"}]
+     * data : [{"attachment":"http://54.71.18.74:4589/uploads/attachments/","message":"messagexdfgsdfgsd","status":false,"_id":"5d70f3d3f1dec57c323b2b36","to":"5d661f79320948394d423511","toName":"T","toName":"5d661f79320948394d423511","fromName":"From Name","createdAt":"2019-09-05T11:38:59.477Z"},{"attachment":"http://54.71.18.74:4589/uploads/attachments/","message":"messagexdfgsdfgsd","status":false,"_id":"5d70f3d3f1dec57c323b2b37","to":"5d661f79320948394d423511","toName":"o","toName":"5d661f79320948394d423511","fromName":"From Name","createdAt":"2019-09-05T11:38:59.481Z"}]
      * message : Successful
      */
 
@@ -38,7 +38,7 @@ public class MessagesModel extends BaseModel{
          * _id : 5d70f3d3f1dec57c323b2b36
          * to : 5d661f79320948394d423511
          * toName : T
-         * from : 5d661f79320948394d423511
+         * toName : 5d661f79320948394d423511
          * fromName : From Name
          * createdAt : 2019-09-05T11:38:59.477Z
          */

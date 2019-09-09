@@ -1,14 +1,12 @@
 package com.sdei.parentIn.adapters
 
 import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.sdei.parentIn.R
-import com.sdei.parentIn.activities.MessageActivity
 import com.sdei.parentIn.interfaces.InterConst
 import com.sdei.parentIn.model.MessagesModel
 import com.sdei.parentIn.utils.getAppPref
@@ -51,14 +49,10 @@ class MessagesDialogAdapter(var context: Context, var mData: ArrayList<MessagesM
         }
 
         holder.rvMain.setOnClickListener {
-            val intent = Intent(context, MessageActivity::class.java)
-             intent.putExtra(InterConst.KEY_FROM,mData[position].from)
-             intent.putExtra(InterConst.KEY_TO,mData[position].to)
-             context.startActivity(intent)
+            mCallback.openActivity(position)
         }
 
         holder.txtshortmsg.text = mData[position].message
-//      holder.txtMsgDate.text = mData[position].createdAt
 
         if (getAppPref().getString(InterConst.ID) != mData[position].from) {
             holder.txtName.text = mData[position].fromName
@@ -78,10 +72,12 @@ class MessagesDialogAdapter(var context: Context, var mData: ArrayList<MessagesM
         var txtshortmsg = itemView.txtshortmsg
         var txtMsgDate = itemView.txtMsgDate
         var btnResponder = itemView.btnResponder
+        var txtTeacherName = itemView.txtTeacherName
         var rvMain = itemView.rvMain
     }
 
     interface Callback {
         fun getIndex(pos: Int, from: String, fromName: String)
+        fun openActivity(pos: Int)
     }
 }

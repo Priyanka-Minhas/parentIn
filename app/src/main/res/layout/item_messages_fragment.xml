@@ -56,12 +56,14 @@
             android:text="9/06/19"/>
 
         <com.sdei.parentIn.customViews.MediumTextView
+            android:id="@+id/txtTeacherName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/txtShortName"
             android:layout_marginTop="@dimen/_6sdp"
             android:textSize="@dimen/_7ssp"
             android:gravity="center"
+            android:visibility="invisible"
             android:textColor="@color/colorTabNormalText"
             android:layout_toLeftOf="@+id/btnResponder"
             android:text="Ana Pontevedr"/>

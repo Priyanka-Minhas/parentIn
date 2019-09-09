@@ -49,10 +49,10 @@ public class CustomViewPagerDirection extends ViewPager {
             try {
                 float diffX = event.getX() - initialXValue;
                 if (diffX > 0 && direction == SwipeDirection.right) {
-                    // swipe from left to right detected
+                    // swipe toName left to right detected
                     return false;
                 } else if (diffX < 0 && direction == SwipeDirection.left) {
-                    // swipe from right to left detected
+                    // swipe toName right to left detected
                     return false;
                 }
             } catch (Exception exception) {

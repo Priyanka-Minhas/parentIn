@@ -56,6 +56,7 @@ class NewTeacherMessageActivity : BaseActivity<NewTeacherMessageViewModel>(), Vi
         mViewModel!!.messageCreated().observe(this,
                 Observer<MessagesModel> { mData ->
                     if (mData != null && responseHandler(mData.statusCode, mData.message)) {
+                        setResult(RESULT_OK)
                         finish()
                     }
                 })
@@ -77,6 +78,7 @@ class NewTeacherMessageActivity : BaseActivity<NewTeacherMessageViewModel>(), Vi
             }
 
             R.id.imgAdd -> {
+                if (connectedToInternet(txtSubmit)) {
                 if (mClassList.isNotEmpty()) {
                     TeacherMessageSelectNameDialog(mContext, R.style.pullBottomfromTop, R.layout.dialog_message_select_name,
                             mClassList,
@@ -96,6 +98,7 @@ class NewTeacherMessageActivity : BaseActivity<NewTeacherMessageViewModel>(), Vi
                 } else {
                     showAlertSnackBar(imgAdd, getString(R.string.add_student_to_send_messages))
                 }
+            }
             }
 
             R.id.txtSubmit -> {

@@ -58,6 +58,7 @@ class NewParentMessageActivity : BaseActivity<NewParentMessageViewModel>(), View
         mViewModel!!.messageCreated().observe(this,
                 Observer<MessagesModel> { mData ->
                     if (mData != null && responseHandler(mData.statusCode, mData.message)) {
+                        setResult(RESULT_OK)
                         finish()
                     }
                 })
@@ -87,36 +88,39 @@ class NewParentMessageActivity : BaseActivity<NewParentMessageViewModel>(), View
                 }
                 if (connectedToInternet(txtSubmit)) {
                     val toId = arrayListOf<String>()
-                    val toFrom = arrayListOf<String>()
+                    val toName = arrayListOf<String>()
 
                     for (i in 0 until mNameList.size) {
                         toId.add(mNameList[i].teacher!!)
-                        toFrom.add(mNameList[i].teacherFirstName!! + mNameList[i].teacherLastName!!)
+                        toName.add(mNameList[i].teacherFirstName!! + mNameList[i].teacherLastName!!)
                     }
+
                     showProgess()
-                    mViewModel!!.sendMessage(filePath!!,toId, toFrom, edtMessage.text.trim().toString())
+                    mViewModel!!.sendMessage(filePath!!,toId, toName, edtMessage.text.trim().toString())
                 }
             }
 
             R.id.imgAdd -> {
-                if (mChildrenList.isNotEmpty()) {
-                    ParentMessageSelectNameDialog(mContext, R.style.pullBottomfromTop, R.layout.dialog_message_select_name,
-                            mChildrenList,
-                            object : IndexClick {
-                                override fun clickIndex(pos: ChildModel.DataBean) {
-                                    if (TextUtils.isEmpty(pos._id)) {
-                                        mNameList.clear()
-                                        mNameList.addAll(mChildrenList)
-                                    } else {
-                                        if (!mNameList.contains(pos)) {
-                                            mNameList.add(pos)
+                if (connectedToInternet(txtSubmit)) {
+                    if (mChildrenList.isNotEmpty()) {
+                        ParentMessageSelectNameDialog(mContext, R.style.pullBottomfromTop, R.layout.dialog_message_select_name,
+                                mChildrenList,
+                                object : IndexClick {
+                                    override fun clickIndex(pos: ChildModel.DataBean) {
+                                        if (TextUtils.isEmpty(pos._id)) {
+                                            mNameList.clear()
+                                            mNameList.addAll(mChildrenList)
+                                        } else {
+                                            if (!mNameList.contains(pos)) {
+                                                mNameList.add(pos)
+                                            }
                                         }
+                                        setAddNameAdapter()
                                     }
-                                    setAddNameAdapter()
-                                }
-                            }).show()
-                } else {
-                    showAlertSnackBar(imgAdd, getString(R.string.add_child_to_send_messages))
+                                }).show()
+                    } else {
+                        showAlertSnackBar(imgAdd, getString(R.string.add_child_to_send_messages))
+                    }
                 }
             }
 
