@@ -222,10 +222,11 @@
                 android:layout_height="wrap_content"
                 android:foreground="?selectableItemBackground"
                 android:gravity="center"
-                android:text="Eliminar Cuenta"
+                android:paddingTop="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_12sdp"
+                android:text="@string/eliminar_cuenta1"
                 android:textColor="@color/colorDarkText"
                 android:textSize="@dimen/_11ssp"
-                android:layout_marginBottom="@dimen/_12sdp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />

@@ -129,6 +129,9 @@
 
     <!-- Teacher Leading Screen -->
     <string name="Clase">Class</string>
+    <!-- Supervisor Leading Screen -->
+    <string name="list">List</string>
+    <string name="map">Map</string>
 
     <!-- Class Screen -->
     <string name="parentin_matriculados">ParentIn Enrolled:</string>
@@ -209,16 +212,27 @@
     <string name="ayuda_y_soporte">Help and Support</string>
     <string name="cerrar_sesi_n">Sign off</string>
     <string name="informacion_del_padre_o_tutor">Parent or Guardian Information</string>
+    <string name="aceptar">To accept</string>
+    <string name="eliminar_cuenta">Delete account?</string>
+    <string name="los_mensajes_y_la_informaci_n_de_la_cuenta_ya_no_podran_recuperarse">Messages and account information can no longer be retrieved</string>
+    <string name="eliminar">Remove</string>
+    <string name="confirma_si_quieres_eliminar_tu_cuenta">Confirm if you want to delete your account?</string>
+    <string name="eliminar_cuenta1">Delete account</string>
+    <string name="cuenta_eliminada">Account Deleted</string>
+    <string name="account_delete_msg">Your account has been deleted. We have sent you a confirmation email of deactivation</string>
 
     <string name="responder_aqu">Responder aquí…</string>
     <string name="search">Search…</string>
     <string name="select_name">SELECT NAME</string>
     <string name="no_result">NO RESULT</string>
-
-	<string name="select_all">Select All</string>
-	<string name="add_student_to_send_messages">Please add Students to send messages</string>
+    <string name="select_all">Select All</string>
+    <string name="add_student_to_send_messages">Please add Students to send messages</string>
     <string name="add_child_to_send_messages">Please add Child to send messages</string>
     <string name="please_enter_message_first">Please Enter Message First</string>
-	<string name="server_not_responding">Server not Responding</string>
+    <string name="server_not_responding">Server not Responding</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 
 </resources>

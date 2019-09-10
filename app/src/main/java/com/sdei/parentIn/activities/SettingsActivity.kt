@@ -8,13 +8,16 @@ import androidx.lifecycle.ViewModelProviders
 import com.afollestad.assent.Permission
 import com.afollestad.assent.askForPermissions
 import com.sdei.parentIn.R
+import com.sdei.parentIn.dialog.DeleteAccountDialog
 import com.sdei.parentIn.interfaces.InterConst
+import com.sdei.parentIn.interfaces.InterfacesCall
 import com.sdei.parentIn.utils.*
 import com.sdei.parentIn.viewModel.SettingsViewModel
 import kotlinx.android.synthetic.main.activity_setting.*
 
 class SettingsActivity : BaseActivity<SettingsViewModel>(), View.OnClickListener {
 
+    lateinit var mDialog: DeleteAccountDialog
     override val layoutId: Int
         get() = R.layout.activity_setting
     override val viewModel: SettingsViewModel
@@ -73,6 +76,12 @@ class SettingsActivity : BaseActivity<SettingsViewModel>(), View.OnClickListener
                     getCSVFile()
                 }
 
+            }
+            R.id.txtDeleteAccount ->{
+             mDialog = DeleteAccountDialog(mContext, R.style.pullBottomfromTop, R.layout.delete_account,getString(R.string.eliminar_cuenta),getString(R.string.confirma_si_quieres_eliminar_tu_cuenta),InterfacesCall.BtnClick{
+
+             })
+             mDialog.showDialog()
             }
         }
     }

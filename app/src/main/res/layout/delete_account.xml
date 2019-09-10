@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_marginStart="@dimen/_30sdp"
+    android:layout_marginEnd="@dimen/_30sdp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_white_round_corners"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+    <com.sdei.parentIn.customViews.SemiBoldTextView
+        android:id="@+id/txtDialogTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_15ssp"
+        android:text="@string/eliminar_cuenta"/>
+
+    <com.sdei.parentIn.customViews.RegularTextView
+        android:id="@+id/txtDialogMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_11ssp"
+        android:text="@string/confirma_si_quieres_eliminar_tu_cuenta"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorGrayDark"
+        android:layout_marginTop="@dimen/_10sdp"/>
+
+    <LinearLayout
+        android:id="@+id/layoutButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <com.sdei.parentIn.customViews.RegularTextView
+            android:id="@+id/txtCancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/cancelar"
+            android:textSize="@dimen/_15ssp"
+            android:padding="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:foreground="?selectableItemBackground"
+            android:textColor="@color/colorPurpul"
+            android:paddingTop="@dimen/_10sdp"
+            android:gravity="center"/>
+        <View
+            android:layout_width="1dp"
+            android:layout_height="@dimen/_35sdp"
+            android:background="@color/colorGrayDark"/>
+
+        <com.sdei.parentIn.customViews.SemiBoldTextView
+            android:id="@+id/txtRemove"
+            android:layout_width="match_parent"
+            android:padding="@dimen/_5sdp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:foreground="?selectableItemBackground"
+            android:layout_weight="1"
+            android:textColor="@color/colorRed"
+            android:textSize="@dimen/_15ssp"
+            android:paddingTop="@dimen/_10sdp"
+            android:text="@string/eliminar"/>
+    </LinearLayout>
+    <com.sdei.parentIn.customViews.SemiBoldTextView
+        android:id="@+id/txtAccept"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/aceptar"
+        android:textSize="@dimen/_15ssp"
+        android:padding="@dimen/_5sdp"
+        android:visibility="gone"
+        android:foreground="?selectableItemBackground"
+        android:textColor="@color/colorPurpul"
+        android:paddingTop="@dimen/_10sdp"
+        android:gravity="center"/>
+
+
+</LinearLayout>

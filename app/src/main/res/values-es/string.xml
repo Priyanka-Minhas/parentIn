@@ -128,6 +128,9 @@
 
 	<!-- Teacher Leading Screen -->
 	<string name="Clase">Clase</string>
+	<!-- Supervisor Leading Screen -->
+	<string name="list">Lista</string>
+	<string name="map">Mapa</string>
 
 	<!-- Class Screen -->
 	<string name="parentin_matriculados">ParentIn Matriculados:</string>
@@ -191,11 +194,6 @@
 	<string name="olvidaste_la_contrase_a">Olvidaste la contraseña?</string>
 	<string name="a_n_no_tienes_cuenta">Aún no tienes cuenta?</string>
 	<string name="registrate_aqu">Registrate aquí…</string>
-	<string name="responder_aqu">Reply here…</string>
-	<string name="search">Buscar…</string>
-	<string name="select_name">SELECCIONE NOMBRE</string>
-	<string name="no_result">SIN RESULTADOS</string>
-
 	<!-- Supervisor Signup -->
 	<string name="nueva_cuenta">Nueva Cuenta</string>
 	<string name="informaci_n_del_supervisor">Información del Supervisor</string>
@@ -214,10 +212,24 @@
 	<string name="ayuda_y_soporte">Ayuda y soporte</string>
 	<string name="cerrar_sesi_n">Cerrar Sesión</string>
 	<string name="informacion_del_padre_o_tutor">Informacion del Padre o tutor</string>
+	<string name="aceptar">Aceptar</string>
+	<string name="eliminar_cuenta">Eliminar cuenta?</string>
+	<string name="los_mensajes_y_la_informaci_n_de_la_cuenta_ya_no_podran_recuperarse">Los mensajes y la información de la cuenta ya no podran recuperarse</string>
+	<string name="eliminar">Eliminar</string>
+	<string name="confirma_si_quieres_eliminar_tu_cuenta">¿Confirma si quieres eliminar tu cuenta?</string>
+	<string name="eliminar_cuenta1">Eliminar Cuenta</string>
+	<string name="cuenta_eliminada">Cuenta Eliminada</string>
+	<string name="account_delete_msg">Tu cuenta  ha sido eliminada. Te hemos mandado un correo de confirmación de la desactivación</string>
+
+
 	<string name="select_all">Seleccionar todo</string>
 	<string name="add_student_to_send_messages">Agregue Estudiantes para enviar mensajes.</string>
 	<string name="add_child_to_send_messages">Agregue Niño para enviar mensajes.</string>
 	<string name="please_enter_message_first">Por favor ingrese el mensaje primero</string>
 	<string name="server_not_responding">Servidor no responde</string>
+	<string name="responder_aqu">Responder aquí…</string>
+	<string name="search">Search…</string>
+	<string name="select_name">SELECT NAME</string>
+	<string name="no_result">NO RESULT</string>
 
 </resources>

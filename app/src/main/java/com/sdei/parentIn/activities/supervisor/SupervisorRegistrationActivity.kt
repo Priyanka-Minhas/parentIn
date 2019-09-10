@@ -7,6 +7,7 @@ import com.sdei.parentIn.R
 import com.sdei.parentIn.activities.BaseActivity
 import com.sdei.parentIn.dialog.OptionListDialog
 import com.sdei.parentIn.interfaces.InterfacesCall
+import com.sdei.parentIn.model.UserModel
 import com.sdei.parentIn.utils.connectedToInternet
 import com.sdei.parentIn.utils.getGender
 import com.sdei.parentIn.utils.showAlertSnackBar
@@ -74,12 +75,27 @@ class SupervisorRegistrationActivity : BaseActivity<BaseViewModel>(), View.OnCli
                showAlertSnackBar(btnSupCreateAccount, getString(R.string.errorConfirmPassword))
            }else{
                if(connectedToInternet(btnSupCreateAccount)){
-
+                  registerTeacher()
                }
            }
 
          }
        }
+    }
+
+    private fun registerTeacher() {
+        val model = UserModel.DataBeanRequest()
+        model.firstName = edtSupFirstName.text.toString()
+        model.lastName = edtSupLastName.text.toString()
+        model.gender = edtSupGender.text.toString()
+        model.verificationCard = edtSupIdCard.text.toString()
+        model.emailAddress = edtSupEmail.text.toString()
+        model.confirmEmail = edtSupConfEmail.text.toString()
+        model.password =edtSupPass.text.toString()
+        model.confirmPassword = edtSupConfPass.text.toString()
+        //organization
+        //title
+        //
     }
 
 }
