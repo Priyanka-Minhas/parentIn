@@ -10,7 +10,7 @@ import retrofit2.Response
 
 class WelcomeRepository {
 
-    // make call to get school mDialoglist
+    // make call to get school list
     fun getSchoolDataApi(application: Application) {
         RetrofitClient.instance!!.getSchoolList().enqueue(object : Callback<SchoolModel> {
             override fun onFailure(call: Call<SchoolModel>, t: Throwable) {

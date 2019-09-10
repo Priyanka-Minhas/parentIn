@@ -10,8 +10,10 @@ import com.sdei.parentIn.activities.parent.ParentLandingActivity
 import com.sdei.parentIn.activities.supervisor.SupervisorLoginActivity
 import com.sdei.parentIn.activities.teacher.TeacherLandingActivity
 import com.sdei.parentIn.interfaces.InterConst
+import com.sdei.parentIn.room.RoomDb
 import com.sdei.parentIn.utils.connectedToInternet
 import com.sdei.parentIn.utils.getAppPref
+import com.sdei.parentIn.utils.showAlertSnackBar
 import com.sdei.parentIn.viewModel.WelcomeViewModel
 import kotlinx.android.synthetic.main.activity_welcome.*
 
@@ -25,17 +27,26 @@ class WelcomeActivity : BaseActivity<WelcomeViewModel>(), View.OnClickListener {
             when (v!!.id) {
                 R.id.cdParent -> {
                     getStudentList(cdParent)
-                    getAppPref().setInt(InterConst.ROLE_ID, InterConst.ROLE_PARENT)
-                    val intent = Intent(mContext, LoginActivity::class.java)
-                    startActivity(intent)
+                    if (RoomDb.getInstance(application)
+                                    .getDao().fetchSchoolList().isNotEmpty()) {
+                        getAppPref().setInt(InterConst.ROLE_ID, InterConst.ROLE_PARENT)
+                        val intent = Intent(mContext, LoginActivity::class.java)
+                        startActivity(intent)
+                    } else {
+                        showAlertSnackBar(cvSupervisor, getString(R.string.server_not_responding))
+                    }
                 }
 
                 R.id.cdTeacher -> {
                     getStudentList(cdTeacher)
-                    mViewModel!!.getSchoolList()
-                    getAppPref().setInt(InterConst.ROLE_ID, InterConst.ROLE_TEACHER)
-                    val intent = Intent(mContext, LoginActivity::class.java)
-                    startActivity(intent)
+                    if (RoomDb.getInstance(application)
+                                    .getDao().fetchSchoolList().isNotEmpty()) {
+                        getAppPref().setInt(InterConst.ROLE_ID, InterConst.ROLE_TEACHER)
+                        val intent = Intent(mContext, LoginActivity::class.java)
+                        startActivity(intent)
+                    } else {
+                        showAlertSnackBar(cvSupervisor, getString(R.string.server_not_responding))
+                    }
                 }
 
                 R.id.btnAboutFamiliasIn -> {
@@ -45,10 +56,15 @@ class WelcomeActivity : BaseActivity<WelcomeViewModel>(), View.OnClickListener {
                 }
 
                 R.id.cvSupervisor -> {
-                     getStudentList(cvSupervisor)
-                    getAppPref().setInt(InterConst.ROLE_ID, InterConst.ROLE_SUPERVISOR)
-                    val intent = Intent(mContext, SupervisorLoginActivity::class.java)
-                    startActivity(intent)
+                    getStudentList(cvSupervisor)
+                    if (RoomDb.getInstance(application)
+                                    .getDao().fetchSchoolList().isNotEmpty()) {
+                        getAppPref().setInt(InterConst.ROLE_ID, InterConst.ROLE_SUPERVISOR)
+                        val intent = Intent(mContext, SupervisorLoginActivity::class.java)
+                        startActivity(intent)
+                    } else {
+                        showAlertSnackBar(cvSupervisor, getString(R.string.server_not_responding))
+                    }
                 }
             }
         }

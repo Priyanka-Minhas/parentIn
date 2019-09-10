@@ -194,26 +194,12 @@
 		android:background="@drawable/edit_text_selector"
 		android:drawablePadding="@dimen/_10sdp"
 		android:padding="@dimen/_12sdp"
-		android:hint="@string/Maestro"
-		android:inputType="text"
-		android:focusable="true"
-		android:cursorVisible="true"
-		android:textSize="@dimen/_12ssp" />
-
-	<EditText
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:layout_gravity="center_vertical"
-		android:layout_marginTop="@dimen/_12sdp"
-		android:background="@drawable/edit_text_selector"
-		android:drawablePadding="@dimen/_10sdp"
-		android:padding="@dimen/_12sdp"
 		android:drawableRight="@mipmap/drop_down"
 		android:hint="@string/Maestro"
 		android:inputType="none"
 		android:focusable="false"
 		android:cursorVisible="false"
-		android:visibility="gone"
+		android:visibility="visible"
 		android:textSize="@dimen/_12ssp" />
 
 </LinearLayout>

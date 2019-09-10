@@ -219,5 +219,6 @@
 	<string name="add_student_to_send_messages">Please add Students to send messages</string>
     <string name="add_child_to_send_messages">Please add Child to send messages</string>
     <string name="please_enter_message_first">Please Enter Message First</string>
+	<string name="server_not_responding">Server not Responding</string>
 
 </resources>
