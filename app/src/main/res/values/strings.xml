@@ -37,10 +37,12 @@
     <string name="select_gender">SELECT SEX</string>
     <string name="male">MALE</string>
     <string name="female">FEMALE</string>
+    <string name="other">OTHER</string>
     <string name="select_relation">SELECT RELATION</string>
     <string name="father">Father</string>
     <string name="mother">Mother</string>
-    <string name="guardian">Guardian</string>
+    <string name="guardian">Tutor</string>
+    <string name="other_rel">Other</string>
     <string name="select_school">SELECT SCHOOL</string>
     <string name="select_teacher">SELECT TEACHER</string>
     <string name="registered_successfully">Registered Successfully</string>
@@ -50,10 +52,13 @@
     <string name="less150">less than 150</string>
     <string name="more150">more than 150</string>
     <string name="select_level_of_education">SELECT LEVEL OF EDUCATION</string>
-    <string name="doctorate">Doctorate</string>
-    <string name="Masters">Masters</string>
-    <string name="Bachelor">Bachelor</string>
-    <string name="Under_Graduate">Under Graduate</string>
+    <string name="Primaria">Primary</string>
+    <string name="Masters">Teachers</string>
+    <string name="Secundaria">High school</string>
+    <string name="No_formal">Not formal</string>
+    <string name="Terciaria_no_universitaria">Tertiary non-university</string>
+    <string name="Terciaria_universitaria">University Tertiary</string>
+    <string name="Postgrado">Postgraduate</string>
 
     <!--Welcome Activity-->
     <string name="BIENVENIDO">WELCOME</string>

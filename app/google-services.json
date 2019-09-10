@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "693879399237",
+    "firebase_url": "https://familiasin-9dd42.firebaseio.com",
+    "project_id": "familiasin-9dd42",
+    "storage_bucket": "familiasin-9dd42.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:693879399237:android:382323584f9a3576f0d42c",
+        "android_client_info": {
+          "package_name": "com.sdei.parentIn"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "693879399237-3c5on8s48prd3t9bs96mnql03s2l3eud.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXd2qMKpGFpk6dNA_hxAhgjjptF08pCP4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "693879399237-3c5on8s48prd3t9bs96mnql03s2l3eud.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

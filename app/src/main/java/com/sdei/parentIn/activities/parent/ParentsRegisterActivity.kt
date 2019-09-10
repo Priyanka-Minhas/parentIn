@@ -126,7 +126,7 @@ class ParentsRegisterActivity : BaseActivity<BaseViewModel>(), View.OnClickListe
         model.verificationCard = edtId.text.toString()
         model.password = edtPassword.text.toString()
         model.confirmPassword = edtConfPassword.text.toString()
-        model.gender = edtGender.text.toString()
+        model.gender = getGender(edtGender.text.toString())
         model.roleId = getAppPref().getInt(InterConst.ROLE_ID)
 
         val intent = Intent(mContext, ParentAddChildActivity::class.java)

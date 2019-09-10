@@ -14,6 +14,8 @@ import com.sdei.parentIn.viewModel.BaseViewModel
 import com.wajahatkarim3.easyvalidation.core.view_ktx.validEmail
 import kotlinx.android.synthetic.main.activity_supervisor_registration.*
 import kotlinx.android.synthetic.main.activity_supervisor_registration.btnBack
+import kotlinx.android.synthetic.main.fragment_teacher_class.*
+
 class SupervisorRegistrationActivity : BaseActivity<BaseViewModel>(), View.OnClickListener {
 
 

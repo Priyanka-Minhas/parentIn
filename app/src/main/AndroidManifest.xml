@@ -13,8 +13,16 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="n">
-        <activity android:name=".activities.parent.NewParentMessageActivity"></activity>
-        <activity android:name=".activities.SettingsActivity" />
+        <activity android:name=".activities.parent.NewParentMessageActivity"
+            android:configChanges="layoutDirection|locale"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"/>
+        <activity android:name=".activities.SettingsActivity"
+            android:configChanges="layoutDirection|locale"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"/>
         <activity
             android:name=".activities.parent.ParentEditChildActivity"
             android:configChanges="layoutDirection|locale"
@@ -85,8 +93,26 @@
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />
-        <activity android:name=".activities.teacher.NewTeacherMessageActivity" />
-        <activity android:name=".activities.MessageActivity" />
+        <activity android:name=".activities.teacher.NewTeacherMessageActivity"
+            android:configChanges="layoutDirection|locale"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"/>
+        <activity android:name=".activities.MessageActivity"
+            android:configChanges="layoutDirection|locale"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"/>
+        <activity android:name=".activities.supervisor.SupervisorLoginActivity"
+            android:configChanges="layoutDirection|locale"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"/>
+        <activity android:name=".activities.supervisor.SupervisorRegistrationActivity"
+            android:configChanges="layoutDirection|locale"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"/>
 
         <service
             android:name=".utils.DownloadFileService"

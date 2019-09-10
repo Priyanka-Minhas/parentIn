@@ -8,25 +8,30 @@ import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
-
-
-
-
-
-
-
 fun Context.getGender(): ArrayList<OptionsModel> {
     val arrayList = ArrayList<OptionsModel>()
     arrayList.add(OptionsModel(0, this.getString(R.string.male)))
     arrayList.add(OptionsModel(1, this.getString(R.string.female)))
+    arrayList.add(OptionsModel(2, this.getString(R.string.other)))
     return arrayList
+}
+
+fun Context.getGender(string:String) : String{
+    if(string.equals(this.getString(R.string.male))){
+        return "M"
+    }else if(string.equals(this.getString(R.string.female))){
+        return "F"
+    }else{
+        return "O"
+    }
 }
 
 fun Context.getRelations(): ArrayList<OptionsModel> {
     val arrayList = ArrayList<OptionsModel>()
     arrayList.add(OptionsModel(0,this.getString(R.string.father))) //padre
     arrayList.add(OptionsModel(1,this.getString(R.string.mother))) //madre
-    arrayList.add(OptionsModel(2,this.getString(R.string.guardian))) //guardián
+    arrayList.add(OptionsModel(2,this.getString(R.string.guardian)))
+    arrayList.add(OptionsModel(3,this.getString(R.string.other_rel)))//guardián
     return arrayList
 }
 
@@ -48,10 +53,13 @@ fun Context.getNoOfStudents(): ArrayList<OptionsModel> {
 // Education Level
 fun Context.getLevelOfEducation(): ArrayList<OptionsModel> {
     val arrayList = ArrayList<OptionsModel>()
-    arrayList.add(OptionsModel(0,this.getString(R.string.doctorate)))
+    arrayList.add(OptionsModel(0,this.getString(R.string.Primaria)))
     arrayList.add(OptionsModel(1,this.getString(R.string.Masters)))
-    arrayList.add(OptionsModel(2,this.getString(R.string.Bachelor)))
-    arrayList.add(OptionsModel(3,this.getString(R.string.Under_Graduate)))
+    arrayList.add(OptionsModel(2,this.getString(R.string.Secundaria)))
+    arrayList.add(OptionsModel(3,this.getString(R.string.No_formal)))
+    arrayList.add(OptionsModel(4,this.getString(R.string.Terciaria_no_universitaria)))
+    arrayList.add(OptionsModel(5,this.getString(R.string.Terciaria_universitaria)))
+    arrayList.add(OptionsModel(6,this.getString(R.string.Postgrado)))
     return arrayList
 }
 
@@ -69,7 +77,6 @@ fun  Context.getFormatDate(timeStamp:String) : String{
     }
 }
 
-
 // Locale key constant for
 // English = "en"
 // Spanish = "es"
@@ -77,7 +84,7 @@ fun  Context.getFormatDate(timeStamp:String) : String{
 
 // spanish --> es-UY
 // english --> en-US
- const val NETWORK_LOCALE_KEY = "en-US"
+ const val NETWORK_LOCALE_KEY = "es-US"
 // camera request code
 
 const val TAKE_PICTURE = 1

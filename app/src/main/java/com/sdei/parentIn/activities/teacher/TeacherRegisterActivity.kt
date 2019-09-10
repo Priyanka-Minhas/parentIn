@@ -165,7 +165,7 @@ class TeacherRegisterActivity : BaseActivity<TeacherRegisterViewModel>(), View.O
         model.password = edtPassword.text.toString()
         model.confirmPassword = edtConfPassword.text.toString()
         model.school = mSchoolId
-        model.gender = edtGender.text.toString()
+        model.gender = getGender(edtGender.text.toString())
         model.verificationCard = edtId.text.toString()
         model.roleId = getAppPref().getInt(InterConst.ROLE_ID)
 

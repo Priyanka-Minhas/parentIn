@@ -1,14 +1,15 @@
 package com.sdei.parentIn;
 
-import android.app.Application;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import androidx.multidex.MultiDexApplication;
 import com.sdei.parentIn.utils.LocaleHelper;
+
 import static com.sdei.parentIn.utils.ConstantsKt.LOCALE_KEY;
 
-public class AppApplication extends Application {
+public class AppApplication extends MultiDexApplication {
 
     public static final String TAG = AppApplication.class.getSimpleName();
 
@@ -21,6 +22,7 @@ public class AppApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+      //  Fabric.with(this, new Crashlytics());
         instance = this;
 
     }

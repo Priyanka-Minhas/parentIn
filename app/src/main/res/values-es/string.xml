@@ -35,12 +35,14 @@
 
 	<!--COMMON-->
 	<string name="select_gender">SELECCIONE Sexo</string>
-	<string name="male">MASCULINO</string>
-	<string name="female">HEMBRA</string>
+	<string name="male">Masculino</string>
+	<string name="female">Femenino</string>
+	<string name="other">Otro</string>
 	<string name="select_relation">SELECCIONE RELACIÓN</string>
-	<string name="father">padre</string>
-	<string name="mother">madre</string>
-	<string name="guardian">guardián</string>
+	<string name="father">Padre</string>
+	<string name="mother">Madre</string>
+	<string name="guardian">Tutor</string>
+	<string name="other_rel">Otro</string>
 	<string name="select_school">SELECCIONE LA ESCUELA</string>
 	<string name="select_teacher">SELECCIONE PROFESOR</string>
 	<string name="select_no_of_student">SELECCIONE NO. DE ESTUDIANTES</string>
@@ -50,18 +52,20 @@
 	<string name="more150">más de 150</string>
 	<string name="registered_successfully">Registrado correctamente</string>
 	<string name="select_level_of_education">SELECCIONE NIVEL DE EDUCACIÓN</string>
-	<string name="doctorate">Doctorado</string>
+	<string name="Primaria">Primaria</string>
 	<string name="Masters">Maestras</string>
-	<string name="Bachelor">Soltero</string>
-	<string name="Under_Graduate">Graduado</string>
-
+	<string name="Secundaria">Secundaria</string>
+	<string name="No_formal">No formal</string>
+	<string name="Terciaria_no_universitaria">Terciaria no universitaria</string>
+	<string name="Terciaria_universitaria">Terciaria universitaria</string>
+	<string name="Postgrado">Postgrado</string>
 	<!--Welcome Activity-->
 	<string name="BIENVENIDO">Bienvenido</string>
-	<string name="Un_programa_del_Ministro_de_Educación_y_Cultura_de_Uruguay">Un programa del Ministro de Educación y \nCultura de Uruguay</string>
+	<string name="Un_programa_del_Ministro_de_Educación_y_Cultura_de_Uruguay">Un programa del Ministerio de Educación y \nCultura de Uruguay</string>
 	<string name="Selecciona_una_opción">Selecciona una opción</string>
-	<string name="Padre_o_tutor">Padre o tutor</string>
-	<string name="Maestro">Maestro</string>
-	<string name="Supervisor">Supervisor</string>
+	<string name="Padre_o_tutor">Referente familiar, o familias</string>
+	<string name="Maestro">Referente educativo</string>
+	<string name="Supervisor">Supervisor o supervisora</string>
 	<string name="Acerca_de_FamiliasIn">Acerca de FamiliasIn</string>
 
 	<!--LOGIN ACTIVITY-->
@@ -77,15 +81,15 @@
 
 	<!--PARENTS New Account -->
 	<string name="Nueva_Cuenta">Nueva Cuenta</string>
-	<string name="Info_del_padre_o_tutor">Info del padre o tutor</string>
+	<string name="Info_del_padre_o_tutor">INFO DEL REFERENTE FAMILIAR</string>
 	<string name="Ingresa_tu_información_básica_para_crear_tu_nueva_cuenta">Ingresa tu información básica para \ncrear tu nueva cuenta</string>
 	<string name="primer_nombre">Primer nombre</string>
 	<string name="Apellido">Apellido</string>
 	<string name="Dirección">Dirección</string>
 	<string name="Género">Sexo</string>
-	<string name="Relación_con_el_niño">Relación con el niño</string>
+	<string name="Relación_con_el_niño">Relación con el niño o la niña</string>
 	<string name="Cédula">Cédula</string>
-	<string name="Es_esta_la_misma_dirección_que_el_estudiante">¿Es esta la misma dirección que el estudiante?</string>
+	<string name="Es_esta_la_misma_dirección_que_el_estudiante">¿Es esta la misma dirección que el referente familiar?</string>
 	<string name="Si">Si</string>
 	<string name="No">No</string>
 	<string name="Nivel_de_educación_alcanzado">Nivel de educación alcanzado</string>
@@ -95,8 +99,8 @@
 	<!--SIGNUP ADD CHILD ACTIVITY-->
 	<string name="informaci_n_del_estudiante">Información del estudiante</string>
 	<string name="ingresa_la_informaci_n_b_sica_del_ni_o_a_para_poder_continua">Ingresa la información básica del niño/a para poder continua</string>
-	<string name="agregar_hijo_a">Agregar hijo/a</string>
-	<string name="escuela">Escuela</string>
+	<string name="agregar_hijo_a">Agregar niño/a</string>
+	<string name="escuela">Centro educativo</string>
 	<string name="fecha_nacimiento">Fecha nacimiento</string>
 	<string name="nino">Niño</string>
 
@@ -104,7 +108,7 @@
 	<string name="Acerca">Acerca</string>
 	<string name="Familiasin">FAMILIASIN</string>
 	<string name="aboutSmallText">Es una aplicación móvil que fue creada en \ncolaboración con el Ministerio de \nEducación y Cultura y el banco Inter-\nAmericano de Desarrollo.</string>
-	<string name="aboutTextWithEmail">Si tienes alguna pregunta o comentario por \nfavor escribenos a info@parentin.com y te \nresponderemos a la brevedad posible</string>
+	<string name="aboutTextWithEmail">Si tienes alguna pregunta o comentario por \nfavor escribenos a info@familiasin.com y te \nresponderemos a la brevedad posible</string>
 
 	<!-- Teacher New Account -->
 	<string name="Información_del_Maestro">Información del Maestro</string>
