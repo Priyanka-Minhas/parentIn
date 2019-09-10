@@ -1,9 +1,12 @@
 package com.sdei.parentIn.activities
 
 import android.content.Context
+import android.os.Build
 import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import com.afollestad.assent.Permission
+import com.afollestad.assent.askForPermissions
 import com.sdei.parentIn.R
 import com.sdei.parentIn.interfaces.InterConst
 import com.sdei.parentIn.utils.*
@@ -11,7 +14,6 @@ import com.sdei.parentIn.viewModel.SettingsViewModel
 import kotlinx.android.synthetic.main.activity_setting.*
 
 class SettingsActivity : BaseActivity<SettingsViewModel>(), View.OnClickListener {
-
 
     override val layoutId: Int
         get() = R.layout.activity_setting
@@ -63,14 +65,25 @@ class SettingsActivity : BaseActivity<SettingsViewModel>(), View.OnClickListener
                 //startActivity(intent)
             }
             R.id.cvExportList -> {
-                if (mContext.connectedToInternet(cvTeacherInfo)) {
-                    viewModel.sendReqForCSVFile(getAppPref().getString(InterConst.ID)).observe(this, Observer { mData ->
-                        if (mData != null && mContext.responseHandler(mData.statusCode, mData.message)) {
-                            mContext.startService(DownloadFileService.getDownloadService(mContext, mData.data.toString(), DirectoryHelper.ROOT_DIRECTORY_NAME + "/File"))
-                        }
-                    })
+                if(Build.VERSION.SDK_INT >= 23){
+                    askForPermissions(Permission.WRITE_EXTERNAL_STORAGE){
+                      getCSVFile()
+                  }
+                }else{
+                    getCSVFile()
                 }
+
             }
+        }
+    }
+
+    private fun getCSVFile() {
+        if (mContext.connectedToInternet(cvTeacherInfo)) {
+            viewModel.sendReqForCSVFile(getAppPref().getString(InterConst.ID)).observe(this, Observer { mData ->
+                if (mData != null && mContext.responseHandler(mData.statusCode, mData.message)) {
+                    mContext.startService(DownloadFileService.getDownloadService(mContext, mData.data.toString(), DirectoryHelper.ROOT_DIRECTORY_NAME + "/File"))
+                }
+            })
         }
     }
 }
